@@ -181,7 +181,7 @@ namespace GameFeel{
 
 
         //Did we hit a platform?
-        void OnCollisionEnter2D(Collision2D col)
+        protected void OnCollisionEnter2D(Collision2D col)
         {
             if (currState == STATE.Falling)
             {
@@ -200,7 +200,7 @@ namespace GameFeel{
         }
 
         //Did we just walk off a cliff?
-        void OnCollisionExit2D(Collision2D col)
+        protected void OnCollisionExit2D(Collision2D col)
         {
             if(currState == STATE.Grounded)
             {
