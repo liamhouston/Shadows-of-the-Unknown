@@ -40,14 +40,14 @@ namespace GameFeel{
         protected STATE currState = STATE.Falling;
 
 
-        void Start() {
+        protected void Start() {
             boxCollider = GetComponent<BoxCollider2D>();//For size of collider purposes
             acceleration.y = -1 * gravity;//Assuming you start in the air
         }
 
        
         // Update is called once per frame
-        void Update()
+        protected void Update()
         {
             //Position Update Information
             Vector3 newPosition = transform.position;
@@ -58,7 +58,7 @@ namespace GameFeel{
             {
                 percentageForAirOrGround = 1f;
             }
-
+            
             //Input Checks
             if (Input.GetKey(left))
             {
@@ -68,6 +68,7 @@ namespace GameFeel{
             {
                 acceleration.x = horizontalAcceleration * 1f * percentageForAirOrGround;
             }
+
             if(!Input.GetKey(left) && !Input.GetKey(right))
             {
                 acceleration.x = 0f;
@@ -210,64 +211,59 @@ namespace GameFeel{
 
         //Really cheap/lazy physics simulation
         protected void CheapPhysicsSimulation(float percentageToUse)
-        {
+        {   
+            // Handle friction (now it happens every time to fix moonwalking bug)
+            
+            float friction = airFriction;
+
+            if (currState == STATE.Grounded)
+            {
+                friction = groundFriction;
+            }
+
+            if (Mathf.Abs(velocity.x) > 0f)
+            {
+                //If greater than 0 decrease. If less then 0 increase.
+                if (velocity.x > 0)
+                {
+                    velocity.x -= friction * Time.deltaTime;
+
+                    //Ensure that we didn't flipflop
+                    if (velocity.x < -0.01f)
+                    {
+                        velocity.x = 0f;
+                    }
+                }
+                else
+                {
+                    velocity.x += friction * Time.deltaTime;
+
+                    //Ensure that we didn't flipflop
+                    if (velocity.x > 0.01f)
+                    {
+                        velocity.x = 0f;
+                    }
+                }
+
+                //Cut off point due to float issues
+                if (Mathf.Abs(velocity.x) < 0.01f)
+                {
+                    velocity.x = 0;
+                }
+            }
+
+            // Handle movement
             if (Mathf.Abs(acceleration.x) > 0f)
             {
                 //Accelerate up to max horizontal velocity
-                if (Mathf.Abs(velocity.x) < maxHorizontalVelocity)
+                if (Mathf.Abs(velocity.x) <= maxHorizontalVelocity)
                 {
                     velocity.x += acceleration.x * Time.deltaTime* percentageToUse;
-                }
-                //Ensure maximum velocity
-                if (velocity.x < maxHorizontalVelocity * -1 * percentageToUse)
-                {
-                    velocity.x = maxHorizontalVelocity * -1 * percentageToUse;
-                }
-                else if (velocity.x > maxHorizontalVelocity * percentageToUse)
-                {
-                    velocity.x = maxHorizontalVelocity * percentageToUse;
+                    // ensure we clamp at maximum velocity
+                    velocity.x = Mathf.Clamp(velocity.x, maxHorizontalVelocity * -1 * percentageToUse, maxHorizontalVelocity * percentageToUse);
                 }
             }
-            else//Friction Checks
-            {
-                float friction = airFriction;
-
-                if (currState == STATE.Grounded)
-                {
-                    friction = groundFriction;
-                }
-
-                if (Mathf.Abs(velocity.x) > 0f)
-                {
-                    //If greater than 0 decrease. If less then 0 increase.
-                    if (velocity.x > 0)
-                    {
-                        velocity.x -= friction * Time.deltaTime;
-
-                        //Ensure that we didn't flipflop
-                        if (velocity.x < -0.01f)
-                        {
-                            velocity.x = 0f;
-                        }
-                    }
-                    else
-                    {
-                        velocity.x += friction * Time.deltaTime;
-
-                        //Ensure that we didn't flipflop
-                        if (velocity.x > 0.01f)
-                        {
-                            velocity.x = 0f;
-                        }
-                    }
-
-                    //Cut off point due to float issues
-                    if (Mathf.Abs(velocity.x) < 0.01f)
-                    {
-                        velocity.x = 0;
-                    }
-                }
-            }
+            
         }
     }
 }
