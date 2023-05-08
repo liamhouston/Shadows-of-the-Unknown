@@ -10,7 +10,7 @@ namespace GameFeel{
         //Horizontal Movement Checks
         public float horizontalAcceleration = 10f;//how quickly it speeds up horizontally
         public float maxHorizontalVelocity = 5f;//how fast it can go horizontally
-        public float groundFriction = 10f;//how quickly it slows down on the ground
+        public float groundFriction = 5f;//how quickly it slows down on the ground
         public float airFriction = 1f;//how quickly it slows down in the air
         public float airSpeedPercentage = 0.8f;//what percentage of ground speed does it have in the air
 
