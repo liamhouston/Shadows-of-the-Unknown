@@ -5,268 +5,120 @@ using UnityEngine;
 namespace GameFeel{
     public class AudioPlatformerScript : VisualPlatformerScript
     {
-        //Audio Stuff
-        public AudioSource audioSource;
-        public AudioClip jumpClip, impactClip;
+        // Audio Stuff
+        public AudioSource audioSourceAction; // controls singly played audio events: jump and impact
+        public AudioSource audioSourceMove; // controls looping audio events: ground and air movement, falling, rising, etc
 
-        void Start() {
-            boxCollider = GetComponent<BoxCollider2D>();//For size of collider purposes
-            acceleration.y = -1 * gravity;//Assuming you start in the air
-            internalDefaultTimeSpeed = defaultTimeSpeed;//In case you want to set a slow down
-            defaultDimensions = transform.localScale;//Basic scale
-        }
+        public AudioClip jumpClip, doubleJumpClip, impactClip; // action clips
+        public AudioClip groundMoveClip, airRisingClip, airFallingClip; // movement clips
 
-       
+        protected STATE prevState = STATE.Falling;
+        protected bool prevDoubleJumped = false;
+
         // Update is called once per frame
-        void Update()
+        protected override void Update()
         {
-            //Jump Time Speed Change + Scale Timer
-            if (internalJumpTimeChangeTimer>0){
-                internalJumpTimeChangeTimer-=Time.deltaTime;
-                if(internalJumpTimeChangeTimer<=0){
-                    defaultTimeSpeed = internalDefaultTimeSpeed;
-                    //Set Regular Scale
-                    transform.localScale = defaultDimensions;
+            prevState = currState;
+            prevDoubleJumped = doubleJumped;
+            base.Update();
 
-                }
-            }
-            //Impact Time Speed Change + Scale Timer
-            if (internalImpactTimeChangeTimer>0){
-                internalImpactTimeChangeTimer-=Time.deltaTime;
-                if(internalImpactTimeChangeTimer<=0){
-                    defaultTimeSpeed = internalDefaultTimeSpeed;
-                    //Set Regular Scale
-                    transform.localScale = defaultDimensions;
-                    transform.position+=Vector3.up*(defaultDimensions.y-impactDimensions.y);
-                }
+            // jump cases: either we are grounded, or we are double jumping
+            if ((Input.GetKeyDown(jump) && prevState == STATE.Grounded)){
+                // play jump sound: currently doesn't self-overlap, but can if that's desired
+                if (jumpClip != null && audioSourceAction != null){
+                    audioSourceAction.clip  = jumpClip;
+                    if (!audioSourceAction.isPlaying){
+                        audioSourceAction.Play();
+                    }
+                }  
             }
 
-
-            //Position Update Information
-            Vector3 newPosition = transform.position;
-
-            float percentageForAirOrGround = airSpeedPercentage;
-
-            if (currState == STATE.Grounded)
-            {
-                percentageForAirOrGround = 1f;
+            if (Input.GetKeyDown(jump) && doubleJumped != prevDoubleJumped && doubleJumped == true){
+                if (doubleJumpClip != null && audioSourceAction != null){
+                    audioSourceAction.clip  = doubleJumpClip;
+                    if (!audioSourceAction.isPlaying){
+                        audioSourceAction.Play();
+                    }
+                }  
             }
 
-            //Input Checks
-            if (Input.GetKey(left))
-            {
-                acceleration.x = horizontalAcceleration * -1f * percentageForAirOrGround;
-            }
-            if (Input.GetKey(right))
-            {
-                acceleration.x = horizontalAcceleration * 1f * percentageForAirOrGround;
-            }
-            if(!Input.GetKey(left) && !Input.GetKey(right))
-            {
-                acceleration.x = 0f;
-            }
-
-            if (currState == STATE.Grounded && Input.GetKeyDown(jump))
-            {
-                currState = STATE.Rising;
-                timer = 0;
-                acceleration.y = kickOffAcceleration;
-                velocity.y = acceleration.y;
-
-                //Jumped!
-                if (jumpTimeChangeTimer>0){
-                    internalJumpTimeChangeTimer = jumpTimeChangeTimer;
-                    defaultTimeSpeed = timeSpeedOnJump;
-                }
-
-                //Play Jump Sound
-                if(jumpClip!=null && audioSource!=null){
-                    audioSource.clip  = jumpClip;
-                    if(!audioSource.isPlaying){
-                        audioSource.Play();
+            // impact case: if we were previously falling, and now we are grounded, we have hit the ground
+            if (currState == STATE.Grounded && prevState == STATE.Falling){
+                if (impactClip!=null && audioSourceAction!=null){
+                    audioSourceAction.clip  = impactClip;
+                    if(!audioSourceAction.isPlaying){
+                        audioSourceAction.Play();
                     }
                 }
-
-                //Set jump "stretch"
-                transform.localScale = jumpDimensions;
-                transform.position+=Vector3.up*(jumpDimensions.y-defaultDimensions.y);
-            }
-            else if (Input.GetKeyDown(jump) && doubleJump && !doubleJumped)//Double jump check
-            {
-                doubleJumped = true;
-                currState = STATE.Rising;
-                timer = 0;
-                acceleration.y = kickOffAcceleration;
-                velocity.y = acceleration.y;
-
-                //Jumped!
-                if (jumpTimeChangeTimer>0){
-                    internalJumpTimeChangeTimer = jumpTimeChangeTimer;
-                    defaultTimeSpeed = timeSpeedOnJump;
-                }
-
-                //Play Jump Sound
-                if(jumpClip!=null && audioSource!=null){
-                    audioSource.clip  = jumpClip;
-                    if(!audioSource.isPlaying){
-                        audioSource.Play();
-                    }
-                }
-
-                //Set jump "stretch"
-                transform.localScale = jumpDimensions;
-                transform.position+=Vector3.up*(jumpDimensions.y-defaultDimensions.y);
             }
 
-            //Cheap physics simulation
-            CheapPhysicsSimulation(percentageForAirOrGround);
-
-            //State-based movement
+            // Handle looping sounds for falling
             if (currState == STATE.Falling)
             {
-                acceleration.y -= Time.deltaTime * gravity*defaultTimeSpeed;
-                //Speeding up to terminal velocity
-                if (velocity.y > -1 * terminalVelocity)
-                {
-                    velocity.y += Time.deltaTime * acceleration.y*defaultTimeSpeed;
-                    velocity.y = Mathf.Max(velocity.y, -1 * terminalVelocity);
-                }
-            }
-            if(currState == STATE.Rising)
-            {
-                acceleration.y-= Time.deltaTime * gravity*defaultTimeSpeed;
-                velocity.y += Time.deltaTime * acceleration.y*defaultTimeSpeed;
-                velocity.y = Mathf.Min(velocity.y, maxVerticalVelocity);
-
-                if (velocity.y <= 0)
-                {
-                    if (hangTime > 0)
-                    {
-                        currState = STATE.Hanging;
-                        velocity.y = 0;
-                        timer = 0;
+                // play falling sound
+                if (airFallingClip != null && audioSourceMove != null){
+                    audioSourceMove.clip = airFallingClip;
+                    if(!audioSourceMove.isPlaying){
+                        audioSourceMove.Play();
                     }
-                    else
-                    {
-                        currState = STATE.Falling;
+                }
+                // cut off audio if no associated sound
+                else if (audioSourceMove != null){
+                    audioSourceMove.Stop();
+                }
+            }
+
+            // Handle looping sounds for rising
+            if (currState == STATE.Rising)
+            {
+                // play rising sound
+                if (airRisingClip != null && audioSourceMove != null){
+                    audioSourceMove.clip = airRisingClip;
+                    if(!audioSourceMove.isPlaying){
+                        audioSourceMove.Play();
                     }
-                    
-                    
                 }
-
-
-
-            }
-            else if (currState == STATE.Hanging)
-            {
-                if (timer < hangTime)
-                {
-                    timer += Time.deltaTime*defaultTimeSpeed;
-                }
-
-                if (timer >= hangTime)
-                {
-                    currState = STATE.Falling;
+                // cut off audio if no associated sound
+                else if (audioSourceMove != null){
+                    audioSourceMove.Stop();
                 }
             }
 
-            if (velocity.y < 0)
-            {
-                currState = STATE.Falling;
-            }
-
-            //Update based on velocity
-            newPosition += velocity*Time.deltaTime*defaultTimeSpeed;
-
-            // Check for slamming into wall
-            if (currState == STATE.Falling){
-                RaycastHit2D hit = Physics2D.Raycast(transform.position+(newPosition-transform.position).normalized*(1.1f), newPosition-transform.position, (newPosition-transform.position).magnitude);
-
-                if (currState == STATE.Falling && hit.collider != null)
-                {
-                    if (hit.collider != null && hit.collider.gameObject.transform.position.y < transform.position.y)
-                    {
-                        currState = STATE.Grounded;
-                        velocity.y = 0;
-                        acceleration.y = 0;
-                        //Ensure we aren't embedded in the object (this is the bad/cheap way to do it, should be with raycasts)
-                        Vector3 nonEmbeddedPos = transform.position;
-                        nonEmbeddedPos.y = hit.collider.gameObject.transform.position.y+hit.collider.bounds.size.y/2f+boxCollider.bounds.size.y/2f;
-                        transform.position = nonEmbeddedPos;
-                        doubleJumped = false;
-
-                        //Play Impact Sound
-                        if(impactClip!=null && audioSource!=null){
-                            audioSource.clip  = impactClip;
-                            if(!audioSource.isPlaying){
-                                audioSource.Play();
-                            }
+            // Handle looping sounds for grounded movement, and ground movement start/stop sounds
+            if (currState == STATE.Grounded){
+                if (velocity.x != 0){
+                    // play ground movement sound
+                    if (audioSourceMove != null && groundMoveClip != null){
+                        audioSourceMove.clip = groundMoveClip;
+                        if(!audioSourceMove.isPlaying){
+                            audioSourceMove.Play();
                         }
                     }
+                    else if (audioSourceMove != null){
+                        audioSourceMove.Stop();
+                    }
+                }
+                else{
+                    audioSourceMove.Stop();
                 }
             }
-            else if(currState == STATE.Grounded){
-                RaycastHit2D hit = Physics2D.Raycast(newPosition+Vector3.down*(1.1f)*boxCollider.bounds.size.y/2f, Vector3.down, 0.1f);
-
-                if(hit.collider==null){
-                    currState = STATE.Falling;
-                    acceleration.y = -1*gravity;
-                }
-            }
-
-            //Set new position
-            transform.position = newPosition;
         }
 
-
         //Did we hit a platform?
-        void OnCollisionEnter2D(Collision2D col)
+        protected override void OnCollisionEnter2D(Collision2D col)
         {
+            base.OnCollisionEnter2D(col);
             if (currState == STATE.Falling)
             {
                 if (col.gameObject.transform.position.y < transform.position.y)
                 {
-                    currState = STATE.Grounded;
-                    velocity.y = 0;
-                    acceleration.y = 0;
-                    
-
-                    //Impact!
-                    if (impactTimeChangeTimer>0){
-                        internalImpactTimeChangeTimer = impactTimeChangeTimer;
-                        defaultTimeSpeed = timeSpeedOnImpact;
-                    }
-
-                    if(zoomOnImpact){
-                        cameraControl.ZoomOnPlayer();
-                    }
-                    if(shakeOnImpact){
-                        cameraControl.ShakeCamera();
-                    }
-                    if(rotateOnImpact){
-                        cameraControl.RotateCamera();
-                    }
-
                     //Play Impact Sound
-                    if(impactClip!=null && audioSource!=null){
-                        audioSource.clip  = impactClip;
-                        if(!audioSource.isPlaying){
-                            audioSource.Play();
+                    if(impactClip!=null && audioSourceAction!=null){
+                        audioSourceAction.clip  = impactClip;
+                        if(!audioSourceAction.isPlaying){
+                            audioSourceAction.Play();
                         }
                     }
-
-                    
-                    //Ensure we aren't embedded in the object (this is the bad/cheap way to do it, should be with raycasts)
-                    Vector3 nonEmbeddedPos = transform.position;
-                    nonEmbeddedPos.y = col.gameObject.transform.position.y+col.collider.bounds.size.y/2f+boxCollider.bounds.size.y/2f;
-                    transform.position = nonEmbeddedPos;
-                    doubleJumped = false;
-
-                    //Set Impact Scale
-                    transform.localScale = impactDimensions;
-                    transform.position+=Vector3.down*(defaultDimensions.y-impactDimensions.y);
-
-                    
                 }
             }
         }

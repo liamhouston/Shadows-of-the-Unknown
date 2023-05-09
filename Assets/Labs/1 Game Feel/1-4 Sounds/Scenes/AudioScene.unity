@@ -462,6 +462,7 @@ GameObject:
   - component: {fileID: 579762631}
   - component: {fileID: 579762636}
   - component: {fileID: 579762633}
+  - component: {fileID: 579762635}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -509,7 +510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalAcceleration: 10
   maxHorizontalVelocity: 5
-  groundFriction: 10
+  groundFriction: 5
   airFriction: 1
   airSpeedPercentage: 0.8
   gravity: 40
@@ -517,7 +518,7 @@ MonoBehaviour:
   kickOffAcceleration: 10
   maxVerticalVelocity: 20
   hangTime: 0
-  doubleJump: 0
+  doubleJump: 1
   left: 276
   right: 275
   jump: 32
@@ -530,11 +531,16 @@ MonoBehaviour:
   zoomOnImpact: 0
   shakeOnImpact: 0
   rotateOnImpact: 0
-  audioSource: {fileID: 579762633}
-  jumpClip: {fileID: 8300000, guid: 4f1e171a414f74d15b4c88e7508e5a68, type: 3}
-  impactClip: {fileID: 8300000, guid: eff087a6efc944dc589d0581f9458abd, type: 3}
   jumpDimensions: {x: 1, y: 1, z: 1}
   impactDimensions: {x: 1, y: 1, z: 1}
+  audioSourceAction: {fileID: 579762633}
+  audioSourceMove: {fileID: 579762635}
+  jumpClip: {fileID: 8300000, guid: 3a88b9574726a844fb355800835d4828, type: 3}
+  doubleJumpClip: {fileID: 8300000, guid: 46c9339c1d4d75e44b98d12a7727c786, type: 3}
+  impactClip: {fileID: 8300000, guid: 9d25913ba5062d34b816e2e3a278b3e1, type: 3}
+  groundMoveClip: {fileID: 8300000, guid: f4e7eefc3abd02045ac835c0b6558e05, type: 3}
+  airRisingClip: {fileID: 0}
+  airFallingClip: {fileID: 8300000, guid: 4a1fa8029ccbf4f418c7b03cec8f0b09, type: 3}
 --- !u!82 &579762633
 AudioSource:
   m_ObjectHideFlags: 0
@@ -646,6 +652,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &579762635
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579762630}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!50 &579762636
 Rigidbody2D:
   serializedVersion: 4
