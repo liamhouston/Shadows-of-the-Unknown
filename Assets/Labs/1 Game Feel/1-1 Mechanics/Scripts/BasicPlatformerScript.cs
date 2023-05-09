@@ -40,14 +40,14 @@ namespace GameFeel{
         protected STATE currState = STATE.Falling;
 
 
-        protected void Start() {
+        protected virtual void Start() {
             boxCollider = GetComponent<BoxCollider2D>();//For size of collider purposes
             acceleration.y = -1 * gravity;//Assuming you start in the air
         }
 
        
         // Update is called once per frame
-        protected void Update()
+        protected virtual void Update()
         {
             //Position Update Information
             Vector3 newPosition = transform.position;
@@ -181,7 +181,7 @@ namespace GameFeel{
 
 
         //Did we hit a platform?
-        protected void OnCollisionEnter2D(Collision2D col)
+        protected virtual void OnCollisionEnter2D(Collision2D col)
         {
             if (currState == STATE.Falling)
             {
@@ -200,7 +200,7 @@ namespace GameFeel{
         }
 
         //Did we just walk off a cliff?
-        protected void OnCollisionExit2D(Collision2D col)
+        protected virtual void OnCollisionExit2D(Collision2D col)
         {
             if(currState == STATE.Grounded)
             {
