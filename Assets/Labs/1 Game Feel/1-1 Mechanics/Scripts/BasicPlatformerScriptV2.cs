@@ -87,7 +87,6 @@ namespace GameFeel
             {
                 //Input parsing
                 _horizontalInput = 0;
-                print(_jumpCounter);
                 if (Input.GetKeyDown(jump) && _jumpCounter < jumpCount)
                 {
                     if (_jumpRoutine == null)
@@ -152,9 +151,9 @@ namespace GameFeel
                         //if the distance from our position to the obstacle is less than the ground buffer then we've
                         //landed.
                         currState = STATE.Grounded;
+                        _jumpCounter = 0;
                         _currentVelocity = new Vector2(_currentVelocity.x, 0);
                         newPosition = (Vector2)position;
-                        _jumpCounter = 0;
                     }
                     else if (distanceFromBase < Mathf.Abs(_currentVelocity.y)+groundBuffer && distanceFromBase>0 )
                     {
@@ -166,10 +165,13 @@ namespace GameFeel
                     }
                     
                     //one last edgecase to just make sure we never go below ground if theres a floor under us
-                    if (newPosition.y < _groundheight)
+                    if (newPosition.y-extents.y <= _groundheight)
                     {
-                        float error = Mathf.Abs(newPosition.y - _groundheight);
-                        newPosition += Vector2.up*error;
+                        print("called");
+                        currState = STATE.Grounded;
+                        _jumpCounter = 0;
+                        _currentVelocity = new Vector2(_currentVelocity.x, 0);
+                        newPosition = new Vector2(newPosition.x,_groundheight+extents.y);
                     }
                 }
             }
@@ -193,6 +195,7 @@ namespace GameFeel
                 RaycastHit2D checkValid = Physics2D.Raycast(position, Vector2.down,extents.y+GROUND_CHECK_DEPTH);
                 if (!checkValid.collider)
                 {
+                    print("called2");
                     currState = STATE.Falling;
                 }
                 
@@ -219,7 +222,6 @@ namespace GameFeel
                 oldHeight = newHeight; 
                 yield return new WaitForFixedUpdate();
             }
-            print("called");
             timer = 0;
             _currentVelocity = new Vector2(_currentVelocity.x, 0);
             currState = STATE.Hanging;
