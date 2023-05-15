@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 35495511}
   - component: {fileID: 35495512}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BasicSquare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -458,10 +458,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 579762634}
-  - component: {fileID: 579762633}
   - component: {fileID: 579762631}
   - component: {fileID: 579762636}
-  m_Layer: 0
+  - component: {fileID: 579762632}
+  m_Layer: 2
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -494,7 +494,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
---- !u!114 &579762633
+--- !u!114 &579762632
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -503,34 +503,48 @@ MonoBehaviour:
   m_GameObject: {fileID: 579762630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c506fa15fe8834485827201975d16eba, type: 3}
+  m_Script: {fileID: 11500000, guid: df4cc4e3112f43649ad0ff62e7a72e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalAcceleration: 10
-  maxHorizontalVelocity: 5
-  groundFriction: 10
-  airFriction: 1
-  airSpeedPercentage: 0.8
-  gravity: 40
-  terminalVelocity: 20
-  kickOffAcceleration: 10
-  maxVerticalVelocity: 20
-  hangTime: 0
-  doubleJump: 0
   left: 276
   right: 275
   jump: 32
-  defaultTimeSpeed: 1
-  timeSpeedOnImpact: 0.5
-  impactTimeChangeTimer: 1
-  timeSpeedOnJump: 0.5
-  jumpTimeChangeTimer: 1
-  cameraControl: {fileID: 277452419}
-  zoomOnImpact: 0
-  shakeOnImpact: 0
-  rotateOnImpact: 0
-  jumpDimensions: {x: 1, y: 1, z: 1}
-  impactDimensions: {x: 1, y: 1, z: 1}
+  gravity: 9.8
+  mass: 22.67
+  groundBuffer: 0.08
+  groundFriction: 0.139
+  airFriction: 0.279
+  terminalVelocity: 90
+  jumpStrength: 4
+  jumpTime: 0.5
+  jumpCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  hangTime: 0.1
+  jumpCount: 2
+  horizontalAcceleration: 10
+  maxHorizontalVelocity: 20
 --- !u!4 &579762634
 Transform:
   m_ObjectHideFlags: 0
@@ -554,7 +568,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579762630}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -566,7 +580,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!1 &1477552335
 GameObject:
   m_ObjectHideFlags: 0
