@@ -73,31 +73,31 @@ namespace GameFeel
         protected float _horizontalInput = 0;
         protected Vector2 _currentVelocity = Vector2.zero;
         private Coroutine _jumpRoutine;
-        private int _jumpCounter = 0;
-        private float _groundheight = 0;
+        protected int jumpCounter = 0;
+        private float _groundHeight = 0;
 
         #region Unity LifeCycle
             protected virtual void Start()
             {
                 _playerCollider = GetComponent<BoxCollider2D>();
                 _rigidbody2D = GetComponent<Rigidbody2D>();
-                _groundheight = ground.transform.position.y + ground.bounds.extents.y + groundBuffer;
+                _groundHeight = ground.transform.position.y + ground.bounds.extents.y + groundBuffer;
             }
             
             protected virtual void Update()
             {
                 //Input parsing
                 _horizontalInput = 0;
-                if (Input.GetKeyDown(jump) && _jumpCounter < jumpCount)
+                if (Input.GetKeyDown(jump) && jumpCounter < jumpCount)
                 {
                     if (_jumpRoutine == null)
                     {
-                        _jumpCounter += 1;
+                        jumpCounter += 1;
                         _jumpRoutine = StartCoroutine(_Jump());
                     }
-                    else if (_jumpCounter < jumpCount)
+                    else if (jumpCounter < jumpCount)
                     {
-                        _jumpCounter += 1;
+                        jumpCounter += 1;
                         StopCoroutine(_jumpRoutine);
                         _jumpRoutine = StartCoroutine(_Jump());
                     }
@@ -152,7 +152,7 @@ namespace GameFeel
                         //if the distance from our position to the obstacle is less than the ground buffer then we've
                         //landed.
                         currState = STATE.Grounded;
-                        _jumpCounter = 0;
+                        jumpCounter = 0;
                         _currentVelocity = new Vector2(_currentVelocity.x, 0);
                         newPosition = (Vector2)position;
                     }
@@ -163,18 +163,15 @@ namespace GameFeel
                             newPosition.x,
                             position.y - distanceFromBase + groundBuffer
                             );
-                        Debug.Log("position "+(newPosition.y));
-                        Debug.Log("distance from base "+(distanceFromBase));
                     }
                     
                     //one last edgecase to just make sure we never go below ground if theres a floor under us
-                    if (newPosition.y-extents.y <= _groundheight)
+                    if (newPosition.y-extents.y <= _groundHeight)
                     {
-                        print("called");
                         currState = STATE.Grounded;
-                        _jumpCounter = 0;
+                        jumpCounter = 0;
                         _currentVelocity = new Vector2(_currentVelocity.x, 0);
-                        newPosition = new Vector2(newPosition.x,_groundheight+extents.y);
+                        newPosition = new Vector2(newPosition.x,_groundHeight+extents.y);
                     }
                 }
             }
@@ -199,7 +196,6 @@ namespace GameFeel
                 RaycastHit2D checkValid = Physics2D.Raycast(rayPosition, Vector2.down,extents.y+GROUND_CHECK_DEPTH);
                 if (!checkValid.collider)
                 {
-                    print("called2");
                     currState = STATE.Falling;
                 }
                 else if(checkValid.distance == 0f){
