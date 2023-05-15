@@ -49,13 +49,13 @@ namespace GameFeel
                 _currState = value;
                 switch (_currState)
                 {
-                    case STATE.Grounded: OnGrounded_Hook();print(_currState);
+                    case STATE.Grounded: OnGrounded_Hook();
                         break;
-                    case STATE.Rising: OnRising_Hook();print(_currState);
+                    case STATE.Rising: OnRising_Hook();
                         break;
-                    case STATE.Hanging: OnHanging_Hook();print(_currState);
+                    case STATE.Hanging: OnHanging_Hook();
                         break;
-                    case STATE.Falling: OnFalling_Hook();print(_currState);
+                    case STATE.Falling: OnFalling_Hook();
                         break;
                 }
             }
@@ -138,11 +138,12 @@ namespace GameFeel
             if (_currentVelocity.y < 0)
             {
                 //only check if going down.
-                RaycastHit2D checkValid = Physics2D.Raycast(position, Vector2.down);
+                Vector2 rayPosition = new Vector2(position.x, position.y - extents.y);
+                RaycastHit2D checkValid = Physics2D.Raycast(rayPosition, Vector2.down);
                 if (checkValid.collider)
                 {
                     //we only need to do adjust if were actually about to hit something
-                    float distanceFromBase = checkValid.distance - extents.y;
+                    float distanceFromBase = checkValid.distance;
                     if ( distanceFromBase <= groundBuffer && distanceFromBase>0)
                     {
                         //if the distance from our position to the obstacle is less than the ground buffer then we've
