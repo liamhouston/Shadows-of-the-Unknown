@@ -23,6 +23,7 @@ namespace GameFeel
         [SerializeField,Range(0,1)] protected float groundFriction = 0.139f;
         [SerializeField,Range(0,1)] protected float airFriction = 0.279f;
         [SerializeField] protected float terminalVelocity = 20;
+        [SerializeField] protected BoxCollider2D ground;
         
         [Header("Vertical Movement Settings")]
         [SerializeField] protected float jumpStrength = 16.21f;
@@ -49,13 +50,13 @@ namespace GameFeel
                 _currState = value;
                 switch (_currState)
                 {
-                    case STATE.Grounded: OnGrounded_Hook();print(transform.position.y);
+                    case STATE.Grounded: OnGrounded_Hook();
                         break;
-                    case STATE.Rising: OnRising_Hook();print(_currState);
+                    case STATE.Rising: OnRising_Hook();
                         break;
-                    case STATE.Hanging: OnHanging_Hook();print(transform.position.y);
+                    case STATE.Hanging: OnHanging_Hook();
                         break;
-                    case STATE.Falling: OnFalling_Hook();print(_currState);
+                    case STATE.Falling: OnFalling_Hook();
                         break;
                 }
             }
@@ -72,26 +73,31 @@ namespace GameFeel
         protected Vector2 _currentVelocity = Vector2.zero;
         private Coroutine _jumpRoutine;
         private int _jumpCounter = 0;
+        private float _groundheight = 0;
 
         #region Unity LifeCycle
             protected virtual void Start()
             {
                 _playerCollider = GetComponent<BoxCollider2D>();
                 _rigidbody2D = GetComponent<Rigidbody2D>();
+                _groundheight = ground.transform.position.y + ground.bounds.extents.y + groundBuffer;
             }
             
             protected virtual void Update()
             {
                 //Input parsing
                 _horizontalInput = 0;
-                if (Input.GetKeyDown(jump))
+                print(_jumpCounter);
+                if (Input.GetKeyDown(jump) && _jumpCounter < jumpCount)
                 {
                     if (_jumpRoutine == null)
                     {
+                        _jumpCounter += 1;
                         _jumpRoutine = StartCoroutine(_Jump());
                     }
                     else if (_jumpCounter < jumpCount)
                     {
+                        _jumpCounter += 1;
                         StopCoroutine(_jumpRoutine);
                         _jumpRoutine = StartCoroutine(_Jump());
                     }
@@ -135,11 +141,12 @@ namespace GameFeel
             if (_currentVelocity.y < 0)
             {
                 //only check if going down.
-                RaycastHit2D checkValid = Physics2D.Raycast(position, Vector2.down);
+                Vector2 rayPosition = new Vector2(position.x, position.y - extents.y);
+                RaycastHit2D checkValid = Physics2D.Raycast(rayPosition, Vector2.down);
                 if (checkValid.collider)
                 {
                     //we only need to do adjust if were actually about to hit something
-                    float distanceFromBase = checkValid.distance - extents.y;
+                    float distanceFromBase = checkValid.distance;
                     if ( distanceFromBase <= groundBuffer && distanceFromBase>0)
                     {
                         //if the distance from our position to the obstacle is less than the ground buffer then we've
@@ -156,6 +163,13 @@ namespace GameFeel
                             newPosition.x,
                             position.y- Mathf.Clamp(distanceFromBase - groundBuffer,0,distanceFromBase)
                             );
+                    }
+                    
+                    //one last edgecase to just make sure we never go below ground if theres a floor under us
+                    if (newPosition.y < _groundheight)
+                    {
+                        float error = Mathf.Abs(newPosition.y - _groundheight);
+                        newPosition += Vector2.up*error;
                     }
                 }
             }
@@ -195,7 +209,6 @@ namespace GameFeel
             float timer = 0;
             float oldHeight = 0;
             currState = STATE.Rising;
-            _jumpCounter += 1;
             while (timer <= jumpTime)
             {
                 timer += Time.deltaTime;
