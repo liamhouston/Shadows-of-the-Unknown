@@ -148,7 +148,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 82386622}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -159,8 +159,8 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!61 &82386624
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -199,32 +199,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4710e4ca717de954bbb93fe718004973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalAcceleration: 30
-  maxHorizontalVelocity: 8
-  groundFriction: 30
-  airFriction: 1
-  airSpeedPercentage: 0.8
-  gravity: 40
-  terminalVelocity: 20
-  kickOffAcceleration: 15
-  maxVerticalVelocity: 20
-  hangTime: 0
-  doubleJump: 0
   left: 276
   right: 275
   jump: 273
-  defaultTimeSpeed: 1
-  timeSpeedOnImpact: 0.5
-  impactTimeChangeTimer: 1
-  timeSpeedOnJump: 0.5
-  jumpTimeChangeTimer: 1
-  cameraControl: {fileID: 618576926}
-  zoomOnImpact: 0
-  shakeOnImpact: 0
-  rotateOnImpact: 0
-  jumpDimensions: {x: 1, y: 1, z: 1}
-  impactDimensions: {x: 1, y: 1, z: 1}
-  spriteObject: {fileID: 689523032}
+  gravity: 9.8
+  mass: 10
+  groundBuffer: 0.08
+  groundFriction: 0.139
+  airFriction: 0.279
+  terminalVelocity: 20
+  jumpStrength: 16.21
+  jumpTime: 0.5
+  jumpCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  hangTime: 0.2
+  jumpCount: 1
+  horizontalAcceleration: 10
+  maxHorizontalVelocity: 20
 --- !u!4 &82386626
 Transform:
   m_ObjectHideFlags: 0
@@ -533,7 +546,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564225061}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8, y: -15.16, z: 0}
+  m_LocalPosition: {x: 0.85, y: -11.52, z: 0}
   m_LocalScale: {x: 8.721164, y: 2.5832384, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

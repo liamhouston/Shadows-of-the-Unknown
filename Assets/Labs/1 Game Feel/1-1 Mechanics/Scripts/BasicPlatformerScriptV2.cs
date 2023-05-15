@@ -14,7 +14,7 @@ namespace GameFeel
         [Header("Input Bindings")]
         [SerializeField] protected KeyCode left = KeyCode.LeftArrow;
         [SerializeField] protected KeyCode right = KeyCode.RightArrow;
-        [SerializeField] protected KeyCode jump = KeyCode.Space;
+        [SerializeField] protected KeyCode jump = KeyCode.UpArrow;
         
         [Header("Physics Settings")]
         [SerializeField] protected float gravity = 9.8f;
@@ -68,13 +68,13 @@ namespace GameFeel
         
         private BoxCollider2D _playerCollider;
         private Rigidbody2D _rigidbody2D;
-        private float _horizontalInput = 0;
-        private Vector2 _currentVelocity = Vector2.zero;
+        protected float _horizontalInput = 0;
+        protected Vector2 _currentVelocity = Vector2.zero;
         private Coroutine _jumpRoutine;
         private int _jumpCounter = 0;
 
         #region Unity LifeCycle
-            private void Start()
+            protected virtual void Start()
             {
                 _playerCollider = GetComponent<BoxCollider2D>();
                 _rigidbody2D = GetComponent<Rigidbody2D>();
