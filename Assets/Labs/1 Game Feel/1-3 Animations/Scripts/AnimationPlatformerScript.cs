@@ -7,7 +7,7 @@ public class AnimationPlatformerScript : VisualPlatformerScriptV2
 {
 
     [Header("Annimation Settings")]
-    [SerializeField] protected float walkAnimationSpeedMultiplier = 1.0f;   //How fast the walking animation will play
+    [SerializeField,Range(0.25f,4f)] protected float walkAnimationSpeedMultiplier = 1.0f;   //How fast the walking animation will play
 
     private Animator animator;              //Reference to the animator component
     private SpriteRenderer spriteRenderer;  //Reference to the sprite renderer component
