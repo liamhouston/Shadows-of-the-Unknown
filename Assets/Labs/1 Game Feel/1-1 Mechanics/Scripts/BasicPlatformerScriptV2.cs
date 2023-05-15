@@ -49,11 +49,11 @@ namespace GameFeel
                 _currState = value;
                 switch (_currState)
                 {
-                    case STATE.Grounded: OnGrounded_Hook();print(transform.position.y);
+                    case STATE.Grounded: OnGrounded_Hook();print(_currState);
                         break;
                     case STATE.Rising: OnRising_Hook();print(_currState);
                         break;
-                    case STATE.Hanging: OnHanging_Hook();print(transform.position.y);
+                    case STATE.Hanging: OnHanging_Hook();print(_currState);
                         break;
                     case STATE.Falling: OnFalling_Hook();print(_currState);
                         break;
@@ -84,14 +84,17 @@ namespace GameFeel
             {
                 //Input parsing
                 _horizontalInput = 0;
-                if (Input.GetKeyDown(jump))
+                print(_jumpCounter);
+                if (Input.GetKeyDown(jump) && _jumpCounter < jumpCount)
                 {
                     if (_jumpRoutine == null)
                     {
+                        _jumpCounter += 1;
                         _jumpRoutine = StartCoroutine(_Jump());
                     }
                     else if (_jumpCounter < jumpCount)
                     {
+                        _jumpCounter += 1;
                         StopCoroutine(_jumpRoutine);
                         _jumpRoutine = StartCoroutine(_Jump());
                     }
@@ -195,7 +198,6 @@ namespace GameFeel
             float timer = 0;
             float oldHeight = 0;
             currState = STATE.Rising;
-            _jumpCounter += 1;
             while (timer <= jumpTime)
             {
                 timer += Time.deltaTime;

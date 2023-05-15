@@ -503,18 +503,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 579762630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df4cc4e3112f43649ad0ff62e7a72e1c, type: 3}
+  m_Script: {fileID: 11500000, guid: 943bc8ea6f50c534eaf155a8f88d7cd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   left: 276
   right: 275
   jump: 32
   gravity: 9.8
-  mass: 22.67
+  mass: 10
   groundBuffer: 0.08
   groundFriction: 0.139
   airFriction: 0.279
-  terminalVelocity: 90
+  terminalVelocity: 20
   jumpStrength: 4
   jumpTime: 0.5
   jumpCurve:
@@ -541,7 +541,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  hangTime: 0.1
+  hangTime: 0
   jumpCount: 2
   horizontalAcceleration: 10
   maxHorizontalVelocity: 20
@@ -791,7 +791,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869154165}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.1, y: -4.09, z: 0}
+  m_LocalPosition: {x: -10.1, y: -7.63, z: 0}
   m_LocalScale: {x: 1.5, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
