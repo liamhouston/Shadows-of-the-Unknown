@@ -28,6 +28,7 @@ namespace GameFeel
         [SerializeField] protected float jumpTime = 0.5f;
         [SerializeField] protected AnimationCurve jumpCurve;
         [SerializeField] protected float hangTime = 0.2f;
+        [SerializeField,Range(1,2)] protected int jumpCount = 1;
         
         [Header("Horizontal Movement Settings")]
         [SerializeField] protected float horizontalAcceleration = 10;
@@ -68,6 +69,7 @@ namespace GameFeel
         private float _horizontalInput = 0;
         private Vector2 _currentVelocity = Vector2.zero;
         private Coroutine _jumpRoutine;
+        private int jumpCounter = 0;
 
         private void Start()
         {
@@ -78,9 +80,17 @@ namespace GameFeel
         protected virtual void Update()
         {
             _horizontalInput = 0;
-            if (Input.GetKeyDown(jump) && _jumpRoutine == null)
+            if (Input.GetKeyDown(jump))
             {
-                _jumpRoutine = StartCoroutine(_Jump());
+                if (_jumpRoutine == null)
+                {
+                    _jumpRoutine = StartCoroutine(_Jump());
+                }
+                else if (jumpCounter < jumpCount)
+                {
+                    StopCoroutine(_jumpRoutine);
+                    _jumpRoutine = StartCoroutine(_Jump());
+                }
             }
             if (Input.GetKey(right))
             {
@@ -120,6 +130,7 @@ namespace GameFeel
                         currState = STATE.Grounded;
                         _currentVelocity = new Vector2(_currentVelocity.x, 0);
                         newPosition = (Vector2)position;
+                        jumpCounter = 0;
                     }
                     else if (distanceFromBase < Mathf.Abs(_currentVelocity.y)+groundBuffer && distanceFromBase>0 )
                     {
@@ -155,6 +166,7 @@ namespace GameFeel
             float timer = 0;
             float oldHeight = 0;
             currState = STATE.Rising;
+            jumpCounter += 1;
             while (timer <= jumpTime)
             {
                 timer += Time.deltaTime;
@@ -164,7 +176,7 @@ namespace GameFeel
                 oldHeight = newHeight; 
                 yield return null;
             }
-            
+            print("called");
             timer = 0;
             _currentVelocity = new Vector2(_currentVelocity.x, 0);
             currState = STATE.Hanging;
