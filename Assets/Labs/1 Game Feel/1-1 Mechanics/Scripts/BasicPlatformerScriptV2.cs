@@ -23,6 +23,7 @@ namespace GameFeel
         [SerializeField,Range(0,1)] protected float groundFriction = 0.139f;
         [SerializeField,Range(0,1)] protected float airFriction = 0.279f;
         [SerializeField] protected float terminalVelocity = 20;
+        [SerializeField] protected BoxCollider2D ground;
         
         [Header("Vertical Movement Settings")]
         [SerializeField] protected float jumpStrength = 16.21f;
@@ -72,12 +73,14 @@ namespace GameFeel
         private Vector2 _currentVelocity = Vector2.zero;
         private Coroutine _jumpRoutine;
         private int _jumpCounter = 0;
+        private float _groundheight = 0;
 
         #region Unity LifeCycle
             private void Start()
             {
                 _playerCollider = GetComponent<BoxCollider2D>();
                 _rigidbody2D = GetComponent<Rigidbody2D>();
+                _groundheight = ground.transform.position.y + ground.bounds.extents.y + groundBuffer;
             }
             
             protected virtual void Update()
@@ -160,6 +163,13 @@ namespace GameFeel
                             newPosition.x,
                             position.y- Mathf.Clamp(distanceFromBase - groundBuffer,0,distanceFromBase)
                             );
+                    }
+                    
+                    //one last edgecase to just make sure we never go below ground if theres a floor under us
+                    if (newPosition.y < _groundheight)
+                    {
+                        float error = Mathf.Abs(newPosition.y - _groundheight);
+                        newPosition += Vector2.up*error;
                     }
                 }
             }
