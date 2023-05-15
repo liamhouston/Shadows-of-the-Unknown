@@ -66,6 +66,7 @@ namespace GameFeel
         protected virtual void OnRising_Hook(){}
         protected virtual void OnHanging_Hook(){}
         protected virtual void OnFalling_Hook(){}
+        protected virtual void OnJump_Hook(){}
         
         private BoxCollider2D _playerCollider;
         private Rigidbody2D _rigidbody2D;
@@ -217,6 +218,7 @@ namespace GameFeel
             float timer = 0;
             float oldHeight = 0;
             currState = STATE.Rising;
+            OnJump_Hook();
             while (timer <= jumpTime)
             {
                 timer += Time.deltaTime;
