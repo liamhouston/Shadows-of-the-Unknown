@@ -14,7 +14,7 @@ namespace GameFeel
         [Header("Input Bindings")]
         [SerializeField] protected KeyCode left = KeyCode.LeftArrow;
         [SerializeField] protected KeyCode right = KeyCode.RightArrow;
-        [SerializeField] protected KeyCode jump = KeyCode.Space;
+        [SerializeField] protected KeyCode jump = KeyCode.UpArrow;
         
         [Header("Physics Settings")]
         [SerializeField] protected float gravity = 9.8f;
@@ -69,14 +69,14 @@ namespace GameFeel
         
         private BoxCollider2D _playerCollider;
         private Rigidbody2D _rigidbody2D;
-        private float _horizontalInput = 0;
-        private Vector2 _currentVelocity = Vector2.zero;
+        protected float _horizontalInput = 0;
+        protected Vector2 _currentVelocity = Vector2.zero;
         private Coroutine _jumpRoutine;
         private int _jumpCounter = 0;
         private float _groundheight = 0;
 
         #region Unity LifeCycle
-            private void Start()
+            protected virtual void Start()
             {
                 _playerCollider = GetComponent<BoxCollider2D>();
                 _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -160,8 +160,10 @@ namespace GameFeel
                         //otherwise adjust the velocity; dont kill it so we can get as close as possible
                         newPosition = new Vector2(
                             newPosition.x,
-                            position.y- Mathf.Clamp(distanceFromBase - groundBuffer,0,distanceFromBase)
+                            position.y - distanceFromBase + groundBuffer
                             );
+                        Debug.Log("position "+(newPosition.y));
+                        Debug.Log("distance from base "+(distanceFromBase));
                     }
                     
                     //one last edgecase to just make sure we never go below ground if theres a floor under us
@@ -188,17 +190,20 @@ namespace GameFeel
         {
             Vector2 position = transform.position;
             Vector2 extents = _playerCollider.bounds.extents;
+            Vector2 rayPosition = new Vector2(position.x, position.y - extents.y);
             Debug.DrawRay(position+ (Vector2.down * extents.y),Vector2.down*(GROUND_CHECK_DEPTH));
             
             if (currState == STATE.Grounded)
             {
-                RaycastHit2D checkValid = Physics2D.Raycast(position, Vector2.down,extents.y+GROUND_CHECK_DEPTH);
+                RaycastHit2D checkValid = Physics2D.Raycast(rayPosition, Vector2.down,extents.y+GROUND_CHECK_DEPTH);
                 if (!checkValid.collider)
                 {
                     print("called2");
                     currState = STATE.Falling;
                 }
-                
+                else if(checkValid.distance == 0f){
+                    currState = STATE.Falling;
+                }
             }
         }
         
