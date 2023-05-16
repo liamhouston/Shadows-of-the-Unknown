@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace GameFeel{
-    public class AudioPlatformerScriptV2 : VisualPlatformerScriptV2
+    public class AudioPlatformerScriptV2 : AnimationPlatformerScript
     {
         // Audio Stuff
         [Header("Audio Settings")]
