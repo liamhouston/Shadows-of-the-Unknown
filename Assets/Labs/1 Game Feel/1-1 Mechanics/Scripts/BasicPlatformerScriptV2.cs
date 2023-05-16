@@ -68,7 +68,7 @@ namespace GameFeel
         protected virtual void OnFalling_Hook(){}
         protected virtual void OnJump_Hook(){}
         
-        private BoxCollider2D _playerCollider;
+        protected BoxCollider2D _playerCollider;
         private Rigidbody2D _rigidbody2D;
         protected float _horizontalInput = 0;
         protected Vector2 _currentVelocity = Vector2.zero;
