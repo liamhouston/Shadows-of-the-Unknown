@@ -25,7 +25,8 @@ namespace GameFeel{
         }
 
         protected override void OnGrounded_Hook(){
-            Vector2 rayPosition = new Vector2(transform.position.x, transform.position.y - 0.05f); // reminder to unhack once yalmaz makes collider protected
+            Vector2 extents = _playerCollider.bounds.extents;
+            Vector2 rayPosition = new Vector2(transform.position.x, transform.position.y - extents.y); // reminder to unhack once yalmaz makes collider protected
             RaycastHit2D checkValid = Physics2D.Raycast(rayPosition, Vector2.down);
 
             Debug.Log(checkValid.collider);
