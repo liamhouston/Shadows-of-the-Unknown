@@ -60,6 +60,7 @@ namespace GameFeel{
         }
 
         protected override void OnGrounded_Hook(){
+            base.OnGrounded_Hook();
             if (audioSourceAction == null) { return; }
 
             // we have hit the ground, play the impact sound
@@ -74,6 +75,7 @@ namespace GameFeel{
         }
 
         protected override void OnJump_Hook(){
+            base.OnJump_Hook();
             if (audioSourceAction == null){ return; }
 
             bool play = false;

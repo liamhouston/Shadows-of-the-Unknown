@@ -286,7 +286,7 @@ namespace GameFeel
         
         
         //made this but ended up not using it ill get rid of it after im done with visual script or maybe move it there
-        private static int _SignFloat(float val)
+        public static int SignFloat(float val)
         {
             if (val > 0) return 1;
             if (val == 0) return 0;
