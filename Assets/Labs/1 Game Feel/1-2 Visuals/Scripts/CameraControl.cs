@@ -89,6 +89,7 @@ namespace GameFeel{
             {
                 zoomTimer += Time.deltaTime;
                 float current = Mathf.PingPong(zoomTimer, zoomTime/2f)/(zoomTime/2f);
+                print(zoomTimer);
                 float curveVal = zoomCurve.Evaluate(current);
                 _camera.orthographicSize = Mathf.Lerp(_defaultZoom, zoomStrength, curveVal);;
                 yield return null;
@@ -102,7 +103,6 @@ namespace GameFeel{
                 shakeTimer += Time.deltaTime;
                 float current = Mathf.Lerp(1, 0, shakeTimer / shakeDuration);
                 float radius = shakeCurve.Evaluate(current)*shakeStrength;
-                print(radius);
                 Vector2 offset = Random.insideUnitCircle * radius;
                 _camera.transform.localPosition = new Vector3(offset.x,offset.y,_camera.transform.localPosition.z);
                 yield return null;
