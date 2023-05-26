@@ -26,7 +26,7 @@ namespace GameFeel{
             RaycastHit2D checkValid = Physics2D.Raycast(rayPosition, Vector2.down);
 
             Debug.Log(checkValid.collider);
-            if (checkValid.collider && checkValid.collider != ground){
+            if (checkValid.collider){
                 checkValid.collider.gameObject.SendMessage("onContact");
             }
 
