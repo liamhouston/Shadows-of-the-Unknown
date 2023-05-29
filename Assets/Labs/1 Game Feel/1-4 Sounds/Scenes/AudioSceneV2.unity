@@ -339,7 +339,6 @@ GameObject:
   m_Component:
   - component: {fileID: 488165539}
   - component: {fileID: 488165541}
-  - component: {fileID: 488165540}
   m_Layer: 2
   m_Name: Sprite
   m_TagString: Untagged
@@ -361,25 +360,6 @@ Transform:
   m_Father: {fileID: 1901416769}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &488165540
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 488165538}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6c7362016d6612546a4652e6c0b86284, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &488165541
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1021,13 +1001,13 @@ MonoBehaviour:
   left: 276
   right: 275
   jump: 273
+  reset: 114
   gravity: 9.8
   mass: 10
   groundBuffer: 0.08
   groundFriction: 0.196
   airFriction: 0.279
   terminalVelocity: 20
-  ground: {fileID: 1477552338}
   jumpStrength: 16.21
   jumpTime: 0.5
   jumpCurve:
@@ -1117,7 +1097,18 @@ MonoBehaviour:
   dustOnImpact: 0
   dustOnJump: 0
   dustOnDirectionChange: 0
-  walkAnimationSpeedMultiplier: 1
+  idleSprite: {fileID: -2470712982808820347, guid: 40df686498e86f44789ba472d86fb55d,
+    type: 3}
+  walkSprites:
+  - {fileID: 9119549463136492614, guid: 40df686498e86f44789ba472d86fb55d, type: 3}
+  - {fileID: 4059640450490198499, guid: 40df686498e86f44789ba472d86fb55d, type: 3}
+  - {fileID: 9033699428484915931, guid: 40df686498e86f44789ba472d86fb55d, type: 3}
+  - {fileID: -5732108046844625951, guid: 40df686498e86f44789ba472d86fb55d, type: 3}
+  jumpSprite: {fileID: 654785354259171931, guid: 40df686498e86f44789ba472d86fb55d,
+    type: 3}
+  fallSprite: {fileID: 5992651345604836166, guid: 40df686498e86f44789ba472d86fb55d,
+    type: 3}
+  walkFramesPerSecond: 7.5
   audioSourceAction: {fileID: 1901416770}
   audioSourceMove: {fileID: 1901416768}
   jumpClip: {fileID: 8300000, guid: 3a88b9574726a844fb355800835d4828, type: 3}
