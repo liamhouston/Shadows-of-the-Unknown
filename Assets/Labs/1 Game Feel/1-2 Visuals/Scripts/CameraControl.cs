@@ -11,15 +11,15 @@ namespace GameFeel{
         [SerializeField] private Transform cameraTarget;
         [SerializeField] private Vector2 cameraOffset;
         [SerializeField] private float cameraFollowSpeed;
-        [SerializeField] private float cameraEaseTime;
+        [SerializeField] private float cameraEaseTime=0.47f;
 
         [Header("Shake")]
-        [SerializeField] private float shakeDuration;
+        [SerializeField] private float shakeDuration=0.5f;
         [SerializeField] private float shakeStrength;
         [SerializeField] private AnimationCurve shakeCurve;
         
         [Header("Zoom")]
-        [SerializeField] private float zoomTime;
+        [SerializeField] private float zoomTime=0.5f;
         [SerializeField] private float zoomStrength;
         [SerializeField] private AnimationCurve zoomCurve;
 
