@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.U2D.Path;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace GameFeel
 {
@@ -15,7 +16,8 @@ namespace GameFeel
         [SerializeField] protected KeyCode left = KeyCode.LeftArrow;
         [SerializeField] protected KeyCode right = KeyCode.RightArrow;
         [SerializeField] protected KeyCode jump = KeyCode.UpArrow;
-        
+        [SerializeField] protected KeyCode reset = KeyCode.R;
+
         [Header("Physics Settings")]
         [SerializeField] protected float gravity = 9.8f;
         [SerializeField] protected float mass = 10;
@@ -117,6 +119,10 @@ namespace GameFeel
                 _ApplyFriction();
                 _ApplyGravity();
                 _ClampVelocities();
+
+                if (Input.GetKey(reset)){
+                    resetLevel();
+                }
             }
 
             protected virtual  void FixedUpdate()
@@ -291,6 +297,11 @@ namespace GameFeel
             if (val > 0) return 1;
             if (val == 0) return 0;
             else return -1;
+        }
+
+        // helper for resetting the level easily so I can call this in the level design lab
+        public void resetLevel(){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
