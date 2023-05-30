@@ -12,7 +12,7 @@ namespace GameFeel
         [SerializeField] private AnimationCurve jumpDeformCurve;
         
         [Header("Landing Deformation")]
-        [SerializeField] private float landingDeformTime;
+        [SerializeField] private float landingDeformTime=0.1f;
         [SerializeField] private Vector2 landingDeformScale;
         [SerializeField] private AnimationCurve landingDeformCurve;
 
