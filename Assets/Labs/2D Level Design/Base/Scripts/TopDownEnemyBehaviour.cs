@@ -12,9 +12,9 @@ public class TopDownEnemyBehaviour : TopDownEntityBehaviour
     // internal variables
     private float _remainingTime;
 
-    // the player
+    // the player & doors
     private Rigidbody2D player;
-    
+    private TopDownDoorBehaviour[] doors = {};
 
     // Start is called before the first frame update
     override public void Start()
@@ -23,6 +23,7 @@ public class TopDownEnemyBehaviour : TopDownEntityBehaviour
         _remainingTime = moveTime;
         _currDir = pickDirection();
         player = (Rigidbody2D)GameObject.Find("Player").GetComponent("Rigidbody2D");
+        doors = (TopDownDoorBehaviour[])GameObject.FindObjectsOfType(typeof(TopDownDoorBehaviour));
     }
     
     // Update is called once per frame
@@ -63,6 +64,12 @@ public class TopDownEnemyBehaviour : TopDownEntityBehaviour
     
     // on death, kill!!
     override public void handleDeath(){
+        // sending a message to All Doors. I am dead
+        for (int i = 0; i < doors.Length; i++){
+            if (doors[i] != null){
+                doors[i].SendMessage("enemyDeath");
+            }
+        }
         Destroy(gameObject);
     }
 }

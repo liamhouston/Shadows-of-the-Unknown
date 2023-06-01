@@ -22,6 +22,9 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
     private bool _canAttack = true;
     private float _attackThreshold = 1.5f;
     private float _attackCountdown;
+
+    // key parameters
+    private int _keys = 0;
     
     // Start is called before the first frame update
     override public void Start()
@@ -103,5 +106,17 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
     override public void handleDeath(){
         // todo: death anim / sound, wait on anim/sound
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public int getKeys(){
+        return _keys;
+    }
+
+    public void unlockDoor(){
+        _keys--;
+    }
+
+    public void collectKey(){
+        _keys++;
     }
 }
