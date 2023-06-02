@@ -1114,7 +1114,7 @@ MonoBehaviour:
   jumpClip: {fileID: 8300000, guid: 3a88b9574726a844fb355800835d4828, type: 3}
   doubleJumpClip: {fileID: 0}
   impactClip: {fileID: 8300000, guid: 1efdec2eeb50821499c3994a3aee55cd, type: 3}
-  groundMoveClip: {fileID: 8300000, guid: 4f1e171a414f74d15b4c88e7508e5a68, type: 3}
+  groundMoveClip: {fileID: 8300000, guid: 230bd204ac6a7a14295da1ff5516d68b, type: 3}
   airRisingClip: {fileID: 0}
   airFallingClip: {fileID: 0}
 --- !u!1 &2041112504
