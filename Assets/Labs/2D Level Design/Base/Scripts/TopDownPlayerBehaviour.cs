@@ -31,6 +31,18 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
     {
         base.Start();
         _attackCountdown = attackCooldown;
+
+        // reset the room if we aren't using the connective wrapper
+        if (SceneManager.sceneCount == 1){
+            PlayerPrefs.DeleteAll();
+        }
+        
+        if (!PlayerPrefs.HasKey("keys")){
+            PlayerPrefs.SetInt("keys", 0);
+        }
+        if (PlayerPrefs.HasKey("health")){
+            _health = PlayerPrefs.GetInt("health");
+        }
     }
 
     // Update is called once per frame
@@ -56,8 +68,6 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
         if (Input.GetKey(reset)){
             handleDeath();
         }
-
-        
     }
 
     override public Vector2 getMovement(){
@@ -103,20 +113,32 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
         }
     }
 
+    override public void takeDamage(){
+        base.takeDamage();
+        if (_health > 0){
+            PlayerPrefs.SetInt("health", _health);
+        }
+    }
+
     override public void handleDeath(){
         // todo: death anim / sound, wait on anim/sound
+
+        // get rid of health and keys on death
+        PlayerPrefs.SetInt("health", 3);
+        PlayerPrefs.SetInt("keys", 0);
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public int getKeys(){
-        return _keys;
+        return PlayerPrefs.GetInt("keys");
     }
 
     public void unlockDoor(){
-        _keys--;
+        PlayerPrefs.SetInt("keys", PlayerPrefs.GetInt("keys") - 1);
     }
 
     public void collectKey(){
-        _keys++;
+        PlayerPrefs.SetInt("keys", PlayerPrefs.GetInt("keys") + 1);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TopDownDoorBehaviour : MonoBehaviour
 {
@@ -23,6 +24,11 @@ public class TopDownDoorBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // if we've already been opened in a past life, don't open again!
+        if (PlayerPrefs.HasKey(gameObject.scene.name + gameObject.name) && SceneManager.sceneCount != 1){
+            Destroy(gameObject);
+        }
+
         if (openCondition == Condition.KillAllEnemies){
             _remainingEnemies = GameObject.FindObjectsOfType(typeof(TopDownEnemyBehaviour)).Length;
         }
@@ -61,6 +67,9 @@ public class TopDownDoorBehaviour : MonoBehaviour
         if (openCondition == Condition.Key){
             playerScript.unlockDoor();
         }
+
+        // log that this door has been opened
+        PlayerPrefs.SetInt(gameObject.scene.name + gameObject.name, 1);
 
         Destroy(gameObject);
     }

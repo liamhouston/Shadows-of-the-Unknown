@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class TopDownKeyBehaviour : MonoBehaviour
 {
@@ -15,6 +17,11 @@ public class TopDownKeyBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // if we've already been collected in a past life, don't spawn again!
+        if (PlayerPrefs.HasKey(gameObject.scene.name + gameObject.name) && SceneManager.sceneCount != 1){
+            Destroy(gameObject);
+        }
+
         player = (Rigidbody2D)GameObject.Find("Player").GetComponent("Rigidbody2D");
         playerScript = (TopDownPlayerBehaviour)player.gameObject.GetComponent(typeof(TopDownPlayerBehaviour));
     }
@@ -30,6 +37,8 @@ public class TopDownKeyBehaviour : MonoBehaviour
     void Collect(){
         // todo: play sound / animation?
         playerScript.collectKey();
+        // log that we've been collected
+        PlayerPrefs.SetInt(gameObject.scene.name + gameObject.name, 1);
         Destroy(gameObject);
     }
 }
