@@ -7,7 +7,7 @@ public class TopDownEnemyBehaviour : TopDownEntityBehaviour
 
     // public variables
     public float moveTime = 1.5f;
-    public float damageRadius = 2f;
+    public float damageRadius = 1f;
 
     // internal variables
     private float _remainingTime;
