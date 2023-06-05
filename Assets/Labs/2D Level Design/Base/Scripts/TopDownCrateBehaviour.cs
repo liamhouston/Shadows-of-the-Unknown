@@ -13,6 +13,8 @@ public class TopDownCrateBehaviour : MonoBehaviour
     {
         player = (Rigidbody2D)GameObject.Find("Player").GetComponent("Rigidbody2D");
         playerScript = (TopDownPlayerBehaviour)player.gameObject.GetComponent(typeof(TopDownPlayerBehaviour));
+
+        VerifyCrates();
     }
 
     // Update is called once per frame
@@ -24,11 +26,21 @@ public class TopDownCrateBehaviour : MonoBehaviour
     //Just overlapped a collider 2D
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // TODO: Don't hardcode the name and potentially use tags here
-        if (collision.gameObject.name == "Crate")
+        if (collision.gameObject.tag == "Crate")
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
+        }
+    }
+
+    void VerifyCrates()
+    {
+        GameObject[] crates = GameObject.FindGameObjectsWithTag("Crate");
+        GameObject[] goals = GameObject.FindGameObjectsWithTag("Goal");
+
+        if (crates.Length != goals.Length)
+        {
+            Debug.LogError(("Number of crates and goals for Sokoban are not equal. \nNumber of Crates: " + crates.Length + " Number of Goals: " + goals.Length));
         }
     }
 }
