@@ -215,4 +215,8 @@ public class TopDownEntityBehaviour : MonoBehaviour
         }
         return update;
     }
+
+    public int getHealth(){
+        return _health;
+    }
 }
