@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2006271616285821623}
   - component: {fileID: 2006271616285821579}
   - component: {fileID: 2006271616285821578}
+  - component: {fileID: 4924457988990904593}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -46,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ec257832b83a340a6d509e3bc1fc2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 4.5
   invincibilityTime: 1
   rb: {fileID: 2006271616285821578}
   _collider: {fileID: 2006271616285821579}
@@ -57,6 +58,42 @@ MonoBehaviour:
   attack: 32
   reset: 114
   attackCooldown: 1
+  idleSpriteUp: {fileID: 3227475870979519549, guid: f9e0cdb420abb354095fa328cff24c61,
+    type: 3}
+  walkSpritesUp:
+  - {fileID: -6358411510385881483, guid: f9e0cdb420abb354095fa328cff24c61, type: 3}
+  - {fileID: -6122469512599704747, guid: f9e0cdb420abb354095fa328cff24c61, type: 3}
+  - {fileID: 7772193408879962718, guid: f9e0cdb420abb354095fa328cff24c61, type: 3}
+  - {fileID: -2524599692705401834, guid: f9e0cdb420abb354095fa328cff24c61, type: 3}
+  - {fileID: 6967151936209746986, guid: f9e0cdb420abb354095fa328cff24c61, type: 3}
+  - {fileID: -3124884605372549192, guid: f9e0cdb420abb354095fa328cff24c61, type: 3}
+  idleSpriteRight: {fileID: -3253420348759804153, guid: f9e0cdb420abb354095fa328cff24c61,
+    type: 3}
+  walkSpritesRight:
+  - {fileID: -3334996315934385002, guid: f9e0cdb420abb354095fa328cff24c61, type: 3}
+  - {fileID: -8076581974082333276, guid: f9e0cdb420abb354095fa328cff24c61, type: 3}
+  - {fileID: -7278239577763544788, guid: f9e0cdb420abb354095fa328cff24c61, type: 3}
+  - {fileID: -5263749153080092271, guid: f9e0cdb420abb354095fa328cff24c61, type: 3}
+  - {fileID: 7231112734061405083, guid: f9e0cdb420abb354095fa328cff24c61, type: 3}
+  - {fileID: 8584110993362214456, guid: f9e0cdb420abb354095fa328cff24c61, type: 3}
+  idleSpriteDown: {fileID: -7149655254542474397, guid: f9e0cdb420abb354095fa328cff24c61,
+    type: 3}
+  walkSpritesDown:
+  - {fileID: 4399622216052677518, guid: f9e0cdb420abb354095fa328cff24c61, type: 3}
+  - {fileID: -1906566838827814584, guid: f9e0cdb420abb354095fa328cff24c61, type: 3}
+  - {fileID: 1287678291942624209, guid: f9e0cdb420abb354095fa328cff24c61, type: 3}
+  - {fileID: -7399619259161909340, guid: f9e0cdb420abb354095fa328cff24c61, type: 3}
+  - {fileID: -4931093500347432286, guid: f9e0cdb420abb354095fa328cff24c61, type: 3}
+  - {fileID: 2308335609822901001, guid: f9e0cdb420abb354095fa328cff24c61, type: 3}
+  idleSpriteLeft: {fileID: -5273296780164134691, guid: f9e0cdb420abb354095fa328cff24c61,
+    type: 3}
+  walkSpritesLeft:
+  - {fileID: -5576590533242094999, guid: f9e0cdb420abb354095fa328cff24c61, type: 3}
+  - {fileID: 2800806559522486351, guid: f9e0cdb420abb354095fa328cff24c61, type: 3}
+  - {fileID: 7088810788647407318, guid: f9e0cdb420abb354095fa328cff24c61, type: 3}
+  - {fileID: -5532615859466041056, guid: f9e0cdb420abb354095fa328cff24c61, type: 3}
+  - {fileID: 3081078354943938890, guid: f9e0cdb420abb354095fa328cff24c61, type: 3}
+  - {fileID: -5282300517771018440, guid: f9e0cdb420abb354095fa328cff24c61, type: 3}
 --- !u!61 &2006271616285821579
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -104,6 +141,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &4924457988990904593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006271616285821577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e94a24ebf68a144182dc8abd72fc7cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleComplete: 0
 --- !u!1 &2006271616997992750
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,7 +180,7 @@ Transform:
   m_GameObject: {fileID: 2006271616997992750}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2006271616285821622}
   m_RootOrder: 0
@@ -174,8 +224,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5160f0b6aa1bf4826890315659826593, type: 3}
-  m_Color: {r: 0.23971501, g: 0.9433962, b: 0.20024922, a: 1}
+  m_Sprite: {fileID: -7149655254542474397, guid: f9e0cdb420abb354095fa328cff24c61,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

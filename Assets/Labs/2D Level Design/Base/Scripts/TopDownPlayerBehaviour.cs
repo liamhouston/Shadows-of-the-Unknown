@@ -17,11 +17,28 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
     // public variables
     public float attackCooldown = 2f;
 
+    [Header("Sprite Settings")]
+    [SerializeField] private Sprite idleSpriteUp;
+    [SerializeField] private List<Sprite> walkSpritesUp = new List<Sprite>(6);
+    [SerializeField] private Sprite idleSpriteRight;
+    [SerializeField] private List<Sprite> walkSpritesRight = new List<Sprite>(6);
+    [SerializeField] private Sprite idleSpriteDown;
+    [SerializeField] private List<Sprite> walkSpritesDown = new List<Sprite>(6);
+    [SerializeField] private Sprite idleSpriteLeft;
+    [SerializeField] private List<Sprite> walkSpritesLeft = new List<Sprite>(6);
+
     // internal variables    
     // attack parameters
     private bool _canAttack = true;
     private float _attackThreshold = 1.5f;
     private float _attackCountdown;
+
+    // animation speed
+    private float _walkFramesPerSecond = 12.5f;
+    private float _currentFrame = 0f;
+
+    // components
+    private SpriteRenderer currentSprite;
 
     // key parameters
     private int _keys = 0;
@@ -43,6 +60,9 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
         if (PlayerPrefs.HasKey("health")){
             _health = PlayerPrefs.GetInt("health");
         }
+
+        // set up sprite
+        currentSprite = transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -68,6 +88,8 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
         if (Input.GetKey(reset)){
             handleDeath();
         }
+
+        handleAnimation();
     }
 
     override public Vector2 getMovement(){
@@ -128,6 +150,55 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
         PlayerPrefs.SetInt("keys", 0);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void handleAnimation(){
+        // update according to current movement
+        Vector2 movement = getMovement();
+
+        // should be idle, set idle sprite based on direction
+        if (movement.x == 0 && movement.y == 0){
+            switch (_currDir){
+                case Direction.North:
+                    currentSprite.sprite = idleSpriteUp;
+                    break;
+                case Direction.East:
+                    currentSprite.sprite = idleSpriteRight;
+                    break;
+                case Direction.South:
+                    currentSprite.sprite = idleSpriteDown;
+                    break;
+                case Direction.West:
+                    currentSprite.sprite = idleSpriteLeft;
+                    break;
+                default:
+                    break;
+            }
+        }
+        // otherwise we're moving, set the update accordingly!
+        else{
+            _currentFrame = Mathf.Repeat(_currentFrame + Time.deltaTime * _walkFramesPerSecond, 6f);
+
+            switch (_currDir){
+                case Direction.North:
+                    currentSprite.sprite = walkSpritesUp[Mathf.FloorToInt(_currentFrame)];
+                    break;
+                case Direction.East:
+                    currentSprite.sprite = walkSpritesRight[Mathf.FloorToInt(_currentFrame)];
+                    break;
+                case Direction.South:
+                    currentSprite.sprite = walkSpritesDown[Mathf.FloorToInt(_currentFrame)];
+                    break;
+                case Direction.West:
+                    currentSprite.sprite = walkSpritesLeft[Mathf.FloorToInt(_currentFrame)];
+                    break;
+                default:
+                    break;
+            }
+
+        }
+
+        return;
     }
 
     public int getKeys(){
