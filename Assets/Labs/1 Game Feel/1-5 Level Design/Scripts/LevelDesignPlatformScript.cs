@@ -15,7 +15,7 @@ public class LevelDesignPlatformScript : MonoBehaviour
     public AudioSource audioSourcePlatform; // audio source for platform landing sound
     public AudioClip platformLandingClip; // audio clip for platform landing sound
     public bool disappear; // disappear after a given time when player lands
-    public float disappearTimer; // controls how long it takes the platform to disappear
+    public float timeToDisappear; // controls how long it takes the platform to disappear
 
     // platform movement
     protected float dir = 1.0f;
@@ -24,10 +24,12 @@ public class LevelDesignPlatformScript : MonoBehaviour
 
     // platform disappearance
     protected bool disappearing;
+    protected float currDisappear;
 
     // components
     private BoxCollider2D collider;
     private SpriteRenderer renderer;
+    private Color baseColor;
 
     void Start(){
         // set platform bounds
@@ -35,6 +37,8 @@ public class LevelDesignPlatformScript : MonoBehaviour
         bound2 = transform.position.x + distanceFromOrigin;
         collider = (BoxCollider2D)GetComponent("BoxCollider2D");
         renderer = (SpriteRenderer)GetComponent("SpriteRenderer");
+        baseColor = renderer.material.color;
+        currDisappear = timeToDisappear;
     }
      
 
@@ -46,12 +50,21 @@ public class LevelDesignPlatformScript : MonoBehaviour
             newPosition = horizontalMovement();
         }
         if (disappearing){
-            disappearTimer -= Time.deltaTime;
-            if (disappearTimer <= 0.0f){
+            currDisappear -= Time.deltaTime;
+            if (currDisappear <= 0.0f){
                 collider.enabled = false;
                 renderer.enabled = false;
                 disappearing = false;
             }
+            // don't divide by 0
+            if (timeToDisappear > 0){
+                // adjust transparency of platform based on how close it is to disappearing
+                float transparency = (timeToDisappear - Mathf.Abs(timeToDisappear - currDisappear)) / timeToDisappear;
+                Color currColor = baseColor;
+                currColor.a = transparency;
+                renderer.material.color = currColor;
+            }
+            
         }
         transform.position = newPosition;
     }

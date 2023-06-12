@@ -20,6 +20,7 @@ namespace GameFeel{
         public AudioClip airRisingClip; // plays on loop when rising in air
         public AudioClip airFallingClip; // plays on loop when falling in air
 
+        private float _loopThreshold = 0.01f;
         // Update is called once per frame
         protected override void Update()
         {
@@ -28,7 +29,7 @@ namespace GameFeel{
             if (audioSourceMove == null) { return; }
 
             // if we are moving, handle the looping sound logic
-            if (_currentVelocity.x != 0 || _currentVelocity.y != 0){
+            if (groundLoop() || _currentVelocity.y != 0){
                 bool play = false;
                 // switch based on state & status of each clip
                 if (currState == STATE.Grounded && groundMoveClip != null){
@@ -57,6 +58,7 @@ namespace GameFeel{
             else{
                 audioSourceMove.Stop();
             }
+
         }
 
         protected override void OnGrounded_Hook(){
@@ -93,6 +95,10 @@ namespace GameFeel{
             if (!audioSourceAction.isPlaying && play){
                 audioSourceAction.Play();
             }
+        }
+
+        protected bool groundLoop(){
+            return Input.GetKey(left) || Input.GetKey(right);
         }
     }
 
