@@ -796,7 +796,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1, y: 2.67}
   m_EdgeRadius: 0
 --- !u!82 &1901416768
 AudioSource:
@@ -1117,7 +1117,11 @@ MonoBehaviour:
   dustOnImpact: 0
   dustOnJump: 0
   dustOnDirectionChange: 0
-  walkAnimationSpeedMultiplier: 1
+  idleSprite: {fileID: 0}
+  walkSprites: []
+  jumpSprite: {fileID: 0}
+  fallSprite: {fileID: 0}
+  walkFramesPerSecond: 7.5
   audioSourceAction: {fileID: 1901416770}
   audioSourceMove: {fileID: 1901416768}
   jumpClip: {fileID: 8300000, guid: 3a88b9574726a844fb355800835d4828, type: 3}
