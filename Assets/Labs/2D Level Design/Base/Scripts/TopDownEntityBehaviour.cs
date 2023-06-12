@@ -219,4 +219,8 @@ public class TopDownEntityBehaviour : MonoBehaviour
     public int getHealth(){
         return _health;
     }
+
+    public void setInvincible(bool inv){
+        _invincible = inv;
+    }
 }
