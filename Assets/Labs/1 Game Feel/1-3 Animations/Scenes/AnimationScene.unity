@@ -185,7 +185,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1, y: 2.67}
   m_EdgeRadius: 0
 --- !u!114 &82386625
 MonoBehaviour:
@@ -309,7 +309,6 @@ MonoBehaviour:
     type: 3}
   fallSprite: {fileID: 5992651345604836166, guid: 40df686498e86f44789ba472d86fb55d,
     type: 3}
-  walkAnimationSpeedMultiplier: 1
   walkFramesPerSecond: 7.5
 --- !u!4 &82386626
 Transform:
