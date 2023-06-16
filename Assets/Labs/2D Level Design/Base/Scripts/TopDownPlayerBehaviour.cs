@@ -51,6 +51,12 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
     private bool _isFalling = false;
     private Vector2 lastSafePosition = Vector2.zero;
 
+    // ice parameters
+    private Vector2 _closestIce = Vector2.positiveInfinity;
+    private bool _isOnIce = false;
+    private float _iceThreshold = 0.9f;
+
+
     // components
     private SpriteRenderer currentSprite;
     private SpriteRenderer shadow;
@@ -109,6 +115,9 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
         // if we are attacking or falling, we're frozen
         if (_isAttacking || _isFalling) { return update; }
 
+        // if we are on ice, we're moving in our current direction
+        if (_isOnIce) { return dirToVec(); }
+
         // read input, and set our direction accordingly
         if (Input.GetKey(right)){
             update.x = 1;
@@ -131,7 +140,7 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
 
     void handleAttack(){
         // if we can't attack, don't
-        if (_isAttacking || _isFalling) { return; }
+        if (_isAttacking || _isFalling || _isOnIce) { return; }
 
         // shoot out a ray looking to ATTACK
         // _canAttack = false;
@@ -226,7 +235,7 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
         Vector2 movement = getMovement();
 
         // should be idle, set idle sprite based on direction
-        if (movement.x == 0 && movement.y == 0){
+        if ((movement.x == 0 && movement.y == 0) || _isOnIce){
             switch (_currDir){
                 case Direction.North:
                     currentSprite.sprite = idleSpriteUp;
@@ -300,5 +309,23 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
         _currentFrame = 0;
         // we successfully fell!
         return true;
+    }
+
+    public void updateIce(Vector2 icePos){
+        if (Mathf.Abs(Vector2.Distance(transform.position, icePos)) < Mathf.Abs(Vector2.Distance(transform.position, _closestIce))){
+            _closestIce = icePos;
+        }
+
+        if (Mathf.Abs(_closestIce.x - transform.position.x) <= _iceThreshold && Mathf.Abs(_closestIce.y - transform.position.y) <= _iceThreshold && !isStopped()){
+
+            _isOnIce = true;
+        }
+        else{
+            _isOnIce = false;
+        }
+    }
+
+    public bool isStopped(){
+        return (lastSafePosition.x == transform.position.x && lastSafePosition.y == transform.position.y);
     }
 }
