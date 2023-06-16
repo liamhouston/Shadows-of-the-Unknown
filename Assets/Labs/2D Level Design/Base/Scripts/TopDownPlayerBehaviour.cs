@@ -140,7 +140,7 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
 
     void handleAttack(){
         // if we can't attack, don't
-        if (_isAttacking || _isFalling) { return; }
+        if (_isAttacking || _isFalling || _isOnIce) { return; }
 
         // shoot out a ray looking to ATTACK
         // _canAttack = false;
