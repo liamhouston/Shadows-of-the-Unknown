@@ -25,6 +25,7 @@ public class LevelDesignPlatformScript : MonoBehaviour
     // platform disappearance
     protected bool disappearing;
     protected float currDisappear;
+    protected float frameCount = 0f;
 
     // components
     private BoxCollider2D collider;
@@ -61,8 +62,9 @@ public class LevelDesignPlatformScript : MonoBehaviour
                 // adjust transparency of platform based on how close it is to disappearing
                 float transparency = (timeToDisappear - Mathf.Abs(timeToDisappear - currDisappear)) / timeToDisappear;
                 Color currColor = baseColor;
-                currColor.a = transparency;
+                currColor.a = transparency * Mathf.Sin(Mathf.PI * 2 * frameCount / 240f);
                 renderer.material.color = currColor;
+                frameCount += 1;
             }
             
         }

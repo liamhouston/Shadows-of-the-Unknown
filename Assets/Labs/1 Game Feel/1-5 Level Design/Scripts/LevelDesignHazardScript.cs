@@ -13,6 +13,7 @@ public class LevelDesignHazardScript : MonoBehaviour
     [Header("On Death Options")]
     public AudioSource deathAudioSource; // audio source for death sound
     public AudioClip deathClip; // audio clip for death sound
+    public Color deathFlash = Color.red; // colour to flash on death
 
     // control variables
     private bool dying = false;
@@ -23,6 +24,7 @@ public class LevelDesignHazardScript : MonoBehaviour
 
     // the player
     private Rigidbody2D player;
+    private SpriteRenderer playerSprite;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +32,7 @@ public class LevelDesignHazardScript : MonoBehaviour
         collider = (BoxCollider2D)GetComponent("BoxCollider2D");
         renderer = (SpriteRenderer)GetComponent("SpriteRenderer");
         player = (Rigidbody2D)GameObject.Find("Player").GetComponent("Rigidbody2D");
+        playerSprite = (SpriteRenderer)player.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -48,6 +51,7 @@ public class LevelDesignHazardScript : MonoBehaviour
 
         // handle death timer, and reset scene when we are dead
         if (dying){
+            playerSprite.material.color = deathFlash;
             deathTimer -= Time.deltaTime;
             if (deathTimer <= 0){
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

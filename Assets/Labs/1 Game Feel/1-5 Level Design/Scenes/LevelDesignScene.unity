@@ -5101,6 +5101,7 @@ MonoBehaviour:
   deathTimer: 0.2
   deathAudioSource: {fileID: 381604293}
   deathClip: {fileID: 8300000, guid: 5cb95309c134fec43953827abc66f379, type: 3}
+  deathFlash: {r: 1, g: 0, b: 0, a: 1}
 --- !u!82 &381604293
 AudioSource:
   m_ObjectHideFlags: 0
