@@ -6460,7 +6460,7 @@ MonoBehaviour:
   reset: 114
   gravity: 9.8
   mass: 10
-  groundBuffer: 0.08
+  groundBuffer: 0.02
   groundFriction: 0.139
   airFriction: 0.279
   terminalVelocity: 20
