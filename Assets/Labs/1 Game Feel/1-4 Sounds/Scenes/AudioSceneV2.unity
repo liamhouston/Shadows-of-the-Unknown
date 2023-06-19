@@ -1004,7 +1004,7 @@ MonoBehaviour:
   reset: 114
   gravity: 9.8
   mass: 10
-  groundBuffer: 0.08
+  groundBuffer: 0.02
   groundFriction: 0.196
   airFriction: 0.279
   terminalVelocity: 20
@@ -1116,7 +1116,7 @@ MonoBehaviour:
   impactClip: {fileID: 8300000, guid: 1efdec2eeb50821499c3994a3aee55cd, type: 3}
   groundMoveClip: {fileID: 8300000, guid: 230bd204ac6a7a14295da1ff5516d68b, type: 3}
   airRisingClip: {fileID: 0}
-  airFallingClip: {fileID: 0}
+  airFallingClip: {fileID: 8300000, guid: 4a1fa8029ccbf4f418c7b03cec8f0b09, type: 3}
 --- !u!1 &2041112504
 GameObject:
   m_ObjectHideFlags: 0

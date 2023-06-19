@@ -202,13 +202,13 @@ MonoBehaviour:
   left: 276
   right: 275
   jump: 273
+  reset: 114
   gravity: 9.8
   mass: 30
-  groundBuffer: 0.08
+  groundBuffer: 0.01
   groundFriction: 0.1
   airFriction: 0.05
   terminalVelocity: 50
-  ground: {fileID: 564225062}
   jumpStrength: 7
   jumpTime: 0.8
   jumpCurve:

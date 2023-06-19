@@ -5101,6 +5101,7 @@ MonoBehaviour:
   deathTimer: 0.2
   deathAudioSource: {fileID: 381604293}
   deathClip: {fileID: 8300000, guid: 5cb95309c134fec43953827abc66f379, type: 3}
+  deathFlash: {r: 1, g: 0, b: 0, a: 1}
 --- !u!82 &381604293
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5326,6 +5327,7 @@ MonoBehaviour:
   platformLandingClip: {fileID: 8300000, guid: e284008bcfe0ce4429d623bb5ebc5ccc, type: 3}
   disappear: 1
   timeToDisappear: 5
+  flashSpeed: 60
 --- !u!82 &424373140
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5936,6 +5938,7 @@ MonoBehaviour:
   platformLandingClip: {fileID: 0}
   disappear: 0
   timeToDisappear: 0
+  flashSpeed: 0
 --- !u!1 &1869154165
 GameObject:
   m_ObjectHideFlags: 0
@@ -6065,6 +6068,7 @@ MonoBehaviour:
   platformLandingClip: {fileID: 8300000, guid: e284008bcfe0ce4429d623bb5ebc5ccc, type: 3}
   disappear: 1
   timeToDisappear: 1
+  flashSpeed: 60
 --- !u!82 &1869154170
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6456,7 +6460,7 @@ MonoBehaviour:
   reset: 114
   gravity: 9.8
   mass: 10
-  groundBuffer: 0.08
+  groundBuffer: 0.02
   groundFriction: 0.139
   airFriction: 0.279
   terminalVelocity: 20

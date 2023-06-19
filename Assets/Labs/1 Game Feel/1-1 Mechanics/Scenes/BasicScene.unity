@@ -357,7 +357,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1, y: 1.85}
   m_EdgeRadius: 0
 --- !u!23 &579762632
 MeshRenderer:
@@ -435,13 +435,13 @@ MonoBehaviour:
   left: 276
   right: 275
   jump: 273
+  reset: 114
   gravity: 9.8
   mass: 20
   groundBuffer: 0.08
   groundFriction: 0.139
   airFriction: 0.325
   terminalVelocity: 40
-  ground: {fileID: 1477552338}
   jumpStrength: 7
   jumpTime: 0.5
   jumpCurve:
