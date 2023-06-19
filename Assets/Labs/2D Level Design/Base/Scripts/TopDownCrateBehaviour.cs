@@ -29,7 +29,7 @@ public class TopDownCrateBehaviour : MonoBehaviour
     {
         updateIce();
 
-        // Check if we are on ice and if this
+        // Check if we are on ice and get latest velocity before being on Ice
         if (_isOnIce && !isStopped()) { 
             if (!_lockForce)
             {
