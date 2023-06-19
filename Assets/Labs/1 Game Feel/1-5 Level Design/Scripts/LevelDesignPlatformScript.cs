@@ -16,6 +16,7 @@ public class LevelDesignPlatformScript : MonoBehaviour
     public AudioClip platformLandingClip; // audio clip for platform landing sound
     public bool disappear; // disappear after a given time when player lands
     public float timeToDisappear; // controls how long it takes the platform to disappear
+    public float flashSpeed = 60f; // controls the speed of the platform flashing (can't be 0) 
 
     // platform movement
     protected float dir = 1.0f;
@@ -62,7 +63,7 @@ public class LevelDesignPlatformScript : MonoBehaviour
                 // adjust transparency of platform based on how close it is to disappearing
                 float transparency = (timeToDisappear - Mathf.Abs(timeToDisappear - currDisappear)) / timeToDisappear;
                 Color currColor = baseColor;
-                currColor.a = transparency * Mathf.Sin(Mathf.PI * 2 * frameCount / 240f);
+                currColor.a = transparency * Mathf.Sin(Mathf.PI * 2 * frameCount / 60f);
                 renderer.material.color = currColor;
                 frameCount += 1;
             }

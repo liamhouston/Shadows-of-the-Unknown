@@ -5327,6 +5327,7 @@ MonoBehaviour:
   platformLandingClip: {fileID: 8300000, guid: e284008bcfe0ce4429d623bb5ebc5ccc, type: 3}
   disappear: 1
   timeToDisappear: 5
+  flashSpeed: 60
 --- !u!82 &424373140
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5937,6 +5938,7 @@ MonoBehaviour:
   platformLandingClip: {fileID: 0}
   disappear: 0
   timeToDisappear: 0
+  flashSpeed: 0
 --- !u!1 &1869154165
 GameObject:
   m_ObjectHideFlags: 0
@@ -6066,6 +6068,7 @@ MonoBehaviour:
   platformLandingClip: {fileID: 8300000, guid: e284008bcfe0ce4429d623bb5ebc5ccc, type: 3}
   disappear: 1
   timeToDisappear: 1
+  flashSpeed: 60
 --- !u!82 &1869154170
 AudioSource:
   m_ObjectHideFlags: 0
