@@ -7,7 +7,7 @@ public class TopDownDoorBehaviour : MonoBehaviour
 {
 
     // Types of Door
-    public enum Condition {KillAllEnemies, Key};
+    public enum Condition {KillAllEnemies, Key, Puzzle};
     public Condition openCondition;
 
     [Header("Key Options")]
@@ -20,6 +20,7 @@ public class TopDownDoorBehaviour : MonoBehaviour
     // the player
     private Rigidbody2D player;
     private TopDownPlayerBehaviour playerScript;
+    private TopDownSokobanBehaviour sokobanScript;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,9 @@ public class TopDownDoorBehaviour : MonoBehaviour
 
         player = (Rigidbody2D)GameObject.Find("Player").GetComponent("Rigidbody2D");
         playerScript = (TopDownPlayerBehaviour)player.gameObject.GetComponent(typeof(TopDownPlayerBehaviour));
+
+        // Manually getting sokoban script. Might be better to get the player and call sokoban script when needed
+        sokobanScript = (TopDownSokobanBehaviour)player.gameObject.GetComponent(typeof(TopDownSokobanBehaviour));
     }
 
     // Update is called once per frame
@@ -51,7 +55,15 @@ public class TopDownDoorBehaviour : MonoBehaviour
                 Unlock();
             }
         }
-        
+
+        else if (openCondition == Condition.Puzzle)
+        {
+            if (sokobanScript.puzzleComplete && Mathf.Abs(Vector2.Distance(player.position, transform.position)) <= openRadius)
+            {
+                Unlock();
+            }
+        }
+
     }
 
     void enemyDeath(){
