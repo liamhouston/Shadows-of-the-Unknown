@@ -34,6 +34,18 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
 
     [SerializeField] private List<Sprite> fallSprites = new List<Sprite>(6);
 
+    [SerializeField] private Sprite hurtSpriteUp;
+    [SerializeField] private Sprite hurtSpriteRight;
+    [SerializeField] private Sprite hurtSpriteDown;
+    [SerializeField] private Sprite hurtSpriteLeft;
+
+    [Header("Sound Settings")]
+    [SerializeField] private AudioSource soundSource;
+    [SerializeField] private AudioClip attackSound;
+    [SerializeField] private AudioClip hurtSound;
+    [SerializeField] private AudioClip keyPickupSound;
+    
+
 
     // internal variables    
     // attack parameters
@@ -56,6 +68,10 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
     private bool _isOnIce = false;
     private float _iceThreshold = 0.9f;
 
+    // hurt parameters
+    private float _hurtFrames = 24f;
+    private float _currentHurtFrame = 0f;
+    private bool _isHurt = false;
 
     // components
     private SpriteRenderer currentSprite;
@@ -113,7 +129,7 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
     override public Vector2 getMovement(){
         Vector2 update = Vector2.zero;
         // if we are attacking or falling, we're frozen
-        if (_isAttacking || _isFalling) { return update; }
+        if (_isAttacking || _isFalling || _isHurt) { return update; }
 
         // if we are on ice, we're moving in our current direction
         if (_isOnIce) { return dirToVec(); }
@@ -159,13 +175,30 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
             Debug.Log("no hit!");
         }
 
+        // play the attack sound!
+        soundSource.clip = attackSound;
+        soundSource.Play();
+
         _currentFrame = 0;
     }
 
     override public void takeDamage(){
+        int currHealth = _health;
         base.takeDamage();
         if (_health > 0){
             PlayerPrefs.SetInt("health", _health);
+        }
+
+        // if we took damage, do the hurt animation and play the sound
+        if (currHealth != _health){
+            _isHurt = true;
+            _currentHurtFrame = 0f;
+
+            // if health is 0, we're going to play the death sound instead!
+            if (_health > 0){
+                soundSource.clip = hurtSound;
+                soundSource.Play();
+            }
         }
     }
 
@@ -231,6 +264,35 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
             }
         }
 
+        if (_isHurt){
+            // check if we should be hurt anymore
+            _currentHurtFrame += 1;
+            if (_currentHurtFrame > _hurtFrames){
+                _isHurt = false;
+                _currentFrame = 0f;
+            }
+            // otherwise, play the hurt animation
+            else{
+                switch (_currDir){
+                    case Direction.North:
+                        currentSprite.sprite = hurtSpriteUp;
+                        break;
+                    case Direction.East:
+                        currentSprite.sprite = hurtSpriteRight;
+                        break;
+                    case Direction.South:
+                        currentSprite.sprite = hurtSpriteDown;
+                        break;
+                    case Direction.West:
+                        currentSprite.sprite = hurtSpriteLeft;
+                        break;
+                    default:
+                        break;
+                }
+                return;
+            }
+        }
+
         // otherwise, update according to current movement
         Vector2 movement = getMovement();
 
@@ -290,6 +352,9 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
 
     public void collectKey(){
         PlayerPrefs.SetInt("keys", PlayerPrefs.GetInt("keys") + 1);
+        // key sound
+        soundSource.clip = keyPickupSound;
+        soundSource.Play();
     }
 
     public void setVisible(bool vis){

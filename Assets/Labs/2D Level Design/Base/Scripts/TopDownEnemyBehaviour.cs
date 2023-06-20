@@ -12,6 +12,20 @@ public class TopDownEnemyBehaviour : TopDownEntityBehaviour
     // internal variables
     private float _remainingTime;
 
+    // sprites
+    [Header("Sprite Settings")]
+    [SerializeField] private List<Sprite> walkSpritesUp = new List<Sprite>(4);
+    [SerializeField] private List<Sprite> walkSpritesRight = new List<Sprite>(4);
+    [SerializeField] private List<Sprite> walkSpritesDown = new List<Sprite>(4);
+    [SerializeField] private List<Sprite> walkSpritesLeft = new List<Sprite>(4);
+
+    // animation speed
+    private float _walkFramesPerSecond = 8f;
+    protected float _currentFrame = 0f;
+
+    // components
+    protected SpriteRenderer currentSprite;
+
     // the player & doors
     private Rigidbody2D player;
     private TopDownDoorBehaviour[] doors = {};
@@ -24,6 +38,7 @@ public class TopDownEnemyBehaviour : TopDownEntityBehaviour
         _currDir = pickDirection();
         player = (Rigidbody2D)GameObject.Find("Player").GetComponent("Rigidbody2D");
         doors = (TopDownDoorBehaviour[])GameObject.FindObjectsOfType(typeof(TopDownDoorBehaviour));
+        currentSprite = transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
     }
     
     // Update is called once per frame
@@ -42,6 +57,8 @@ public class TopDownEnemyBehaviour : TopDownEntityBehaviour
         if (Mathf.Abs(Vector2.Distance(player.position, transform.position)) <= damageRadius){
             player.gameObject.SendMessage("takeDamage");
         }
+
+        handleAnimation();
     }
 
     // uses helper function to convert current direction into movement vector
@@ -50,7 +67,7 @@ public class TopDownEnemyBehaviour : TopDownEntityBehaviour
     }
 
     // update our direction with a random new one
-    Direction pickDirection(){
+    virtual public Direction pickDirection(){
         int i = 0; // loop limiter for the uh. 0.00390625 chance 
         
         // pick a new direction that wasn't our old one
@@ -71,5 +88,26 @@ public class TopDownEnemyBehaviour : TopDownEntityBehaviour
             }
         }
         Destroy(gameObject);
+    }
+
+    virtual public void handleAnimation(){
+        _currentFrame = Mathf.Repeat(_currentFrame + Time.deltaTime * _walkFramesPerSecond, 4f);
+
+            switch (_currDir){
+                case Direction.North:
+                    currentSprite.sprite = walkSpritesUp[Mathf.FloorToInt(_currentFrame)];
+                    break;
+                case Direction.East:
+                    currentSprite.sprite = walkSpritesRight[Mathf.FloorToInt(_currentFrame)];
+                    break;
+                case Direction.South:
+                    currentSprite.sprite = walkSpritesDown[Mathf.FloorToInt(_currentFrame)];
+                    break;
+                case Direction.West:
+                    currentSprite.sprite = walkSpritesLeft[Mathf.FloorToInt(_currentFrame)];
+                    break;
+                default:
+                    break;
+            }
     }
 }

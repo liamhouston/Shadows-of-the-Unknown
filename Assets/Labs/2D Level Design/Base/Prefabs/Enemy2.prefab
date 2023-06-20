@@ -99,9 +99,49 @@ MonoBehaviour:
   _collider: {fileID: 3570980124067725928}
   moveTime: 1.5
   damageRadius: 1
+  walkSpritesUp:
+  - {fileID: -8341226561923978522, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  - {fileID: 4552989192691332897, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  - {fileID: 8393695872867782849, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  - {fileID: 6326612735113504112, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  walkSpritesRight:
+  - {fileID: 8952579329312639340, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  - {fileID: 2693899778015109357, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  - {fileID: 8631130792890714432, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  - {fileID: 102464443920676763, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  walkSpritesDown:
+  - {fileID: 5027853181419828128, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  - {fileID: 3975291242419253033, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  - {fileID: -3240661248099505628, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  - {fileID: 314646154338458536, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  walkSpritesLeft:
+  - {fileID: -8399772541321868063, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  - {fileID: -3258914053520618500, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  - {fileID: 606466193383608676, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  - {fileID: -8868737252284106608, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
   projectileTimer: 3
   projectile: {fileID: 6605173533699516481, guid: 37dde2137ffd9854cb88af0549660479,
     type: 3}
+  fireSpritesUp:
+  - {fileID: -2659561507078400360, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  - {fileID: -1990319531777496934, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  - {fileID: 2107786526159525803, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  - {fileID: 2861125767104098054, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  fireSpritesRight:
+  - {fileID: 6208918266731222883, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  - {fileID: 207927803596394758, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  - {fileID: 3034132387233737396, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  - {fileID: 5229937099423864085, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  fireSpritesDown:
+  - {fileID: 1460606528769398029, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  - {fileID: -4167543780277359114, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  - {fileID: -1332957310374407398, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  - {fileID: -7897518827625076252, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  fireSpritesLeft:
+  - {fileID: 6890123664382151235, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  - {fileID: -4590484652688822865, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  - {fileID: -3506953966498570899, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
+  - {fileID: -5893381119158548444, guid: b26f746f55877e84aa3fa0dc1a215b33, type: 3}
 --- !u!1 &3570980124847148940
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,7 +168,7 @@ Transform:
   m_GameObject: {fileID: 3570980124847148940}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0.02, z: 0}
-  m_LocalScale: {x: 0.1918325, y: 0.1918325, z: 0.1918325}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 3570980124067725930}
   m_RootOrder: 0
@@ -172,8 +212,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5160f0b6aa1bf4826890315659826593, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.69411767, a: 1}
+  m_Sprite: {fileID: 1344780287051860636, guid: b26f746f55877e84aa3fa0dc1a215b33,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
