@@ -11,6 +11,10 @@ public class TopDownSokobanBehaviour : MonoBehaviour
     // Check if Sokoban puzzle complete
     public bool puzzleComplete;
 
+    // Sound for puzzle complete
+    [SerializeField] private AudioSource puzzleSoundSource;
+    [SerializeField] private AudioClip puzzleCompleteClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +42,9 @@ public class TopDownSokobanBehaviour : MonoBehaviour
         {
             Debug.Log("Puzzle complete!");
             puzzleComplete = true;
+            
+            puzzleSoundSource.clip = puzzleCompleteClip;
+            puzzleSoundSource.Play();
         }
     }
 

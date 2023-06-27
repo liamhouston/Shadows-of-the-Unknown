@@ -5,14 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class TopDownDoorBehaviour : MonoBehaviour
 {
-
     // Types of Door
     public enum Condition {KillAllEnemies, Key, Puzzle};
     public Condition openCondition;
 
     [Header("Key Options")]
     public float openRadius = 1f;
-    
 
     // internal variables
     private int _remainingEnemies = 0;
@@ -73,11 +71,12 @@ public class TopDownDoorBehaviour : MonoBehaviour
     }
 
     void Unlock(){
-        // todo: play sound, play animation
-
         // if we're opening with a key, decrement key from player
         if (openCondition == Condition.Key){
-            playerScript.unlockDoor();
+            playerScript.unlockDoor(true);
+        }
+        else{
+            playerScript.unlockDoor(false);
         }
 
         // log that this door has been opened

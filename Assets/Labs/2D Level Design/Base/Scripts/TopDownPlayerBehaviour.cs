@@ -40,12 +40,15 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
     [SerializeField] private Sprite hurtSpriteLeft;
 
     [Header("Sound Settings")]
-    [SerializeField] private AudioSource soundSource;
+    [SerializeField] private AudioSource playerSoundSource;
     [SerializeField] private AudioClip attackSound;
     [SerializeField] private AudioClip hurtSound;
-    [SerializeField] private AudioClip keyPickupSound;
+    [SerializeField] private AudioClip deathSound;
     
-
+    [SerializeField] private AudioSource controlSoundSource;
+    [SerializeField] private AudioClip doorOpenSound;
+    [SerializeField] private AudioClip keyPickupSound;
+    [SerializeField] private AudioClip pitFallSound;
 
     // internal variables    
     // attack parameters
@@ -72,6 +75,7 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
     private float _hurtFrames = 24f;
     private float _currentHurtFrame = 0f;
     private bool _isHurt = false;
+    private bool _isDead = false;
 
     // components
     private SpriteRenderer currentSprite;
@@ -124,12 +128,23 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
         }
 
         handleAnimation();
+
+        if (_isDead){
+            // only die once we are done playing the death sound!
+            if (playerSoundSource.isPlaying) { return; }
+
+            // get rid of health and keys on death, and reload the scene
+            PlayerPrefs.SetInt("health", 3);
+            PlayerPrefs.SetInt("keys", 0);
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     override public Vector2 getMovement(){
         Vector2 update = Vector2.zero;
-        // if we are attacking or falling, we're frozen
-        if (_isAttacking || _isFalling || _isHurt) { return update; }
+        // if we are attacking or falling or hurt or dead (i wish i used a state machine), we're frozen
+        if (_isAttacking || _isFalling || _isHurt || _isDead) { return update; }
 
         // if we are on ice, we're moving in our current direction
         if (_isOnIce) { return dirToVec(); }
@@ -156,7 +171,7 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
 
     void handleAttack(){
         // if we can't attack, don't
-        if (_isAttacking || _isFalling || _isOnIce) { return; }
+        if (_isAttacking || _isFalling || _isOnIce || _isDead) { return; }
 
         // shoot out a ray looking to ATTACK
         // _canAttack = false;
@@ -176,8 +191,8 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
         }
 
         // play the attack sound!
-        soundSource.clip = attackSound;
-        soundSource.Play();
+        playerSoundSource.clip = attackSound;
+        playerSoundSource.Play();
 
         _currentFrame = 0;
     }
@@ -196,20 +211,17 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
 
             // if health is 0, we're going to play the death sound instead!
             if (_health > 0){
-                soundSource.clip = hurtSound;
-                soundSource.Play();
+                playerSoundSource.clip = hurtSound;
+                playerSoundSource.Play();
             }
         }
     }
 
     override public void handleDeath(){
-        // todo: death anim / sound, wait on anim/sound
+        _isDead = true;
 
-        // get rid of health and keys on death
-        PlayerPrefs.SetInt("health", 3);
-        PlayerPrefs.SetInt("keys", 0);
-
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        playerSoundSource.clip = deathSound;
+        playerSoundSource.Play();
     }
 
     public void handleAnimation(){
@@ -346,15 +358,21 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
         return PlayerPrefs.GetInt("keys");
     }
 
-    public void unlockDoor(){
-        PlayerPrefs.SetInt("keys", PlayerPrefs.GetInt("keys") - 1);
+    public void unlockDoor(bool usedKey){
+        if (usedKey){
+            PlayerPrefs.SetInt("keys", PlayerPrefs.GetInt("keys") - 1);
+        }
+        
+        // door sound
+        controlSoundSource.clip = doorOpenSound;
+        controlSoundSource.Play();
     }
 
     public void collectKey(){
         PlayerPrefs.SetInt("keys", PlayerPrefs.GetInt("keys") + 1);
         // key sound
-        soundSource.clip = keyPickupSound;
-        soundSource.Play();
+        controlSoundSource.clip = keyPickupSound;
+        controlSoundSource.Play();
     }
 
     public void setVisible(bool vis){
@@ -372,6 +390,11 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
 
         transform.position = pitPosition;
         _currentFrame = 0;
+
+        // play falling sound
+        controlSoundSource.clip = pitFallSound;
+        controlSoundSource.Play();
+
         // we successfully fell!
         return true;
     }

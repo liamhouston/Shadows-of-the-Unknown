@@ -24,6 +24,7 @@ public class TopDownEnemy2Behaviour : TopDownEnemyBehaviour
     {
         base.Start();
         _currentTime = projectileTimer;
+        _health = 2;
     }
 
     // Update is called once per frame
@@ -33,7 +34,7 @@ public class TopDownEnemy2Behaviour : TopDownEnemyBehaviour
         _currentTime -= Time.deltaTime;
         
         // shoot a bullet if the time is right
-        if (_currentTime <= 0){
+        if (_currentTime <= 0 && !_isDying){
             _isFiring = true;
             _currentFrame = 0;
             _currentTime = projectileTimer;

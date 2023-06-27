@@ -191,7 +191,7 @@ public class TopDownEntityBehaviour : MonoBehaviour
 
     // helper function for collisions
     bool collided(RaycastHit2D result){
-        return (result.collider && result.distance < _collisionBuffer);
+        return (result.collider && result.distance < _collisionBuffer && !result.collider.isTrigger);
     }
 
     // helper function to take direction and get a corresponding vector

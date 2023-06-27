@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4924457988990904593}
   - component: {fileID: 18187440}
   - component: {fileID: 693238364}
+  - component: {fileID: 5998746992836713456}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -132,10 +133,14 @@ MonoBehaviour:
     type: 3}
   hurtSpriteLeft: {fileID: 8637524454217707811, guid: 2a08cdda8b87e9147afbe3337237fa70,
     type: 3}
-  soundSource: {fileID: 693238364}
+  playerSoundSource: {fileID: 693238364}
   attackSound: {fileID: 8300000, guid: 380bb33c53a932349b2f52cd16687b49, type: 3}
   hurtSound: {fileID: 8300000, guid: 59ddb80e04db46b46813359bddca735c, type: 3}
+  deathSound: {fileID: 8300000, guid: de1ff4a17a47ed742b6c7e0119876735, type: 3}
+  controlSoundSource: {fileID: 5998746992836713456}
+  doorOpenSound: {fileID: 8300000, guid: 87239c6d8a8a1b946adf2590cc97d4bc, type: 3}
   keyPickupSound: {fileID: 8300000, guid: edfbdbf71cfa23643a1ffbc505080331, type: 3}
+  pitFallSound: {fileID: 8300000, guid: cc488dc52acc6bc4b85981a52e54eb16, type: 3}
 --- !u!61 &2006271616285821579
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -196,6 +201,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzleComplete: 0
+  puzzleSoundSource: {fileID: 5998746992836713456}
+  puzzleCompleteClip: {fileID: 8300000, guid: 92083a60c6e7fdb4b86e3110a69275cd, type: 3}
 --- !u!58 &18187440
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -213,6 +220,102 @@ CircleCollider2D:
   serializedVersion: 2
   m_Radius: 0.5
 --- !u!82 &693238364
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006271616285821577}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &5998746992836713456
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

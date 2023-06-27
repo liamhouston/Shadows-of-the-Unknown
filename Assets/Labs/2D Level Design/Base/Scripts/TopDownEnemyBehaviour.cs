@@ -11,6 +11,7 @@ public class TopDownEnemyBehaviour : TopDownEntityBehaviour
 
     // internal variables
     private float _remainingTime;
+    protected bool _isDying = false;
 
     // sprites
     [Header("Sprite Settings")]
@@ -18,6 +19,12 @@ public class TopDownEnemyBehaviour : TopDownEntityBehaviour
     [SerializeField] private List<Sprite> walkSpritesRight = new List<Sprite>(4);
     [SerializeField] private List<Sprite> walkSpritesDown = new List<Sprite>(4);
     [SerializeField] private List<Sprite> walkSpritesLeft = new List<Sprite>(4);
+
+    // sounds
+    [Header("Sound Settings")]
+    [SerializeField] private AudioSource enemySoundSource;
+    [SerializeField] private AudioClip hurtSound;
+    [SerializeField] private AudioClip deathSound;
 
     // animation speed
     private float _walkFramesPerSecond = 8f;
@@ -39,6 +46,8 @@ public class TopDownEnemyBehaviour : TopDownEntityBehaviour
         player = (Rigidbody2D)GameObject.Find("Player").GetComponent("Rigidbody2D");
         doors = (TopDownDoorBehaviour[])GameObject.FindObjectsOfType(typeof(TopDownDoorBehaviour));
         currentSprite = transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
+
+        _health = 1;
     }
     
     // Update is called once per frame
@@ -54,15 +63,21 @@ public class TopDownEnemyBehaviour : TopDownEntityBehaviour
         }
 
         // handle player collision
-        if (Mathf.Abs(Vector2.Distance(player.position, transform.position)) <= damageRadius){
+        if (Mathf.Abs(Vector2.Distance(player.position, transform.position)) <= damageRadius && !_isDying){
             player.gameObject.SendMessage("takeDamage");
         }
 
         handleAnimation();
+
+        // wait to die until death sound is done!
+        if (_isDying && !enemySoundSource.isPlaying){
+            Destroy(gameObject);
+        }
     }
 
     // uses helper function to convert current direction into movement vector
     override public Vector2 getMovement(){
+        if (_isDying) { return Vector2.zero; }
         return dirToVec();
     }
 
@@ -79,6 +94,15 @@ public class TopDownEnemyBehaviour : TopDownEntityBehaviour
         return newDir;
     }
     
+    override public void takeDamage(){
+        int pastHealth = _health;
+        base.takeDamage();
+        if (pastHealth != _health && _health > 0){
+            enemySoundSource.clip = hurtSound;
+            enemySoundSource.Play();
+        }
+    }
+
     // on death, kill!!
     override public void handleDeath(){
         // sending a message to All Doors. I am dead
@@ -87,7 +111,9 @@ public class TopDownEnemyBehaviour : TopDownEntityBehaviour
                 doors[i].SendMessage("enemyDeath");
             }
         }
-        Destroy(gameObject);
+        _isDying = true;
+        enemySoundSource.clip = deathSound;
+        enemySoundSource.Play();
     }
 
     virtual public void handleAnimation(){
