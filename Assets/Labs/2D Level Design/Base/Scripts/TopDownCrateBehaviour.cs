@@ -39,14 +39,14 @@ public class TopDownCrateBehaviour : MonoBehaviour
 
             // Check if we are going faster in the x direction or y direction and move on ice with highest direction
             // This should prevent diagonal ice movement
-            if (Mathf.Abs(latestVelocity.x) >= Mathf.Abs(latestVelocity.y))
+            if (Mathf.Abs(latestVelocity.x) >= Mathf.Abs(latestVelocity.y) && _lockForce)
             {
-                rb.velocity = new Vector2(Mathf.Sign(latestVelocity.x) * 10, 0);
+                rb.velocity = new Vector2(Mathf.Sign(latestVelocity.x) * 15, 0);
             }
-            else
+            else if (Mathf.Abs(latestVelocity.x) < Mathf.Abs(latestVelocity.y) && _lockForce)
             {
 
-                rb.velocity = new Vector2(0, Mathf.Sign(latestVelocity.y) * 10);
+                rb.velocity = new Vector2(0, Mathf.Sign(latestVelocity.y) * 15);
             }
         }
         if (!_isOnIce)
