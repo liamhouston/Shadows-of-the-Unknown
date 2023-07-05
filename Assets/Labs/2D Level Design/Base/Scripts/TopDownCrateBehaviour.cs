@@ -30,8 +30,8 @@ public class TopDownCrateBehaviour : MonoBehaviour
         updateIce();
 
         // Check if we are on ice and get latest velocity before being on Ice
-        if (_isOnIce && !isStopped()) { 
-            if (!_lockForce)
+        if (_isOnIce && !isStopped()) {
+            if (!_lockForce )
             {
                 latestVelocity = rb.velocity;
                 _lockForce = true;
@@ -41,14 +41,14 @@ public class TopDownCrateBehaviour : MonoBehaviour
             // This should prevent diagonal ice movement
             if (Mathf.Abs(latestVelocity.x) >= Mathf.Abs(latestVelocity.y) && _lockForce)
             {
-                rb.velocity = new Vector2(Mathf.Sign(latestVelocity.x) * 15, 0);
+                rb.velocity = new Vector2(Mathf.Sign(latestVelocity.x) * 10, 0);
             }
             else if (Mathf.Abs(latestVelocity.x) < Mathf.Abs(latestVelocity.y) && _lockForce)
             {
-
-                rb.velocity = new Vector2(0, Mathf.Sign(latestVelocity.y) * 15);
+                rb.velocity = new Vector2(0, Mathf.Sign(latestVelocity.y) * 10);
             }
         }
+
         if (!_isOnIce)
         {
             if (_lockForce)
@@ -84,7 +84,7 @@ public class TopDownCrateBehaviour : MonoBehaviour
             }
         }
 
-        if (Mathf.Abs(_closestIce.x - transform.position.x) <= _iceThreshold && Mathf.Abs(_closestIce.y - transform.position.y) <= _iceThreshold)
+        if ((Mathf.Abs(_closestIce.x - transform.position.x) <= _iceThreshold && Mathf.Abs(_closestIce.y - transform.position.y) <= _iceThreshold) && !isStopped())
         {
 
             _isOnIce = true;
