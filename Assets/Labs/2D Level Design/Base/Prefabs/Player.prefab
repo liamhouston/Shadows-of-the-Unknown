@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2006271616285821579}
   - component: {fileID: 2006271616285821578}
   - component: {fileID: 4924457988990904593}
-  - component: {fileID: 18187440}
   - component: {fileID: 693238364}
   - component: {fileID: 5998746992836713456}
   m_Layer: 0
@@ -203,22 +202,6 @@ MonoBehaviour:
   puzzleComplete: 0
   puzzleSoundSource: {fileID: 5998746992836713456}
   puzzleCompleteClip: {fileID: 8300000, guid: 92083a60c6e7fdb4b86e3110a69275cd, type: 3}
---- !u!58 &18187440
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006271616285821577}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!82 &693238364
 AudioSource:
   m_ObjectHideFlags: 0
