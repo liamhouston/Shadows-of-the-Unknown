@@ -128,6 +128,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50b21af4d4064d74cb28ee5fc76ec5ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 5
+  invincibilityTime: 1
+  rb: {fileID: 4964052204845527539}
+  _collider: {fileID: 4964052204845527534}
 --- !u!50 &4964052204845527539
 Rigidbody2D:
   serializedVersion: 4
@@ -136,11 +140,11 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4964052204845527538}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 1000
   m_LinearDrag: 100
   m_AngularDrag: 1000000
   m_GravityScale: 0
