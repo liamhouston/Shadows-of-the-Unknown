@@ -17,4 +17,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Labs/2D Level Design/Base/Scenes/BaseTopDownScene_Megan.unity
     guid: f484b631c59974148bada8fe3f635531
+  - enabled: 1
+    path: Assets/Labs/2D Level Design/2D-5 PCG/Scenes/Components/TopDownPCGSegment.unity
+    guid: 24e27b3b1a531d94ba6844df2289cae4
+  - enabled: 1
+    path: Assets/Labs/2D Level Design/2D-5 PCG/Scenes/Components/TopDownPCGSegment
+      1.unity
+    guid: 24d9c285e60a2ba4a915cb50352e3f04
+  - enabled: 1
+    path: Assets/Labs/2D Level Design/2D-5 PCG/Scenes/Components/TopDownPCGSegment
+      3.unity
+    guid: 67cf1779d600dd547beddbdfd37faeb1
+  - enabled: 1
+    path: Assets/Labs/2D Level Design/2D-5 PCG/Scenes/Components/TopDownPCGSegment
+      2.unity
+    guid: 166b822fdc9325f4694b0fc31566145a
   m_configObjects: {}

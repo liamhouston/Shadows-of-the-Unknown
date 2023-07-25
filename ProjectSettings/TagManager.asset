@@ -8,6 +8,7 @@ TagManager:
   - Goal
   - Enemy
   - Ice
+  - PCGController
   layers:
   - Default
   - TransparentFX

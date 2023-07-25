@@ -56,7 +56,7 @@ public class TopDownDoorBehaviour : MonoBehaviour
 
         else if (openCondition == Condition.Puzzle)
         {
-            if (sokobanScript.puzzleComplete && Mathf.Abs(Vector2.Distance(player.position, transform.position)) <= openRadius)
+            if (sokobanScript.puzzleComplete)
             {
                 Unlock();
             }

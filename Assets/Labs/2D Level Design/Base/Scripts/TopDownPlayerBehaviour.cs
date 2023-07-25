@@ -138,6 +138,7 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
             PlayerPrefs.SetInt("keys", 0);
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Destroy(gameObject);
         }
     }
 
