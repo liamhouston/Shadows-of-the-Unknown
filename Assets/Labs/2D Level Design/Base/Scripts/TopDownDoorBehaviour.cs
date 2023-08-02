@@ -37,6 +37,8 @@ public class TopDownDoorBehaviour : MonoBehaviour
 
         // Manually getting sokoban script. Might be better to get the player and call sokoban script when needed
         sokobanScript = (TopDownSokobanBehaviour)player.gameObject.GetComponent(typeof(TopDownSokobanBehaviour));
+
+        
     }
 
     // Update is called once per frame

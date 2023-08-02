@@ -29,7 +29,7 @@ public class TopDownKeyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Mathf.Abs(Vector2.Distance(player.position, transform.position)) <= collectRadius){
+        if (player != null && Mathf.Abs(Vector2.Distance(player.position, transform.position)) <= collectRadius){
             Collect();
         }
     }

@@ -18,6 +18,11 @@ public class TopDownCrateBehaviour : TopDownEntityBehaviour
     private Vector2 previousLocation;
     private Vector2 lastPlayerLocation;
 
+    // sound parameters
+    [SerializeField] private AudioSource boxSoundSource;
+    [SerializeField] private AudioClip boxGroundPush;
+    [SerializeField] private AudioClip boxIceSlide;
+
     // Start is called before the first frame update
     override public void Start()
     {
@@ -51,6 +56,11 @@ public class TopDownCrateBehaviour : TopDownEntityBehaviour
         // if we are on ice, we're moving in our current direction
         if (_isOnIce)
         {
+            boxSoundSource.volume = 1f;
+            boxSoundSource.clip = boxIceSlide;
+            if (!boxSoundSource.isPlaying){
+                boxSoundSource.Play();
+            }
             _lockForce = true;
             return lastPlayerLocation;
         }
@@ -98,6 +108,23 @@ public class TopDownCrateBehaviour : TopDownEntityBehaviour
             }
             else if (minDist == downDist && playerScript.dirToVec() == upDir){
                 update = new Vector2(0, 1);
+            }
+        }
+
+        // if we have an update, we need to be making the move sound!
+        if (previousLocation != (Vector2)transform.position){
+            boxSoundSource.clip = boxGroundPush;
+            boxSoundSource.volume = 1f;
+            if (!boxSoundSource.isPlaying){
+                boxSoundSource.Play();
+            }
+        }
+        // if the box is stationary, stop all sound!
+        else{
+            boxSoundSource.Stop();
+            boxSoundSource.volume = Mathf.Clamp(boxSoundSource.volume - 0.1f, 0f, 1f);
+            if (boxSoundSource.volume == 0f){
+                boxSoundSource.Stop();
             }
         }
 

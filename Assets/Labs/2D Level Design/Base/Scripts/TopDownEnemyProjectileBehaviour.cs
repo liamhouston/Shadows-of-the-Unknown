@@ -35,7 +35,6 @@ public class TopDownEnemyProjectileBehaviour : MonoBehaviour
     {
         player = (Rigidbody2D)GameObject.Find("Player").GetComponent("Rigidbody2D");
         currentSprite = (SpriteRenderer)this.gameObject.transform.GetChild(0).gameObject.GetComponent("SpriteRenderer");
-        print("hi");
     }
 
     void FixedUpdate(){

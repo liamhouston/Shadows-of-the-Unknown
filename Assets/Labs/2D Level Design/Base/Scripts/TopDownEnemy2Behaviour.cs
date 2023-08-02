@@ -18,11 +18,11 @@ public class TopDownEnemy2Behaviour : TopDownEnemyBehaviour
     private bool _isFiring;
     private float _firingFramesPerSecond = 8f;
 
-
     // Start is called before the first frame update
     override public void Start()
     {
         base.Start();
+        moveTime = 0.75f;
         _currentTime = projectileTimer;
         _health = 2;
     }
@@ -30,6 +30,10 @@ public class TopDownEnemy2Behaviour : TopDownEnemyBehaviour
     // Update is called once per frame
     override public void FixedUpdate()
     {
+        if (player == null){
+            player = (Rigidbody2D)GameObject.Find("Player").GetComponent("Rigidbody2D");
+        }
+
         base.FixedUpdate();
         _currentTime -= Time.deltaTime;
         
@@ -38,13 +42,39 @@ public class TopDownEnemy2Behaviour : TopDownEnemyBehaviour
             _isFiring = true;
             _currentFrame = 0;
             _currentTime = projectileTimer;
-
-            
         }
     }
 
     override public Direction pickDirection(){
         if (_isFiring) {return _currDir;}
+
+        // 75/25 chance to move towards the player vs move randomly (exploit vs explore)
+        if (Random.Range(0, 4) != 1){
+            // 50/50 chance to go horizontal or vertical towards player
+            // horizontal
+            if (Random.Range(0, 2) == 1 && Mathf.Abs(player.position.x - transform.position.x) > 1f){
+                if (player.position.x > transform.position.x){
+                    return Direction.East;
+                }
+                else{
+                    return Direction.West;
+                }
+            }
+            // vertical
+            else if (Mathf.Abs(player.position.y - transform.position.y) > 1f){
+                if (player.position.y > transform.position.y){
+                    return Direction.North;
+                }
+                else{
+                    return Direction.South;
+                }
+            }
+            // if we are lined up on an axis, it's time to walk the same way we are currently walking!
+            else{
+                return _currDir;
+            }
+        }
+
         return base.pickDirection();
     }
 

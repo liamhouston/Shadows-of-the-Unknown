@@ -50,10 +50,14 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
     [SerializeField] private AudioClip keyPickupSound;
     [SerializeField] private AudioClip pitFallSound;
 
+    [SerializeField] private AudioSource playerWalkSoundSource;
+    [SerializeField] private AudioClip walkSound;
+    [SerializeField] private AudioClip slipSound;
+
     // internal variables    
     // attack parameters
     private bool _isAttacking = false;
-    private float _attackThreshold = 1.5f;
+    private float _attackThreshold = 1.75f;
     private float _attackCountdown;
 
     // animation speed
@@ -105,6 +109,11 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
         // set up sprite
         currentSprite = transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
         shadow = transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>();
+
+        // set up walk sound
+        playerWalkSoundSource.clip = walkSound;
+
+        lastSafePosition = transform.position;
     }
 
     // Update is called once per frame
@@ -115,6 +124,28 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
         // handle attack and damage collisions
         if (_isAttacking || Input.GetKey(attack)){
             handleAttack();
+        }
+
+        // handle walk sound
+        if (!_isFalling && !_isOnIce && lastSafePosition != (Vector2)transform.position){
+            playerWalkSoundSource.volume = 0.25f;
+            playerWalkSoundSource.clip = walkSound;
+            if (!playerWalkSoundSource.isPlaying){
+                playerWalkSoundSource.Play();
+            }
+        }
+        else if (_isOnIce){
+            playerWalkSoundSource.volume = 0.25f;
+            playerWalkSoundSource.clip = slipSound;
+            if (!playerWalkSoundSource.isPlaying){
+                playerWalkSoundSource.Play();
+            }
+        }
+        else{
+            playerWalkSoundSource.volume = Mathf.Clamp(playerWalkSoundSource.volume - 0.05f, 0f, 1f);
+            if (playerWalkSoundSource.volume == 0f){
+                playerWalkSoundSource.Stop();
+            }
         }
 
         // if we aren't falling, save our last safe position!
@@ -129,6 +160,8 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
 
         handleAnimation();
 
+        
+
         if (_isDead){
             // only die once we are done playing the death sound!
             if (playerSoundSource.isPlaying) { return; }
@@ -138,7 +171,7 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
             PlayerPrefs.SetInt("keys", 0);
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 
@@ -178,17 +211,23 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
         // _canAttack = false;
         _isAttacking = true;
         Vector2 attackDir = dirToVec();
+        Vector2 extents = _collider.bounds.extents;
+
+        Vector2 posUp = new Vector2(rb.position.x - extents.x, rb.position.y);
+        Vector2 posDown = new Vector2(rb.position.x + extents.x, rb.position.y);
 
         RaycastHit2D attackRay = Physics2D.Raycast(rb.position, attackDir);
-        if (attackRay.collider && attackRay.distance < _attackThreshold){
-            Debug.Log("hit!");
-            Debug.Log(_currDir);
+        RaycastHit2D attackRayUp = Physics2D.Raycast(posUp, attackDir);
+        RaycastHit2D attackRayDown = Physics2D.Raycast(posDown, attackDir);
 
+        if (attackCollision(attackRay)){
             attackRay.collider.gameObject.SendMessage("takeDamage");
-
         }
-        else{
-            Debug.Log("no hit!");
+        if (attackCollision(attackRayUp)){
+            attackRayUp.collider.gameObject.SendMessage("takeDamage");
+        }
+        if (attackCollision(attackRayDown)){
+            attackRayDown.collider.gameObject.SendMessage("takeDamage");
         }
 
         // play the attack sound!
@@ -406,8 +445,8 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
         }
 
         if (Mathf.Abs(_closestIce.x - transform.position.x) <= _iceThreshold && Mathf.Abs(_closestIce.y - transform.position.y) <= _iceThreshold && !isStopped()){
-
             _isOnIce = true;
+            
         }
         else{
             _isOnIce = false;
@@ -416,5 +455,9 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
 
     public bool isStopped(){
         return (lastSafePosition.x == transform.position.x && lastSafePosition.y == transform.position.y);
+    }
+
+    public bool attackCollision(RaycastHit2D attackRay){
+        return attackRay.collider && attackRay.distance < _attackThreshold && attackRay.transform.gameObject.tag == "Enemy";
     }
 }

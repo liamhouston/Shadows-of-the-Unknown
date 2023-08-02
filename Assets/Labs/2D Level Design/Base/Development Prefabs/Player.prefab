@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4924457988990904593}
   - component: {fileID: 693238364}
   - component: {fileID: 5998746992836713456}
+  - component: {fileID: 8020971037757381641}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -30,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2006271616285821577}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.243, y: -1.842, z: 0}
+  m_LocalPosition: {x: -0.243, y: -1.842, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2006271616997992751}
@@ -140,6 +141,9 @@ MonoBehaviour:
   doorOpenSound: {fileID: 8300000, guid: 87239c6d8a8a1b946adf2590cc97d4bc, type: 3}
   keyPickupSound: {fileID: 8300000, guid: edfbdbf71cfa23643a1ffbc505080331, type: 3}
   pitFallSound: {fileID: 8300000, guid: cc488dc52acc6bc4b85981a52e54eb16, type: 3}
+  playerWalkSoundSource: {fileID: 8020971037757381641}
+  walkSound: {fileID: 8300000, guid: e2a7d3156a773904b960a3d54c02fe0b, type: 3}
+  slipSound: {fileID: 8300000, guid: dda89c61c55b96d4096da353d8a60cd7, type: 3}
 --- !u!61 &2006271616285821579
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -153,7 +157,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.005508721}
+  m_Offset: {x: 0, y: -0.048538268}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -164,7 +168,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7338946, y: 0.7449125}
+  m_Size: {x: 0.6491084, y: 0.6588534}
   m_EdgeRadius: 0
 --- !u!50 &2006271616285821578
 Rigidbody2D:
@@ -201,6 +205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleComplete: 0
   puzzleSoundSource: {fileID: 5998746992836713456}
+  boxCompleteClip: {fileID: 8300000, guid: 87239c6d8a8a1b946adf2590cc97d4bc, type: 3}
   puzzleCompleteClip: {fileID: 8300000, guid: 92083a60c6e7fdb4b86e3110a69275cd, type: 3}
 --- !u!82 &693238364
 AudioSource:
@@ -313,6 +318,102 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &8020971037757381641
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006271616285821577}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.25
+  m_Pitch: 1
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

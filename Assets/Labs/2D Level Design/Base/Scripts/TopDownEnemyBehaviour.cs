@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class TopDownEnemyBehaviour : TopDownEntityBehaviour
 {
@@ -12,6 +13,7 @@ public class TopDownEnemyBehaviour : TopDownEntityBehaviour
     // internal variables
     private float _remainingTime;
     protected bool _isDying = false;
+    private bool _wallDeath = false;
 
     // sprites
     [Header("Sprite Settings")]
@@ -34,26 +36,52 @@ public class TopDownEnemyBehaviour : TopDownEntityBehaviour
     protected SpriteRenderer currentSprite;
 
     // the player & doors
-    private Rigidbody2D player;
+    protected Rigidbody2D player;
     private TopDownDoorBehaviour[] doors = {};
+    
+    // time to check if we live inside a wall
+    private Tilemap tiles;
 
     // Start is called before the first frame update
     override public void Start()
     {
         base.Start();
         _remainingTime = moveTime;
-        _currDir = pickDirection();
+
         player = (Rigidbody2D)GameObject.Find("Player").GetComponent("Rigidbody2D");
         doors = (TopDownDoorBehaviour[])GameObject.FindObjectsOfType(typeof(TopDownDoorBehaviour));
+        tiles = (Tilemap)GameObject.Find("Tilemap").GetComponent("Tilemap");
+        
         currentSprite = transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
 
         _health = 1;
+
+        _currDir = pickDirection();
+
+        // check if there's a tile at our current location. If so, it's time to die
+        Vector3Int intPosition = new Vector3Int((int)Mathf.Floor(transform.position.x), (int)Mathf.Floor(transform.position.y), 0);
+        if (tiles.HasTile(intPosition) && (tiles.GetTile(intPosition).name == "CaveRuleTile" || tiles.GetTile(intPosition).name == "PitRuleTile")){
+            _wallDeath = true;
+        }
     }
     
     // Update is called once per frame
     override public void FixedUpdate()
     {
+
+        if (player == null){
+            player = (Rigidbody2D)GameObject.Find("Player").GetComponent("Rigidbody2D");
+        }
+
+        // if we are in a wall, die time
+        if (_wallDeath){
+            handleDeath();
+            _wallDeath = false;
+        }
+
         base.FixedUpdate();
+
+        
 
         // handle movement, change directions after elapsed time
         _remainingTime -= Time.deltaTime;
