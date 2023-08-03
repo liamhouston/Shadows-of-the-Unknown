@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Ice
   - PCGController
+  - PCGComponent
   layers:
   - Default
   - TransparentFX
