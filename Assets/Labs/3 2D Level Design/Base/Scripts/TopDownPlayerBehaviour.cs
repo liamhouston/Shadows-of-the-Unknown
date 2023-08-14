@@ -57,7 +57,7 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
     // internal variables    
     // attack parameters
     private bool _isAttacking = false;
-    private float _attackThreshold = 1.75f;
+    private float _attackThreshold = 1.8f;
     private float _attackCountdown;
 
     // animation speed
