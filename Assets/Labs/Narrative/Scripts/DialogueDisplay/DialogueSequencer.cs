@@ -11,6 +11,7 @@ namespace Narrative
     public class DialogueSequencer : MonoBehaviour
     {
         //Event Callbacks
+        public UnityEvent onStarted;
         public UnityEvent onFinish;
 
         //Sub-Object references
@@ -44,6 +45,8 @@ namespace Narrative
             //Open and play
             textbox.OpenTextbox();
             ParseLine(currentLine);
+
+            onStarted.Invoke();
         }
 
         /// <summary>

@@ -85,6 +85,16 @@ namespace Narrative
         }
 
         /// <summary>
+        /// Gets the value in the given row and column of the CSV data.
+        /// Doesn't error check for validity.
+        /// </summary>
+        /// <returns>Contents of the cell.</returns>
+        public string GetCell(int lineNum, int columnNum)
+        {
+            return (lines[lineNum][columnNum]);
+        }
+
+        /// <summary>
         /// Gets the dialogue from the line. Currently defined as the last non-tag non-empty entry in the row.
         /// </summary>
         public string GetRowDialogue(int lineNum)

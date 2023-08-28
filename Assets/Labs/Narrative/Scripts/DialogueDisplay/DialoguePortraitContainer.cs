@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Narrative {
     /// <summary>
-    /// Container class for portraits to be retrieved by string ids.
+    /// Container class for portrait references to be retrieved by string ids.
     /// </summary>
     public class DialoguePortraitContainer : MonoBehaviour
     {

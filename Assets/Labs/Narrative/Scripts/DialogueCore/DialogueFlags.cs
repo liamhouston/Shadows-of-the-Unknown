@@ -18,7 +18,7 @@ namespace Narrative
         [SerializeField] private bool[] flags = new bool[NUMFLAGS];
 
         /// <summary>
-        /// Class constructor. Assigns itself as th esingleton instance.
+        /// Class constructor. Assigns itself as the singleton instance.
         /// </summary>
         public DialogueFlags()
         {

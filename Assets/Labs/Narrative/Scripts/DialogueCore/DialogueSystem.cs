@@ -11,6 +11,7 @@ namespace Narrative
     public class DialogueSystem : MonoBehaviour
     {
         //Event Callbacks
+        public UnityEvent onDialogueStarted;
         public UnityEvent onDialogueEnd;
         public static UnityEvent OnDialogueEnd { get { return Instance.onDialogueEnd; } }
 
@@ -52,6 +53,7 @@ namespace Narrative
         public static void PlaySequence(DialogueSequence dialogue)
         {
             Instance.dialogueSequencer.PlaySequence(dialogue);
+            Instance.onDialogueStarted.Invoke();
         }
 
         /// <summary>
