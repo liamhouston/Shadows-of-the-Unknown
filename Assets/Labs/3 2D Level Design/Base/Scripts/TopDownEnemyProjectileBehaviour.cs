@@ -76,7 +76,11 @@ public class TopDownEnemyProjectileBehaviour : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col){
         if (col.tag == "Enemy") { return; }
         if (col.tag == "Player"){
-            player.gameObject.SendMessage("takeDamage");
+            if (player != null)
+            {
+                player.gameObject.SendMessage("takeDamage");
+            }
+
         }
 
         // impact has happened, adjust animations and play sound
