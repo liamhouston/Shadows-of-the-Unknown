@@ -4,63 +4,95 @@ using UnityEngine;
 
 public class AnimatedEntity : MonoBehaviour
 {
-    public List<Sprite> DefaultAnimationCycle;
-    public float Framerate = 12f;//frames per second
-    public SpriteRenderer SpriteRenderer;//spriteRenderer
+    public List<Sprite> DefaultAnimationCycle; // Standing (idle) animation frames
+    public List<Sprite> WalkingAnimationCycle; // Walking animation frames
+    public float Framerate = 12f; // Frames per second
+    public SpriteRenderer SpriteRenderer; // SpriteRenderer
 
-    //private animation stuff
-    private float animationTimer;//current number of seconds since last animation frame update
-    private float animationTimerMax;//max number of seconds for each frame, defined by Framerate
-    private int index;//current index in the DefaultAnimationCycle
-    
+    private float animationTimer;
+    private float animationTimerMax;
+    private int index;
 
-    //interrupt animation info
     private bool interruptFlag;
     private List<Sprite> interruptAnimation;
 
+    // New variables to handle different states
+    private enum AnimationState { Idle, Walking }
+    private AnimationState currentState = AnimationState.Idle;
 
-    //Set up logic for animation stuff
-    protected void AnimationSetup(){
-        animationTimerMax = 1.0f/((float)(Framerate));
+    protected void AnimationSetup()
+    {
+        animationTimerMax = 1.0f / Framerate;
         index = 0;
     }
 
-    //Default animation update
-    protected void AnimationUpdate(){
-        animationTimer+=Time.deltaTime;
+    protected void AnimationUpdate()
+    {
+        animationTimer += Time.deltaTime;
 
-        if(animationTimer>animationTimerMax){
+        if (animationTimer > animationTimerMax)
+        {
             animationTimer = 0;
             index++;
 
-            if(!interruptFlag){
-                if(DefaultAnimationCycle.Count==0 || index>=DefaultAnimationCycle.Count){
-                    index=0;
-                }
-                if(DefaultAnimationCycle.Count>0){
-                    SpriteRenderer.sprite = DefaultAnimationCycle[index];
+            if (!interruptFlag)
+            {
+                switch (currentState)
+                {
+                    case AnimationState.Idle:
+                        PlayAnimationCycle(DefaultAnimationCycle);
+                        break;
+                    case AnimationState.Walking:
+                        PlayAnimationCycle(WalkingAnimationCycle);
+                        break;
                 }
             }
-            else{
-                if(interruptAnimation==null || index>=interruptAnimation.Count){
-                    index=0;
+            else
+            {
+                // Handle interrupt animation
+                if (interruptAnimation == null || index >= interruptAnimation.Count)
+                {
+                    index = 0;
                     interruptFlag = false;
-                    interruptAnimation= null;//clear interrupt animation
+                    interruptAnimation = null;
                 }
-                else{
+                else
+                {
                     SpriteRenderer.sprite = interruptAnimation[index];
                 }
             }
         }
     }
 
-    //Interrupt animation
-    protected void Interrupt(List<Sprite> _interruptAnimation){
+    private void PlayAnimationCycle(List<Sprite> animationCycle)
+    {
+        if (animationCycle.Count == 0 || index >= animationCycle.Count){
+            index = 0;
+        }
+        if (animationCycle.Count > 0){
+            SpriteRenderer.sprite = animationCycle[index];
+        }
+    }
+
+    protected void Interrupt(List<Sprite> _interruptAnimation)
+    {
         interruptFlag = true;
         animationTimer = 0;
         index = 0;
         interruptAnimation = _interruptAnimation;
         SpriteRenderer.sprite = interruptAnimation[index];
     }
-    
+
+    // Call this method to switch to walking animation
+    public void setStateWalk()
+    {
+        currentState = AnimationState.Walking;
+    }
+
+    // Call this method to switch to idle animation
+    public void setStateIdle()
+    {
+        currentState = AnimationState.Idle;
+        index = 0; // Reset index for smooth transition
+    }
 }
