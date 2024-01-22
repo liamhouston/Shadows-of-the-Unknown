@@ -23,6 +23,9 @@ TextureImporter:
   - first:
       213: -8247427897190936331
     second: walk_5
+  - first:
+      213: -7449960293903617258
+    second: headshot
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -112,12 +115,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 19
-        y: 80
+        y: 79
         width: 10
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 1, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -137,7 +140,7 @@ TextureImporter:
         width: 11
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -158,7 +161,7 @@ TextureImporter:
         width: 12
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -179,7 +182,7 @@ TextureImporter:
         width: 9
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -200,7 +203,7 @@ TextureImporter:
         width: 11
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -221,7 +224,7 @@ TextureImporter:
         width: 12
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -242,7 +245,7 @@ TextureImporter:
         width: 12
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -250,6 +253,27 @@ TextureImporter:
       bones: []
       spriteID: 5f0994536004b8d80800000000000000
       internalID: -8247427897190936331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: headshot
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 86
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6133c13959c6c9890800000000000000
+      internalID: -7449960293903617258
       vertices: []
       indices: 
       edges: []

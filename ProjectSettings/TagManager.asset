@@ -10,6 +10,7 @@ TagManager:
   - Ice
   - PCGController
   - PCGComponent
+  - NPC
   layers:
   - Default
   - TransparentFX

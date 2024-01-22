@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class startCameraScene : MonoBehaviour
+public class startScene : MonoBehaviour
 {
     private bool playerIsNearby = false;
-    private string sceneToLoad = "CameraMiniGameScene";
+    public string sceneToLoad;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +16,7 @@ public class startCameraScene : MonoBehaviour
 
     // Update is called once per frame
     void Update(){
-        if (playerIsNearby && Input.GetKey(KeyCode.C)){
+        if (playerIsNearby && Input.GetKey(KeyCode.I)){
             Debug.LogError("Opening a new Scene!");
             //SceneManager.LoadScene(sceneToLoad);
         }
