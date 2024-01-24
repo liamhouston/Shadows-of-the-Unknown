@@ -11,6 +11,7 @@ TagManager:
   - PCGController
   - PCGComponent
   - NPC
+  - Bush
   layers:
   - Default
   - TransparentFX
@@ -47,4 +48,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: background
+    uniqueID: 1872641687
+    locked: 0
+  - name: bush
+    uniqueID: 896621641
     locked: 0
