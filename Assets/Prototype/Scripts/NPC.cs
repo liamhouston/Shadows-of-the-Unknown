@@ -19,6 +19,8 @@ public class NPC : MonoBehaviour{
     public float wordSpeed;
     public bool playerIsNearby;
 
+    public bool stopTyping = false; // check this everytime before a character gets typed. This allows a call to zeroText() to interupt the typing sequence (so the text from a previous interaction doesn't appear)
+
     // Update is called once per frame
     void Update(){
         // if player within range and interacts
@@ -34,28 +36,34 @@ public class NPC : MonoBehaviour{
                 StartCoroutine(Typing());
             }
         }
-
-        Debug.LogError("This is the current dialogue text:" + dialogueText.text + "This is the full line of dialogue:" + dialogue[line_index]);
         if(dialogueText.text == dialogue[line_index]){
-            Debug.LogError("Reached the end of this line of dialogue");
             contButton.SetActive(true);
         }
+        
     }
 
 
 
     public void zeroText(){
         // this function clears the dialoguePanel and resets
+        stopTyping = true;
         dialogueText.text = "";
         line_index = 0;
         dialoguePanel.SetActive(false);
     }
 
     IEnumerator Typing(){
+        stopTyping = false;
         // this function types out each individual letter of the dialogue
         foreach (char letter in dialogue[line_index].ToCharArray()){
-            dialogueText.text += letter;
-            yield return new WaitForSeconds(wordSpeed);
+            if (!stopTyping){
+                dialogueText.text += letter;
+                yield return new WaitForSeconds(wordSpeed);
+            }
+            else {
+                stopTyping = false;
+                break;
+            }    
         }
     }
 
@@ -63,7 +71,7 @@ public class NPC : MonoBehaviour{
         // this function is called by the OnClick for the continueButton
         contButton.SetActive(false);
 
-        if (line_index < dialogue.Length -1){
+        if (line_index < dialogue.Length - 1){
             line_index++;
             dialogueText.text = "";
             StartCoroutine(Typing());
@@ -73,8 +81,6 @@ public class NPC : MonoBehaviour{
             zeroText();
         }
     }
-
-
 
     private void OnTriggerEnter2D(Collider2D other){
         if (other.CompareTag("Player")){
