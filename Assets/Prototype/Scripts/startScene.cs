@@ -19,20 +19,17 @@ public class startScene : MonoBehaviour
         playerIsNearby = false;
     }
     void OnTriggerEnter2D(Collider2D other){
-        Debug.LogError("Collision with bush");
         if (other.CompareTag("Player")) playerIsNearby = true;
         InteractwithText.SetActive(true);
     }
 
     void OnTriggerExit2D(Collider2D other){
-        Debug.LogError("Exit collision with bush");
         if (other.CompareTag("Player")) playerIsNearby = false;
         InteractwithText.SetActive(false);
     }
     // Update is called once per frame
     void Update(){
         if (playerIsNearby && Input.GetKey(KeyCode.I)){
-            Debug.LogError("Opening a new Scene!");
             InteractwithText.SetActive(false);
             if (this.CompareTag("Bush") && darkMode == false)
             {
@@ -46,7 +43,7 @@ public class startScene : MonoBehaviour
             {
                 darkMode = false;
                 // sceneToLoad = SceneManager.GetActiveScene().ToString().PadRight(-4);
-                SceneManager.LoadScene("PrototypeScene");
+                SceneManager.LoadScene(("PrototypeScene"));
             }
             //SceneManager.LoadScene(sceneToLoad);
         }

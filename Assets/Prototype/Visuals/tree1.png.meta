@@ -5,6 +5,9 @@ TextureImporter:
   - first:
       213: -2541579827414792756
     second: bush_0
+  - first:
+      213: 7209657227957792324
+    second: tree0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -98,7 +101,7 @@ TextureImporter:
         width: 44
         height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -106,6 +109,27 @@ TextureImporter:
       bones: []
       spriteID: cc584a2ec9e7abcd0800000000000000
       internalID: -2541579827414792756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 139
+        width: 93
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 1, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44e60c8ec09dd0460800000000000000
+      internalID: 7209657227957792324
       vertices: []
       indices: 
       edges: []
