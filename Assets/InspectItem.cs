@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class InspectItem : MonoBehaviour
 {
+    private SpriteRenderer spriteRenderer;
+
     private bool playerIsNearby = false;
     private float imageHeight = 400;
 
@@ -13,10 +15,15 @@ public class InspectItem : MonoBehaviour
     public GameObject InteractwithText;
     //public AudioSource InteractwithSound;
 
+    private Color originalColor;
+    public Color highlightColor = new Color(1f, 0.5255f, 0.5255f);
+
 
     // Start is called before the first frame update
     void Start(){
+        spriteRenderer = GetComponent<SpriteRenderer>();
         InteractwithText.SetActive(false);
+        originalColor = spriteRenderer.color;
     }
 
     // Update is called once per frame
@@ -26,9 +33,6 @@ public class InspectItem : MonoBehaviour
                 itemCanvas.SetActive(false);
             }
             else {
-                // get the sprite image from this object
-                SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-                
                 // Calculate the aspect ratio of the image
                 float aspectRatio = (float) spriteRenderer.sprite.bounds.size.x / spriteRenderer.sprite.bounds.size.y;
                 float newWidth = imageHeight * aspectRatio;
@@ -49,6 +53,7 @@ public class InspectItem : MonoBehaviour
         if (other.CompareTag("Player")) {
             playerIsNearby = true;
             InteractwithText.SetActive(true);
+            spriteRenderer.color = highlightColor;
         }
     }
 
@@ -57,6 +62,7 @@ public class InspectItem : MonoBehaviour
             playerIsNearby = false;
             InteractwithText.SetActive(false);
             itemCanvas.SetActive(false);
+            spriteRenderer.color = originalColor;
         }    
     }
 }
