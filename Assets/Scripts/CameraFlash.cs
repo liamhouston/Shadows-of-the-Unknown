@@ -18,8 +18,7 @@ public class CameraFlash : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) && readyFlash)
-        {
+        if (Input.GetMouseButtonDown(1) && readyFlash){
             readyFlash = false;
             StartCoroutine(WaitForFlash());
         }
@@ -37,11 +36,13 @@ public class CameraFlash : MonoBehaviour
         yield return new WaitForSeconds(flashDelay);
 
         AudioController.Instance.PlayCameraShutter();
+        flashLight.transform.position = this.transform.position;
         flashLight.SetActive(true);
         yield return new WaitForSeconds(flashLength);
+
         flashLight.SetActive(false);
         yield return new WaitForSeconds(afterFlashDelay);
-        Debug.Log("5seconds");
+
         readyFlash = true;
     }
 }
