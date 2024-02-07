@@ -13,6 +13,8 @@ public class InspectItem : MonoBehaviour
     public GameObject itemCanvas;
 
     public GameObject InteractwithText;
+
+    public Sprite displayImage = null;
     //public AudioSource InteractwithSound;
 
     private Color originalColor;
@@ -22,6 +24,7 @@ public class InspectItem : MonoBehaviour
     // Start is called before the first frame update
     void Start(){
         spriteRenderer = GetComponent<SpriteRenderer>();
+        Debug.Assert(spriteRenderer != null, "SpriteRenderer must exist on this object");
         InteractwithText.SetActive(false);
         originalColor = spriteRenderer.color;
     }
@@ -40,9 +43,13 @@ public class InspectItem : MonoBehaviour
                 // Set the size of the Canvas based on the aspect ratio
                 itemCanvas.GetComponent<RectTransform>().sizeDelta = new Vector2(newWidth, imageHeight);
 
-                // Set the RawImage component of the Canvas to display the inspected image
-                itemCanvas.GetComponentInChildren<Image>().sprite = spriteRenderer.sprite;
-
+                // Set the image to the display image or the sprite
+                if (displayImage != null){
+                    itemCanvas.GetComponentInChildren<RawImage>().texture = displayImage.texture;
+                }
+                else {
+                    itemCanvas.GetComponentInChildren<RawImage>().texture = spriteRenderer.sprite.texture;
+                }
                 itemCanvas.SetActive(true);
             }
         }
@@ -50,6 +57,7 @@ public class InspectItem : MonoBehaviour
 
 
     void OnTriggerEnter2D(Collider2D other){
+        Debug.Log("logged collision");
         if (other.CompareTag("Player")) {
             playerIsNearby = true;
             InteractwithText.SetActive(true);
@@ -58,6 +66,7 @@ public class InspectItem : MonoBehaviour
     }
 
     void OnTriggerExit2D(Collider2D other){
+                    Debug.Log("exited logged collision");
         if (other.CompareTag("Player")) {
             playerIsNearby = false;
             InteractwithText.SetActive(false);

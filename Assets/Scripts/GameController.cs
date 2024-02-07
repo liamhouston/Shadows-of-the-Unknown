@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
 
     [Header("Player Info")]
     [SerializeField] private int _maxResolve = 100;
-    [SerializeField] private int _currentReslove;
+    [SerializeField] private int _currentResolve;
     public ResolveBar resolveBar;
 
     void Awake()
@@ -21,8 +21,11 @@ public class GameController : MonoBehaviour
         else
         {
             _instance = this;
-            _currentReslove = _maxResolve;
+            _currentResolve = _maxResolve;
             resolveBar.SetMaxResolve(_maxResolve);
         }
     }
+
+
+    
 }

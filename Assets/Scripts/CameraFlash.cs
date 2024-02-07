@@ -24,13 +24,6 @@ public class CameraFlash : MonoBehaviour
         }
     }
     
-    // void TriggerCameraShutter()
-    // {
-    //     if (Input.GetMouseButtonDown(1) && !flashLight.activeSelf)
-    //     {
-    //         StartCoroutine(WaitForFlash());
-    //     }
-    // }
     private IEnumerator WaitForFlash()
     {
         yield return new WaitForSeconds(flashDelay);
