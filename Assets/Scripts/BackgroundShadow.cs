@@ -9,7 +9,12 @@ public class BackgroundShadow : MonoBehaviour
 
     public float waitTime = 5.0f;
 
-    private bool shadowIsVisible = true;
+    private bool shadowIsVisible = false;
+
+    private void Start(){
+        // wait before shadow appears in scene
+        StartCoroutine(MoveShadow());
+    }
 
     IEnumerator MoveShadow(){
         float newX = Random.Range(leftBound, rightBound);
