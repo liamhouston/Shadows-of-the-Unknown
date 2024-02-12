@@ -26,12 +26,11 @@ public class startScene : MonoBehaviour
     }
     // Update is called once per frame
     void Update(){
-        if (playerIsNearby && Input.GetKey(KeyCode.I)){
+        if (playerIsNearby && Input.GetKeyDown(KeyCode.I)){
             InteractwithText.SetActive(false);
-            if (this.CompareTag("Bush"))
-            {
-                LevelManager.Instance.LoadScene(sceneToLoad, "CrossFade");
-            }
+            LevelManager.Instance.LoadScene(sceneToLoad, "CrossFade");
+            MusicManager.Instance.PlayMusic(sceneToLoad);
+
         }
     }
 

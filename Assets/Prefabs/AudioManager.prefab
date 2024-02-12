@@ -193,8 +193,10 @@ MonoBehaviour:
   tracks:
   - trackName: MainMenu
     clip: {fileID: 8300000, guid: 0ba682da4bde7e34aaff7051da9996fb, type: 3}
-  - trackName: FirstPerson
+  - trackName: Fishdock
     clip: {fileID: 8300000, guid: 0dc4035b20dddac46a4f8954d223fd52, type: 3}
+  - trackName: Campsite
+    clip: {fileID: 8300000, guid: 62883bbf8eabc9c4f9c0a039fc0c5a01, type: 3}
 --- !u!114 &4063165185107553850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +230,13 @@ MonoBehaviour:
   - groupID: MenuSelect
     clips:
     - {fileID: 8300000, guid: 64cb7821bc148b34f94f1ef44944f083, type: 3}
+  - groupID: Heartbeating
+    clips:
+    - {fileID: 8300000, guid: 1066b85efe0640f4aa5820cf2e6d32b1, type: 3}
+    - {fileID: 8300000, guid: 69dd128e3d11f504e95af9dec2b2adf2, type: 3}
+  - groupID: ScaryAmbientWind
+    clips:
+    - {fileID: 8300000, guid: 2d0726f0018f679498add1ec8e15f45c, type: 3}
 --- !u!1 &4063165185422374783
 GameObject:
   m_ObjectHideFlags: 0

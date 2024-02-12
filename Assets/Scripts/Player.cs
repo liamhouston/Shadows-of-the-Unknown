@@ -16,26 +16,33 @@ public class Player : AnimatedEntity
 
     // Update is called once per frame
     void Update(){
-        AnimationUpdate();
-        
-        // Movement controls
-        if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)){
-            setStateWalk();
-            transform.position+= Vector3.left*Time.deltaTime*Speed;
-            if (transform.localScale.x > 0){ // if facing right, flip sprite
-                transform.localScale = new Vector3(-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z);
-            }    
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseManager.Instance.EscapceCheck();
         }
-        else if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)){
-            setStateWalk();
-            transform.position+= Vector3.right*Time.deltaTime*Speed;
-            if (transform.localScale.x < 0){ // if facing left, flip sprite
-                transform.localScale = new Vector3(-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        else
+        {
+            AnimationUpdate();
+            // Movement controls
+            if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)){
+                setStateWalk();
+                transform.position+= Vector3.left*Time.deltaTime*Speed;
+                if (transform.localScale.x > 0){ // if facing right, flip sprite
+                    transform.localScale = new Vector3(-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                }    
+            }
+            else if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)){
+                setStateWalk();
+                transform.position+= Vector3.right*Time.deltaTime*Speed;
+                if (transform.localScale.x < 0){ // if facing left, flip sprite
+                    transform.localScale = new Vector3(-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                }
+            }
+            else {
+                setStateIdle();
             }
         }
-        else {
-            setStateIdle();
-        }
+        
 
     }
 }
