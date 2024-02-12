@@ -6,7 +6,7 @@ AudioMixerController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NewAudioMixer
+  m_Name: Master
   m_OutputGroup: {fileID: 0}
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
@@ -72,7 +72,9 @@ AudioMixerSnapshotController:
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 75365b052b7ab5d4dacb054d2770e049
-  m_FloatValues: {}
+  m_FloatValues:
+    25b0f73428d3aa3418dcf785fceb8444: 0
+    f1d3460b1f16aa449ba858026454a849: 0
   m_TransitionOverrides: {}
 --- !u!243 &319664540933368929
 AudioMixerGroupController:
