@@ -57,7 +57,6 @@ public class InspectItem : MonoBehaviour
 
 
     void OnTriggerEnter2D(Collider2D other){
-        Debug.Log("logged collision");
         if (other.CompareTag("Player")) {
             playerIsNearby = true;
             InteractwithText.SetActive(true);
@@ -66,7 +65,6 @@ public class InspectItem : MonoBehaviour
     }
 
     void OnTriggerExit2D(Collider2D other){
-                    Debug.Log("exited logged collision");
         if (other.CompareTag("Player")) {
             playerIsNearby = false;
             InteractwithText.SetActive(false);

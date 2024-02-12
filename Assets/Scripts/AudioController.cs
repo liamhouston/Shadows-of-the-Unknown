@@ -13,6 +13,8 @@ public class AudioController : MonoBehaviour
     public AudioClip firstDamageSound;
     public AudioClip defaultDamageSound;
 
+    public AudioClip backgroundShadowMovementSound;
+
     private AudioController audioController;
 
 
@@ -37,4 +39,15 @@ public class AudioController : MonoBehaviour
     public void PlayDefaultDamageSound() {
         audioSource.PlayOneShot(defaultDamageSound);
     }
+    public void PlayBackgroundShadowMovementSound() {
+        audioSource.clip = backgroundShadowMovementSound;
+        audioSource.time = 1.0f;
+        audioSource.Play();
+        StartCoroutine(stopSoundAfterSeconds(1.5f));
+
+    }
+    IEnumerator stopSoundAfterSeconds(float seconds){
+        yield return new WaitForSeconds(seconds);
+        audioSource.Stop();
+    }  
 }

@@ -10,7 +10,13 @@ public class GameController : MonoBehaviour {
     private static GameController _instance;
     public static GameController Instance {get{return _instance;}}
 
+    private float default_amplitude;
+    private float default_frequency;
+
     public CinemachineVirtualCamera CinemachineVirtualCamera;
+
+    public NoiseSettings ShakeNoiseProfile;
+    public NoiseSettings DefaultNoiseProfile;
 
     [Header("Player Info")]
     [SerializeField] private int _maxResolve = 100;
@@ -18,6 +24,14 @@ public class GameController : MonoBehaviour {
 
     void Awake()
     {
+        Debug.Assert(CinemachineVirtualCamera != null, "CinemachineVirtualCamera must exist in the scene");
+        Debug.Assert(ShakeNoiseProfile != null, "ShakeNoiseProfile must exist in the scene");
+        Debug.Assert(DefaultNoiseProfile != null, "DefaultNoiseProfile must exist in the scene");
+
+        CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = CinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        default_amplitude = cinemachineBasicMultiChannelPerlin.m_AmplitudeGain;
+        default_frequency = cinemachineBasicMultiChannelPerlin.m_FrequencyGain;
+
         if (_instance != null && _instance != this)
         {
             Destroy(this);
@@ -27,7 +41,6 @@ public class GameController : MonoBehaviour {
             _instance = this;
             _currentResolve = _maxResolve;
             this.SetMaxResolve(_maxResolve);
-            Debug.Assert(CinemachineVirtualCamera != null, "CinemachineVirtualCamera must exist in the scene");
         }
     }
 
@@ -46,19 +59,25 @@ public class GameController : MonoBehaviour {
         resolveBar.value += change;
     } 
 
-    public void StartShake(float intensity, float time) {
-        Debug.Log("starting shake");
+    public void StartShake(float amplitude, float frequency, float time) {
         CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = CinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-        Debug.Assert(cinemachineBasicMultiChannelPerlin != null, "CinemachineBasicMultiChannelPerlin must exist on the virtual camera");
-        cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = intensity;
+        
+        cinemachineBasicMultiChannelPerlin.m_NoiseProfile = ShakeNoiseProfile;
+    
+        cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = amplitude;
+        cinemachineBasicMultiChannelPerlin.m_FrequencyGain = frequency;
         StartCoroutine(StopShake(time));
     }
 
     private IEnumerator StopShake(float time) {
         yield return new WaitForSeconds(time);
-        Debug.Log("stopping shake");
+
         CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = CinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-        cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0;
+        
+        cinemachineBasicMultiChannelPerlin.m_NoiseProfile = DefaultNoiseProfile;
+
+        cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = default_amplitude;
+        cinemachineBasicMultiChannelPerlin.m_FrequencyGain = default_frequency;
     }
 
 }

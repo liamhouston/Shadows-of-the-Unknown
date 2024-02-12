@@ -64,8 +64,7 @@ public class AnimatedEntity : MonoBehaviour
         }
     }
 
-    private void PlayAnimationCycle(List<Sprite> animationCycle)
-    {
+    private void PlayAnimationCycle(List<Sprite> animationCycle) {
         if (animationCycle.Count == 0 || index >= animationCycle.Count){
             index = 0;
         }
