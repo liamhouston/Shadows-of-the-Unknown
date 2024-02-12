@@ -20,18 +20,27 @@ public class MousePosition : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        // Get the mouse input
-        float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseManager.Instance.EscapceCheck();
+        }
+        else
+        {
+            // Get the mouse input
+            float mouseX = Input.GetAxis("Mouse X");
+            float mouseY = Input.GetAxis("Mouse Y");
 
-        // Calculate the movement in world space
-        Vector3 mouseDelta = new Vector3(mouseX, mouseY, 0f) * sensitivity * Time.deltaTime;
+            // Calculate the movement in world space
+            Vector3 mouseDelta = new Vector3(mouseX, mouseY, 0f) * sensitivity * Time.deltaTime;
 
-        // Convert the mouse position to world position
-        Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        mouseWorldPosition.z = 0f;
+            // Convert the mouse position to world position
+            Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+            mouseWorldPosition.z = 0f;
 
-        // Update the object's position based on the mouse movement
-        transform.position = mouseWorldPosition + mouseDelta;
+            // Update the object's position based on the mouse movement
+            transform.position = mouseWorldPosition + mouseDelta;
+        }
+        
+        
     }
 }

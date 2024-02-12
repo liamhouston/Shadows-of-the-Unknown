@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
  
 public class MainMenu : MonoBehaviour
 {
@@ -11,16 +12,15 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         LoadVolume();
-        MusicManager.Instance.PlayMusic("MainMenu");
-        // var anim = GetComponent<Animator>();
-        // var state = anim.GetCurrentAnimatorStateInfo(layerIndex:0);
-        // anim.Play(state.fullPathHash, layer:0, normalizedTime:Random.Range(0f, 1f));
+        Scene activeScene = SceneManager.GetActiveScene();
+        string sceneName = activeScene.name;
+        MusicManager.Instance.PlayMusic(sceneName);
     }
  
     public void Play()
     {
-        LevelManager.Instance.LoadScene("BasicScene", "CrossFade");
-        MusicManager.Instance.PlayMusic("FirstPerson");
+        LevelManager.Instance.LoadScene("Fishdock", "CrossFade");
+        MusicManager.Instance.PlayMusic("Fishdock");
     }
  
     public void Quit()

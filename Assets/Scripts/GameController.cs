@@ -79,5 +79,4 @@ public class GameController : MonoBehaviour {
         cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = default_amplitude;
         cinemachineBasicMultiChannelPerlin.m_FrequencyGain = default_frequency;
     }
-
 }
