@@ -10,6 +10,9 @@ public class AudioController : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip cameraShutter;
 
+    public AudioClip firstDamageSound;
+    public AudioClip defaultDamageSound;
+
     private AudioController audioController;
 
 
@@ -27,5 +30,11 @@ public class AudioController : MonoBehaviour
     public void PlayCameraShutter()
     {
         audioSource.PlayOneShot(cameraShutter);
+    }
+    public void PlayFirstDamageSound() {
+        audioSource.PlayOneShot(firstDamageSound);
+    }
+    public void PlayDefaultDamageSound() {
+        audioSource.PlayOneShot(defaultDamageSound);
     }
 }
