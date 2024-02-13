@@ -12,7 +12,7 @@ public class PauseManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            // DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -24,10 +24,12 @@ public class PauseManager : MonoBehaviour
     {
         if(IsPaused)
         {
+            Cursor.visible = false;
             Resume();
         }
         else
         {
+            Cursor.visible = true;
             Pause();
         }
     }
@@ -49,6 +51,7 @@ public class PauseManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         IsPaused = false;
+
         LevelManager.Instance.LoadScene("MainMenu", "CrossFade");
     }
     public void Quid()
