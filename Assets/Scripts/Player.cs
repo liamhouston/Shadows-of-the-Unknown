@@ -16,9 +16,9 @@ public class Player : AnimatedEntity
 
     // Update is called once per frame
     void Update(){
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.P))
         {
-            PauseManager.Instance.EscapceCheck();
+            PauseManager.Instance.PauseCheck();
         }
         else
         {

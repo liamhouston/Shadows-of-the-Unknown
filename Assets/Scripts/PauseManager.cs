@@ -20,7 +20,7 @@ public class PauseManager : MonoBehaviour
         }
     }
     
-    public void EscapceCheck()
+    public void PauseCheck()
     {
         if(IsPaused)
         {

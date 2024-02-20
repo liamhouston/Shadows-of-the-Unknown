@@ -20,9 +20,9 @@ public class MousePosition : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.P))
         {
-            PauseManager.Instance.EscapceCheck();
+            PauseManager.Instance.PauseCheck();
         }
         else
         {
