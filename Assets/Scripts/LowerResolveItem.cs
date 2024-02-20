@@ -33,8 +33,8 @@ public class LowerResolveItem : MonoBehaviour
             // change the resolve meter
             gameController.ChangeResolve(-damageAmount);
             
-            // shake camera with amplitude 3, frequency 3, and duration 2 seconds.
-            gameController.StartShake(3,5,2);
+            // shake camera with amplitude 3, frequency 5, and duration 2 seconds.
+            gameController.StartShake(3,5,1);
 
             // play audio depending if this is the first time the player has seen the item
             if (playerSeenItem == false) {
