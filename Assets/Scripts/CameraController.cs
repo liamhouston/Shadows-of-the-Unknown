@@ -2,109 +2,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
+using Cinemachine;
 
-    public class CameraController : MonoBehaviour
-    {
-        [Header("Motion")]
-        [SerializeField] private Transform cameraTarget;
-        [SerializeField] private Vector2 cameraOffset;
-        [SerializeField] private float cameraFollowSpeed;
-        [SerializeField] private float cameraEaseTime=0.47f;
+    public class CameraController : MonoBehaviour {
+        [Header ("Camera Settings")]
+        public float speed = 5f;
+        [Header ("Camera Confinement")]
+        public Transform backgroundTransform;
+        public SpriteRenderer backgroundSpriteRenderer;
 
-        [Header("Shake")]
-        [SerializeField] private float shakeDuration=0.5f;
-        [SerializeField] private float shakeStrength;
-        [SerializeField] private AnimationCurve shakeCurve;
-        
-        [Header("Zoom")]
-        [SerializeField] private float zoomTime=0.5f;
-        [SerializeField] private float zoomStrength;
-        [SerializeField] private AnimationCurve zoomCurve;
 
-        private Vector3 _target = Vector3.zero;
-        private Vector3 _cameraSpeed;
-        private bool _shaking;
-        private bool _zoomed;
+        public void Update() {
+            // Built in Unity input system uses arrows or wasd
+            float horizontalInput = Input.GetAxis("Horizontal"); // ranges from -1 left to 1 right
+            float verticalInput = Input.GetAxis("Vertical"); // ranges from -1 down to 1 up
 
-        private Camera _camera;
-        private float _defaultRotation;
-        private float _defaultZoom;
+            Vector3 movement = new Vector3(horizontalInput, verticalInput, 0f) * speed * Time.deltaTime;
+            Vector3 newPosition = transform.position + movement;
 
-        private Coroutine _zoomRoutine = null;
-        private Coroutine _shakeRoutine = null;
-
-        private void Start()
-        {
-            _camera = Camera.main;
-            _target = _updateTarget();
-            transform.position = _target;
-            _cameraSpeed = new Vector3(cameraFollowSpeed, cameraFollowSpeed, 0);
-            
-            _defaultZoom = _camera.orthographicSize;
-        }
-        
-        void Update()
-        {
-            _target = _updateTarget();
-            transform.position = Vector3.SmoothDamp(transform.position, _target, ref _cameraSpeed, cameraEaseTime);
-        }
-
-        private Vector3 _updateTarget()
-        {
-            var targetPosition = cameraTarget.position;
-            targetPosition = new Vector3(
-                targetPosition.x - cameraOffset.x,
-                targetPosition.y + cameraOffset.y,
-                transform.position.z);
-            return targetPosition;
-        }
-        
-        public void Zoom()
-        {
-            if (_zoomRoutine != null)
-            {
-                StopCoroutine(_zoomRoutine);
-                _zoomRoutine = null;
+            if (IsValid(newPosition)){
+                Debug.Log("moved to new position : " + newPosition);
+                transform.position = newPosition;
             }
-
-            _zoomRoutine = StartCoroutine(_zoom());
-        }
-        public void Shake()
-        {
-            if (_shakeRoutine != null)
-            {
-                StopCoroutine(_shakeRoutine);
-                _shakeRoutine = null;
-            }
-
-            _shakeRoutine = StartCoroutine(_shake());
-        }
-        
-        private IEnumerator _zoom()
-        {
-            float zoomTimer = 0;
-            while (zoomTimer<=zoomTime)
-            {
-                zoomTimer += Time.deltaTime;
-                float current = Mathf.PingPong(zoomTimer, zoomTime/2f)/(zoomTime/2f);
-                print(zoomTimer);
-                float curveVal = zoomCurve.Evaluate(current);
-                _camera.orthographicSize = Mathf.Lerp(_defaultZoom, zoomStrength, curveVal);;
-                yield return null;
+            else {
+                Debug.Log("confider says camera cant move there");
             }
         }
-        private IEnumerator _shake()
-        {
-            float shakeTimer = 0;
-            while (shakeTimer<=shakeDuration)
-            {
-                shakeTimer += Time.deltaTime;
-                float current = Mathf.Lerp(1, 0, shakeTimer / shakeDuration);
-                float radius = shakeCurve.Evaluate(current)*shakeStrength;
-                Vector2 offset = Random.insideUnitCircle * radius;
-                _camera.transform.localPosition = new Vector3(offset.x,offset.y,_camera.transform.localPosition.z);
-                yield return null;
-            }
-        }
+
+    // Given a position, checks that this position is valid in the bounds of the camera
+    public bool IsValid(Vector3 pos){
+        float horz_size = backgroundSpriteRenderer.bounds.size.x;
+        float vert_size = backgroundSpriteRenderer.bounds.size.y;
+
+        float left_bound = backgroundTransform.position.x - (horz_size / 2.0f);
+        float right_bound = backgroundTransform.position.x + (horz_size / 2.0f); 
+        float top_bound = backgroundTransform.position.y + (vert_size / 2.0f);
+        float bottom_bound = backgroundTransform.position.y - (vert_size / 2.0f);
+
+        return pos.x >= left_bound && pos.x <= right_bound && pos.y >= bottom_bound && pos.y <= top_bound;
     }
+}
