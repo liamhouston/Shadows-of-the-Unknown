@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class MousePosition : MonoBehaviour
 {
     [SerializeField] private Camera mainCamera;
+    [SerializeField] private CinemachineVirtualCamera cvc;
 
     public bool ShowCursor = false;
     public float sensitivity;
@@ -38,7 +40,23 @@ public class MousePosition : MonoBehaviour
             mouseWorldPosition.z = 0f;
 
             // Update the object's position based on the mouse movement
-            transform.position = mouseWorldPosition + mouseDelta;
+            Vector3 newPos = mouseWorldPosition + mouseDelta;
+
+
+            float aspectRatio = (float) mainCamera.pixelWidth / mainCamera.pixelHeight;    
+            float y_offset = cvc.m_Lens.OrthographicSize;
+            float x_offset = y_offset * aspectRatio;
+
+            // check that the mouse is within screen bounds
+            bool leftBounds  = newPos.x <= (mainCamera.transform.position.x - x_offset); // true if left of screen
+            bool rightBounds = newPos.x >= (mainCamera.transform.position.x + x_offset); // true if right of screen
+            bool belowBounds = newPos.y <= (mainCamera.transform.position.y - y_offset); // true if below screen
+            bool aboveBounds = newPos.y >= (mainCamera.transform.position.y + y_offset); // true if above screen
+
+            if (!leftBounds && !rightBounds && !belowBounds && !aboveBounds){ // if in screen, move to new position
+                transform.position = newPos;
+            }
+
         }
         
         

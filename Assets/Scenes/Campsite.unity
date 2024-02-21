@@ -1210,6 +1210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 222937745}
+  cvc: {fileID: 597193460}
   ShowCursor: 0
   sensitivity: 1
 --- !u!114 &264987593
