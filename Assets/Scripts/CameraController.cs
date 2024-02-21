@@ -27,16 +27,16 @@ using Cinemachine;
             float horizontalInput = Input.GetAxis("Horizontal"); // ranges from -1 left to 1 right
             float verticalInput = Input.GetAxis("Vertical"); // ranges from -1 down to 1 up
 
-            Vector3 movement = new Vector3(horizontalInput, verticalInput, 0f) * speed * Time.deltaTime;
-            Vector3 newPosition = transform.position + movement;
+            Vector3 horzMovement = new Vector3(horizontalInput, 0f, 0f) * speed * Time.deltaTime;
+            Vector3 vertMovement = new Vector3(0f, verticalInput, 0f) * speed * Time.deltaTime;
 
-
-            if (IsValid(newPosition)){
-                transform.position = newPosition;
+            // if not at screen bound, move horizontal
+            if (IsValid(transform.position + horzMovement)){
+                transform.position = transform.position + horzMovement;
             }
-            else {
-                // light camera shake to indicate edge
-                // GameController.Instance.StartShake(1,1,0.5f);
+            // if not at screen bound, move vertical
+            if (IsValid(transform.position + vertMovement)){
+                transform.position = transform.position + vertMovement;
             }
         }
 
