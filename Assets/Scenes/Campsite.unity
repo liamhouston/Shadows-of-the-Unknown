@@ -4070,7 +4070,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fd53d5c229e5e348934e3b7cf212a07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDelay: 0.5
+  delayOnFirstSight: 1
+  delayBetweenDamages: 1
   damageAmount: 2
 --- !u!50 &1872509150
 Rigidbody2D:

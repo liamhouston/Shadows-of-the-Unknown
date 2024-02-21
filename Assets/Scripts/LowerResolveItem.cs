@@ -5,16 +5,19 @@ using UnityEngine.UI;
 
 public class LowerResolveItem : MonoBehaviour
 {
+    [Header ("Damage Info")]
+    public float delayOnFirstSight = 1f; // how long the player can look at item before taking damage the first time. (allow the player to actually realize what's damaging them before damaging)
+    public float delayBetweenDamages = 1f; // wait before taking more damage to resolve meter
+    public int damageAmount = 3; // amount of damage to resolve meter every delayBetweenDamages seconds
+
+
     private SpriteRenderer spriteRenderer;
     private GameController gameController;
+
+    // bool indicators
     private bool playerIsNearby = false;
-  
     private bool playerSeenItem = false;
-
-
     private bool readyDamage = true;
-    public float damageDelay = 1f; // wait half a second before taking more damage to resolve meter
-    public int damageAmount = 3; // amount of damage to resolve meter every damageDelay seconds
 
 
     // Start is called before the first frame update
@@ -29,23 +32,24 @@ public class LowerResolveItem : MonoBehaviour
     // Update is called once per frame
     void Update(){
         if (playerIsNearby && readyDamage){
-            readyDamage = false;
-            // change the resolve meter
-            gameController.ChangeResolve(-damageAmount);
-            
-            // shake camera with amplitude 3, frequency 5, and duration 2 seconds.
-            gameController.StartShake(3,5,1);
-
-            // play audio depending if this is the first time the player has seen the item
+            // allow the player time to see the item for the first time
             if (playerSeenItem == false) {
-                playerSeenItem = true;
-                AudioController.Instance.PlayFirstDamageSound();
-            } else {
+                StartCoroutine(WaitForFirstSight());
+            } 
+            else {
                 AudioController.Instance.PlayDefaultDamageSound();
             }
 
-            // wait until we can take damage again
-            StartCoroutine(WaitForDamage());
+            if (playerSeenItem){                
+                // change the resolve meter
+                gameController.ChangeResolve(-damageAmount);
+                // shake camera with amplitude 3, frequency 5, and duration 2 seconds.
+                gameController.StartShake(3,5,1);
+                // wait until we can take damage again
+                readyDamage = false;
+                StartCoroutine(WaitForDamage());    
+            }
+            
         }
     }
 
@@ -63,7 +67,15 @@ public class LowerResolveItem : MonoBehaviour
     }
 
     private IEnumerator WaitForDamage() {
-        yield return new WaitForSeconds(damageDelay);
+        yield return new WaitForSeconds(delayBetweenDamages);
         readyDamage = true;
+    }
+
+    private IEnumerator WaitForFirstSight() {
+        yield return new WaitForSeconds(delayOnFirstSight);
+        if (playerIsNearby){
+            playerSeenItem = true;
+            AudioController.Instance.PlayFirstDamageSound();
+        }
     }
 }
