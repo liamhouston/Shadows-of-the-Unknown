@@ -147,18 +147,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11198489}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1678135046}
   - {fileID: 383970127}
   m_Father: {fileID: 145594950}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -705.6449, y: 486.7717}
+  m_AnchoredPosition: {x: 926, y: 98}
   m_SizeDelta: {x: -1421.6678, y: -985.7325}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &11198492
@@ -3766,7 +3766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5188679, g: 0, b: 0.3013783, a: 1}
+  m_Color: {r: 1, g: 0.0627451, b: 0.05490196, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4132,8 +4132,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -26.911173, y: -15.356908}
-  m_Size: {x: 14.077777, y: 4.9030204}
+  m_Offset: {x: -26.65147, y: -15.818594}
+  m_Size: {x: 9.691769, y: 5.2492833}
   m_Direction: 1
 --- !u!114 &1872509152
 MonoBehaviour:
