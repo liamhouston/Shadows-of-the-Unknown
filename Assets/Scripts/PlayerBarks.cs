@@ -25,7 +25,7 @@ public class PlayerBarks : MonoBehaviour{
     // Update is called once per frame
     void Update(){
         // if player within range and clicks
-        if(playerIsNearby && Input.GetMouseButtonDown(0) && !dialoguePanel.activeInHierarchy && bark_index < barkList.Count){
+        if(playerIsNearby && InputManager.Instance.ClickInput && !dialoguePanel.activeInHierarchy && bark_index < barkList.Count){
                 // start dialogue
                 dialogueText.text = "";
                 dialoguePanel.SetActive(true);

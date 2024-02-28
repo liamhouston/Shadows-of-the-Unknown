@@ -18,7 +18,7 @@ public class CameraFlash : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) && readyFlash){
+        if (InputManager.Instance.RightClickInput && readyFlash){
             readyFlash = false;
             StartCoroutine(WaitForFlash());
         }

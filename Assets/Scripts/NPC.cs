@@ -24,7 +24,7 @@ public class NPC : MonoBehaviour{
     // Update is called once per frame
     void Update(){
         // if player within range and interacts
-        if(Input.GetKeyDown(KeyCode.I) && playerIsNearby){
+        if(InputManager.Instance.InteractInput && playerIsNearby){
             if (dialoguePanel.activeInHierarchy){
                 // clear display if already talking
                 zeroText();

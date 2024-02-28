@@ -37,6 +37,7 @@ public class PauseManager : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
+        InputManager.PlayerInput.SwitchCurrentActionMap("Player");
         IsPaused = false;
     }
 
@@ -44,6 +45,7 @@ public class PauseManager : MonoBehaviour
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
+        InputManager.PlayerInput.SwitchCurrentActionMap("UI");
         IsPaused = true;
     }
 
