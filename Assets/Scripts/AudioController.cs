@@ -15,6 +15,8 @@ public class AudioController : MonoBehaviour
 
     public AudioClip backgroundShadowMovementSound;
 
+    public AudioClip foundMajorClueSound;
+
     private AudioController audioController;
 
 
@@ -46,6 +48,10 @@ public class AudioController : MonoBehaviour
         StartCoroutine(stopSoundAfterSeconds(1.5f));
 
     }
+    public void PlayFoundMajorClueSound(){
+        audioSource.PlayOneShot(foundMajorClueSound);
+    }
+
     IEnumerator stopSoundAfterSeconds(float seconds){
         yield return new WaitForSeconds(seconds);
         audioSource.Stop();
