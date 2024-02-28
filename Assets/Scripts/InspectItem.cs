@@ -31,7 +31,7 @@ public class InspectItem : MonoBehaviour
 
     // Update is called once per frame
     void Update(){
-        if (Input.GetKeyDown(KeyCode.I) && playerIsNearby){
+        if (InputManager.Instance.InteractInput && playerIsNearby){
             if (itemCanvas.activeSelf){
                 itemCanvas.SetActive(false);
             }

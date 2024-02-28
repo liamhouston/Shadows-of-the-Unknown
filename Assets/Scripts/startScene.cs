@@ -26,7 +26,7 @@ public class startScene : MonoBehaviour
     }
     // Update is called once per frame
     void Update(){
-        if (playerIsNearby && Input.GetKeyDown(KeyCode.I)){
+        if (playerIsNearby && InputManager.Instance.InteractInput){
             InteractwithText.SetActive(false);
             LevelManager.Instance.LoadScene(sceneToLoad, "CrossFade");
             MusicManager.Instance.PlayMusic(sceneToLoad);
