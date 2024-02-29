@@ -814,6 +814,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1081802593}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &196050127 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6786917324959274688, guid: 5d19872645476a84f8d083944e258e27,
+    type: 3}
+  m_PrefabInstance: {fileID: 390319302}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &196050133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196050127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2f1dbc7524cd4d4e8e5a2cdf91b6350, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterNames: []
+  characterProfile: []
+  dialoguePanel: {fileID: 461000955}
+  dialogueText: {fileID: 1242592484}
+  wordSpeed: 0.04
 --- !u!1 &263274999
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,7 +1219,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6786917324959274688, guid: 5d19872645476a84f8d083944e258e27,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 196050133}
   m_SourcePrefab: {fileID: 100100000, guid: 5d19872645476a84f8d083944e258e27, type: 3}
 --- !u!1 &419076141
 GameObject:
@@ -1414,8 +1441,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -6.300049, y: -177.40002}
-  m_SizeDelta: {x: -47.820007, y: -390.1109}
+  m_AnchoredPosition: {x: 0, y: -387.5}
+  m_SizeDelta: {x: -500, y: -825}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &461000957
 MonoBehaviour:
@@ -1993,7 +2020,7 @@ Transform:
   m_GameObject: {fileID: 623563484}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.0971532, y: 0.63, z: -3.2399998}
+  m_LocalPosition: {x: -2.0971537, y: 0.63, z: -3.2399998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2974,7 +3001,7 @@ Transform:
   m_GameObject: {fileID: 1226332784}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.0971532, y: 0.63, z: -3.2399998}
+  m_LocalPosition: {x: -2.0971537, y: 0.63, z: -3.2399998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3151,8 +3178,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 90.3, y: 15.1}
-  m_SizeDelta: {x: 789.2112, y: 95.43796}
+  m_AnchoredPosition: {x: -43.0071, y: 12.6}
+  m_SizeDelta: {x: 1111.197, y: 155}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1242592484
 MonoBehaviour:
@@ -3699,16 +3726,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ffe7c3f9bcd5040bf463603b63ec5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 461000955}
-  dialogueText: {fileID: 1242592484}
   dialogue:
   - Hello there!
   - This is an example of how to speak with an NPC in a playable scene.
   - Well I'll let you get on your way
-  contButton: {fileID: 2052371144}
-  wordSpeed: 0.04
   playerIsNearby: 0
-  stopTyping: 0
 --- !u!61 &1600816418
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4016,9 +4038,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -412, y: -58}
-  m_SizeDelta: {x: 99.994995, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 646.99994, y: -85.8}
+  m_SizeDelta: {x: 150, y: 41.799}
+  m_Pivot: {x: 0.49999988, y: 0.4999991}
 --- !u!114 &1953952086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4041,10 +4063,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -4259,8 +4281,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -412, y: 15.1}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 647, y: 15.1}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2057233683
 MonoBehaviour:
