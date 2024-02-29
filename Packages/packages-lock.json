@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.adamgryu.audioclipadjuster": {
+      "version": "https://github.com/adamgryu/AudioClipAdjuster-Unity.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "9cf9c8296058125cd4d071caf3b596e59d715eac"
+    },
     "com.unity.2d.animation": {
       "version": "9.1.0",
       "depth": 0,

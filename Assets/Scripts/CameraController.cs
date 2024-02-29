@@ -12,10 +12,13 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float _moveSpeed = 5f;
     [Header("Camera Confinement")]
     // public Transform backgroundTransform;
-    // public SpriteRenderer backgroundSpriteRenderer;
+    // public Transform camTransform;
+
+   
+    public Collider2D CamBoundary;
     // public Camera mainCamera;
 
-    // private CinemachineVirtualCamera cvc;
+    public CinemachineVirtualCamera vcam;
     private Vector3 _movement;
 
     // public void Awake()
@@ -31,7 +34,10 @@ public class CameraController : MonoBehaviour
     {
         // _movement.Set(InputManager.Instance.MoveInput.x, InputManager.Instance.MoveInput.y);
         _movement.Set(InputManager.Instance.MoveInput.x, InputManager.Instance.MoveInput.y, 0f);
-        transform.Translate(_movement * _moveSpeed * Time.deltaTime);
+        Vector3 clampedPosition = transform.position + _movement * _moveSpeed * Time.deltaTime;
+        clampedPosition.x = Mathf.Clamp(clampedPosition.x, CamBoundary.bounds.min.x, CamBoundary.bounds.max.x);
+        clampedPosition.y = Mathf.Clamp(clampedPosition.y, CamBoundary.bounds.min.y, CamBoundary.bounds.max.y);
+        transform.position = clampedPosition;
         // Built in Unity input system uses arrows or wasd
         // float horizontalInput = Input.GetAxis("Horizontal"); // ranges from -1 left to 1 right
         // float verticalInput = Input.GetAxis("Vertical"); // ranges from -1 down to 1 up
@@ -54,13 +60,13 @@ public class CameraController : MonoBehaviour
     // Given a position, checks that this position is valid in the bounds of the camera
     // public bool IsValid(Vector3 pos)
     // {
-    //     float horz_size = backgroundSpriteRenderer.bounds.size.x;
-    //     float vert_size = backgroundSpriteRenderer.bounds.size.y;
+    //     float horz_size = CamBoundary.bounds.size.x;
+    //     float vert_size = CamBoundary.bounds.size.y;
 
-    //     float left_bound = backgroundTransform.position.x - (horz_size / 2.0f);
-    //     float right_bound = backgroundTransform.position.x + (horz_size / 2.0f);
-    //     float top_bound = backgroundTransform.position.y + (vert_size / 2.0f);
-    //     float bottom_bound = backgroundTransform.position.y - (vert_size / 2.0f);
+    //     float left_bound = CamBoundary.position.x - (horz_size / 2.0f);
+    //     float right_bound = CamBoundary.position.x + (horz_size / 2.0f);
+    //     float top_bound = CamBoundary.position.y + (vert_size / 2.0f);
+    //     float bottom_bound = CamBoundary.position.y - (vert_size / 2.0f);
 
     //     // We need to consider the size of the virtual camera when determining if a position is valid
 

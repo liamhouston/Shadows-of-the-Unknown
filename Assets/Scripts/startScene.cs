@@ -15,18 +15,22 @@ public class startScene : MonoBehaviour
         InteractwithText.SetActive(false);
         playerIsNearby = false;
     }
-    void OnTriggerEnter2D(Collider2D other){
+    void OnTriggerEnter2D(Collider2D other)
+    {
         if (other.CompareTag("Player")) playerIsNearby = true;
         InteractwithText.SetActive(true);
     }
 
-    void OnTriggerExit2D(Collider2D other){
+    void OnTriggerExit2D(Collider2D other)
+    {
         if (other.CompareTag("Player")) playerIsNearby = false;
         InteractwithText.SetActive(false);
     }
     // Update is called once per frame
-    void Update(){
-        if (playerIsNearby && InputManager.Instance.InteractInput){
+    void Update()
+    {
+        if (playerIsNearby && InputManager.Instance.InteractInput)
+        {
             InteractwithText.SetActive(false);
             LevelManager.Instance.LoadScene(sceneToLoad, "CrossFade");
             MusicManager.Instance.PlayMusic(sceneToLoad);
@@ -34,5 +38,5 @@ public class startScene : MonoBehaviour
         }
     }
 
-    
+
 }
