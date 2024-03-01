@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour {
     private static GameController _instance;
     public static GameController Instance {get{return _instance;}}
 
+    [Header ("Virtual Camera Info")]
     private float default_amplitude;
     private float default_frequency;
 
@@ -22,11 +23,18 @@ public class GameController : MonoBehaviour {
     [SerializeField] private int _maxResolve = 100;
     [SerializeField] private int _currentResolve;
 
+    [Header ("Game Over Info")]
+    public Image BlackoutBox;
+    private bool fadeComplete = false;
+    public string[] gameOverBark;
+
+
     void Awake()
     {
         Debug.Assert(CinemachineVirtualCamera != null, "CinemachineVirtualCamera must exist in the scene");
         Debug.Assert(ShakeNoiseProfile != null, "ShakeNoiseProfile must exist in the scene");
         Debug.Assert(DefaultNoiseProfile != null, "DefaultNoiseProfile must exist in the scene");
+        Debug.Assert(BlackoutBox != null, "BlackoutBox must exist in scene");
 
         CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = CinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         default_amplitude = cinemachineBasicMultiChannelPerlin.m_AmplitudeGain;
@@ -44,6 +52,17 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    public void Update(){
+        // check for game over
+        if (_currentResolve <= 0 && !fadeComplete){
+            
+            StartCoroutine(FadeBlackOutSquare((float)0.01));
+        }
+        else if (fadeComplete){
+            // play dialogue if fade complete
+        }
+    }
+
     public void SetMaxResolve(int resolve)
     {
         resolveBar.maxValue = resolve;
@@ -52,10 +71,12 @@ public class GameController : MonoBehaviour {
 
     public void SetResolve(int resolve)
     {
+        _currentResolve = resolve;
         resolveBar.value = resolve;
     }
 
     public void ChangeResolve(int change) {
+        _currentResolve += change;
         resolveBar.value += change;
     } 
 
@@ -78,5 +99,20 @@ public class GameController : MonoBehaviour {
 
         cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = default_amplitude;
         cinemachineBasicMultiChannelPerlin.m_FrequencyGain = default_frequency;
+    }
+
+    public IEnumerator FadeBlackOutSquare(float fadeSpeed = 1){
+        Color objectColor = BlackoutBox.GetComponent<Image>().color;
+        float fadeAmount;
+
+        Debug.Log("In fade out square " + BlackoutBox.GetComponent<Image>().color.a);
+
+        while (BlackoutBox.GetComponent<Image>().color.a < 1){
+            fadeAmount = BlackoutBox.GetComponent<Image>().color.a + (fadeSpeed * Time.deltaTime);
+            BlackoutBox.GetComponent<Image>().color = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
+            yield return null;
+        }
+
+        fadeComplete = true;
     }
 }
