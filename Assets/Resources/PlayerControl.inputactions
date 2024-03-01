@@ -15,36 +15,18 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Look",
-                    "type": "Value",
-                    "id": "d8d09bf5-5a8e-4735-a858-f61853a76c62",
+                    "name": "Point_p",
+                    "type": "PassThrough",
+                    "id": "d8951b75-617d-4565-bbc2-2da89a14dd3d",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Fire",
-                    "type": "Button",
-                    "id": "0787e33b-e901-4bff-a9ce-317ee60d2389",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "MenuOPEN",
                     "type": "Button",
                     "id": "9a622f75-10a6-4664-ad23-2c122b218e87",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Interact",
-                    "type": "Button",
-                    "id": "4ffd646a-266e-4d90-b4d2-931262fddeec",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -186,94 +168,6 @@
                 },
                 {
                     "name": "",
-                    "id": "469c09e3-1d32-4018-a93b-2ca0db8f4610",
-                    "path": "<Gamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Gamepad",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "08bbd1e7-311b-468d-9751-762d171aebfa",
-                    "path": "<Pointer>/delta",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse;Touch",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "06b102ea-9a54-4169-bb6c-c5ef305ba56f",
-                    "path": "<Joystick>/{Hatswitch}",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Joystick",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "13453b4a-8147-46c2-8737-1ef858511bd8",
-                    "path": "<Gamepad>/rightTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Gamepad",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "f960c71b-ae22-4fe1-a811-f79dd0d304cd",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ec60145a-4cdc-46e8-93c9-8bb7598879e1",
-                    "path": "<Touchscreen>/primaryTouch/tap",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Touch",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "683aa965-e0c7-4d85-904d-979a2a13653e",
-                    "path": "<Joystick>/trigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Joystick",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ec5bb77d-0d63-4add-bb89-96e7de885b07",
-                    "path": "<XRController>/{PrimaryAction}",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "XR",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "1ce9a204-2c39-49f2-9fcf-c4a593c085b2",
                     "path": "<Keyboard>/p",
                     "interactions": "",
@@ -285,12 +179,34 @@
                 },
                 {
                     "name": "",
-                    "id": "f1c65569-48b7-47ae-a481-657c141a835d",
-                    "path": "<Keyboard>/i",
+                    "id": "27b81279-c2db-4f7a-b89d-b8cff107bf10",
+                    "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Interact",
+                    "action": "Point_p",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0a1dae59-7a36-4ffd-8882-baca093f494b",
+                    "path": "<Pen>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Point_p",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1f0218b0-e1e9-43b8-94ba-0e6a345803db",
+                    "path": "<Touchscreen>/touch*/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Point_p",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
