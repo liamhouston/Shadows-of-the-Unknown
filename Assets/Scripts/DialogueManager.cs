@@ -24,8 +24,6 @@ public class DialogueManager : MonoBehaviour
     private bool stopTyping = false;
     private float secondsOnScreen;
 
-    private int numClicks = 0;
-
     private void Awake() {
         if (Instance == null){
             Instance = this;
@@ -42,9 +40,6 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void Update(){
-        if (InputManager.Instance.ClickInput){
-            Debug.Log("Num Clicks " + ++numClicks);
-        }
         if (dialoguePanel.activeSelf){
             // check whether user has clicked through to end this line of dialogue
             if (dialogueText.text == dialogue[line_index] && InputManager.Instance.ClickInput){
@@ -121,7 +116,7 @@ public class DialogueManager : MonoBehaviour
 
     }   
 
-    public bool DialogueCheck(){
+    public bool DialogueIsActive(){
         return dialoguePanel.activeSelf;
     }
 }

@@ -13,12 +13,11 @@ public class PlayerBarks : MonoBehaviour{
     private bool playerIsNearby;
 
     public string[] barkList;
-    private int bark_index = 0;
 
     // Update is called once per frame
     void Update(){
         // if player within range and clicks
-        if(playerIsNearby && InputManager.Instance.ClickInput){
+        if(playerIsNearby && InputManager.Instance.ClickInput && !DialogueManager.Instance.DialogueIsActive()){
                 // start dialogue
                 DialogueManager.Instance.playBlockingDialogue("Mr. NPC", barkList);
         }
