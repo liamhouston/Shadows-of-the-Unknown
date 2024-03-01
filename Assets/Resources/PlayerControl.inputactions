@@ -762,7 +762,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Point",
+                    "name": "Point_c",
                     "type": "PassThrough",
                     "id": "2b25ff00-89ee-49e2-b25f-1876b5165fd2",
                     "expectedControlType": "Vector2",
@@ -817,7 +817,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Point",
+                    "action": "Point_c",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -828,7 +828,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Point",
+                    "action": "Point_c",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -839,7 +839,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Point",
+                    "action": "Point_c",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

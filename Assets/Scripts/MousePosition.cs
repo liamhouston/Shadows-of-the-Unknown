@@ -34,6 +34,9 @@ public class MousePosition : MonoBehaviour
         {
             PauseManager.Instance.PauseCheck();
         }
+        else if (DialogueManager.Instance.DialogueIsActive()){
+            // we're in dialogue
+        }
         else
         {
 

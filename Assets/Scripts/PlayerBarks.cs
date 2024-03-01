@@ -10,44 +10,17 @@ using UnityEngine.UI;
 
 public class PlayerBarks : MonoBehaviour{
 
-    public GameObject dialoguePanel;
-    public Text dialogueText;
-
-    public float wordSpeed = 0.04f;
     private bool playerIsNearby;
 
-    public List<string> barkList = new List<string>();
-    private int bark_index;
-
-    public float remainOnScreen = 3f;
-    public bool repeatBarks = false;
+    public string[] barkList;
 
     // Update is called once per frame
     void Update(){
         // if player within range and clicks
-        if(playerIsNearby && InputManager.Instance.ClickInput && !dialoguePanel.activeInHierarchy && bark_index < barkList.Count){
+        if(playerIsNearby && InputManager.Instance.ClickInput && !DialogueManager.Instance.DialogueIsActive()){
                 // start dialogue
-                dialogueText.text = "";
-                dialoguePanel.SetActive(true);
-                StartCoroutine(Typing());
-                bark_index++;
-
-                // if we want to repeat the barks
-                if (bark_index == barkList.Count && repeatBarks){
-                    bark_index = 0;
-                }
+                DialogueManager.Instance.playBlockingDialogue("Mr. NPC", barkList);
         }
-    }
-
-    IEnumerator Typing(){
-        // this function types out each individual letter of the dialogue
-        foreach (char letter in barkList[bark_index].ToCharArray()){
-            dialogueText.text += letter;
-            yield return new WaitForSeconds(wordSpeed);
-              
-        }
-        yield return new WaitForSeconds(remainOnScreen);
-        dialoguePanel.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other){

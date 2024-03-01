@@ -153,13 +153,14 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1678135046}
+  - {fileID: 1059220124}
   - {fileID: 383970127}
   m_Father: {fileID: 1097368275}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 929, y: 9}
-  m_SizeDelta: {x: -1421.6678, y: -985.7325}
+  m_AnchoredPosition: {x: 891, y: 16}
+  m_SizeDelta: {x: -1421.6678, y: -898.1855}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &11198492
 MonoBehaviour:
@@ -302,7 +303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &45669920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,7 +362,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.000030518, y: -47.1917}
+  m_AnchoredPosition: {x: 0.000030518, y: -47.19165}
   m_SizeDelta: {x: 226.3045, y: 51.6602}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &82436910
@@ -401,8 +402,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -397.5}
-  m_SizeDelta: {x: -400, y: -805}
+  m_AnchoredPosition: {x: 7.470581, y: -384.16003}
+  m_SizeDelta: {x: -400, y: -846.7269}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &82436912
 MonoBehaviour:
@@ -474,7 +475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
-  m_DragThreshold: 10
+  m_DragThreshold: 0
 --- !u!4 &115013516
 Transform:
   m_ObjectHideFlags: 0
@@ -503,8 +504,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SendPointerHoverToParent: 1
-  m_MoveRepeatDelay: 0.5
-  m_MoveRepeatRate: 0.1
+  m_MoveRepeatDelay: 0
+  m_MoveRepeatRate: 0
   m_XRTrackingOrigin: {fileID: 0}
   m_ActionsAsset: {fileID: -944628639613478452, guid: 067666e17913a6f4ba4d8e7fe56ca1f9,
     type: 3}
@@ -531,6 +532,111 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+<<<<<<< HEAD
+=======
+--- !u!1 &145594946
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 145594950}
+  - component: {fileID: 145594949}
+  - component: {fileID: 145594948}
+  - component: {fileID: 145594947}
+  m_Layer: 5
+  m_Name: Resolve
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &145594947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145594946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &145594948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145594946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0.5
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &145594949
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145594946}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &145594950
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145594946}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 11198490}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+>>>>>>> origin/camera_controls
 --- !u!1 &222937743
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,13 +1177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eac34f5bea1aca419d8ac232ce4fb61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 82436910}
-  dialogueText: {fileID: 2079438786}
-  wordSpeed: 0.06
   barkList:
   - Hmmm.. looks like a note someone left behind.
-  remainOnScreen: 3
-  repeatBarks: 0
 --- !u!1 &264987590
 GameObject:
   m_ObjectHideFlags: 0
@@ -2131,9 +2232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eac34f5bea1aca419d8ac232ce4fb61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 82436910}
-  dialogueText: {fileID: 2079438786}
-  wordSpeed: 0.04
   barkList:
   - Oh, shit. This looks like Percy's tent. I better take a picture, this might be
     a clue!
@@ -2143,8 +2241,6 @@ MonoBehaviour:
     an actual deer."
   - "This is weird, though, I don\u2019t think he would\u2019ve just left this expensive
     tent here. Was he taking pictures of that deer?"
-  remainOnScreen: 3
-  repeatBarks: 0
 --- !u!50 &781784730
 Rigidbody2D:
   serializedVersion: 4
@@ -2396,14 +2492,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eac34f5bea1aca419d8ac232ce4fb61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 82436910}
-  dialogueText: {fileID: 2079438786}
-  wordSpeed: 0.04
   barkList:
   - W...what was that..
   - Hello is anybody there?!?
-  remainOnScreen: 3
-  repeatBarks: 0
 --- !u!114 &833725712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2741,6 +2832,141 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1059220123
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1059220124}
+  - component: {fileID: 1059220126}
+  - component: {fileID: 1059220125}
+  m_Layer: 5
+  m_Name: ResolveLabel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1059220124
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059220123}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.66666675, y: 2.4999998, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 11198490}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 12.6, y: -5}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1059220125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059220123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: RESOLVE
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: e570760b85168d34b912aedf007e5c2c, type: 2}
+  m_sharedMaterial: {fileID: -808965446104630965, guid: e570760b85168d34b912aedf007e5c2c,
+    type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 1728053248
+  m_fontColor: {r: 0, g: 0, b: 0, a: 0.40392157}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 45
+  m_fontSizeBase: 45
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 25
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1059220126
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059220123}
+  m_CullTransparentMesh: 1
 --- !u!1 &1079620052
 GameObject:
   m_ObjectHideFlags: 0
@@ -3143,7 +3369,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1630684693}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: LoadFishDockScene
         m_Mode: 1
@@ -3490,8 +3716,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 477.6, y: 8.6}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchoredPosition: {x: 636, y: 27.301}
+  m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1356413616
 MonoBehaviour:
@@ -3713,13 +3939,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eac34f5bea1aca419d8ac232ce4fb61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 82436910}
-  dialogueText: {fileID: 2079438786}
-  wordSpeed: 0.04
   barkList:
   - No s'mores??
-  remainOnScreen: 3
-  repeatBarks: 0
 --- !u!50 &1491658050
 Rigidbody2D:
   serializedVersion: 4
@@ -4007,20 +4228,35 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6786917324959274688, guid: 5d19872645476a84f8d083944e258e27,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1630684692}
   m_SourcePrefab: {fileID: 100100000, guid: 5d19872645476a84f8d083944e258e27, type: 3}
---- !u!114 &1630684693 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6786917324959274693, guid: 5d19872645476a84f8d083944e258e27,
+--- !u!1 &1630684691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6786917324959274688, guid: 5d19872645476a84f8d083944e258e27,
     type: 3}
   m_PrefabInstance: {fileID: 1630684690}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+--- !u!114 &1630684692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630684691}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99577889af99ceb4b9a51cfd8576f438, type: 3}
+  m_Script: {fileID: 11500000, guid: c2f1dbc7524cd4d4e8e5a2cdf91b6350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterNames: []
+  characterProfile: []
+  dialoguePanel: {fileID: 82436910}
+  dialogueText: {fileID: 2079438786}
+  wordSpeed: 0.04
 --- !u!1 &1678135045
 GameObject:
   m_ObjectHideFlags: 0
@@ -4467,15 +4703,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eac34f5bea1aca419d8ac232ce4fb61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 82436910}
-  dialogueText: {fileID: 2079438786}
-  wordSpeed: 0.04
   barkList:
   - "Eugh, what the hell\u2026 Not touching that."
   - Looks like it got shot. Or maybe chronic wasting disease. Personally, I would
     not want to be a zombified deer.
-  remainOnScreen: 3
-  repeatBarks: 1
 --- !u!1 &2011443848
 GameObject:
   m_ObjectHideFlags: 0
@@ -4510,7 +4741,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 477.6, y: -48.996}
+  m_AnchoredPosition: {x: 640, y: -57}
   m_SizeDelta: {x: 41.268, y: 29.1958}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2011443850
@@ -4560,14 +4791,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -4596,7 +4827,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -45.743164, y: 0, z: -39.724243, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4642,15 +4873,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eac34f5bea1aca419d8ac232ce4fb61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 82436910}
-  dialogueText: {fileID: 2079438786}
-  wordSpeed: 0.04
   barkList:
   - "This looks pretty old. There\u2019s a lot of stuff around here that\u2019s a
     lot older than I thought, for some reason. I dunno. To me this town started existing
     when Percy moved here. I wouldn\u2019t have ever known about it otherwise."
-  remainOnScreen: 3
-  repeatBarks: 0
 --- !u!50 &2023605245
 Rigidbody2D:
   serializedVersion: 4
@@ -9797,13 +10023,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eac34f5bea1aca419d8ac232ce4fb61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 82436910}
-  dialogueText: {fileID: 2079438786}
-  wordSpeed: 0.04
   barkList:
   - Percy always wished the fireflies would hold still for just one picture.
-  remainOnScreen: 3
-  repeatBarks: 0
 --- !u!61 &2070125222
 BoxCollider2D:
   m_ObjectHideFlags: 0

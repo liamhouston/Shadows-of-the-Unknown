@@ -43,7 +43,7 @@ public class InputManager : MonoBehaviour
         _menuOpenAction = PlayerInput.actions["MenuOPEN"];
         _menuCloseAction = PlayerInput.actions["MenuClose"];
         _interactInputAction = PlayerInput.actions["Interact"];
-        _mouseInputAction = PlayerInput.actions["Point"];
+        _mouseInputAction = PlayerInput.actions["Point_c"];
         _rightClickAction = PlayerInput.actions["RightClick"];
         _clickAction = PlayerInput.actions["Click"];
     }
