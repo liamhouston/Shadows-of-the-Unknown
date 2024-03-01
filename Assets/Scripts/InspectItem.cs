@@ -17,8 +17,8 @@ public class InspectItem : MonoBehaviour
     public Sprite displayImage = null;
     //public AudioSource InteractwithSound;
 
-    private Color originalColor;
-    public Color highlightColor = new Color(1f, 0.5255f, 0.5255f);
+    //private Color originalColor;
+    //public Color highlightColor = new Color(1f, 0.5255f, 0.5255f);
 
 
     // Start is called before the first frame update
@@ -26,7 +26,7 @@ public class InspectItem : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         Debug.Assert(spriteRenderer != null, "SpriteRenderer must exist on this object");
         InteractwithText.SetActive(false);
-        originalColor = spriteRenderer.color;
+        //originalColor = spriteRenderer.color;
     }
 
     // Update is called once per frame
@@ -60,7 +60,7 @@ public class InspectItem : MonoBehaviour
         if (other.CompareTag("Player")) {
             playerIsNearby = true;
             InteractwithText.SetActive(true);
-            spriteRenderer.color = highlightColor;
+            //spriteRenderer.color = highlightColor;
         }
     }
 
@@ -69,7 +69,7 @@ public class InspectItem : MonoBehaviour
             playerIsNearby = false;
             InteractwithText.SetActive(false);
             itemCanvas.SetActive(false);
-            spriteRenderer.color = originalColor;
+            //spriteRenderer.color = originalColor;
         }    
     }
 }
