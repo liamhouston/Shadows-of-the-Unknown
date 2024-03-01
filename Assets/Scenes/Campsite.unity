@@ -4671,7 +4671,7 @@ MonoBehaviour:
   imageHeight: 400
   itemCanvas: {fileID: 1746869776}
   InteractwithText: {fileID: 45669919}
-  displayImage: {fileID: 21300000, guid: 71eeac123b9096744a00ef10d448d375, type: 3}
+  displayImage: {fileID: 21300000, guid: 5d5d0097a5f6b6740bcc2396da95f58b, type: 3}
 --- !u!50 &1983930670
 Rigidbody2D:
   serializedVersion: 4
@@ -10592,6 +10592,7 @@ MonoBehaviour:
   _maxResolve: 100
   _currentResolve: 0
   BlackoutBox: {fileID: 760005727}
+  gameOverBark: []
 --- !u!222 &666056123794236476
 CanvasRenderer:
   m_ObjectHideFlags: 0
