@@ -5,10 +5,9 @@ using UnityEngine.UI;
 
 public class InspectItem : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
 
     private bool playerIsNearby = false;
-    private float imageHeight = 400;
+    public float imageHeight = 400;
 
     public GameObject itemCanvas;
 
@@ -23,10 +22,7 @@ public class InspectItem : MonoBehaviour
 
     // Start is called before the first frame update
     void Start(){
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        Debug.Assert(spriteRenderer != null, "SpriteRenderer must exist on this object");
         InteractwithText.SetActive(false);
-        //originalColor = spriteRenderer.color;
     }
 
     // Update is called once per frame
@@ -36,21 +32,26 @@ public class InspectItem : MonoBehaviour
                 itemCanvas.SetActive(false);
             }
             else {
-                // Calculate the aspect ratio of the image
-                float aspectRatio = (float) spriteRenderer.sprite.bounds.size.x / spriteRenderer.sprite.bounds.size.y;
-                float newWidth = imageHeight * aspectRatio;
-
-                // Set the size of the Canvas based on the aspect ratio
-                itemCanvas.GetComponent<RectTransform>().sizeDelta = new Vector2(newWidth, imageHeight);
-
                 // Set the image to the display image or the sprite
+                itemCanvas.SetActive(true);
                 if (displayImage != null){
+                    // Calculate the aspect ratio of the image
+                    float aspectRatio = (float) displayImage.bounds.size.x / displayImage.bounds.size.y;
+                    float newWidth = imageHeight * aspectRatio;
+                    // Set the size of the Canvas based on the aspect ratio
+                    itemCanvas.GetComponent<RectTransform>().sizeDelta = new Vector2(newWidth, imageHeight);
                     itemCanvas.GetComponentInChildren<RawImage>().texture = displayImage.texture;
                 }
                 else {
+                    // Calculate the aspect ratio of the image
+                    SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+                    Debug.Assert(spriteRenderer != null, "SpriteRenderer must exist on this object");
+                    float aspectRatio = (float) spriteRenderer.sprite.bounds.size.x / spriteRenderer.sprite.bounds.size.y;
+                    float newWidth = imageHeight * aspectRatio;
+                    // Set the size of the Canvas based on the aspect ratio
+                    itemCanvas.GetComponent<RectTransform>().sizeDelta = new Vector2(newWidth, imageHeight);
                     itemCanvas.GetComponentInChildren<RawImage>().texture = spriteRenderer.sprite.texture;
                 }
-                itemCanvas.SetActive(true);
             }
         }
     }
