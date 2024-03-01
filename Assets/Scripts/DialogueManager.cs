@@ -71,6 +71,7 @@ public class DialogueManager : MonoBehaviour
         stopTyping = true; // no one else should be typing
         if (dialoguePanel.activeSelf){
             dialoguePanel.SetActive(false);
+            InputManager.PlayerInput.SwitchCurrentActionMap(defaultActionMap);
             return;
         }
 
@@ -91,6 +92,7 @@ public class DialogueManager : MonoBehaviour
         stopTyping = true; // no one else should be typing
         if (dialoguePanel.activeSelf){
             dialoguePanel.SetActive(false);
+            InputManager.PlayerInput.SwitchCurrentActionMap(defaultActionMap);
             return;
         }
         // prep for typing
@@ -118,4 +120,8 @@ public class DialogueManager : MonoBehaviour
         }
 
     }   
+
+    public bool DialogueCheck(){
+        return dialoguePanel.activeSelf;
+    }
 }
