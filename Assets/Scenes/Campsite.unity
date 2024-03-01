@@ -859,7 +859,7 @@ MonoBehaviour:
   WalkingAnimationCycle: []
   Framerate: 12
   SpriteRenderer: {fileID: 230183931}
-  targetPoint: {fileID: 1872509148}
+  speed: 2
 --- !u!212 &230183931
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1790,7 +1790,7 @@ MonoBehaviour:
   WalkingAnimationCycle: []
   Framerate: 12
   SpriteRenderer: {fileID: 400243696}
-  targetPoint: {fileID: 1872509148}
+  speed: 2
 --- !u!212 &400243696
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1887,7 +1887,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.620001, y: -3.65, z: 0.2935183}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 256872042}
@@ -1912,7 +1912,7 @@ MonoBehaviour:
   WalkingAnimationCycle: []
   Framerate: 12
   SpriteRenderer: {fileID: 410279314}
-  targetPoint: {fileID: 1872509148}
+  speed: 2
 --- !u!212 &410279314
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2868,7 +2868,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.26, y: -4.57, z: 1.2935183}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 256872042}
@@ -2893,7 +2893,7 @@ MonoBehaviour:
   WalkingAnimationCycle: []
   Framerate: 12
   SpriteRenderer: {fileID: 1079620055}
-  targetPoint: {fileID: 1872509148}
+  speed: 2
 --- !u!212 &1079620055
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3105,7 +3105,7 @@ MonoBehaviour:
   WalkingAnimationCycle: []
   Framerate: 12
   SpriteRenderer: {fileID: 1129796353}
-  targetPoint: {fileID: 1872509148}
+  speed: 2
 --- !u!212 &1129796353
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3345,7 +3345,7 @@ MonoBehaviour:
   WalkingAnimationCycle: []
   Framerate: 12
   SpriteRenderer: {fileID: 1187643855}
-  targetPoint: {fileID: 1872509148}
+  speed: 2
 --- !u!212 &1187643855
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3501,7 +3501,7 @@ MonoBehaviour:
   WalkingAnimationCycle: []
   Framerate: 12
   SpriteRenderer: {fileID: 1343901129}
-  targetPoint: {fileID: 1872509148}
+  speed: 2
 --- !u!212 &1343901129
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4223,7 +4223,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6.64, y: -6.62, z: 0.2935183}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 256872042}
@@ -4248,7 +4248,7 @@ MonoBehaviour:
   WalkingAnimationCycle: []
   Framerate: 12
   SpriteRenderer: {fileID: 1684095745}
-  targetPoint: {fileID: 1872509148}
+  speed: 2
 --- !u!212 &1684095745
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9984,7 +9984,7 @@ MonoBehaviour:
   WalkingAnimationCycle: []
   Framerate: 12
   SpriteRenderer: {fileID: 2072261073}
-  targetPoint: {fileID: 1872509148}
+  speed: 2
 --- !u!212 &2072261073
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10145,7 +10145,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.827118, y: -4.189912, z: 0.2935183}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 256872042}
@@ -10170,7 +10170,7 @@ MonoBehaviour:
   WalkingAnimationCycle: []
   Framerate: 12
   SpriteRenderer: {fileID: 2101603746}
-  targetPoint: {fileID: 1872509148}
+  speed: 2
 --- !u!212 &2101603746
 SpriteRenderer:
   m_ObjectHideFlags: 0
