@@ -54,6 +54,9 @@ public class MajorClue : MonoBehaviour
             playMajorClueSound = true; // communicate to the CameraFlash script that we don't want the default camera shutter noise
             playerFoundMajorClue = true;
 
+            // Fade In and Out From Black quickly
+            StartCoroutine(GameController.Instance.FadeToAndFromBlack((float) 0.5, (float) 0, (float) 0.1));
+
             // enable and make visible the exit button
             exitButton.interactable = true;
             buttonText.color = buttonTextColor;

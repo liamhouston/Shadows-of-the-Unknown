@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour {
 
     [Header ("Game Over Info")]
     public Image BlackoutBox;
-    private bool fadeComplete = false;
+    private bool gameOverFadeComplete = false;
     public string[] gameOverBark;
 
 
@@ -54,11 +54,10 @@ public class GameController : MonoBehaviour {
 
     public void Update(){
         // check for game over
-        if (_currentResolve <= 0 && !fadeComplete){
-            
-            StartCoroutine(FadeBlackOutSquare((float)0.01));
+        if (_currentResolve <= 0 && !gameOverFadeComplete){
+            StartCoroutine(GameOverFade((float)0.01));
         }
-        else if (fadeComplete){
+        else if (gameOverFadeComplete){
             // play dialogue if fade complete
             LevelManager.Instance.LoadScene("MainMenu", "CrossFade");
         }
@@ -102,7 +101,7 @@ public class GameController : MonoBehaviour {
         cinemachineBasicMultiChannelPerlin.m_FrequencyGain = default_frequency;
     }
 
-    public IEnumerator FadeBlackOutSquare(float fadeSpeed = 1){
+    public IEnumerator FadeOutBlackOutSquare(float fadeSpeed = 1){
         Color objectColor = BlackoutBox.GetComponent<Image>().color;
         float fadeAmount;
 
@@ -112,6 +111,40 @@ public class GameController : MonoBehaviour {
             yield return null;
         }
 
-        fadeComplete = true;
+        gameOverFadeComplete = true;
+    }
+
+    public IEnumerator GameOverFade(float fadeSpeed = 1){
+        Color objectColor = BlackoutBox.GetComponent<Image>().color;
+        float fadeAmount;
+
+        while (BlackoutBox.GetComponent<Image>().color.a < 1){
+            fadeAmount = BlackoutBox.GetComponent<Image>().color.a + (fadeSpeed * Time.deltaTime);
+            BlackoutBox.GetComponent<Image>().color = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
+            yield return null;
+        }
+
+        gameOverFadeComplete = true;
+    }
+
+    public IEnumerator FadeToAndFromBlack(float initialWait, float duringWait = 0.05f, float inBetweenWait = 0.25f){
+        Color objectColor = BlackoutBox.GetComponent<Image>().color;
+        float fadeAmount;
+
+        yield return new WaitForSeconds(initialWait);
+
+        while (BlackoutBox.GetComponent<Image>().color.a < 1){
+            fadeAmount = BlackoutBox.GetComponent<Image>().color.a + 10*Time.deltaTime;
+            BlackoutBox.GetComponent<Image>().color = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
+            yield return new WaitForSeconds(duringWait);
+        }
+
+        yield return new WaitForSeconds(inBetweenWait);
+
+        while (BlackoutBox.GetComponent<Image>().color.a > 0){
+            fadeAmount = BlackoutBox.GetComponent<Image>().color.a - 10*Time.deltaTime;
+            BlackoutBox.GetComponent<Image>().color = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
+            yield return new WaitForSeconds(duringWait);
+        }
     }
 }
