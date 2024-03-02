@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class MajorClue : MonoBehaviour
 {
+    private static MajorClue instance; // Singleton instance 
+
     private bool playerIsNearby = false;
 
     public float waitToPlaySound = 2.5f;
@@ -12,8 +14,31 @@ public class MajorClue : MonoBehaviour
     public Button exitButton;
     public Text buttonText;
 
+    public bool playMajorClueSound = false; // this will communicate with CameraFlash when to play the major clue sound
+    public bool playerFoundMajorClue = false;
+
     private Color buttonTextColor;
     private Color invisible = new Color(1,1,1,0);
+
+        // Singleton Instance Property
+    public static MajorClue Instance
+    {
+        get { return instance; }
+    }
+
+    void Awake()
+    {
+        // Ensure only one instance of MajorClue exists
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
+
 
     void Start(){
         // keep exit button hidden until player interacts
@@ -25,19 +50,14 @@ public class MajorClue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerIsNearby && InputManager.Instance.RightClickInput){
-            // player took a picture of the major clue
-            StartCoroutine(WaitToPlaySound());
+        if (playerIsNearby && InputManager.Instance.RightClickInput && !playerFoundMajorClue){
+            playMajorClueSound = true; // communicate to the CameraFlash script that we don't want the default camera shutter noise
+            playerFoundMajorClue = true;
 
             // enable and make visible the exit button
             exitButton.interactable = true;
             buttonText.color = buttonTextColor;
         }
-    }
-
-    IEnumerator WaitToPlaySound() {     
-        yield return new WaitForSeconds(waitToPlaySound);
-        AudioController.Instance.PlayFoundMajorClueSound();
     }
 
     void OnTriggerEnter2D(Collider2D other){
@@ -50,5 +70,9 @@ public class MajorClue : MonoBehaviour
         if (other.CompareTag("Player")) {
             playerIsNearby = false;
         }    
+    }
+
+    public bool GetPlayerIsNearby(){
+        return playerIsNearby;
     }
 }

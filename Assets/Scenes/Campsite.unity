@@ -2473,6 +2473,8 @@ MonoBehaviour:
   waitToPlaySound: 2.5
   exitButton: {fileID: 1183049924}
   buttonText: {fileID: 897604635}
+  playMajorClueSound: 0
+  playerFoundMajorClue: 0
 --- !u!850595691 &785221733
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -2735,7 +2737,7 @@ GameObject:
   - component: {fileID: 897604634}
   - component: {fileID: 897604635}
   m_Layer: 0
-  m_Name: X Text
+  m_Name: Button X Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2748,17 +2750,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897604631}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1183049923}
+  m_Father: {fileID: 1097368275}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 885.2063, y: 461.13574}
+  m_SizeDelta: {x: -1806.4126, y: -978.2715}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &897604634
 CanvasRenderer:
@@ -3056,9 +3058,10 @@ RectTransform:
   - {fileID: 145594950}
   - {fileID: 82436911}
   - {fileID: 45669922}
-  - {fileID: 1183049923}
   - {fileID: 1746869777}
+  - {fileID: 897604632}
   - {fileID: 760005729}
+  - {fileID: 1183049923}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3266,8 +3269,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 897604632}
+  m_Children: []
   m_Father: {fileID: 1097368275}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3297,8 +3299,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
+    m_HighlightedColor: {r: 1, g: 0.7028302, b: 0.7028302, a: 0.3529412}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
     m_ColorMultiplier: 1
@@ -10460,7 +10462,7 @@ MonoBehaviour:
   defaultDamageSound: {fileID: 8300000, guid: 1066b85efe0640f4aa5820cf2e6d32b1, type: 3}
   backgroundShadowMovementSound: {fileID: 8300000, guid: 2d0726f0018f679498add1ec8e15f45c,
     type: 3}
-  foundMajorClueSound: {fileID: 8300000, guid: 64cb7821bc148b34f94f1ef44944f083, type: 3}
+  foundMajorClueSound: {fileID: 8300000, guid: 9b22a9ea40be63d4b897638e13f883cd, type: 3}
 --- !u!82 &2109467826
 AudioSource:
   m_ObjectHideFlags: 0

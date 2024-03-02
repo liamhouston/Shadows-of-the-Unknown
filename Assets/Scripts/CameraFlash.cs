@@ -28,7 +28,16 @@ public class CameraFlash : MonoBehaviour
     {
         yield return new WaitForSeconds(flashDelay);
 
-        AudioController.Instance.PlayCameraShutter();
+        // play default shutter or major clue sound
+        if (MajorClue.Instance.playMajorClueSound){
+            MajorClue.Instance.playMajorClueSound = false;
+            AudioController.Instance.PlayFoundMajorClueSound();
+        }
+        else{
+            AudioController.Instance.PlayCameraShutter();
+        }
+        
+        
         flashLight.transform.position = this.transform.position;
         flashLight.SetActive(true);
         yield return new WaitForSeconds(flashLength);
