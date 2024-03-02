@@ -27,8 +27,7 @@ public class CameraFlash : MonoBehaviour
     private IEnumerator WaitForFlash()
     {
         yield return new WaitForSeconds(flashDelay);
-
-        AudioController.Instance.PlayCameraShutter();
+        SoundManager.Instance.PlaySound2D("CameraFlash");
         flashLight.transform.position = this.transform.position;
         flashLight.SetActive(true);
         yield return new WaitForSeconds(flashLength);

@@ -13,20 +13,19 @@ public class Player : MonoBehaviour
     private Animator _animator;
     private const string _horizontal = "Horizontal";
 
-    private void Awake()
+    private void Start()
     {
-        // audioSource = gameObject.GetComponent<AudioSource>();
+        Cursor.visible = true;
+        InputManager.PlayerInput.actions.FindActionMap("Player").Enable();
+        InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap("Player");
+        InputManager.PlayerInput.SwitchCurrentActionMap("Player");
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
 
     }
     private void Update()
     {
-        if (InputManager.Instance.MenuOpenInput || InputManager.Instance.MenuCloseInput)
-        {
-            PauseManager.Instance.PauseCheck();
-        }
-
+        Debug.Log(InputManager.PlayerInput.currentActionMap);
         _movement.Set(InputManager.Instance.MoveInput.x, InputManager.Instance.MoveInput.y);
 
         _rb.velocity = _movement * _moveSpeed;

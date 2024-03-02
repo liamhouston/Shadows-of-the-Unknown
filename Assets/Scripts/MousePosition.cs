@@ -18,23 +18,29 @@ public class MousePosition : MonoBehaviour
     public float sensitivity;
 
     // Start is called before the first frame update
-    void Awake()
+    private void Start()
     {
-        Cursor.visible = false;
-        // _rb = GetComponent<Rigidbody2D>();
-        // if (ShowCursor == false)
-        // {
-
-        // }
+        // Cursor.visible = false;
+        InputManager.PlayerInput.actions.FindActionMap("Camera").Enable();
+        InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap("Camera");
+        InputManager.PlayerInput.SwitchCurrentActionMap("Camera");
+        InputManager.PlayerInput.actions.FindActionMap("Player").Disable();
     }
     // Update is called once per frame
     private void Update()
     {
-        if (InputManager.Instance.MenuOpenInput)
+        // if (InputManager.PlayerInput.defaultActionMap == null)
+        // {
+        //     InputManager.PlayerInput.actions.FindActionMap("Camera").Enable();
+        //     InputManager.PlayerInput.SwitchCurrentActionMap("Camera");
+        // }
+        Debug.Log(InputManager.PlayerInput.currentActionMap);
+        // if (InputManager.Instance.MenuOpenInput)
+        // {
+        //     PauseManager.Instance.PauseCheck();
+        // }
+        if (DialogueManager.Instance.DialogueIsActive())
         {
-            PauseManager.Instance.PauseCheck();
-        }
-        else if (DialogueManager.Instance.DialogueIsActive()){
             // we're in dialogue
         }
         else
@@ -42,7 +48,7 @@ public class MousePosition : MonoBehaviour
 
             // _mouse.Set(InputManager.Instance.MouseInput.x, InputManager.Instance.MouseInput.y);
             // Debug.Log(InputManager.Instance.MouseInput);
-            _mouse = _mainCamera.ScreenToWorldPoint(InputManager.Instance.MouseInput);
+            _mouse = _mainCamera.ScreenToWorldPoint(InputManager.Instance.MouseCInput);
             transform.position = _mouse;
 
             // // Get the mouse input
@@ -77,5 +83,16 @@ public class MousePosition : MonoBehaviour
         }
 
 
+    }
+    public void MouseCursor()
+    {
+        if (Cursor.visible)
+        {
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.visible = true;
+        }
     }
 }

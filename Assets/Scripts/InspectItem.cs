@@ -22,7 +22,8 @@ public class InspectItem : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start(){
+    void Start()
+    {
         spriteRenderer = GetComponent<SpriteRenderer>();
         Debug.Assert(spriteRenderer != null, "SpriteRenderer must exist on this object");
         InteractwithText.SetActive(false);
@@ -30,24 +31,31 @@ public class InspectItem : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update(){
-        if (InputManager.Instance.InteractInput && playerIsNearby){
-            if (itemCanvas.activeSelf){
+    void Update()
+    {
+        if ((InputManager.Instance.ClickCInput || InputManager.Instance.ClickInput) && playerIsNearby)
+        {
+            if (itemCanvas.activeSelf)
+            {
                 itemCanvas.SetActive(false);
+                playerIsNearby = false; // need to come back if they want to look at it again
             }
-            else {
+            else
+            {
                 // Calculate the aspect ratio of the image
-                float aspectRatio = (float) spriteRenderer.sprite.bounds.size.x / spriteRenderer.sprite.bounds.size.y;
+                float aspectRatio = (float)spriteRenderer.sprite.bounds.size.x / spriteRenderer.sprite.bounds.size.y;
                 float newWidth = imageHeight * aspectRatio;
 
                 // Set the size of the Canvas based on the aspect ratio
                 itemCanvas.GetComponent<RectTransform>().sizeDelta = new Vector2(newWidth, imageHeight);
 
                 // Set the image to the display image or the sprite
-                if (displayImage != null){
+                if (displayImage != null)
+                {
                     itemCanvas.GetComponentInChildren<RawImage>().texture = displayImage.texture;
                 }
-                else {
+                else
+                {
                     itemCanvas.GetComponentInChildren<RawImage>().texture = spriteRenderer.sprite.texture;
                 }
                 itemCanvas.SetActive(true);
@@ -56,20 +64,24 @@ public class InspectItem : MonoBehaviour
     }
 
 
-    void OnTriggerEnter2D(Collider2D other){
-        if (other.CompareTag("Player")) {
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
             playerIsNearby = true;
             InteractwithText.SetActive(true);
             spriteRenderer.color = highlightColor;
         }
     }
 
-    void OnTriggerExit2D(Collider2D other){
-        if (other.CompareTag("Player")) {
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
             playerIsNearby = false;
             InteractwithText.SetActive(false);
             itemCanvas.SetActive(false);
             spriteRenderer.color = originalColor;
-        }    
+        }
     }
 }

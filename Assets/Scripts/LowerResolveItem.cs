@@ -37,7 +37,7 @@ public class LowerResolveItem : MonoBehaviour
                 StartCoroutine(WaitForFirstSight());
             } 
             else {
-                AudioController.Instance.PlayDefaultDamageSound();
+                SoundManager.Instance.PlaySound2D("Heartbeating");
             }
 
             if (playerSeenItem){                
@@ -75,7 +75,7 @@ public class LowerResolveItem : MonoBehaviour
         yield return new WaitForSeconds(delayOnFirstSight);
         if (playerIsNearby){
             playerSeenItem = true;
-            AudioController.Instance.PlayFirstDamageSound();
+            SoundManager.Instance.PlaySound2D("Heartbeating");
         }
     }
 }

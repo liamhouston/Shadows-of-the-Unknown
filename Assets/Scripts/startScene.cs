@@ -10,32 +10,40 @@ public class startScene : MonoBehaviour
     public GameObject InteractwithText;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         InteractwithText.SetActive(false);
         playerIsNearby = false;
     }
-    void OnTriggerEnter2D(Collider2D other)
+
+    // Update is called once per frame
+    private void Update()
+    {
+        if (playerIsNearby && InputManager.Instance.ClickInput)
+        {
+            NextLevel();
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player")) playerIsNearby = true;
         InteractwithText.SetActive(true);
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player")) playerIsNearby = false;
-        InteractwithText.SetActive(false);
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        if (playerIsNearby && InputManager.Instance.InteractInput)
+        if (InteractwithText != null)
         {
             InteractwithText.SetActive(false);
-            LevelManager.Instance.LoadScene(sceneToLoad, "CrossFade");
-            MusicManager.Instance.PlayMusic(sceneToLoad);
-
         }
+
+    }
+    public void NextLevel()
+    {
+        InteractwithText.SetActive(false);
+        LevelManager.Instance.LoadScene(sceneToLoad, "CrossFade");
+        MusicManager.Instance.PlayMusic(sceneToLoad);
     }
 
 

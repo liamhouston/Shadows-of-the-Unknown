@@ -13,42 +13,52 @@ public class MajorClue : MonoBehaviour
     public Text buttonText;
 
     private Color buttonTextColor;
-    private Color invisible = new Color(1,1,1,0);
+    private Color invisible = new Color(1, 1, 1, 0);
 
-    void Start(){
+    void Start()
+    {
         // keep exit button hidden until player interacts
-        exitButton.interactable = false;
-        buttonTextColor = buttonText.color;
-        buttonText.color = invisible;
+        exitButton.gameObject.SetActive(false);
+        // exitButton.interactable = false;
+        // buttonTextColor = buttonText.color;
+        // buttonText.color = invisible;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (playerIsNearby && InputManager.Instance.RightClickInput){
+        if (playerIsNearby && InputManager.Instance.RightClickInput)
+        {
             // player took a picture of the major clue
             StartCoroutine(WaitToPlaySound());
-
+            InputManager.PlayerInput.actions.FindActionMap("UI").Enable();
+            // InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap("Camera");
+            // InputManager.PlayerInput.SwitchCurrentActionMap("Camera");
             // enable and make visible the exit button
             exitButton.interactable = true;
-            buttonText.color = buttonTextColor;
+            exitButton.gameObject.SetActive(true);
         }
     }
 
-    IEnumerator WaitToPlaySound() {     
+    IEnumerator WaitToPlaySound()
+    {
         yield return new WaitForSeconds(waitToPlaySound);
-        AudioController.Instance.PlayFoundMajorClueSound();
+        SoundManager.Instance.PlaySound2D("ScaryAmbientWind");
     }
 
-    void OnTriggerEnter2D(Collider2D other){
-        if (other.CompareTag("Player")) {
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
             playerIsNearby = true;
         }
     }
 
-    void OnTriggerExit2D(Collider2D other){
-        if (other.CompareTag("Player")) {
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
             playerIsNearby = false;
-        }    
+        }
     }
 }
