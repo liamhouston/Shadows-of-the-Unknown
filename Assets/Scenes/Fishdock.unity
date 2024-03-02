@@ -882,7 +882,7 @@ GameObject:
   m_Component:
   - component: {fileID: 266968465}
   m_Layer: 0
-  m_Name: --------------------UI
+  m_Name: '--------------------UI'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1116,7 +1116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 440777212}
   m_Layer: 0
-  m_Name: --------------------Camera
+  m_Name: '--------------------Camera'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1239,7 +1239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &485281625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1252,10 +1252,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496f2332e78cccc418511222358474c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageHeight: 400
   itemCanvas: {fileID: 1551774642632687501}
   InteractwithText: {fileID: 1454048609}
   displayImage: {fileID: 21300000, guid: 7e27ec7d8589eed468b24d1121d6670a, type: 3}
-  highlightColor: {r: 1, g: 0.5255, b: 0.5255, a: 1}
 --- !u!212 &485281626
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1753,7 +1753,7 @@ GameObject:
   m_Component:
   - component: {fileID: 624466549}
   m_Layer: 0
-  m_Name: -------------MANGERS
+  m_Name: '-------------MANGERS'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1790,7 +1790,7 @@ GameObject:
   m_Component:
   - component: {fileID: 697882771}
   m_Layer: 0
-  m_Name: -------------------Env
+  m_Name: '-------------------Env'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3497,7 +3497,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1600816416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3625,8 +3625,7 @@ Transform:
   m_LocalPosition: {x: -11.74, y: -0.29, z: 0}
   m_LocalScale: {x: 9, y: 9, z: 0}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 478558813}
+  m_Children: [{fileID: 478558813}]
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1645570374 stripped
@@ -3995,7 +3994,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2032405272}
   m_Layer: 0
-  m_Name: --------------------Chara
+  m_Name: '--------------------Chara'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6465,23 +6464,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 795265178}
-          m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-          m_MethodName: PlaySound2D
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: MenuSelect
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_Delegates: [{eventID: 0, callback: {m_PersistentCalls: {m_Calls: [{m_Target: {
+                fileID: 795265178}, m_TargetAssemblyTypeName: 'SoundManager, Assembly-CSharp',
+              m_MethodName: PlaySound2D, m_Mode: 5, m_Arguments: {m_ObjectArgument: {
+                  fileID: 0}, m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object,
+                  UnityEngine', m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: MenuSelect,
+                m_BoolArgument: 0}, m_CallState: 2}]}}}]
 --- !u!114 &7909105366717933978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6494,23 +6482,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 795265178}
-          m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-          m_MethodName: PlaySound2D
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: MenuSelect
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_Delegates: [{eventID: 0, callback: {m_PersistentCalls: {m_Calls: [{m_Target: {
+                fileID: 795265178}, m_TargetAssemblyTypeName: 'SoundManager, Assembly-CSharp',
+              m_MethodName: PlaySound2D, m_Mode: 5, m_Arguments: {m_ObjectArgument: {
+                  fileID: 0}, m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object,
+                  UnityEngine', m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: MenuSelect,
+                m_BoolArgument: 0}, m_CallState: 2}]}}}]
 --- !u!114 &7909105366958562237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6523,23 +6500,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 795265178}
-          m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-          m_MethodName: PlaySound2D
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: MenuSelect
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_Delegates: [{eventID: 0, callback: {m_PersistentCalls: {m_Calls: [{m_Target: {
+                fileID: 795265178}, m_TargetAssemblyTypeName: 'SoundManager, Assembly-CSharp',
+              m_MethodName: PlaySound2D, m_Mode: 5, m_Arguments: {m_ObjectArgument: {
+                  fileID: 0}, m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object,
+                  UnityEngine', m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: MenuSelect,
+                m_BoolArgument: 0}, m_CallState: 2}]}}}]
 --- !u!114 &8071322147362917569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6724,11 +6690,9 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9212744111544909979, guid: 7932c489666b5a942a10590527e98b81,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1645570381}
+    m_AddedComponents: [{targetCorrespondingSourceObject: {fileID: 9212744111544909979,
+          guid: 7932c489666b5a942a10590527e98b81, type: 3}, insertIndex: -1, addedObject: {
+          fileID: 1645570381}}]
   m_SourcePrefab: {fileID: 100100000, guid: 7932c489666b5a942a10590527e98b81, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

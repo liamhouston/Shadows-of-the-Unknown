@@ -5,10 +5,9 @@ using UnityEngine.UI;
 
 public class InspectItem : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
 
     private bool playerIsNearby = false;
-    private float imageHeight = 400;
+    public float imageHeight = 400;
 
     public GameObject itemCanvas;
 
@@ -17,71 +16,61 @@ public class InspectItem : MonoBehaviour
     public Sprite displayImage = null;
     //public AudioSource InteractwithSound;
 
-    private Color originalColor;
-    public Color highlightColor = new Color(1f, 0.5255f, 0.5255f);
+    //private Color originalColor;
+    //public Color highlightColor = new Color(1f, 0.5255f, 0.5255f);
 
 
     // Start is called before the first frame update
-    void Start()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        Debug.Assert(spriteRenderer != null, "SpriteRenderer must exist on this object");
+    void Start(){
         InteractwithText.SetActive(false);
-        originalColor = spriteRenderer.color;
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if ((InputManager.Instance.ClickCInput || InputManager.Instance.ClickInput) && playerIsNearby)
-        {
-            if (itemCanvas.activeSelf)
-            {
+    void Update(){
+        if (InputManager.Instance.InteractInput && playerIsNearby){
+            if (itemCanvas.activeSelf){
                 itemCanvas.SetActive(false);
-                playerIsNearby = false; // need to come back if they want to look at it again
             }
-            else
-            {
-                // Calculate the aspect ratio of the image
-                float aspectRatio = (float)spriteRenderer.sprite.bounds.size.x / spriteRenderer.sprite.bounds.size.y;
-                float newWidth = imageHeight * aspectRatio;
-
-                // Set the size of the Canvas based on the aspect ratio
-                itemCanvas.GetComponent<RectTransform>().sizeDelta = new Vector2(newWidth, imageHeight);
-
+            else {
                 // Set the image to the display image or the sprite
-                if (displayImage != null)
-                {
+                itemCanvas.SetActive(true);
+                if (displayImage != null){
+                    // Calculate the aspect ratio of the image
+                    float aspectRatio = (float) displayImage.bounds.size.x / displayImage.bounds.size.y;
+                    float newWidth = imageHeight * aspectRatio;
+                    // Set the size of the Canvas based on the aspect ratio
+                    itemCanvas.GetComponent<RectTransform>().sizeDelta = new Vector2(newWidth, imageHeight);
                     itemCanvas.GetComponentInChildren<RawImage>().texture = displayImage.texture;
                 }
-                else
-                {
+                else {
+                    // Calculate the aspect ratio of the image
+                    SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+                    Debug.Assert(spriteRenderer != null, "SpriteRenderer must exist on this object");
+                    float aspectRatio = (float) spriteRenderer.sprite.bounds.size.x / spriteRenderer.sprite.bounds.size.y;
+                    float newWidth = imageHeight * aspectRatio;
+                    // Set the size of the Canvas based on the aspect ratio
+                    itemCanvas.GetComponent<RectTransform>().sizeDelta = new Vector2(newWidth, imageHeight);
                     itemCanvas.GetComponentInChildren<RawImage>().texture = spriteRenderer.sprite.texture;
                 }
-                itemCanvas.SetActive(true);
             }
         }
     }
 
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
+    void OnTriggerEnter2D(Collider2D other){
+        if (other.CompareTag("Player")) {
             playerIsNearby = true;
             InteractwithText.SetActive(true);
-            spriteRenderer.color = highlightColor;
+            //spriteRenderer.color = highlightColor;
         }
     }
 
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
+    void OnTriggerExit2D(Collider2D other){
+        if (other.CompareTag("Player")) {
             playerIsNearby = false;
             InteractwithText.SetActive(false);
             itemCanvas.SetActive(false);
-            spriteRenderer.color = originalColor;
-        }
+            //spriteRenderer.color = originalColor;
+        }    
     }
 }
