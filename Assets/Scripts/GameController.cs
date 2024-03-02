@@ -60,6 +60,7 @@ public class GameController : MonoBehaviour {
         }
         else if (fadeComplete){
             // play dialogue if fade complete
+            LevelManager.Instance.LoadScene("MainMenu", "CrossFade");
         }
     }
 
@@ -104,8 +105,6 @@ public class GameController : MonoBehaviour {
     public IEnumerator FadeBlackOutSquare(float fadeSpeed = 1){
         Color objectColor = BlackoutBox.GetComponent<Image>().color;
         float fadeAmount;
-
-        Debug.Log("In fade out square " + BlackoutBox.GetComponent<Image>().color.a);
 
         while (BlackoutBox.GetComponent<Image>().color.a < 1){
             fadeAmount = BlackoutBox.GetComponent<Image>().color.a + (fadeSpeed * Time.deltaTime);
