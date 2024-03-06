@@ -23,7 +23,8 @@ public class InspectItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InteractwithText.SetActive(false);
+        if (InteractwithText)
+            InteractwithText.SetActive(false);
     }
 
     // Update is called once per frame

@@ -25,7 +25,6 @@ public class MousePosition : MonoBehaviour
     {
 
         // Debug.Log(InputManager.PlayerInput.currentActionMap);
-
         if (DialogueManager.Instance.DialogueIsActive())
         {
             // we're in dialogue
@@ -34,6 +33,7 @@ public class MousePosition : MonoBehaviour
             //     DialogueManager.Instance.wordSpeed = 0.01f;
             // }
         }
+
         else
         {
             Vector3 mousePosition = _mainCamera.ScreenToWorldPoint(InputManager.Instance.MouseCInput);

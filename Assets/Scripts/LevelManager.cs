@@ -74,9 +74,10 @@ public class LevelManager : MonoBehaviour
         LoadScene("Campsite", "CrossFade");
         MusicManager.Instance.PlayMusic("Campsite");
     }
-    // public void DestroyPlayer()
-    // {
-    //     Destroy(Player.Instance.gameObject);
-    // }
+
+    public void LoadApartmentScene()
+    {
+        LoadScene("Campsite", "CrossFade");
+    }
 
 }

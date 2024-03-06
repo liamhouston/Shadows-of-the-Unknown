@@ -12,6 +12,7 @@ TagManager:
   - PCGComponent
   - NPC
   - Bush
+  - Apartment
   layers:
   - Default
   - TransparentFX

@@ -23,7 +23,7 @@ public class MusicManager : MonoBehaviour
         }
     }
 
-    public void PlayMusic(string trackName, float fadeDuration = 0.5f)
+    public void PlayMusic(string trackName, float fadeDuration = 0.2f)
     {
         StartCoroutine(AnimateMusicCrossfade(musicLibrary.GetClipFromName(trackName), fadeDuration));
     }

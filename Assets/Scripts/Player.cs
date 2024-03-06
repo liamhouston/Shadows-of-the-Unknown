@@ -43,8 +43,6 @@ public class Player : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
 
-        Debug.Log(TentPic);
-
     }
     private void Update()
     {

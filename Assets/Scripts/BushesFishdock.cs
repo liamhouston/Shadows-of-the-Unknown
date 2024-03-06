@@ -10,11 +10,8 @@ public class BushesFishdock : MonoBehaviour
     // Update is called once per frame
     private void Start()
     {
-        if (GameController.Instance != null)
-        {
-            _isPic = Player.Instance.TentPic;
-        }
 
+        _isPic = Player.Instance.TentPic;
     }
     private void Update()
     {

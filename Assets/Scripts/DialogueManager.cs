@@ -75,6 +75,7 @@ public class DialogueManager : MonoBehaviour
                     dialoguePanel.SetActive(false);
                     InputManager.PlayerInput.actions.FindActionMap(defaultActionMap).Enable();
                     InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap(defaultActionMap);
+                    InputManager.PlayerInput.SwitchCurrentActionMap(defaultActionMap);
                     InputManager.PlayerInput.actions.FindActionMap("UI").Disable();
                 }
                 wordSpeed = 0.04f;
