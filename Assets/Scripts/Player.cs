@@ -4,31 +4,36 @@ using UnityEngine.InputSystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Cinemachine;
+using System.Runtime.InteropServices;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float _moveSpeed = 5f;
+    [SerializeField]
+    private float _moveSpeed = 5f;
+
+    [SerializeField]
+    private Transform _focusObjectTransform;
+    public bool TentPic;
+    private CinemachineVirtualCamera _cinemachinevcam;
     private Vector2 _movement;
     private Rigidbody2D _rb;
-    // private AudioSource audioSource;
+
     private Animator _animator;
     private const string _horizontal = "Horizontal";
     private const string _lastHorizontal = "LastHorizontal";
-    // public static Player Instance;
-    // private CinemachineVirtualCamera _vcam;
-
-    // private void Awake()
-    // {
-    //     if (Instance == null)
-    //     {
-    //         Instance = this;
-    //         DontDestroyOnLoad(gameObject);
-    //     }
-    //     else
-    //     {
-    //         Destroy(gameObject);
-    //     }
-    // }
+    public static Player Instance;
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     private void Start()
     {
         Cursor.visible = true;
@@ -38,11 +43,15 @@ public class Player : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
 
+        Debug.Log(TentPic);
+
     }
     private void Update()
     {
 
         Debug.Log(InputManager.PlayerInput.currentActionMap);
+        Debug.Log(TentPic);
+
         _movement.Set(InputManager.Instance.MoveInput.x, InputManager.Instance.MoveInput.y);
 
         _rb.velocity = _movement * _moveSpeed;
