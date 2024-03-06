@@ -8,49 +8,41 @@ using UnityEngine.InputSystem;
 public class MousePosition : MonoBehaviour
 {
     [SerializeField] private Camera _mainCamera;
-    // [SerializeField] private CinemachineVirtualCamera cvc;
-
-    // [SerializeField] private float _moveSpeed = 5f;
     private Vector2 _mouse;
-    // private Rigidbody2D _rb;
 
-    // public bool ShowCursor = false;
     public float sensitivity;
-
-    // Start is called before the first frame update
     private void Start()
     {
-        // Cursor.visible = false;
+        InputManager.PlayerInput.actions.FindActionMap("UI").Disable();
         InputManager.PlayerInput.actions.FindActionMap("Camera").Enable();
         InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap("Camera");
         InputManager.PlayerInput.SwitchCurrentActionMap("Camera");
+        Debug.Log("In Start, Mouse input: " + InputManager.Instance.MouseCInput);
         InputManager.PlayerInput.actions.FindActionMap("Player").Disable();
     }
     // Update is called once per frame
     private void Update()
     {
-        // if (InputManager.PlayerInput.defaultActionMap == null)
-        // {
-        //     InputManager.PlayerInput.actions.FindActionMap("Camera").Enable();
-        //     InputManager.PlayerInput.SwitchCurrentActionMap("Camera");
-        // }
-        Debug.Log(InputManager.PlayerInput.currentActionMap);
-        // if (InputManager.Instance.MenuOpenInput)
-        // {
-        //     PauseManager.Instance.PauseCheck();
-        // }
+
+        // Debug.Log(InputManager.PlayerInput.currentActionMap);
+
         if (DialogueManager.Instance.DialogueIsActive())
         {
             // we're in dialogue
+            // if (InputManager.Instance.ClickUIInput)
+            // {
+            //     DialogueManager.Instance.wordSpeed = 0.01f;
+            // }
         }
         else
         {
+            Vector3 mousePosition = _mainCamera.ScreenToWorldPoint(InputManager.Instance.MouseCInput);
+            // _mouse = _mainCamera.ScreenToWorldPoint(InputManager.Instance.MouseCInput);
+            // Debug.Log("In update, Mouse input: " + mousePosition);
+            transform.position = new Vector3(mousePosition.x, mousePosition.y, 0);
 
-            // _mouse.Set(InputManager.Instance.MouseInput.x, InputManager.Instance.MouseInput.y);
-            // Debug.Log(InputManager.Instance.MouseInput);
-            _mouse = _mainCamera.ScreenToWorldPoint(InputManager.Instance.MouseCInput);
-            transform.position = _mouse;
-
+            // Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            // transform.position = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
             // // Get the mouse input
             // float mouseX = Input.GetAxis("Mouse X");
             // float mouseY = Input.GetAxis("Mouse Y");
@@ -79,20 +71,6 @@ public class MousePosition : MonoBehaviour
             // if (!leftBounds && !rightBounds && !belowBounds && !aboveBounds){ // if in screen, move to new position
             //     transform.position = newPos;
             // }
-
-        }
-
-
-    }
-    public void MouseCursor()
-    {
-        if (Cursor.visible)
-        {
-            Cursor.visible = false;
-        }
-        else
-        {
-            Cursor.visible = true;
         }
     }
 }

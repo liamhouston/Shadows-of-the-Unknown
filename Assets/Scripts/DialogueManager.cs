@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using Unity.Collections.LowLevel.Unsafe;
+using UnityEngine.PlayerLoop;
 
 
 public class DialogueManager : MonoBehaviour
@@ -22,7 +24,9 @@ public class DialogueManager : MonoBehaviour
     private string[] dialogue;
     private string defaultActionMap;
     private bool stopTyping = false;
+    private bool _isTyping = false;
     private float secondsOnScreen;
+
 
 
     private void Awake()
@@ -44,14 +48,19 @@ public class DialogueManager : MonoBehaviour
         defaultActionMap = InputManager.PlayerInput.currentActionMap?.name;
     }
 
-    public void Update()
+    private void Update()
     {
         if (dialoguePanel.activeSelf)
         {
+            if (_isTyping == true && InputManager.Instance.ClickUIInput)
+            {
+                wordSpeed = 0.01f;
+            }
             // check whether user has clicked through to end this line of dialogue
             if (dialogueText.text == dialogue[line_index] && InputManager.Instance.ClickUIInput)
             {
                 // if there are still more lines of dialogue play them
+
                 if (line_index < dialogue.Length - 1)
                 {
                     line_index++;
@@ -67,9 +76,8 @@ public class DialogueManager : MonoBehaviour
                     InputManager.PlayerInput.actions.FindActionMap(defaultActionMap).Enable();
                     InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap(defaultActionMap);
                     InputManager.PlayerInput.actions.FindActionMap("UI").Disable();
-                    // InputManager.PlayerInput.SwitchCurrentActionMap(defaultActionMap);
-
                 }
+                wordSpeed = 0.04f;
             }
         }
     }
@@ -114,8 +122,11 @@ public class DialogueManager : MonoBehaviour
         {
             dialoguePanel.SetActive(false);
 
-            InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap(defaultActionMap);
 
+            // InputManager.PlayerInput.actions.FindActionMap("UI").Enable();
+            // InputManager.PlayerInput.actions.FindActionMap("Camera").Enable();
+            // InputManager.PlayerInput.SwitchCurrentActionMap("Camera");
+            // InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap(defaultActionMap);
             // InputManager.PlayerInput.SwitchCurrentActionMap(defaultActionMap);
             return;
         }
@@ -126,11 +137,14 @@ public class DialogueManager : MonoBehaviour
         line_index = 0;
         secondsOnScreen = seconds;
         StartCoroutine(Typing(secondsOnScreen));
+
     }
 
     // Seconds on screen represents how long the dialogue box will appear on screen. (-1 if BLOCKING and should stay on screen until player clicks)
     private IEnumerator Typing(float secondsOnScreen)
     {
+        yield return new WaitForSeconds(0.2f);
+        _isTyping = true;
         stopTyping = false;
         // this function types out each individual letter of the dialogue
         foreach (char letter in dialogue[line_index].ToCharArray())
@@ -146,11 +160,16 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitForSeconds(secondsOnScreen);
             dialoguePanel.SetActive(false);
         }
-
+        _isTyping = false;
     }
 
     public bool DialogueIsActive()
     {
         return dialoguePanel.activeSelf;
     }
+
+    // public void DialogueSkip()
+    // {
+    //     wordSpeed = 0.01f;
+    // }
 }

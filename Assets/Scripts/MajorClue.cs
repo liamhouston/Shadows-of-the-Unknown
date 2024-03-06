@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,11 +15,14 @@ public class MajorClue : MonoBehaviour
 
     private Color buttonTextColor;
     private Color invisible = new Color(1, 1, 1, 0);
-
+    public string[] dialogue;
+    private PlayerBarks playerBarks;
     void Start()
     {
+
         // keep exit button hidden until player interacts
         exitButton.gameObject.SetActive(false);
+        playerBarks = GetComponent<PlayerBarks>();
         // exitButton.interactable = false;
         // buttonTextColor = buttonText.color;
         // buttonText.color = invisible;
@@ -31,12 +35,20 @@ public class MajorClue : MonoBehaviour
         {
             // player took a picture of the major clue
             StartCoroutine(WaitToPlaySound());
+            GameController.Instance.TentPic = true;
             InputManager.PlayerInput.actions.FindActionMap("UI").Enable();
             // InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap("Camera");
             // InputManager.PlayerInput.SwitchCurrentActionMap("Camera");
             // enable and make visible the exit button
             exitButton.interactable = true;
             exitButton.gameObject.SetActive(true);
+        }
+        else if (GameController.Instance.TentPic)
+        {
+            dialogue = playerBarks.barkList;
+            dialogue = new string[] { "I think I got the pictue. I might as well leave." };
+            DialogueManager.Instance.playBlockingDialogue("", dialogue);
+            GameController.Instance.TentPic = false;
         }
     }
 
@@ -61,4 +73,10 @@ public class MajorClue : MonoBehaviour
             playerIsNearby = false;
         }
     }
-}
+
+    public void LeavingCampsite()
+    {
+        GameController.Instance.TentPic = true;
+    }
+}   
+

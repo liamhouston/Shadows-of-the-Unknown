@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 
 public class Player : MonoBehaviour
 {
@@ -12,7 +13,22 @@ public class Player : MonoBehaviour
     // private AudioSource audioSource;
     private Animator _animator;
     private const string _horizontal = "Horizontal";
+    private const string _lastHorizontal = "LastHorizontal";
+    // public static Player Instance;
+    // private CinemachineVirtualCamera _vcam;
 
+    // private void Awake()
+    // {
+    //     if (Instance == null)
+    //     {
+    //         Instance = this;
+    //         DontDestroyOnLoad(gameObject);
+    //     }
+    //     else
+    //     {
+    //         Destroy(gameObject);
+    //     }
+    // }
     private void Start()
     {
         Cursor.visible = true;
@@ -25,11 +41,17 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
+
         Debug.Log(InputManager.PlayerInput.currentActionMap);
         _movement.Set(InputManager.Instance.MoveInput.x, InputManager.Instance.MoveInput.y);
 
         _rb.velocity = _movement * _moveSpeed;
         _animator.SetFloat(_horizontal, _movement.x);
+
+        if (_movement != Vector2.zero)
+        {
+            _animator.SetFloat(_lastHorizontal, _movement.x);
+        }
 
     }
     // Update is called once per frame

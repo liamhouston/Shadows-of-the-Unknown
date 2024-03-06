@@ -24,15 +24,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Point_p",
-                    "type": "PassThrough",
-                    "id": "d8951b75-617d-4565-bbc2-2da89a14dd3d",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
                     "name": "MenuOPEN",
                     "type": "Button",
                     "id": "9a622f75-10a6-4664-ad23-2c122b218e87",
@@ -139,39 +130,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "MenuOPEN",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "27b81279-c2db-4f7a-b89d-b8cff107bf10",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Point_p",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0a1dae59-7a36-4ffd-8882-baca093f494b",
-                    "path": "<Pen>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Point_p",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1f0218b0-e1e9-43b8-94ba-0e6a345803db",
-                    "path": "<Touchscreen>/touch*/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Point_p",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
