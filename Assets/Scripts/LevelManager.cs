@@ -66,6 +66,7 @@ public class LevelManager : MonoBehaviour
     public void LoadFishDockScene()
     {
         LoadScene("Fishdock", "CrossFade");
+        MusicManager.Instance.PlayMusic("Fishdock");
     }
 
     public void LoadCampsiteScene()

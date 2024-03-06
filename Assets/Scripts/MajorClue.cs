@@ -35,21 +35,25 @@ public class MajorClue : MonoBehaviour
         {
             // player took a picture of the major clue
             StartCoroutine(WaitToPlaySound());
-            GameController.Instance.TentPic = true;
+            Player.Instance.TentPic = true;
+            dialogue = playerBarks.barkList;
             InputManager.PlayerInput.actions.FindActionMap("UI").Enable();
+            dialogue = new string[] { "I think I got the pictue. I might as well leave." };
+            DialogueManager.Instance.playBlockingDialogue("", dialogue);
             // InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap("Camera");
             // InputManager.PlayerInput.SwitchCurrentActionMap("Camera");
             // enable and make visible the exit button
             exitButton.interactable = true;
             exitButton.gameObject.SetActive(true);
+            playerIsNearby = false;
         }
-        else if (GameController.Instance.TentPic)
-        {
-            dialogue = playerBarks.barkList;
-            dialogue = new string[] { "I think I got the pictue. I might as well leave." };
-            DialogueManager.Instance.playBlockingDialogue("", dialogue);
-            GameController.Instance.TentPic = false;
-        }
+        // else if (playerIsNearby && Player.Instance.TentPic)
+        // {
+        //     dialogue = playerBarks.barkList;
+        //     dialogue = new string[] { "I think I got the pictue. I might as well leave." };
+        //     DialogueManager.Instance.playBlockingDialogue("", dialogue);
+        //     playerIsNearby = false;
+        // }
     }
 
     IEnumerator WaitToPlaySound()
@@ -76,7 +80,7 @@ public class MajorClue : MonoBehaviour
 
     public void LeavingCampsite()
     {
-        GameController.Instance.TentPic = true;
+        Player.Instance.TentPic = true;
     }
-}   
+}
 

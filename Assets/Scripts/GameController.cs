@@ -8,8 +8,7 @@ public class GameController : MonoBehaviour
 {
     public Slider resolveBar;
 
-    private static GameController _instance;
-    public static GameController Instance { get { return _instance; } }
+    public static GameController Instance;
 
     private float default_amplitude;
     private float default_frequency;
@@ -19,7 +18,7 @@ public class GameController : MonoBehaviour
     public NoiseSettings ShakeNoiseProfile;
     public NoiseSettings DefaultNoiseProfile;
 
-    public bool TentPic = false;
+    // public bool TentPic = false;
 
     [Header("Player Info")]
     [SerializeField] private int _maxResolve = 100;
@@ -35,17 +34,19 @@ public class GameController : MonoBehaviour
         default_amplitude = cinemachineBasicMultiChannelPerlin.m_AmplitudeGain;
         default_frequency = cinemachineBasicMultiChannelPerlin.m_FrequencyGain;
 
-        if (_instance != null && _instance != this)
+        if (Instance == null)
         {
-            Destroy(this);
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+            _currentResolve = _maxResolve;
+
+            this.SetMaxResolve(_maxResolve);
+
+
         }
         else
         {
-            _instance = this;
-            DontDestroyOnLoad(gameObject);
-            _currentResolve = _maxResolve;
-            this.SetMaxResolve(_maxResolve);
-
+            Destroy(gameObject);
         }
     }
 
