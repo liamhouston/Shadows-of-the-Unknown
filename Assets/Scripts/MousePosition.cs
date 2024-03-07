@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.Universal;
 
 
 public class MousePosition : MonoBehaviour
@@ -11,6 +12,8 @@ public class MousePosition : MonoBehaviour
     private Vector2 _mouse;
 
     public float sensitivity;
+    public float delayInStart = 0; // how long after the scene starts to enable the light
+
     private void Start()
     {
         InputManager.PlayerInput.actions.FindActionMap("UI").Disable();
@@ -19,6 +22,8 @@ public class MousePosition : MonoBehaviour
         InputManager.PlayerInput.SwitchCurrentActionMap("Camera");
         Debug.Log("In Start, Mouse input: " + InputManager.Instance.MouseCInput);
         InputManager.PlayerInput.actions.FindActionMap("Player").Disable();
+
+        StartCoroutine(WaitToEnableLight());
     }
     // Update is called once per frame
     private void Update()
@@ -72,5 +77,12 @@ public class MousePosition : MonoBehaviour
             //     transform.position = newPos;
             // }
         }
+    }
+
+    private IEnumerator WaitToEnableLight(){
+        Light2D light = GetComponent<Light2D>();
+        light.enabled = false;
+        yield return new WaitForSeconds(delayInStart);
+        light.enabled = true;
     }
 }

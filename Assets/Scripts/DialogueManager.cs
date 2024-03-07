@@ -11,6 +11,8 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
 
+    public string[] openingDialogue;
+
     [Header("Character Info")]
     public List<string> characterNames;
     public List<Image> characterProfile;
@@ -46,6 +48,11 @@ public class DialogueManager : MonoBehaviour
     {
         dialoguePanel.SetActive(false);
         defaultActionMap = InputManager.PlayerInput.currentActionMap?.name;
+
+        if (openingDialogue.Length != 0){
+            dialogue = openingDialogue;
+            playBlockingDialogue("Jay", openingDialogue);
+        }
     }
 
     private void Update()

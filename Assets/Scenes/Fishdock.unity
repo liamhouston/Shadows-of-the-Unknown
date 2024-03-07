@@ -931,6 +931,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f1dbc7524cd4d4e8e5a2cdf91b6350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openingDialogue:
+  - Whoa.. my legs feel shaky. I think it's A to move left, D to move right and click
+    to interact.
   characterNames: []
   characterProfile: []
   dialoguePanel: {fileID: 2429484468754813083}

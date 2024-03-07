@@ -709,7 +709,7 @@ MonoBehaviour:
   imageHeight: 400
   itemCanvas: {fileID: 1982566907351442447}
   InteractwithText: {fileID: 3630835877747498023}
-  displayImage: {fileID: 21300000, guid: 71eeac123b9096744a00ef10d448d375, type: 3}
+  displayImage: {fileID: 21300000, guid: 903fef09f8ec9594590ec0f3ae109557, type: 3}
 --- !u!61 &259800071
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -978,6 +978,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mainCamera: {fileID: 222937745}
   sensitivity: 1
+  delayInStart: 2.5
 --- !u!1001 &267462305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1724,6 +1725,81 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66f15d4dae2676643ace55b6b16ca69f, type: 3}
+--- !u!1 &770667450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 770667451}
+  - component: {fileID: 770667453}
+  - component: {fileID: 770667452}
+  m_Layer: 0
+  m_Name: BlackoutBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &770667451
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770667450}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4064912508659236288}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 5.0821, y: 0}
+  m_SizeDelta: {x: 1977.8782, y: 1125.7122}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &770667452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770667450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: a8cf8d1041477ae4da70e119504d19b9, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &770667453
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770667450}
+  m_CullTransparentMesh: 1
 --- !u!1 &781784728
 GameObject:
   m_ObjectHideFlags: 0
@@ -1920,7 +1996,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitToPlaySound: 2.5
   exitButton: {fileID: 1772804596646269793}
-  buttonText: {fileID: 0}
   playMajorClueSound: 0
   playerFoundMajorClue: 0
   dialogue: []
@@ -2473,6 +2548,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f1dbc7524cd4d4e8e5a2cdf91b6350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openingDialogue:
+  - "Ugh its dark... I think I can use a flashlight? Where\u2026 Wow, this is clunky.
+    I think the mouse is the flashlight and maybe\u2026 Yeah, I just move the camera
+    the same way I walk. Pretty intuitive. This is a little shaky. My eyes feel all
+    weird when I look through it."
+  - "From what I remember about Percy\u2019s chattering, it\u2019s right-click to
+    take a photo."
   characterNames: []
   characterProfile: []
   dialoguePanel: {fileID: 959136775157999831}
@@ -9915,8 +9997,9 @@ RectTransform:
   - {fileID: 7134357448229932444}
   - {fileID: 1996245262293463288}
   - {fileID: 2584144458388574740}
-  - {fileID: 9056077335320199303}
   - {fileID: 1783123862229222360}
+  - {fileID: 770667451}
+  - {fileID: 9056077335320199303}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -10402,9 +10485,26 @@ PrefabInstance:
       objectReference: {fileID: 7989082148689536073}
     - target: {fileID: 3336924764266330916, guid: 0afd5e2431b0fbf43893a3ae940c8d8d,
         type: 3}
+      propertyPath: BlackoutBox
+      value: 
+      objectReference: {fileID: 770667452}
+    - target: {fileID: 3336924764266330916, guid: 0afd5e2431b0fbf43893a3ae940c8d8d,
+        type: 3}
+      propertyPath: gameOverBark.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336924764266330916, guid: 0afd5e2431b0fbf43893a3ae940c8d8d,
+        type: 3}
       propertyPath: CinemachineVirtualCamera
       value: 
       objectReference: {fileID: 597193460}
+    - target: {fileID: 3336924764266330916, guid: 0afd5e2431b0fbf43893a3ae940c8d8d,
+        type: 3}
+      propertyPath: gameOverBark.Array.data[0]
+      value: "Oh, god. I feel\u2014I feel really nauseous. I\u2019m\u2026 This camera
+        is burning my hands. My hands hurt. I need to\u2014I need to leave. I\u2019m
+        gonna leave. Percy\u2026 I\u2019ll wait for him at the\u2026"
+      objectReference: {fileID: 0}
     - target: {fileID: 4420678823064606937, guid: 0afd5e2431b0fbf43893a3ae940c8d8d,
         type: 3}
       propertyPath: m_Name
