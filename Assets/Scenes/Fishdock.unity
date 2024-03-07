@@ -371,7 +371,7 @@ Transform:
   m_GameObject: {fileID: 135476395}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -59.96, y: -8.98, z: 0}
+  m_LocalPosition: {x: -89.78, y: -8.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -389,7 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df5b16f5536689469797f90e4f6c0ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 10
+  _moveSpeed: 13
   _focusObjectTransform: {fileID: 0}
   TentPic: 0
   currentSceneName: Fishdock
@@ -2169,7 +2169,7 @@ Transform:
   m_GameObject: {fileID: 623563484}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -59.05715, y: -8.099998, z: -3.2399998}
+  m_LocalPosition: {x: -88.87715, y: -8.099998, z: -3.2399998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2737,7 +2737,7 @@ Transform:
   m_GameObject: {fileID: 1226332784}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -59.060577, y: -1.3576665, z: -3.2399998}
+  m_LocalPosition: {x: -88.88052, y: -1.374907, z: -3.2399998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
