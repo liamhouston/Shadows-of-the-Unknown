@@ -22,7 +22,12 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-
+    public void SetVolume(float volume){
+        // Clamp the volume between 0 and 1
+        volume = Mathf.Clamp01(volume);
+        // Set the volume of the audio source
+        sfx2DSource.volume = volume;
+    }
 
     public void PlaySound3D(string soundName, Vector3 pos)
     {
@@ -39,6 +44,19 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySound2D(string soundName)
     {
-        sfx2DSource.PlayOneShot(sfxLibrary.GetClipFromName(soundName));
+        AudioClip clip = sfxLibrary.GetClipFromName(soundName);
+        sfx2DSource.PlayOneShot(clip);
+    }
+
+    public void PlayLoopingSound2D(string soundName)
+    {
+        AudioClip clip = sfxLibrary.GetClipFromName(soundName);
+        sfx2DSource.clip = clip;
+        sfx2DSource.loop = true;
+        sfx2DSource.Play();
+    }
+
+    public void TurnOffSound(){
+        sfx2DSource.Stop();
     }
 }

@@ -49,7 +49,7 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(false);
         defaultActionMap = InputManager.PlayerInput.currentActionMap?.name;
 
-        if (openingDialogue.Length != 0){
+        if (!Player.Instance.playedOpeningDialogue() && openingDialogue.Length != 0){
             dialogue = openingDialogue;
             playBlockingDialogue("Jay", openingDialogue);
         }

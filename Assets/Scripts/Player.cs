@@ -18,6 +18,11 @@ public class Player : MonoBehaviour
     private Vector2 _movement;
     private Rigidbody2D _rb;
 
+    // keep track of whether we've played the opening dialogue for this scene
+    public string currentSceneName = "Fishdock";
+    Dictionary<string, bool> enteredScenes = new Dictionary<string, bool>();
+
+
     private Animator _animator;
     private const string _horizontal = "Horizontal";
     private const string _lastHorizontal = "LastHorizontal";
@@ -44,12 +49,7 @@ public class Player : MonoBehaviour
         _animator = GetComponent<Animator>();
 
     }
-    private void Update()
-    {
-
-        Debug.Log(InputManager.PlayerInput.currentActionMap);
-        Debug.Log(TentPic);
-
+    private void Update() {
         _movement.Set(InputManager.Instance.MoveInput.x, InputManager.Instance.MoveInput.y);
 
         _rb.velocity = _movement * _moveSpeed;
@@ -59,40 +59,19 @@ public class Player : MonoBehaviour
         {
             _animator.SetFloat(_lastHorizontal, _movement.x);
         }
-
     }
-    // Update is called once per frame
-    // void Update(){
-    //     if(InputManager.Instance.MenuOpenInput)
-    //     {
-    //         PauseManager.Instance.Pause();
-    //         // PauseManager.Instance.PauseCheck();
-    //     }
-    //     else
-    //     {
-    //         AnimationUpdate();
-    //         transform = 
-    // Movement controls
-    // if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)){
-    //     setStateWalk();
-    //     transform.position+= Vector3.left*Time.deltaTime*Speed;
-    //     if (transform.localScale.x > 0){ // if facing right, flip sprite
-    //         transform.localScale = new Vector3(-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z);
-    //     }    
-    // }
-    // else if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)){
-    //     setStateWalk();
-    //     transform.position+= Vector3.right*Time.deltaTime*Speed;
-    //     if (transform.localScale.x < 0){ // if facing left, flip sprite
-    //         transform.localScale = new Vector3(-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z);
-    //     }
-    // }
-    // else {
-    //     setStateIdle();
-    // }
+
+    public bool playedOpeningDialogue(){
+        // Check if we've already been in this scene
+        if (currentSceneName != null){
+            if (enteredScenes.ContainsKey(currentSceneName)){
+                return true; // we've already been in this scene
+            }
+            else{
+                enteredScenes[currentSceneName] = true;
+                return false;
+            }
+        }
+        return false;
+    }
 }
-
-
-//     }
-// }
-

@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jay_profile_0
+      name: Percy
       rect:
         serializedVersion: 2
         x: 77
@@ -143,6 +143,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Jay
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 427
+        width: 902
+        height: 1270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5ec9526921cef346ab8b57a55e7a52c
+      internalID: -50108268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -154,7 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Jay_profile_0: 1799897176
+      Jay: -50108268
+      Percy: 1799897176
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

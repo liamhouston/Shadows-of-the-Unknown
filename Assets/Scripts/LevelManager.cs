@@ -33,6 +33,7 @@ public class LevelManager : MonoBehaviour
 
     public void LoadScene(string sceneName, string transitionName)
     {
+        if (Player.Instance != null) Player.Instance.currentSceneName = sceneName;
         StartCoroutine(LoadSceneAsync(sceneName, transitionName));
     }
 

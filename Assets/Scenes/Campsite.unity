@@ -619,7 +619,6 @@ GameObject:
   - component: {fileID: 259800071}
   - component: {fileID: 259800072}
   - component: {fileID: 259800070}
-  - component: {fileID: 259800073}
   m_Layer: 0
   m_Name: Scrap Clue
   m_TagString: Untagged
@@ -706,7 +705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496f2332e78cccc418511222358474c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageHeight: 400
+  imageHeight: 600
   itemCanvas: {fileID: 1982566907351442447}
   InteractwithText: {fileID: 3630835877747498023}
   displayImage: {fileID: 21300000, guid: 903fef09f8ec9594590ec0f3ae109557, type: 3}
@@ -782,20 +781,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &259800073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 259800067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eac34f5bea1aca419d8ac232ce4fb61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  barkList:
-  - Hmmm.. looks like a note someone left behind.
 --- !u!1 &264987590
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,7 +1594,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 1
   m_Color: {r: 0.30072978, g: 0.44849953, b: 0.5849056, a: 1}
-  m_Intensity: 0.26
+  m_Intensity: 0.2
   m_LightVolumeIntensity: 0
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000973e9e6f495c7135a59db2ec
@@ -1842,7 +1827,7 @@ MonoBehaviour:
     art thing.\u200B\u200B I dunno why a deer shadow would be more interesting than
     an actual deer."
   - "This is weird, though, I don\u2019t think he would\u2019ve just left this expensive
-    tent here. Was he taking pictures of that deer?"
+    tent here. I'll take a picture and investigate later.."
 --- !u!50 &781784730
 Rigidbody2D:
   serializedVersion: 4
@@ -3686,7 +3671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496f2332e78cccc418511222358474c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageHeight: 400
+  imageHeight: 600
   itemCanvas: {fileID: 1982566907351442447}
   InteractwithText: {fileID: 3630835877747498023}
   displayImage: {fileID: 21300000, guid: 5d5d0097a5f6b6740bcc2396da95f58b, type: 3}
