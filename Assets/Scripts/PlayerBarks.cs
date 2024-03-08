@@ -8,57 +8,50 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerBarks : MonoBehaviour{
+public class PlayerBarks : MonoBehaviour
+{
 
-    public GameObject dialoguePanel;
-    public Text dialogueText;
-
-    public float wordSpeed = 0.04f;
     private bool playerIsNearby;
 
-    public List<string> barkList = new List<string>();
-    private int bark_index;
-
-    public float remainOnScreen = 3f;
-    public bool repeatBarks = false;
+    public string[] barkList;
 
     // Update is called once per frame
-    void Update(){
+    private void Update()
+    {
         // if player within range and clicks
-        if(playerIsNearby && InputManager.Instance.ClickInput && !dialoguePanel.activeInHierarchy && bark_index < barkList.Count){
-                // start dialogue
-                dialogueText.text = "";
-                dialoguePanel.SetActive(true);
-                StartCoroutine(Typing());
-                bark_index++;
 
-                // if we want to repeat the barks
-                if (bark_index == barkList.Count && repeatBarks){
-                    bark_index = 0;
-                }
+        if (playerIsNearby && InputManager.Instance.ClickCInput && !DialogueManager.Instance.DialogueIsActive() && this.CompareTag("Enemy"))
+        {
+            DialogueManager.Instance.playNonBlockingDialogue("Mr. NPC", barkList, 0.01f);
+            // DialogueManager.Instance.playNonBlockingDialogue();
+        }
+        else if (playerIsNearby && (InputManager.Instance.ClickCInput || InputManager.Instance.ClickInput) && !DialogueManager.Instance.DialogueIsActive())
+        {
+            // start dialogue
+            DialogueManager.Instance.playBlockingDialogue("Mr. NPC", barkList);
+            playerIsNearby = false; // need to come back;
         }
     }
 
-    IEnumerator Typing(){
-        // this function types out each individual letter of the dialogue
-        foreach (char letter in barkList[bark_index].ToCharArray()){
-            dialogueText.text += letter;
-            yield return new WaitForSeconds(wordSpeed);
-              
-        }
-        yield return new WaitForSeconds(remainOnScreen);
-        dialoguePanel.SetActive(false);
-    }
-
-    private void OnTriggerEnter2D(Collider2D other){
-        if (other.CompareTag("Player")){
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
             playerIsNearby = true;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other){
-        if (other.CompareTag("Player")){
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
             playerIsNearby = false;
         }
+    }
+
+    public void ApartmentDialogue()
+    {
+        DialogueManager.Instance.playBlockingDialogue("Mr. NPC", barkList);
+        playerIsNearby = false; // need to come back;
     }
 }

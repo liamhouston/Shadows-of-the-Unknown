@@ -12,6 +12,7 @@ TagManager:
   - PCGComponent
   - NPC
   - Bush
+  - Apartment
   layers:
   - Default
   - TransparentFX
@@ -48,6 +49,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 682607203
     locked: 0
   - name: background
     uniqueID: 1872641687
