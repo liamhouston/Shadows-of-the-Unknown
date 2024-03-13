@@ -51,13 +51,13 @@ public class InputManager : MonoBehaviour
         _moveCInputAction = PlayerInput.actions["Move_c"];
         _menuOpenAction = PlayerInput.actions["Player/MenuOPEN"];
         _menuOpenCAction = PlayerInput.actions["Camera/MenuOPEN"];
-        _menuCloseAction = PlayerInput.actions["MenuClose"];
-        _mouseInputAction = PlayerInput.actions["Point"];
+        // _menuCloseAction = PlayerInput.actions["MenuClose"];
+        // _mouseInputAction = PlayerInput.actions["Point"];
         _mouseCInputAction = PlayerInput.actions["Point_c"];
         _rightClickAction = PlayerInput.actions["RightClick_c"];
-        _clickAction = PlayerInput.actions["Click_p"];
+        // _clickAction = PlayerInput.actions["Click_p"];
         _clickCAction = PlayerInput.actions["Click_C"];
-        _clickUIAction = PlayerInput.actions["UI/Click"];
+        // _clickUIAction = PlayerInput.actions["UI/Click"];
     }
 
     // Update is called once per frame
@@ -65,14 +65,14 @@ public class InputManager : MonoBehaviour
     {
         MoveInput = _moveInputAction.ReadValue<Vector2>();
         MoveCInput = _moveCInputAction.ReadValue<Vector2>();
-        MouseInput = _mouseInputAction.ReadValue<Vector2>();
+        // MouseInput = _mouseInputAction.ReadValue<Vector2>();
         MouseCInput = _mouseCInputAction.ReadValue<Vector2>();
 
         MenuOpenInput = _menuOpenAction.WasPressedThisFrame() || _menuOpenCAction.WasPressedThisFrame();
-        MenuCloseInput = _menuCloseAction.WasPerformedThisFrame();
+        // MenuCloseInput = _menuCloseAction.WasPerformedThisFrame();
         RightClickInput = _rightClickAction.WasPressedThisFrame();
-        ClickInput = _clickAction.WasPressedThisFrame();
+        // ClickInput = _clickAction.WasPressedThisFrame();
         ClickCInput = _clickCAction.WasPressedThisFrame();
-        ClickUIInput = _clickUIAction.WasPressedThisFrame();
+        // ClickUIInput = _clickUIAction.WasPressedThisFrame();
     }
 }

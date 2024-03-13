@@ -25,7 +25,7 @@ public class PlayerBarks : MonoBehaviour
             DialogueManager.Instance.playNonBlockingDialogue("Mr. NPC", barkList, 0.01f);
             // DialogueManager.Instance.playNonBlockingDialogue();
         }
-        else if (playerIsNearby && (InputManager.Instance.ClickCInput || InputManager.Instance.ClickInput) && !DialogueManager.Instance.DialogueIsActive())
+        else if (playerIsNearby && InputManager.Instance.ClickCInput && !DialogueManager.Instance.DialogueIsActive())
         {
             // start dialogue
             DialogueManager.Instance.playBlockingDialogue("Mr. NPC", barkList);

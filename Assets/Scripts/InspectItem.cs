@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class InspectItem : MonoBehaviour
 {
-
     private bool playerIsNearby = false;
     public float imageHeight = 400;
 
@@ -30,7 +30,7 @@ public class InspectItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ( (InputManager.Instance.ClickCInput || InputManager.Instance.ClickInput) && playerIsNearby)
+        if (InputManager.Instance.ClickUIInput && playerIsNearby)
         {
             if (itemCanvas.activeSelf)
             {
@@ -69,10 +69,11 @@ public class InspectItem : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && (InputManager.Instance.ClickCInput || InputManager.Instance.ClickInput))
         {
             playerIsNearby = true;
             InteractwithText.SetActive(true);
+            // InputManager.Instance.MoveCInput.
             //spriteRenderer.color = highlightColor;
         }
     }
