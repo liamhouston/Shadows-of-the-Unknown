@@ -179,7 +179,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115013513}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115013513}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
@@ -233,24 +233,17 @@ MonoBehaviour:
     type: 3}
   m_PointAction: {fileID: 2460815764254466186, guid: 067666e17913a6f4ba4d8e7fe56ca1f9,
     type: 3}
-  m_MoveAction: {fileID: 5580585761991961186, guid: 067666e17913a6f4ba4d8e7fe56ca1f9,
+  m_MoveAction: {fileID: 0}
+  m_SubmitAction: {fileID: -9118887345417307131, guid: 067666e17913a6f4ba4d8e7fe56ca1f9,
     type: 3}
-  m_SubmitAction: {fileID: 716755283461473962, guid: 067666e17913a6f4ba4d8e7fe56ca1f9,
+  m_CancelAction: {fileID: 0}
+  m_LeftClickAction: {fileID: 4928652760716471916, guid: 067666e17913a6f4ba4d8e7fe56ca1f9,
     type: 3}
-  m_CancelAction: {fileID: -9207753363032965337, guid: 067666e17913a6f4ba4d8e7fe56ca1f9,
-    type: 3}
-  m_LeftClickAction: {fileID: -6692240429523640005, guid: 067666e17913a6f4ba4d8e7fe56ca1f9,
-    type: 3}
-  m_MiddleClickAction: {fileID: 3741387866963525074, guid: 067666e17913a6f4ba4d8e7fe56ca1f9,
-    type: 3}
-  m_RightClickAction: {fileID: 3089531460624899835, guid: 067666e17913a6f4ba4d8e7fe56ca1f9,
-    type: 3}
-  m_ScrollWheelAction: {fileID: 7155265896887752932, guid: 067666e17913a6f4ba4d8e7fe56ca1f9,
-    type: 3}
-  m_TrackedDevicePositionAction: {fileID: 7870786424670126482, guid: 067666e17913a6f4ba4d8e7fe56ca1f9,
-    type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 7435751906075824635, guid: 067666e17913a6f4ba4d8e7fe56ca1f9,
-    type: 3}
+  m_MiddleClickAction: {fileID: 0}
+  m_RightClickAction: {fileID: 0}
+  m_ScrollWheelAction: {fileID: 0}
+  m_TrackedDevicePositionAction: {fileID: 0}
+  m_TrackedDeviceOrientationAction: {fileID: 0}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
@@ -1650,6 +1643,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 670987952001565287, guid: 66f15d4dae2676643ace55b6b16ca69f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7569905954637115275, guid: 66f15d4dae2676643ace55b6b16ca69f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1704,6 +1702,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001524986871713404, guid: 66f15d4dae2676643ace55b6b16ca69f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9375,7 +9378,7 @@ PrefabInstance:
     - target: {fileID: 3143896677296792844, guid: 69568fb608a8b444ea03a1614324526f,
         type: 3}
       propertyPath: m_DefaultActionMap
-      value: dd72cda4-fedd-47e2-ac81-b38c8a5e52be
+      value: 73ca705e-a2a7-4f4c-8bf4-53c0b15d082d
       objectReference: {fileID: 0}
     - target: {fileID: 4620212885360855226, guid: 69568fb608a8b444ea03a1614324526f,
         type: 3}

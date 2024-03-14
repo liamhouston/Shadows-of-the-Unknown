@@ -47,9 +47,10 @@ public class DialogueManager : MonoBehaviour
     public void Start()
     {
         dialoguePanel.SetActive(false);
-        defaultActionMap = InputManager.PlayerInput.currentActionMap?.name;
+        // defaultActionMap = InputManager.PlayerInput.currentActionMap?.name;
 
-        if (!Player.Instance.playedOpeningDialogue() && openingDialogue.Length != 0){
+        if (!Player.Instance.playedOpeningDialogue() && openingDialogue.Length != 0)
+        {
             dialogue = openingDialogue;
             playBlockingDialogue("Jay", openingDialogue);
         }
@@ -59,12 +60,13 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialoguePanel.activeSelf)
         {
-            if (_isTyping == true && InputManager.Instance.ClickUIInput)
+            
+            if (_isTyping == true && InputManager.Instance.ClickCInput)
             {
                 wordSpeed = 0.01f;
             }
             // check whether user has clicked through to end this line of dialogue
-            if (dialogueText.text == dialogue[line_index] && InputManager.Instance.ClickUIInput)
+            if (dialogueText.text == dialogue[line_index] && InputManager.Instance.ClickCInput)
             {
                 // if there are still more lines of dialogue play them
 
@@ -80,10 +82,10 @@ public class DialogueManager : MonoBehaviour
                     // last line of dialogue
                     dialogueText.text = "";
                     dialoguePanel.SetActive(false);
-                    InputManager.PlayerInput.actions.FindActionMap(defaultActionMap).Enable();
-                    InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap(defaultActionMap);
-                    InputManager.PlayerInput.SwitchCurrentActionMap(defaultActionMap);
-                    InputManager.PlayerInput.actions.FindActionMap("UI").Disable();
+                    // InputManager.PlayerInput.actions.FindActionMap(defaultActionMap).Enable();
+                    // InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap(defaultActionMap);
+                    // InputManager.PlayerInput.SwitchCurrentActionMap(defaultActionMap);
+                    // InputManager.PlayerInput.actions.FindActionMap("UI").Disable();
                 }
                 wordSpeed = 0.04f;
             }
@@ -97,20 +99,20 @@ public class DialogueManager : MonoBehaviour
         if (dialoguePanel.activeSelf)
         {
             dialoguePanel.SetActive(false);
-            InputManager.PlayerInput.actions.FindActionMap("UI").Disable();
-            InputManager.PlayerInput.actions.FindActionMap(defaultActionMap).Enable();
-            InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap(defaultActionMap);
-            InputManager.PlayerInput.SwitchCurrentActionMap(defaultActionMap);
+            // InputManager.PlayerInput.actions.FindActionMap("UI").Disable();
+            // InputManager.PlayerInput.actions.FindActionMap(defaultActionMap).Enable();
+            // InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap(defaultActionMap);
+            // InputManager.PlayerInput.SwitchCurrentActionMap(defaultActionMap);
             return;
         }
 
         // disable input system
-        InputManager.PlayerInput.actions.FindActionMap("UI").Enable();
-        InputManager.PlayerInput.actions.FindActionMap("Player").Disable();
-        InputManager.PlayerInput.actions.FindActionMap("Camera").Disable();
-        InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap("UI");
         // InputManager.PlayerInput.actions.FindActionMap("UI").Enable();
-        InputManager.PlayerInput.SwitchCurrentActionMap("UI");
+        // InputManager.PlayerInput.actions.FindActionMap("Player").Disable();
+        // InputManager.PlayerInput.actions.FindActionMap("Camera").Disable();
+        // InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap("UI");
+        // // InputManager.PlayerInput.actions.FindActionMap("UI").Enable();
+        // InputManager.PlayerInput.SwitchCurrentActionMap("UI");
 
 
         // prep for typing

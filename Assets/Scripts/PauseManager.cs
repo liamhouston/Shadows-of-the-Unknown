@@ -23,7 +23,7 @@ public class PauseManager : MonoBehaviour
     }
     private void Update()
     {
-        if (InputManager.Instance.MenuOpenInput || InputManager.Instance.MenuCloseInput)
+        if (InputManager.Instance.MenuOpenInput)
         {
             PauseCheck();
         }
@@ -46,9 +46,9 @@ public class PauseManager : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         // InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap(currentActionMap);
-        InputManager.PlayerInput.actions.FindActionMap("UI").Disable();
-        InputManager.PlayerInput.actions.FindActionMap(currentActionMap).Enable();
-        InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap(currentActionMap);
+        // InputManager.PlayerInput.actions.FindActionMap("UI").Disable();
+        // InputManager.PlayerInput.actions.FindActionMap(currentActionMap).Enable();
+        // InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap(currentActionMap);
         // InputManager.PlayerInput.SwitchCurrentActionMap(currentActionMap);
         IsPaused = false;
     }
@@ -59,10 +59,10 @@ public class PauseManager : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
 
-        InputManager.PlayerInput.actions.FindActionMap(currentActionMap).Disable();
-        InputManager.PlayerInput.actions.FindActionMap("UI").Enable();
-        InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap("UI");
-        InputManager.PlayerInput.SwitchCurrentActionMap("UI");
+        // InputManager.PlayerInput.actions.FindActionMap(currentActionMap).Disable();
+        // InputManager.PlayerInput.actions.FindActionMap("UI").Enable();
+        // InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap("UI");
+        // InputManager.PlayerInput.SwitchCurrentActionMap("UI");
         IsPaused = true;
     }
 

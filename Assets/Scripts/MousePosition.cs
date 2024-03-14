@@ -9,18 +9,17 @@ using UnityEngine.Rendering.Universal;
 public class MousePosition : MonoBehaviour
 {
     [SerializeField] private Camera _mainCamera;
-    private Vector2 _mouse;
 
     public float sensitivity;
     public float delayInStart = 0; // how long after the scene starts to enable the light
-
     private void Start()
     {
-        InputManager.PlayerInput.actions.FindActionMap("UI").Disable();
+
+        // InputManager.PlayerInput.actions.FindActionMap("UI").Disable();
         InputManager.PlayerInput.actions.FindActionMap("Camera").Enable();
         InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap("Camera");
         InputManager.PlayerInput.SwitchCurrentActionMap("Camera");
-        InputManager.PlayerInput.actions.FindActionMap("Player").Disable();
+        // InputManager.PlayerInput.actions.FindActionMap("Player").Disable();
 
         StartCoroutine(WaitToEnableLight());
     }
@@ -35,10 +34,12 @@ public class MousePosition : MonoBehaviour
         }
     }
 
-    private IEnumerator WaitToEnableLight(){
+    private IEnumerator WaitToEnableLight()
+    {
         Light2D light = GetComponent<Light2D>();
         light.enabled = false;
         yield return new WaitForSeconds(delayInStart);
         light.enabled = true;
     }
+
 }

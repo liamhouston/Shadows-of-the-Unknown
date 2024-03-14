@@ -12,16 +12,13 @@ public class Player : MonoBehaviour
     private float _moveSpeed = 5f;
 
     [SerializeField]
-    private Transform _focusObjectTransform;
     public bool TentPic;
-    private CinemachineVirtualCamera _cinemachinevcam;
     private Vector2 _movement;
     private Rigidbody2D _rb;
 
     // keep track of whether we've played the opening dialogue for this scene
     public string currentSceneName = "Fishdock";
     Dictionary<string, bool> enteredScenes = new Dictionary<string, bool>();
-
 
     private Animator _animator;
     private const string _horizontal = "Horizontal";
@@ -42,15 +39,17 @@ public class Player : MonoBehaviour
     private void Start()
     {
         Cursor.visible = true;
-        InputManager.PlayerInput.actions.FindActionMap("Player").Enable();
-        InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap("Player");
-        InputManager.PlayerInput.SwitchCurrentActionMap("Player");
+        // InputManager.PlayerInput.actions.FindActionMap("Player").Enable();
+        // InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap("Player");
+        // InputManager.PlayerInput.SwitchCurrentActionMap("Player");
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
 
     }
-    private void Update() {
-        _movement.Set(InputManager.Instance.MoveInput.x, InputManager.Instance.MoveInput.y);
+
+    private void Update()
+    {
+        _movement.Set(InputManager.Instance.MoveInput.x, 0f);
 
         _rb.velocity = _movement * _moveSpeed;
         _animator.SetFloat(_horizontal, _movement.x);
@@ -61,13 +60,17 @@ public class Player : MonoBehaviour
         }
     }
 
-    public bool playedOpeningDialogue(){
+    public bool playedOpeningDialogue()
+    {
         // Check if we've already been in this scene
-        if (currentSceneName != null){
-            if (enteredScenes.ContainsKey(currentSceneName)){
+        if (currentSceneName != null)
+        {
+            if (enteredScenes.ContainsKey(currentSceneName))
+            {
                 return true; // we've already been in this scene
             }
-            else{
+            else
+            {
                 enteredScenes[currentSceneName] = true;
                 return false;
             }

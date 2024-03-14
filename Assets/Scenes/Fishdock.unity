@@ -5505,8 +5505,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3143896677296792844, guid: 69568fb608a8b444ea03a1614324526f,
         type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3143896677296792844, guid: 69568fb608a8b444ea03a1614324526f,
+        type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3143896677296792844, guid: 69568fb608a8b444ea03a1614324526f,
+        type: 3}
+      propertyPath: m_UIInputModule
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3143896677296792844, guid: 69568fb608a8b444ea03a1614324526f,
         type: 3}
