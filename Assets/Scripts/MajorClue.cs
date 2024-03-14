@@ -61,7 +61,7 @@ public class MajorClue : MonoBehaviour
             exitButton.gameObject.SetActive(true);
             exitButton.interactable = true;
             // dialogue = playerBarks.barkList;
-            InputManager.PlayerInput.actions.FindActionMap("UI").Enable();
+            // InputManager.PlayerInput.actions.FindActionMap("UI").Enable();
             // InputManager.PlayerInput.actions.FindActionMap("Camera").Enable();
             dialogue = new string[] { "I think I got the picture. I might as well leave." };
             DialogueManager.Instance.playBlockingDialogue("", dialogue);
