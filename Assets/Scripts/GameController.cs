@@ -29,6 +29,14 @@ public class GameController : MonoBehaviour
     private bool gameOverFadeComplete = false;
     public string[] gameOverBark;
 
+    [Header("Damage Effect")]
+    public Image DamageEffectImage;
+    public float damage_intensity = (float) 1.5;
+    public float min_alpha = (float) 100;
+    public float max_alpha = (float) 200;
+    private bool currently_fading;
+    private float desired_alpha;
+
 
     void Awake()
     {
@@ -53,8 +61,21 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void Update()
-    {
+    public void Update() {
+        // update red tint
+        float resolvePercent = (_maxResolve - _currentResolve + 0.0f) / _maxResolve;
+        float alpha = resolvePercent * (max_alpha - min_alpha) + min_alpha;
+        if (resolvePercent == 0)
+            alpha = 0; // if player has not taken damage, don't show damage effect yet
+        else {
+            desired_alpha = alpha * damage_intensity;
+            if (!currently_fading && DamageEffectImage.color.a < desired_alpha/255){
+                // start fade 
+                currently_fading = true;
+                StartCoroutine(startDamageFade((float) 0.01f));
+            }            
+        }
+
         // check for game over
         if (_currentResolve <= 0 && !gameOverFadeComplete)
         {
@@ -160,5 +181,14 @@ public class GameController : MonoBehaviour
             BlackoutBox.GetComponent<Image>().color = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
             yield return new WaitForSeconds(duringWait);
         }
+    }
+
+    private IEnumerator startDamageFade(float secondInBetween){
+        while (DamageEffectImage.color.a < desired_alpha/255 && DamageEffectImage.color.a < 1){
+            float fadeAmount = DamageEffectImage.color.a + Time.deltaTime;
+            DamageEffectImage.color = new Color(DamageEffectImage.color.r, DamageEffectImage.color.g, DamageEffectImage.color.b, fadeAmount);
+            yield return new WaitForSeconds(secondInBetween);
+        }
+        currently_fading = false;
     }
 }
