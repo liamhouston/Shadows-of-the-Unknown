@@ -7,7 +7,6 @@ public class PauseManager : MonoBehaviour
     public static PauseManager Instance;
     public static bool IsPaused = false;
     public GameObject pauseMenuUI;
-    private static string currentActionMap;
     private void Awake()
     {
         if (Instance == null)
@@ -45,6 +44,12 @@ public class PauseManager : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
+        if (!DialogueManager.Instance.dialoguePanel.activeSelf)
+        {
+            InputManager.PlayerInput.actions.FindAction("Move").Enable();
+            // InputManager.PlayerInput.actions.FindAction("Point").Enable();
+            InputManager.PlayerInput.actions.FindAction("RightClick").Enable();
+        }
         // InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap(currentActionMap);
         // InputManager.PlayerInput.actions.FindActionMap("UI").Disable();
         // InputManager.PlayerInput.actions.FindActionMap(currentActionMap).Enable();
@@ -55,9 +60,19 @@ public class PauseManager : MonoBehaviour
 
     public void Pause()
     {
-        currentActionMap = InputManager.PlayerInput.currentActionMap?.name;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
+        if (!DialogueManager.Instance.dialoguePanel.activeSelf)
+        {
+            InputManager.PlayerInput.actions.FindAction("Move").Disable();
+            // InputManager.PlayerInput.actions.FindAction("Point").Disable();
+            InputManager.PlayerInput.actions.FindAction("RightClick").Disable();
+        }
+        else
+        {
+            InputManager.PlayerInput.actions.FindAction("Point").Enable();
+        }
+
 
         // InputManager.PlayerInput.actions.FindActionMap(currentActionMap).Disable();
         // InputManager.PlayerInput.actions.FindActionMap("UI").Enable();

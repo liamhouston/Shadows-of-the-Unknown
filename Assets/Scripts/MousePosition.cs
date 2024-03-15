@@ -14,24 +14,22 @@ public class MousePosition : MonoBehaviour
     public float delayInStart = 0; // how long after the scene starts to enable the light
     private void Start()
     {
-
-        // InputManager.PlayerInput.actions.FindActionMap("UI").Disable();
-        InputManager.PlayerInput.actions.FindActionMap("Camera").Enable();
-        InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap("Camera");
-        InputManager.PlayerInput.SwitchCurrentActionMap("Camera");
-        // InputManager.PlayerInput.actions.FindActionMap("Player").Disable();
-
+        // // InputManager.PlayerInput.actions.FindActionMap("UI").Disable();
+        // InputManager.PlayerInput.actions.FindActionMap("Camera").Enable();
+        // InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap("Camera");
+        // InputManager.PlayerInput.SwitchCurrentActionMap("Camera");
+        // // InputManager.PlayerInput.actions.FindActionMap("Player").Disable();
         StartCoroutine(WaitToEnableLight());
     }
     // Update is called once per frame
     private void Update()
     {
-        if (!DialogueManager.Instance.DialogueIsActive())
-        {
-            Vector3 mousePosition = _mainCamera.ScreenToWorldPoint(InputManager.Instance.MouseCInput);
-
-            transform.position = new Vector3(mousePosition.x, mousePosition.y, 0);
-        }
+        // if (!DialogueManager.Instance.DialogueIsActive())
+        // {
+        Vector3 mousePosition = _mainCamera.ScreenToWorldPoint(InputManager.Instance.MouseInput);
+        mousePosition.z = 0; // Ensure the z-position is 0, as we're in a 2D space
+        GetComponent<Rigidbody2D>().MovePosition(mousePosition);
+        // }
     }
 
     private IEnumerator WaitToEnableLight()

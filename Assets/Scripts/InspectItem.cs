@@ -30,7 +30,7 @@ public class InspectItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (InputManager.Instance.ClickUIInput && playerIsNearby)
+        if (InputManager.Instance.ClickInput && playerIsNearby)
         {
             if (itemCanvas.activeSelf)
             {
@@ -69,11 +69,10 @@ public class InspectItem : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && (InputManager.Instance.ClickCInput || InputManager.Instance.ClickInput))
+        if (other.CompareTag("Player"))
         {
             playerIsNearby = true;
             InteractwithText.SetActive(true);
-            // InputManager.Instance.MoveCInput.
             //spriteRenderer.color = highlightColor;
         }
     }

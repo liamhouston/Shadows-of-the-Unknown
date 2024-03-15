@@ -15,40 +15,60 @@ public class PlaySound : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (playerIsNearby && !currentlyPlaying){
-            currentlyPlaying = true;
+        // if (playerIsNearby && !currentlyPlaying)
+        // {
+        //     currentlyPlaying = true;
 
-            SoundManager.Instance.SetVolume(soundVolume);
+        //     SoundManager.Instance.SetVolume(soundVolume);
 
-            if (looping){
-                SoundManager.Instance.PlayLoopingSound2D(soundEffectName);
-            }
-            else{
-                SoundManager.Instance.PlaySound2D(soundEffectName);
-            }
-        }
+        //     if (looping)
+        //     {
+        //         SoundManager.Instance.PlayLoopingSound2D(soundEffectName);
+        //     }
+        //     else
+        //     {
+        //         SoundManager.Instance.PlaySound2D(soundEffectName);
+        //     }
+        // }
     }
-    
-    
-    void OnTriggerEnter2D(Collider2D other){
-        if (other.CompareTag("Player")) {
+
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
             playerIsNearby = true;
+            if (!currentlyPlaying)
+            {
+                SoundManager.Instance.SetVolume(soundVolume);
+
+                if (looping)
+                {
+                    SoundManager.Instance.PlayLoopingSound2D(soundEffectName);
+                }
+                else
+                {
+                    SoundManager.Instance.PlaySound2D(soundEffectName);
+                }
+            }
         }
     }
 
-    void OnTriggerExit2D(Collider2D other){
-        if (other.CompareTag("Player")) {
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
             playerIsNearby = false;
             currentlyPlaying = false;
 
             SoundManager.Instance.SetVolume(1);
             SoundManager.Instance.TurnOffSound();
-        }    
+        }
     }
 }

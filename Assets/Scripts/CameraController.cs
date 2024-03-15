@@ -33,7 +33,7 @@ public class CameraController : MonoBehaviour
     public void Update()
     {
         // _movement.Set(InputManager.Instance.MoveInput.x, InputManager.Instance.MoveInput.y);
-        _movement.Set(InputManager.Instance.MoveCInput.x, InputManager.Instance.MoveCInput.y, 0f);
+        _movement.Set(InputManager.Instance.MoveInput.x, InputManager.Instance.MoveInput.y, 0f);
         Vector3 clampedPosition = transform.position + _movement * _moveSpeed * Time.deltaTime;
         clampedPosition.x = Mathf.Clamp(clampedPosition.x, CamBoundary.bounds.min.x, CamBoundary.bounds.max.x);
         clampedPosition.y = Mathf.Clamp(clampedPosition.y, CamBoundary.bounds.min.y, CamBoundary.bounds.max.y);

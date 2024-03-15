@@ -24,7 +24,6 @@ public class DialogueManager : MonoBehaviour
 
     private int line_index;
     private string[] dialogue;
-    private string defaultActionMap;
     private bool stopTyping = false;
     private bool _isTyping = false;
     private float secondsOnScreen;
@@ -60,13 +59,13 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialoguePanel.activeSelf)
         {
-            
-            if (_isTyping == true && InputManager.Instance.ClickCInput)
+
+            if (_isTyping == true && InputManager.Instance.ClickInput)
             {
                 wordSpeed = 0.01f;
             }
             // check whether user has clicked through to end this line of dialogue
-            if (dialogueText.text == dialogue[line_index] && InputManager.Instance.ClickCInput)
+            if (dialogueText.text == dialogue[line_index] && InputManager.Instance.ClickInput)
             {
                 // if there are still more lines of dialogue play them
 
@@ -82,6 +81,9 @@ public class DialogueManager : MonoBehaviour
                     // last line of dialogue
                     dialogueText.text = "";
                     dialoguePanel.SetActive(false);
+                    InputManager.PlayerInput.actions.FindAction("Move").Enable();
+                    // InputManager.PlayerInput.actions.FindAction("Point").Enable();
+                    InputManager.PlayerInput.actions.FindAction("RightClick").Enable();
                     // InputManager.PlayerInput.actions.FindActionMap(defaultActionMap).Enable();
                     // InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap(defaultActionMap);
                     // InputManager.PlayerInput.SwitchCurrentActionMap(defaultActionMap);
@@ -119,6 +121,10 @@ public class DialogueManager : MonoBehaviour
         dialogue = dialogueLines;
         dialogueText.text = "";
         dialoguePanel.SetActive(true);
+        InputManager.PlayerInput.actions.FindAction("Move").Disable();
+        InputManager.PlayerInput.actions.FindAction("RightClick").Disable();
+        // InputManager.PlayerInput.actions.FindAction("RightClick").Disable();
+        // InputManager.PlayerInput.actions.FindAction("Point").Disable();
         line_index = 0;
         secondsOnScreen = -1;
         StartCoroutine(Typing(secondsOnScreen)); // -1 indicates that dialogue should stay on screen until player clicks

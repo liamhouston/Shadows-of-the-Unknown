@@ -12,13 +12,10 @@ public class MajorClue : MonoBehaviour
     public float waitToPlaySound = 2.5f;
 
     public Button exitButton;
-    private Text buttonText;
 
     public bool playMajorClueSound = false; // this will communicate with CameraFlash when to play the major clue sound
     public bool playerFoundMajorClue = false;
 
-    private Color buttonTextColor;
-    private Color invisible = new Color(1, 1, 1, 0);
 
     // Singleton Instance Property
     public static MajorClue Instance
@@ -57,7 +54,7 @@ public class MajorClue : MonoBehaviour
         {
             playMajorClueSound = true; // communicate to the CameraFlash script that we don't want the default camera shutter noise
             playerFoundMajorClue = true;
-            Player.Instance.TentPic = true;
+            // Player.Instance.TentPic = true;
             exitButton.gameObject.SetActive(true);
             exitButton.interactable = true;
             // dialogue = playerBarks.barkList;
