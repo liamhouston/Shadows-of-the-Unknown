@@ -6,8 +6,6 @@ using Cinemachine;
 
 public class GameController : MonoBehaviour
 {
-    public Slider resolveBar;
-
     private static GameController _instance;
     public static GameController Instance { get { return _instance; } }
 
@@ -57,7 +55,6 @@ public class GameController : MonoBehaviour
         {
             _instance = this;
             _currentResolve = _maxResolve;
-            this.SetMaxResolve(_maxResolve);
         }
     }
 
@@ -88,22 +85,14 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void SetMaxResolve(int resolve)
-    {
-        resolveBar.maxValue = resolve;
-        resolveBar.value = resolve;
-    }
-
     public void SetResolve(int resolve)
     {
         _currentResolve = resolve;
-        resolveBar.value = resolve;
     }
 
     public void ChangeResolve(int change)
     {
         _currentResolve += change;
-        resolveBar.value += change;
     }
 
     public void StartShake(float amplitude, float frequency, float time)
