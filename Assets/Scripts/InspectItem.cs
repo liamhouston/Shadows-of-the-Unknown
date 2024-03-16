@@ -30,7 +30,7 @@ public class InspectItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (InputManager.Instance.ClickInput && playerIsNearby)
+        if (InputManager.Instance.ClickInput && playerIsNearby && !DialogueManager.Instance.DialogueIsActive())
         {
             if (itemCanvas.activeSelf)
             {
