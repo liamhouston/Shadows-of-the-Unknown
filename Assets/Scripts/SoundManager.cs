@@ -22,7 +22,8 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void SetVolume(float volume){
+    public void SetVolume(float volume)
+    {
         // Clamp the volume between 0 and 1
         volume = Mathf.Clamp01(volume);
         // Set the volume of the audio source
@@ -45,6 +46,7 @@ public class SoundManager : MonoBehaviour
     public void PlaySound2D(string soundName)
     {
         AudioClip clip = sfxLibrary.GetClipFromName(soundName);
+        clip.LoadAudioData();
         sfx2DSource.PlayOneShot(clip);
     }
 
@@ -56,7 +58,14 @@ public class SoundManager : MonoBehaviour
         sfx2DSource.Play();
     }
 
-    public void TurnOffSound(){
+    public void PreloadSound(string soundName)
+    {
+        AudioClip clip = sfxLibrary.GetClipFromName(soundName);
+        clip.LoadAudioData();
+    }
+
+    public void TurnOffSound()
+    {
         sfx2DSource.Stop();
     }
 }

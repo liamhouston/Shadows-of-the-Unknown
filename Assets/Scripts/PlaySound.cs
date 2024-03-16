@@ -15,28 +15,28 @@ public class PlaySound : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        SoundManager.Instance.PreloadSound(soundEffectName);
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        // if (playerIsNearby && !currentlyPlaying)
-        // {
-        //     currentlyPlaying = true;
+    // void Update()
+    // {
+    //     // if (playerIsNearby && !currentlyPlaying)
+    //     // {
+    //     //     currentlyPlaying = true;
 
-        //     SoundManager.Instance.SetVolume(soundVolume);
+    //     //     SoundManager.Instance.SetVolume(soundVolume);
 
-        //     if (looping)
-        //     {
-        //         SoundManager.Instance.PlayLoopingSound2D(soundEffectName);
-        //     }
-        //     else
-        //     {
-        //         SoundManager.Instance.PlaySound2D(soundEffectName);
-        //     }
-        // }
-    }
+    //     //     if (looping)
+    //     //     {
+    //     //         SoundManager.Instance.PlayLoopingSound2D(soundEffectName);
+    //     //     }
+    //     //     else
+    //     //     {
+    //     //         SoundManager.Instance.PlaySound2D(soundEffectName);
+    //     //     }
+    //     // }
+    // }
 
 
     void OnTriggerEnter2D(Collider2D other)
