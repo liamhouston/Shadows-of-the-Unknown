@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
@@ -7,7 +8,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     private SoundLibrary sfxLibrary;
     [SerializeField]
-    private AudioSource sfx2DSource;
+    private AudioSource sfx2DSource, sfx2dSource2;
+
 
     private void Awake()
     {
@@ -67,5 +69,39 @@ public class SoundManager : MonoBehaviour
     public void TurnOffSound()
     {
         sfx2DSource.Stop();
+    }
+
+    public IEnumerator FadeOut(string soundName, bool isfadeout)
+    {
+        float timeToFade = 1.50f;
+        float timeElapsed = 0;
+
+        AudioClip clip = sfxLibrary.GetClipFromName(soundName);
+        sfx2dSource2.clip = clip;
+        sfx2dSource2.loop = true;
+        
+        if (!isfadeout)
+        {
+            sfx2dSource2.Play();
+            while(timeElapsed < timeToFade)
+            {
+                
+                sfx2dSource2.volume = Mathf.Lerp(0, 0.5f, timeElapsed / timeToFade);
+                timeElapsed += Time.deltaTime;
+                yield return null;
+            }
+
+        }
+        else
+        {
+            while(timeElapsed < timeToFade)
+            {
+                sfx2dSource2.volume = Mathf.Lerp(0.5f, 0, timeElapsed / timeToFade);
+                timeElapsed += Time.deltaTime;
+                
+                yield return null;
+            }
+            sfx2dSource2.Stop();
+        }
     }
 }

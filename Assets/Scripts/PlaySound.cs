@@ -48,14 +48,16 @@ public class PlaySound : MonoBehaviour
             {
                 SoundManager.Instance.SetVolume(soundVolume);
 
-                if (looping)
+                if (true)
                 {
-                    SoundManager.Instance.PlayLoopingSound2D(soundEffectName);
+                    // SoundManager.Instance.PlayLoopingSound2D(soundEffectName);
+                    StopAllCoroutines();
+                    StartCoroutine(SoundManager.Instance.FadeOut("Waves", false));
                 }
-                else
-                {
-                    SoundManager.Instance.PlaySound2D(soundEffectName);
-                }
+                // else
+                // {
+                //     SoundManager.Instance.PlaySound2D(soundEffectName);
+                // }
             }
         }
     }
@@ -67,8 +69,10 @@ public class PlaySound : MonoBehaviour
             playerIsNearby = false;
             currentlyPlaying = false;
 
-            SoundManager.Instance.SetVolume(1);
-            SoundManager.Instance.TurnOffSound();
+            StopAllCoroutines();
+            StartCoroutine(SoundManager.Instance.FadeOut("Waves", true));
+            // SoundManager.Instance.SetVolume(1);
+            // SoundManager.Instance.TurnOffSound();
         }
     }
 }
