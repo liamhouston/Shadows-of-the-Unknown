@@ -8,20 +8,15 @@ public class drag : MonoBehaviour
 {
     public Canvas canvas;
     public RectTransform panelRect;
+    public RectTransform correctPosition;
+    public int snapDistance;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private bool inCorrectPosition = false;
 
     public void DragHandler(BaseEventData data){
+        // if the piece is in the correct position, we can't move it
+        if (inCorrectPosition) return;
+
         PointerEventData pointerData = (PointerEventData) data;
         Vector2 position;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
@@ -31,17 +26,43 @@ public class drag : MonoBehaviour
             out position);
 
         position = ClampPosition(position, panelRect.rect);
-        //Debug.Log("Original Position " + position + " clamped to " + transform.position);
         transform.position = canvas.transform.TransformPoint(position);
     }
 
+    public void DropHandler(BaseEventData data){
+        PointerEventData pointerData = (PointerEventData) data;
+        Vector2 position;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            (RectTransform)canvas.transform,
+            pointerData.position,
+            canvas.worldCamera,
+            out position);
+
+        Vector2 correctPositionInRect;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            (RectTransform)canvas.transform,
+            correctPosition.position,
+            canvas.worldCamera,
+            out correctPositionInRect);
+
+        float dist = Vector2.Distance(position, correctPositionInRect);
+        
+        if (dist < snapDistance){
+            // piece is in correct location
+            inCorrectPosition = true;
+            
+            transform.position = canvas.transform.TransformPoint(correctPositionInRect); // change transform to correct pos
+        }
+
+    }
+
+    
     // Clamps the position within the bounds of the panel
     private Vector2 ClampPosition(Vector2 position, Rect panelBounds)
     {
         Vector2 clampedPosition = position;
         clampedPosition.x = Mathf.Clamp(clampedPosition.x, panelBounds.xMin, panelBounds.xMax);
         clampedPosition.y = Mathf.Clamp(clampedPosition.y, panelBounds.yMin, panelBounds.yMax);
-        Debug.Log("Positoin: " + position + "Rect XMin: " + panelBounds.xMin + ", XMax: " + panelBounds.xMax + ", YMin: " + panelBounds.yMin + ", YMax: " + panelBounds.yMax);
         return clampedPosition;
     }
 }
