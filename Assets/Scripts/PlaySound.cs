@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlaySound : MonoBehaviour
 {
-    private bool playerIsNearby = false;
+    // private bool playerIsNearby = false;
     private bool currentlyPlaying = false;
 
     [Header("Clip information")]
@@ -43,7 +43,7 @@ public class PlaySound : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            playerIsNearby = true;
+            // playerIsNearby = true;
             if (!currentlyPlaying)
             {
                 SoundManager.Instance.SetVolume(soundVolume);
@@ -66,7 +66,7 @@ public class PlaySound : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            playerIsNearby = false;
+            // playerIsNearby = false;
             currentlyPlaying = false;
 
             StopAllCoroutines();
