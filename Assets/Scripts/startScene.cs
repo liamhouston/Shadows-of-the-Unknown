@@ -7,12 +7,12 @@ public class startScene : MonoBehaviour
 {
     private bool playerIsNearby;
     public string sceneToLoad;
-    public GameObject InteractwithText;
+    // public GameObject InteractwithText;
 
     // Start is called before the first frame update
     private void Start()
     {
-        InteractwithText.SetActive(false);
+        // InteractwithText.SetActive(false);
         playerIsNearby = false;
     }
 
@@ -27,21 +27,21 @@ public class startScene : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player")) playerIsNearby = true;
-        InteractwithText.SetActive(true);
+        // InteractwithText.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player")) playerIsNearby = false;
-        if (InteractwithText != null)
-        {
-            InteractwithText.SetActive(false);
-        }
+        // if (InteractwithText != null)
+        // {
+        //     // InteractwithText.SetActive(false);
+        // }
 
     }
     public void NextLevel()
     {
-        InteractwithText.SetActive(false);
+        // InteractwithText.SetActive(false);
         LevelManager.Instance.LoadScene(sceneToLoad, "CrossFade");
         MusicManager.Instance.PlayMusic(sceneToLoad);
     }

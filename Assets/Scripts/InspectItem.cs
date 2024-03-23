@@ -11,7 +11,7 @@ public class InspectItem : MonoBehaviour
 
     public GameObject itemCanvas;
 
-    public GameObject InteractwithText;
+    // public GameObject InteractwithText;
 
     public Sprite displayImage = null;
     //public AudioSource InteractwithSound;
@@ -21,11 +21,11 @@ public class InspectItem : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
-    {
-        if (InteractwithText)
-            InteractwithText.SetActive(false);
-    }
+    // void Start()
+    // {
+    //     if (InteractwithText)
+    //         InteractwithText.SetActive(false);
+    // }
 
     // Update is called once per frame
     void Update()
@@ -72,7 +72,7 @@ public class InspectItem : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerIsNearby = true;
-            InteractwithText.SetActive(true);
+            // InteractwithText.SetActive(true);
             //spriteRenderer.color = highlightColor;
         }
     }
@@ -82,10 +82,10 @@ public class InspectItem : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerIsNearby = false;
-            if (InteractwithText != null)
-            {
-                InteractwithText.SetActive(false);
-            }
+            // if (InteractwithText != null)
+            // {
+            //     InteractwithText.SetActive(false);
+            // }
             if (itemCanvas != null)
             {
                 itemCanvas.SetActive(false);
