@@ -12,6 +12,7 @@ public class PuzzleObject : MonoBehaviour
 
 
     private bool playerIsNearby = false;
+    private bool puzzleComplete = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,18 +24,24 @@ public class PuzzleObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // start puzzle if player clicks
         if (playerIsNearby && InputManager.Instance.ClickInput && !puzzlePanel.activeSelf){
-            // start puzzle if player clicks
             puzzlePanel.SetActive(true);
         }
-
-        if (puzzlePanel.activeSelf){
+        // close panel if user clicks
+        else if (puzzleComplete && puzzlePanel.activeSelf && InputManager.Instance.ClickInput){
+            puzzlePanel.SetActive(false);
+        }
+        // check for puzzle completion
+        else if (puzzlePanel.activeSelf && !puzzleComplete){
             foreach (PuzzlePiece piece in pieces){
                 if (!piece.inCorrectPosition) return;
             }
             // otherwise puzzle complete
-
+            puzzleComplete = true;
+            SoundManager.Instance.PlaySound2D("PuzzleComplete");
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)

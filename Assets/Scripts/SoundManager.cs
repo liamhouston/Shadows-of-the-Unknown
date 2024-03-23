@@ -50,6 +50,7 @@ public class SoundManager : MonoBehaviour
         AudioClip clip = sfxLibrary.GetClipFromName(soundName);
         clip.LoadAudioData();
         sfx2DSource.PlayOneShot(clip);
+        Debug.Log("playing " + soundName + " with clip of " + clip);
     }
 
     public void PlayLoopingSound2D(string soundName)
@@ -66,9 +67,11 @@ public class SoundManager : MonoBehaviour
         clip.LoadAudioData();
     }
 
-    public void TurnOffSound()
+    public IEnumerator TurnOffSound(float seconds)
     {
+        yield return new WaitForSeconds(seconds);
         sfx2DSource.Stop();
+        Debug.Log("turning off sound");
     }
 
     public IEnumerator FadeOut(string soundName, bool isfadeout)
