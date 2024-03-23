@@ -8,6 +8,7 @@ public class PuzzleObject : MonoBehaviour
 {
     public Canvas canvas;
     public GameObject puzzlePanel;
+    public PuzzlePiece[] pieces;
 
 
     private bool playerIsNearby = false;
@@ -25,6 +26,14 @@ public class PuzzleObject : MonoBehaviour
         if (playerIsNearby && InputManager.Instance.ClickInput && !puzzlePanel.activeSelf){
             // start puzzle if player clicks
             puzzlePanel.SetActive(true);
+        }
+
+        if (puzzlePanel.activeSelf){
+            foreach (PuzzlePiece piece in pieces){
+                if (!piece.inCorrectPosition) return;
+            }
+            // otherwise puzzle complete
+
         }
     }
 

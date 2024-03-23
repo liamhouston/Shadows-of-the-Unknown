@@ -499,8 +499,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1200937878714598745}
   panelRect: {fileID: 1788973800}
-  correctPosition: {fileID: 708660416}
-  snapDistance: 100
+  correctPiece: {fileID: 708660415}
+  snapDistance: 50
+  inCorrectPosition: 0
 --- !u!1 &135476395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,8 +1299,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1200937878714598745}
   panelRect: {fileID: 1788973800}
-  correctPosition: {fileID: 19457806}
-  snapDistance: 100
+  correctPiece: {fileID: 19457805}
+  snapDistance: 50
+  inCorrectPosition: 0
 --- !u!114 &252295600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2842,7 +2844,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
         type: 3}
+      propertyPath: soundEffects.Array.data[5].groupID
+      value: PuzzlePiecePickUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: soundEffects.Array.data[6].groupID
+      value: PuzzleComplete
+      objectReference: {fileID: 0}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: soundEffects.Array.data[7].groupID
+      value: PuzzleComplete
+      objectReference: {fileID: 0}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
       propertyPath: soundEffects.Array.data[4].clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: soundEffects.Array.data[5].clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: soundEffects.Array.data[6].clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: soundEffects.Array.data[7].clips.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
@@ -2865,6 +2897,21 @@ PrefabInstance:
       propertyPath: soundEffects.Array.data[4].clips.Array.data[3]
       value: 
       objectReference: {fileID: 8300000, guid: f4bb498e41c1dc1499027a1203b2f066, type: 3}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: soundEffects.Array.data[5].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6feda3bc5d162f843b33eabf4a32155d, type: 3}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: soundEffects.Array.data[6].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6feda3bc5d162f843b33eabf4a32155d, type: 3}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: soundEffects.Array.data[7].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6feda3bc5d162f843b33eabf4a32155d, type: 3}
     - target: {fileID: 4063165185107553854, guid: af9a69f8dd886d24eb9e61c08dabedba,
         type: 3}
       propertyPath: m_RootOrder
@@ -3043,7 +3090,7 @@ GameObject:
   - component: {fileID: 841094245}
   - component: {fileID: 841094244}
   m_Layer: 5
-  m_Name: Image
+  m_Name: FullImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3808,6 +3855,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1200937878714598745}
   puzzlePanel: {fileID: 1788973799}
+  pieces:
+  - {fileID: 99940668}
+  - {fileID: 1634947840}
+  - {fileID: 1597821221}
+  - {fileID: 1542214425}
+  - {fileID: 252295599}
 --- !u!212 &1357159339
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4355,8 +4408,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1200937878714598745}
   panelRect: {fileID: 1788973800}
-  correctPosition: {fileID: 2043660617}
-  snapDistance: 100
+  correctPiece: {fileID: 2043660616}
+  snapDistance: 50
+  inCorrectPosition: 0
 --- !u!114 &1542214426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4721,8 +4775,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1200937878714598745}
   panelRect: {fileID: 1788973800}
-  correctPosition: {fileID: 498780137}
-  snapDistance: 100
+  correctPiece: {fileID: 498780136}
+  snapDistance: 50
+  inCorrectPosition: 0
 --- !u!114 &1597821222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5309,8 +5364,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1200937878714598745}
   panelRect: {fileID: 1788973800}
-  correctPosition: {fileID: 1480513030}
-  snapDistance: 100
+  correctPiece: {fileID: 1480513029}
+  snapDistance: 50
+  inCorrectPosition: 0
 --- !u!114 &1634947841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5748,17 +5804,17 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 99940664}
-  - {fileID: 708660416}
-  - {fileID: 1634947839}
-  - {fileID: 1480513030}
-  - {fileID: 1597821220}
-  - {fileID: 498780137}
-  - {fileID: 1542214424}
-  - {fileID: 2043660617}
-  - {fileID: 252295598}
-  - {fileID: 19457806}
   - {fileID: 841094243}
+  - {fileID: 708660416}
+  - {fileID: 1480513030}
+  - {fileID: 498780137}
+  - {fileID: 2043660617}
+  - {fileID: 19457806}
+  - {fileID: 99940664}
+  - {fileID: 1634947839}
+  - {fileID: 1597821220}
+  - {fileID: 1542214424}
+  - {fileID: 252295598}
   m_Father: {fileID: 1200937878714598742}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -6216,7 +6272,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043660616}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.08, y: 0.08, z: 1}
   m_ConstrainProportionsScale: 0
