@@ -9241,7 +9241,7 @@ PrefabInstance:
         type: 3}
       propertyPath: soundEffects.Array.data[4].clips.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: 13fcfffc264fe4c4fa8b4883d1bcda5b, type: 3}
+      objectReference: {fileID: 8300000, guid: 6e322f17b244d764e966a4d2e59b062b, type: 3}
     - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
         type: 3}
       propertyPath: soundEffects.Array.data[4].clips.Array.data[2]
@@ -9256,7 +9256,7 @@ PrefabInstance:
         type: 3}
       propertyPath: soundEffects.Array.data[4].clips.Array.data[4]
       value: 
-      objectReference: {fileID: 8300000, guid: 9f1202be33b09094a80d909368051d80, type: 3}
+      objectReference: {fileID: 8300000, guid: c85714dd5aea7464fa82f090ea45174d, type: 3}
     - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
         type: 3}
       propertyPath: soundEffects.Array.data[4].clips.Array.data[5]
