@@ -1806,7 +1806,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &770667451
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1839,7 +1839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10005,10 +10005,10 @@ RectTransform:
   m_Children:
   - {fileID: 1564346496}
   - {fileID: 201160774}
-  - {fileID: 7134357448229932444}
   - {fileID: 1996245262293463288}
   - {fileID: 2584144458388574740}
   - {fileID: 770667451}
+  - {fileID: 7134357448229932444}
   - {fileID: 9056077335320199303}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10447,6 +10447,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3336924764266330916, guid: 0afd5e2431b0fbf43893a3ae940c8d8d,
         type: 3}
+      propertyPath: XButton
+      value: 
+      objectReference: {fileID: 5344586550053374101}
+    - target: {fileID: 3336924764266330916, guid: 0afd5e2431b0fbf43893a3ae940c8d8d,
+        type: 3}
       propertyPath: max_tint
       value: 255
       objectReference: {fileID: 0}
@@ -10470,6 +10475,11 @@ PrefabInstance:
       propertyPath: DamageEffectImage
       value: 
       objectReference: {fileID: 1564346497}
+    - target: {fileID: 3336924764266330916, guid: 0afd5e2431b0fbf43893a3ae940c8d8d,
+        type: 3}
+      propertyPath: mainMenuLoadDelay
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3336924764266330916, guid: 0afd5e2431b0fbf43893a3ae940c8d8d,
         type: 3}
       propertyPath: gameOverBark.Array.size

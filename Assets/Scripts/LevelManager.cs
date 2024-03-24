@@ -35,8 +35,8 @@ public class LevelManager : MonoBehaviour
     {
         if (Player.Instance != null) Player.Instance.currentSceneName = sceneName;
         SceneManager.LoadSceneAsync(sceneName);
-        // StartCoroutine(LoadSceneAsync(sceneName, transitionName));
         // Debug.Log("trying to load" + sceneName);
+        // StartCoroutine(LoadSceneAsync(sceneName, transitionName));
     }
 
     private IEnumerator LoadSceneAsync(string sceneName, string transitionName)
