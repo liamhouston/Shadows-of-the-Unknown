@@ -2880,7 +2880,7 @@ Transform:
   m_GameObject: {fileID: 1226332784}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -88.88052, y: -1.37357, z: -3.2399998}
+  m_LocalPosition: {x: -88.88052, y: -1.3718896, z: -3.2399998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3553,9 +3553,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barkList:
-  - "The Atlantic is so much grosser than the Pacific. I think if you go straight
-    South from here you\u2019ll hit Puerto Rico. Or maybe the Bermuda Triangle and
-    I\u2019ll get eaten up and disappear."
+  - "The Atlantic is so much grosser than the Pacific. I think if I go straight South
+    from here I\u2019ll hit Puerto Rico."
+  - "Or maybe the Bermuda Triangle and I\u2019ll get eaten up and disappear."
 --- !u!61 &1548179249
 BoxCollider2D:
   m_ObjectHideFlags: 0

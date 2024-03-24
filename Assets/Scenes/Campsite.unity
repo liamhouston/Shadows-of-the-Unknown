@@ -1899,14 +1899,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barkList:
-  - Oh, shit. This looks like Percy's tent. I better take a picture, this might be
-    a clue!
-  - "I remember Percy bought this with Dad when he started taking pictures of deer
-    through different, like\u2026 What did he say? Mediums? It was some pretentious
-    art thing.\u200B\u200B I dunno why a deer shadow would be more interesting than
-    an actual deer."
-  - "This is weird, though, I don\u2019t think he would\u2019ve just left this expensive
-    tent here. I'll take a picture and investigate later.."
+  - "Oh, shit. This looks like Percy\u2019s. I remember \u2018cause he bought it
+    with Dad when he was obsessed with taking photos of deers. I should take a picture\u2014it
+    might help me find him. "
+  - "This is weird, though, I don\u2019t think he would\u2019ve just left it here.
+    It was expensive."
+  - Was he taking pictures of that deer too?
 --- !u!50 &781784730
 Rigidbody2D:
   serializedVersion: 4
@@ -3274,7 +3272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barkList:
-  - No s'mores??
+  - 'Damn. No s''mores. '
 --- !u!50 &1491658050
 Rigidbody2D:
   serializedVersion: 4
