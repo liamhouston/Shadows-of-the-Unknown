@@ -6359,6 +6359,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043660616}
   m_CullTransparentMesh: 1
+--- !u!1 &2073401141
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2073401143}
+  - component: {fileID: 2073401142}
+  m_Layer: 0
+  m_Name: RandomSounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2073401142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073401141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3e227d44b01ee548946fc069a96c980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minDelay: 10
+  maxDelay: 20
+  soundName: FishdockBackgroundNoise
+--- !u!4 &2073401143
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073401141}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -16.03404, y: 0.46495652, z: 0.10762861}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2096332942
 GameObject:
   m_ObjectHideFlags: 0
@@ -7368,6 +7415,7 @@ SceneRoots:
   - {fileID: 502748112}
   - {fileID: 406610472}
   - {fileID: 1357159340}
+  - {fileID: 2073401143}
   - {fileID: 1081802593}
   - {fileID: 1200937878714598741}
   - {fileID: 962486789}
