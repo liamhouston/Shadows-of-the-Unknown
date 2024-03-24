@@ -194,11 +194,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tracks:
   - trackName: MainMenu
-    clip: {fileID: 8300000, guid: 0ba682da4bde7e34aaff7051da9996fb, type: 3}
+    clip: {fileID: 8300000, guid: 9eb5d984ea600aa489eca58fce9d7dda, type: 3}
   - trackName: Fishdock
     clip: {fileID: 8300000, guid: 0dc4035b20dddac46a4f8954d223fd52, type: 3}
   - trackName: Campsite
-    clip: {fileID: 8300000, guid: 62883bbf8eabc9c4f9c0a039fc0c5a01, type: 3}
+    clip: {fileID: 8300000, guid: 4a5271cd1fbb32a44a38f4b784935180, type: 3}
 --- !u!114 &4063165185107553850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sfxLibrary: {fileID: 4063165185107553853}
   sfx2DSource: {fileID: 4063165185422374769}
-  sfx2dSource2: {fileID: 0}
+  sfx2dSource2: {fileID: 4063165185422374769}
 --- !u!114 &4063165185107553853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,20 +229,20 @@ MonoBehaviour:
   soundEffects:
   - groupID: CameraFlash
     clips:
-    - {fileID: 8300000, guid: 5ebadf793d6940240aeb6b0975cf6e40, type: 3}
+    - {fileID: 8300000, guid: 3ac14d19fb3d88b4a820ee9c6c6dcd78, type: 3}
   - groupID: MenuSelect
     clips:
-    - {fileID: 8300000, guid: 64cb7821bc148b34f94f1ef44944f083, type: 3}
+    - {fileID: 8300000, guid: f83ee805fa8e3f14ca7ad574d27d29e8, type: 3}
   - groupID: Heartbeating
     clips:
-    - {fileID: 8300000, guid: 1066b85efe0640f4aa5820cf2e6d32b1, type: 3}
-    - {fileID: 8300000, guid: 69dd128e3d11f504e95af9dec2b2adf2, type: 3}
+    - {fileID: 8300000, guid: e062608c6b4eaf04294d8272a5177ab1, type: 3}
+    - {fileID: 8300000, guid: d776de5702e7afb44bf40723e218db4f, type: 3}
   - groupID: ScaryAmbientWind
     clips:
-    - {fileID: 8300000, guid: 2d0726f0018f679498add1ec8e15f45c, type: 3}
+    - {fileID: 8300000, guid: 45ac17da59bae60439f76fa8acc3afe3, type: 3}
   - groupID: Waves
     clips:
-    - {fileID: 8300000, guid: 6feda3bc5d162f843b33eabf4a32155d, type: 3}
+    - {fileID: 8300000, guid: 09875572a9ed14941b0f6fb70b9b6de5, type: 3}
   - groupID: PuzzleComplete
     clips:
     - {fileID: 8300000, guid: 548ec7d9bcd67ca4f94b6de6972e8d63, type: 3}

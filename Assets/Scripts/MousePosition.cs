@@ -24,6 +24,10 @@ public class MousePosition : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (InputManager.Instance.MenuOpenInput)
+        {
+            Debug.Log("Menu Open Input");
+        }
         // if (!DialogueManager.Instance.DialogueIsActive())
         // {
         Vector3 mousePosition = _mainCamera.ScreenToWorldPoint(InputManager.Instance.MouseInput);

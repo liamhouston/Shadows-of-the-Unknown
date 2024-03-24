@@ -884,6 +884,12 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!82 &628060517 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4063165185422374769, guid: af9a69f8dd886d24eb9e61c08dabedba,
+    type: 3}
+  m_PrefabInstance: {fileID: 4063165183757911433}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &689616628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1972,6 +1978,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4063165185107553850, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: sfx2dSource2
+      value: 
+      objectReference: {fileID: 628060517}
     - target: {fileID: 4063165185107553851, guid: af9a69f8dd886d24eb9e61c08dabedba,
         type: 3}
       propertyPath: m_Name
@@ -1979,9 +1990,49 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4063165185107553852, guid: af9a69f8dd886d24eb9e61c08dabedba,
         type: 3}
+      propertyPath: tracks.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9eb5d984ea600aa489eca58fce9d7dda, type: 3}
+    - target: {fileID: 4063165185107553852, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: tracks.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4a5271cd1fbb32a44a38f4b784935180, type: 3}
+    - target: {fileID: 4063165185107553852, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
       propertyPath: tracks.Array.data[1].trackName
       value: Fishdock
       objectReference: {fileID: 0}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: soundEffects.Array.data[0].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3ac14d19fb3d88b4a820ee9c6c6dcd78, type: 3}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: soundEffects.Array.data[1].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f83ee805fa8e3f14ca7ad574d27d29e8, type: 3}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: soundEffects.Array.data[2].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: e062608c6b4eaf04294d8272a5177ab1, type: 3}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: soundEffects.Array.data[2].clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a6e0b42d520ee4c86576623ac5b3b1, type: 3}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: soundEffects.Array.data[3].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 45ac17da59bae60439f76fa8acc3afe3, type: 3}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: soundEffects.Array.data[4].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 09875572a9ed14941b0f6fb70b9b6de5, type: 3}
     - target: {fileID: 4063165185107553854, guid: af9a69f8dd886d24eb9e61c08dabedba,
         type: 3}
       propertyPath: m_RootOrder

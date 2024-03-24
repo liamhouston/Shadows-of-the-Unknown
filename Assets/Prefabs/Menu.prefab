@@ -427,7 +427,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 4063165185107553850, guid: af9a69f8dd886d24eb9e61c08dabedba,
+            type: 3}
           m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
           m_MethodName: PlaySound2D
           m_Mode: 5
@@ -1083,7 +1084,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.5
+  m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1472,7 +1473,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 4063165185107553850, guid: af9a69f8dd886d24eb9e61c08dabedba,
+            type: 3}
           m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
           m_MethodName: PlaySound2D
           m_Mode: 5
@@ -1951,7 +1953,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.5
+  m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -2616,7 +2618,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 4063165185107553850, guid: af9a69f8dd886d24eb9e61c08dabedba,
+            type: 3}
           m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
           m_MethodName: PlaySound2D
           m_Mode: 5
@@ -3085,7 +3088,6 @@ GameObject:
   - component: {fileID: 7569905954637115275}
   - component: {fileID: 1313396621437518119}
   - component: {fileID: 4132224931325051449}
-  - component: {fileID: 4118104487119552076}
   m_Layer: 0
   m_Name: Menu
   m_TagString: Untagged
@@ -3138,19 +3140,6 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: c650268cadc1f84489d5d5ff9c14d070, type: 2}
   musicSlider: {fileID: 4043082120686384445}
   sfxSlider: {fileID: 5986691548346365755}
---- !u!114 &4118104487119552076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8374128733161427590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!1 &8806336366455216511
 GameObject:
   m_ObjectHideFlags: 0
