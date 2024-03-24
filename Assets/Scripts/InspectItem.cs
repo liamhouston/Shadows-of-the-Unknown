@@ -69,7 +69,7 @@ public class InspectItem : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Mouse"))
         {
             playerIsNearby = true;
             InteractwithText.SetActive(true);
@@ -79,7 +79,7 @@ public class InspectItem : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Mouse"))
         {
             playerIsNearby = false;
             if (InteractwithText != null)
