@@ -29,7 +29,7 @@ public class GameController : MonoBehaviour
 
     [Header("Damage Effect")]
     public Image DamageEffectImage;
-    public float damage_intensity = (float) 1.5;
+    public float damage_intensity = (float) 1.25;
     public float min_alpha = (float) 100;
     public float max_alpha = (float) 200;
     private bool currently_fading;
@@ -56,6 +56,7 @@ public class GameController : MonoBehaviour
             _instance = this;
             _currentResolve = _maxResolve;
         }
+        gameOverFadeComplete = false;
     }
 
     public void Update() {
@@ -80,6 +81,7 @@ public class GameController : MonoBehaviour
         }
         else if (gameOverFadeComplete)
         {
+            gameOverFadeComplete = false;
             // play dialogue if fade complete
             LevelManager.Instance.LoadScene("MainMenu", "CrossFade");
         }
