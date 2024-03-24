@@ -2230,9 +2230,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4faa23a2af2c624d95caae99ff023b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftBound: -17
-  rightBound: -8
-  waitTime: 15
+  leftBound: -12
+  rightBound: -3
+  waitTime: 12
 --- !u!50 &833725713
 Rigidbody2D:
   serializedVersion: 4
@@ -2357,7 +2357,7 @@ Transform:
   m_GameObject: {fileID: 833725710}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.49, y: 0.9, z: -8.034689}
+  m_LocalPosition: {x: -8.81, y: 0.34, z: -8.034689}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3810,7 +3810,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1885904513
 MonoBehaviour:
   m_ObjectHideFlags: 0

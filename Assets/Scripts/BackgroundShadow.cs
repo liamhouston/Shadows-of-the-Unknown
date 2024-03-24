@@ -37,6 +37,7 @@ public class BackgroundShadow : MonoBehaviour
         if (other.CompareTag("Player") && shadowIsVisible)
         {
             SoundManager.Instance.PlaySound2D("ScaryAmbientWind");
+            StartCoroutine(SoundManager.Instance.TurnOffSound(5));
             StartCoroutine(MoveShadow());
         }
     }

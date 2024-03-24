@@ -70,7 +70,6 @@ public class SoundManager : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         sfx2DSource.Stop();
-        Debug.Log("turning off sound");
     }
 
     public IEnumerator FadeOut(string soundName, bool isfadeout)
