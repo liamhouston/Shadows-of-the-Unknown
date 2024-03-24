@@ -189,6 +189,10 @@ public class DialogueManager : MonoBehaviour
         return dialoguePanel.activeSelf;
     }
 
+    public void DisableDialoguePanel(){
+        dialoguePanel.SetActive(false);
+    }
+
     // public void DialogueSkip()
     // {
     //     wordSpeed = 0.01f;

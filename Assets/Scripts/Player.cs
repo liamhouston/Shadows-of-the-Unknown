@@ -24,6 +24,9 @@ public class Player : MonoBehaviour
     private const string _horizontal = "Horizontal";
     private const string _lastHorizontal = "LastHorizontal";
     public static Player Instance;
+
+    private AudioSource footstepsAudioSource;
+
     private void Awake()
     {
         if (Instance == null)
@@ -44,7 +47,7 @@ public class Player : MonoBehaviour
         // InputManager.PlayerInput.SwitchCurrentActionMap("Player");
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-
+        footstepsAudioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -57,6 +60,12 @@ public class Player : MonoBehaviour
         if (_movement != Vector2.zero)
         {
             _animator.SetFloat(_lastHorizontal, _movement.x);
+            if (!footstepsAudioSource.isPlaying){
+                footstepsAudioSource.Play();
+            }
+        }
+        else {
+            footstepsAudioSource.Stop();
         }
     }
 

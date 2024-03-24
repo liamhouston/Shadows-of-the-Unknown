@@ -24,12 +24,15 @@ public class GameController : MonoBehaviour
 
     [Header("Game Over Info")]
     public Image BlackoutBox;
-    private bool gameOverFadeComplete = false;
+    public GameObject XButton; // need x button to disable it on game over
+    private bool gameOverFadeComplete;
+    private bool gameOverFadeStarted;
     public string[] gameOverBark;
+    public float mainMenuLoadDelay = 10; // how long the dialogue remains on screen before loading main menu
 
     [Header("Damage Effect")]
     public Image DamageEffectImage;
-    public float damage_intensity = (float) 1.5;
+    public float damage_intensity = (float) 1.25;
     public float min_alpha = (float) 100;
     public float max_alpha = (float) 200;
     private bool currently_fading;
@@ -56,6 +59,8 @@ public class GameController : MonoBehaviour
             _instance = this;
             _currentResolve = _maxResolve;
         }
+        gameOverFadeStarted = false;
+        gameOverFadeComplete = false;
     }
 
     public void Update() {
@@ -74,14 +79,23 @@ public class GameController : MonoBehaviour
         }
 
         // check for game over
-        if (_currentResolve <= 0 && !gameOverFadeComplete)
+        if (_currentResolve <= 0 && !gameOverFadeStarted && !gameOverFadeComplete)
         {
-            StartCoroutine(GameOverFade((float)0.01));
+            gameOverFadeStarted = true;
+            // disable on screen elements
+            DialogueManager.Instance.DisableDialoguePanel();
+            XButton.SetActive(false);
+
+            StartCoroutine(GameOverFade((float)0.3));
         }
         else if (gameOverFadeComplete)
         {
+            gameOverFadeComplete = false;
+            
             // play dialogue if fade complete
-            LevelManager.Instance.LoadScene("MainMenu", "CrossFade");
+            DialogueManager.Instance.playBlockingDialogue("Jay", gameOverBark);
+
+            StartCoroutine(LoadMainMenuAfterSeconds(mainMenuLoadDelay));
         }
     }
 
@@ -144,7 +158,6 @@ public class GameController : MonoBehaviour
             BlackoutBox.GetComponent<Image>().color = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
             yield return null;
         }
-
         gameOverFadeComplete = true;
     }
 
@@ -179,5 +192,13 @@ public class GameController : MonoBehaviour
             yield return new WaitForSeconds(secondInBetween);
         }
         currently_fading = false;
+    }
+
+    private IEnumerator LoadMainMenuAfterSeconds(float seconds){
+        Debug.Log("waiting for " + seconds);
+        yield return new WaitForSeconds(seconds);
+        // load main menu
+        Debug.Log("done wait, loading main menu");
+        LevelManager.Instance.LoadScene("MainMenu", "CrossFade");
     }
 }

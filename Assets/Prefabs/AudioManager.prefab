@@ -24,12 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4063165183915282890}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4063165185107553854}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &4063165183915282892
 AudioSource:
@@ -155,14 +156,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4063165185107553851}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4063165185422374782}
   - {fileID: 4063165183915282893}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4063165185107553855
 MonoBehaviour:
@@ -211,6 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sfxLibrary: {fileID: 4063165185107553853}
   sfx2DSource: {fileID: 4063165185422374769}
+  sfx2dSource2: {fileID: 0}
 --- !u!114 &4063165185107553853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,7 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundEffects:
-  - groupID: Camera
+  - groupID: CameraFlash
     clips:
     - {fileID: 8300000, guid: 5ebadf793d6940240aeb6b0975cf6e40, type: 3}
   - groupID: MenuSelect
@@ -237,6 +240,27 @@ MonoBehaviour:
   - groupID: ScaryAmbientWind
     clips:
     - {fileID: 8300000, guid: 2d0726f0018f679498add1ec8e15f45c, type: 3}
+  - groupID: Waves
+    clips:
+    - {fileID: 8300000, guid: 6feda3bc5d162f843b33eabf4a32155d, type: 3}
+  - groupID: PuzzleComplete
+    clips:
+    - {fileID: 8300000, guid: 548ec7d9bcd67ca4f94b6de6972e8d63, type: 3}
+  - groupID: CampsiteBackgroundNoise
+    clips:
+    - {fileID: 8300000, guid: 1e398f37dece879449983cc7657e4bf1, type: 3}
+    - {fileID: 8300000, guid: 13fcfffc264fe4c4fa8b4883d1bcda5b, type: 3}
+    - {fileID: 8300000, guid: 8a181045388a64d458490b44f4615824, type: 3}
+    - {fileID: 8300000, guid: a13298bbbc6ac1d4d87a834f0cc33863, type: 3}
+    - {fileID: 8300000, guid: 9f1202be33b09094a80d909368051d80, type: 3}
+    - {fileID: 8300000, guid: a9c421afa18227b4c9a899a2195f46c1, type: 3}
+  - groupID: FishdockBackgroundNoise
+    clips:
+    - {fileID: 8300000, guid: 1e398f37dece879449983cc7657e4bf1, type: 3}
+    - {fileID: 8300000, guid: 8a181045388a64d458490b44f4615824, type: 3}
+    - {fileID: 8300000, guid: a13298bbbc6ac1d4d87a834f0cc33863, type: 3}
+    - {fileID: 8300000, guid: 9f1202be33b09094a80d909368051d80, type: 3}
+    - {fileID: 8300000, guid: 335b1aefb95f58649b386cc07edd9b35, type: 3}
 --- !u!1 &4063165185422374783
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,12 +285,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4063165185422374783}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4063165185107553854}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &4063165185422374769
 AudioSource:
