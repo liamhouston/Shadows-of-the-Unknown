@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -80,7 +80,6 @@ public class LevelManager : MonoBehaviour
 
     public void LoadApartmentScene()
     {
-        LoadScene("Campsite", "CrossFade");
+        LoadScene("Bedroom", "CrossFade");
     }
-
 }

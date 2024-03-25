@@ -16,11 +16,13 @@ public class MainMenu : MonoBehaviour
         Scene activeScene = SceneManager.GetActiveScene();
         string sceneName = activeScene.name;
         MusicManager.Instance.PlayMusic(sceneName);
+
+        PlayerPrefs.SetInt("IsCameraPickedUp", 0); // player has not picked up camera yet
     }
 
     public void Play()
     {
-        LevelManager.Instance.LoadScene("Apartment", "CrossFade");
+        LevelManager.Instance.LoadScene("Bedroom", "CrossFade");
         MusicManager.Instance.PlayMusic("Fishdock");
     }
 

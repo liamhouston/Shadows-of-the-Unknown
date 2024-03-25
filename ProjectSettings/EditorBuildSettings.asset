@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Store.unity
     guid: 7ebf172b3144f774db17f103d7350da7
+  - enabled: 1
+    path: Assets/Scenes/BedroomCam.unity
+    guid: 6612ab96f6bf9374eb052eeadd44aae3
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9fed1e94b3b0c964cb5ab3bf26cf30bc,
       type: 2}

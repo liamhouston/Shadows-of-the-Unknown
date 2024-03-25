@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            // DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -42,9 +42,6 @@ public class Player : MonoBehaviour
     private void Start()
     {
         Cursor.visible = true;
-        // InputManager.PlayerInput.actions.FindActionMap("Player").Enable();
-        // InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap("Player");
-        // InputManager.PlayerInput.SwitchCurrentActionMap("Player");
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         footstepsAudioSource = GetComponent<AudioSource>();

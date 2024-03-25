@@ -1,9 +1,4 @@
-﻿/* Code Acknowledgements
-* From: diving_squid on YouTube 
-* URL: https://www.youtube.com/watch?v=1nFNOyCalzo
-*/
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -72,5 +67,9 @@ public class PlayerBarks : MonoBehaviour
 
     private void IncrementBarkIndex(){
         barkIndex = (barkIndex + 1) % barkList.Length;
+    }
+
+    public void TestFunction(){
+        Debug.Log("Please please please");
     }
 }

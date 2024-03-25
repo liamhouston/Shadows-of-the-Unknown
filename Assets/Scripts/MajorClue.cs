@@ -62,6 +62,7 @@ public class MajorClue : MonoBehaviour
             // InputManager.PlayerInput.actions.FindActionMap("Camera").Enable();
             dialogue = new string[] { "I think I got the picture. I might as well leave." };
             DialogueManager.Instance.playBlockingDialogue("", dialogue);
+            SoundManager.Instance.PlaySound2D("MajorClue");
 
             // Fade In and Out From Black quickly
             // StartCoroutine(GameController.Instance.FadeToAndFromBlack((float)0.5, (float)0, (float)0.1));
