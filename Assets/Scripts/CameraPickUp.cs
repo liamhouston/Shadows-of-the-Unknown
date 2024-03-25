@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CameraPickUp : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer cameraCover;
+    // [SerializeField] private SpriteRenderer cameraCover;
     [SerializeField] private GameObject cameraObj;
     public string[] barkList;
 
@@ -15,14 +15,13 @@ public class CameraPickUp : MonoBehaviour
 
     private void Start(){
         triggeredCameraDialogue = false;
+        cameraObj.SetActive(true);
 
+        Debug.Log(PlayerPrefs.GetInt(isCameraPickedUp));
         // cover the camera if it's already been picked up
-        if (PlayerPrefs.HasKey(isCameraPickedUp) && PlayerPrefs.GetInt(isCameraPickedUp) == 1){
-            cameraCover.color = new Color (cameraCover.color.r, cameraCover.color.g, cameraCover.color.b, 1); // cover the camera
+        if (PlayerPrefs.HasKey(isCameraPickedUp) && PlayerPrefs.GetInt("BedroomCam") == 1){
+            // cameraCover.color = new Color (cameraCover.color.r, cameraCover.color.g, cameraCover.color.b, 1); // cover the camera
             cameraObj.SetActive(false); // turn off tutorial
-        }
-        else {
-            cameraCover.color = new Color (cameraCover.color.r, cameraCover.color.g, cameraCover.color.b, 0); // uncover the camera
         }
     }
 
@@ -32,12 +31,13 @@ public class CameraPickUp : MonoBehaviour
         // if player has clicked through all of dialogue, then start the tutorial scene
         if (triggeredCameraDialogue && !DialogueManager.Instance.DialogueIsActive() && PlayerPrefs.GetInt(isCameraPickedUp) != 1){
             PlayerPrefs.SetInt(isCameraPickedUp, 1); // camera picked up in player prefs
+            // Debug.Log(PlayerPrefs.GetInt(isCameraPickedUp));
             LevelManager.Instance.LoadScene("BedroomCam", "CrossFade");
         }
 
         // if player within range and clicks
         if (playerIsNearby && InputManager.Instance.ClickInput && !DialogueManager.Instance.DialogueIsActive()){
-            DialogueManager.Instance.playBlockingDialogue("Jau", barkList);
+            DialogueManager.Instance.playBlockingDialogue("Jay", barkList);
             triggeredCameraDialogue = true;
         }
 
