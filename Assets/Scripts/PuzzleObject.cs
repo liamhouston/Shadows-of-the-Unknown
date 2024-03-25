@@ -61,21 +61,5 @@ public class PuzzleObject : MonoBehaviour
             playerIsNearby = false;
         }
     }
-
-    public void TestFunction(){
-        Debug.Log("event triggered function");
-    }
-
-    public void DragHandler(BaseEventData data){
-        PointerEventData pointerData = (PointerEventData) data;
-        Vector2 position;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            (RectTransform)canvas.transform,
-            pointerData.position,
-            canvas.worldCamera,
-            out position);
-
-        transform.position = canvas.transform.TransformPoint(position);
-    }
 }
 

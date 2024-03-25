@@ -261,6 +261,9 @@ MonoBehaviour:
     - {fileID: 8300000, guid: a13298bbbc6ac1d4d87a834f0cc33863, type: 3}
     - {fileID: 8300000, guid: 6e322f17b244d764e966a4d2e59b062b, type: 3}
     - {fileID: 8300000, guid: b51ec63013a38054da4b0ed9bb186482, type: 3}
+  - groupID: MajorClue
+    clips:
+    - {fileID: 8300000, guid: eff339cb3e1576444a989996a75a49ff, type: 3}
 --- !u!1 &4063165185422374783
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,38 +17,37 @@ public class InspectItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // if open and click happens, close
+        if (InputManager.Instance.ClickInput && itemCanvas.activeSelf){
+            itemCanvas.SetActive(false);
+        }
+
+        // open if player nearby
         if (InputManager.Instance.ClickInput && playerIsNearby && !DialogueManager.Instance.DialogueIsActive())
         {
-            if (itemCanvas.activeSelf)
+            // Set the image to the display image or the sprite
+            itemCanvas.SetActive(true);
+            if (displayImage != null)
             {
-                itemCanvas.SetActive(false);
+                // Calculate the aspect ratio of the image
+                float aspectRatio = (float)displayImage.bounds.size.x / displayImage.bounds.size.y;
+                float newWidth = imageHeight * aspectRatio;
+                // Set the size of the Canvas based on the aspect ratio
+                itemCanvas.GetComponent<RectTransform>().sizeDelta = new Vector2(newWidth, imageHeight);
+                itemCanvas.GetComponent<RectTransform>().position = new Vector2(Screen.width / 2f, Screen.height / 2f);
+                itemCanvas.GetComponentInChildren<RawImage>().texture = displayImage.texture;
             }
             else
             {
-                // Set the image to the display image or the sprite
-                itemCanvas.SetActive(true);
-                if (displayImage != null)
-                {
-                    // Calculate the aspect ratio of the image
-                    float aspectRatio = (float)displayImage.bounds.size.x / displayImage.bounds.size.y;
-                    float newWidth = imageHeight * aspectRatio;
-                    // Set the size of the Canvas based on the aspect ratio
-                    itemCanvas.GetComponent<RectTransform>().sizeDelta = new Vector2(newWidth, imageHeight);
-                    itemCanvas.GetComponent<RectTransform>().position = new Vector2(Screen.width / 2f, Screen.height / 2f);
-                    itemCanvas.GetComponentInChildren<RawImage>().texture = displayImage.texture;
-                }
-                else
-                {
-                    // Calculate the aspect ratio of the image
-                    SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-                    Debug.Assert(spriteRenderer != null, "SpriteRenderer must exist on this object");
-                    float aspectRatio = (float)spriteRenderer.sprite.bounds.size.x / spriteRenderer.sprite.bounds.size.y;
-                    float newWidth = imageHeight * aspectRatio;
-                    // Set the size of the Canvas based on the aspect ratio
-                    itemCanvas.GetComponent<RectTransform>().sizeDelta = new Vector2(newWidth, imageHeight);
-                    itemCanvas.GetComponent<RectTransform>().position = new Vector2(Screen.width / 2f + newWidth / 2f, Screen.height / 2f + imageHeight / 2f);
-                    itemCanvas.GetComponentInChildren<RawImage>().texture = spriteRenderer.sprite.texture;
-                }
+                // Calculate the aspect ratio of the image
+                SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+                Debug.Assert(spriteRenderer != null, "SpriteRenderer must exist on this object");
+                float aspectRatio = (float)spriteRenderer.sprite.bounds.size.x / spriteRenderer.sprite.bounds.size.y;
+                float newWidth = imageHeight * aspectRatio;
+                // Set the size of the Canvas based on the aspect ratio
+                itemCanvas.GetComponent<RectTransform>().sizeDelta = new Vector2(newWidth, imageHeight);
+                itemCanvas.GetComponent<RectTransform>().position = new Vector2(Screen.width / 2f + newWidth / 2f, Screen.height / 2f + imageHeight / 2f);
+                itemCanvas.GetComponentInChildren<RawImage>().texture = spriteRenderer.sprite.texture;
             }
         }
     }
@@ -67,10 +66,6 @@ public class InspectItem : MonoBehaviour
         if (other.CompareTag("Mouse"))
         {
             playerIsNearby = false;
-            if (itemCanvas != null)
-            {
-                itemCanvas.SetActive(false);
-            }
         }
     }
 }

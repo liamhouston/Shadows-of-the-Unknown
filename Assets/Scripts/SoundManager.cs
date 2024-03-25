@@ -49,7 +49,6 @@ public class SoundManager : MonoBehaviour
     {
         AudioClip clip = sfxLibrary.GetClipFromName(soundName);
         clip.LoadAudioData();
-        // Debug.Log("playing " + soundName + " with clip" + clip);
         sfx2DSource.PlayOneShot(clip);
     }
 
