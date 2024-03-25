@@ -34,7 +34,7 @@ public class BackgroundShadow : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && shadowIsVisible)
+        if (other.CompareTag("Mouse") && shadowIsVisible)
         {
             SoundManager.Instance.PlaySound2D("ScaryAmbientWind");
             StartCoroutine(SoundManager.Instance.TurnOffSound(5));

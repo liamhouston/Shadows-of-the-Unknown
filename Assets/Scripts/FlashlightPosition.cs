@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
 
 
-public class MousePosition : MonoBehaviour
+public class FlashlightPosition : MonoBehaviour
 {
     [SerializeField] private Camera _mainCamera;
 

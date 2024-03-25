@@ -823,7 +823,7 @@ GameObject:
   - component: {fileID: 264987597}
   m_Layer: 7
   m_Name: PlayerLight
-  m_TagString: Player
+  m_TagString: Mouse
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1869,15 +1869,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eac34f5bea1aca419d8ac232ce4fb61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playTogether: 0
   barkList:
-  - Oh, shit. This looks like Percy's tent. I better take a picture, this might be
-    a clue!
-  - "I remember Percy bought this with Dad when he started taking pictures of deer
-    through different, like\u2026 What did he say? Mediums? It was some pretentious
-    art thing.\u200B\u200B I dunno why a deer shadow would be more interesting than
-    an actual deer."
-  - "This is weird, though, I don\u2019t think he would\u2019ve just left this expensive
-    tent here. I'll take a picture and investigate later.."
+  - "Oh, shit. This looks like Percy\u2019s. I remember \u2018cause he bought it
+    with Dad when he was obsessed with taking photos of deers. I should take a picture\u2014it
+    might help me find him."
+  - "This is weird, though, I don\u2019t think he would\u2019ve just left it here.
+    It was expensive."
+  - Was he taking pictures of that deer too?
 --- !u!50 &781784730
 Rigidbody2D:
   serializedVersion: 4
@@ -2134,6 +2133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eac34f5bea1aca419d8ac232ce4fb61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playTogether: 0
   barkList:
   - W...what was that..
   - Hello is anybody there?!?
@@ -3272,8 +3272,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eac34f5bea1aca419d8ac232ce4fb61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playTogether: 0
   barkList:
-  - No s'mores??
+  - 'Damn. No s''mores. '
 --- !u!50 &1491658050
 Rigidbody2D:
   serializedVersion: 4
@@ -3808,6 +3809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eac34f5bea1aca419d8ac232ce4fb61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playTogether: 0
   barkList:
   - "Eugh, what the hell\u2026 Not touching that."
   - Looks like it got shot. Or maybe chronic wasting disease. Personally, I would
@@ -3976,10 +3978,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eac34f5bea1aca419d8ac232ce4fb61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playTogether: 0
   barkList:
   - "This looks pretty old. There\u2019s a lot of stuff around here that\u2019s a
-    lot older than I thought, for some reason. I dunno. To me this town started existing
-    when Percy moved here. I wouldn\u2019t have ever known about it otherwise."
+    lot older than I thought, for some reason. I dunno."
+  - "To me this town started existing when Percy moved here. I wouldn\u2019t have
+    ever known about it otherwise."
 --- !u!50 &2023605245
 Rigidbody2D:
   serializedVersion: 4
@@ -8938,6 +8942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eac34f5bea1aca419d8ac232ce4fb61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playTogether: 0
   barkList:
   - Percy always wished the fireflies would hold still for just one picture.
 --- !u!61 &2070125222

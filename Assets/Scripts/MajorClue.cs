@@ -74,7 +74,7 @@ public class MajorClue : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Mouse"))
         {
             playerIsNearby = true;
         }
@@ -82,7 +82,7 @@ public class MajorClue : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Mouse"))
         {
             playerIsNearby = false;
         }

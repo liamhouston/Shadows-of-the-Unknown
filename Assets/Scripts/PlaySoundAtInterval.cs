@@ -18,7 +18,6 @@ public class PlaySoundAtInterval : MonoBehaviour
             waitingForSound = true;
             System.Random rnd = new System.Random();
             int interval = rnd.Next(minDelay, maxDelay);
-            Debug.Log("waiting for " + interval + " before playing " + soundName);
             StartCoroutine(playSoundAtInterval(soundName, interval));
         }
     }
