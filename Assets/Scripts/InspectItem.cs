@@ -11,21 +11,8 @@ public class InspectItem : MonoBehaviour
 
     public GameObject itemCanvas;
 
-    // public GameObject InteractwithText;
-
     public Sprite displayImage = null;
-    //public AudioSource InteractwithSound;
 
-    //private Color originalColor;
-    //public Color highlightColor = new Color(1f, 0.5255f, 0.5255f);
-
-
-    // Start is called before the first frame update
-    // void Start()
-    // {
-    //     if (InteractwithText)
-    //         InteractwithText.SetActive(false);
-    // }
 
     // Update is called once per frame
     void Update()
@@ -69,30 +56,21 @@ public class InspectItem : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Mouse"))
         {
             playerIsNearby = true;
-            // InteractwithText.SetActive(true);
-            //spriteRenderer.color = highlightColor;
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Mouse"))
         {
             playerIsNearby = false;
-            // if (InteractwithText != null)
-            // {
-            //     InteractwithText.SetActive(false);
-            // }
             if (itemCanvas != null)
             {
                 itemCanvas.SetActive(false);
             }
-            // InteractwithText.SetActive(false);
-            // itemCanvas.SetActive(false);
-            //spriteRenderer.color = originalColor;
         }
     }
 }

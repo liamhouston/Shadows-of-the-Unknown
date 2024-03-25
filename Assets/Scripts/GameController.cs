@@ -63,6 +63,10 @@ public class GameController : MonoBehaviour
         gameOverFadeComplete = false;
     }
 
+    void Start(){
+
+    }
+
     public void Update() {
         // update red tint
         float resolvePercent = (_maxResolve - _currentResolve + 0.0f) / _maxResolve;
