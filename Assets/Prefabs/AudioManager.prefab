@@ -249,18 +249,18 @@ MonoBehaviour:
   - groupID: CampsiteBackgroundNoise
     clips:
     - {fileID: 8300000, guid: 1e398f37dece879449983cc7657e4bf1, type: 3}
-    - {fileID: 8300000, guid: 13fcfffc264fe4c4fa8b4883d1bcda5b, type: 3}
+    - {fileID: 8300000, guid: 6e322f17b244d764e966a4d2e59b062b, type: 3}
     - {fileID: 8300000, guid: 8a181045388a64d458490b44f4615824, type: 3}
     - {fileID: 8300000, guid: a13298bbbc6ac1d4d87a834f0cc33863, type: 3}
-    - {fileID: 8300000, guid: 9f1202be33b09094a80d909368051d80, type: 3}
+    - {fileID: 8300000, guid: c85714dd5aea7464fa82f090ea45174d, type: 3}
     - {fileID: 8300000, guid: a9c421afa18227b4c9a899a2195f46c1, type: 3}
   - groupID: FishdockBackgroundNoise
     clips:
     - {fileID: 8300000, guid: 1e398f37dece879449983cc7657e4bf1, type: 3}
     - {fileID: 8300000, guid: 8a181045388a64d458490b44f4615824, type: 3}
     - {fileID: 8300000, guid: a13298bbbc6ac1d4d87a834f0cc33863, type: 3}
-    - {fileID: 8300000, guid: 9f1202be33b09094a80d909368051d80, type: 3}
-    - {fileID: 8300000, guid: 335b1aefb95f58649b386cc07edd9b35, type: 3}
+    - {fileID: 8300000, guid: 6e322f17b244d764e966a4d2e59b062b, type: 3}
+    - {fileID: 8300000, guid: b51ec63013a38054da4b0ed9bb186482, type: 3}
 --- !u!1 &4063165185422374783
 GameObject:
   m_ObjectHideFlags: 0
