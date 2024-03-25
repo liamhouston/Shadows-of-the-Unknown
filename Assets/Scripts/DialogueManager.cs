@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine.PlayerLoop;
+using TMPro;
 
 
 public class DialogueManager : MonoBehaviour
@@ -19,7 +20,7 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Dialogue Panel Info")]
     public GameObject dialoguePanel;
-    public Text dialogueText;
+    public TextMeshProUGUI dialogueText;
     public float wordSpeed = 0.04f;
 
     private int line_index;
@@ -47,12 +48,16 @@ public class DialogueManager : MonoBehaviour
     {
         dialoguePanel.SetActive(false);
         // defaultActionMap = InputManager.PlayerInput.currentActionMap?.name;
-
-        if (!Player.Instance.playedOpeningDialogue() && openingDialogue.Length != 0)
+        if (openingDialogue.Length != 0)
         {
             dialogue = openingDialogue;
             playBlockingDialogue("Jay", openingDialogue);
         }
+        // if (!Player.Instance.playedOpeningDialogue() && openingDialogue.Length != 0)
+        // {
+        //     dialogue = openingDialogue;
+        //     playBlockingDialogue("Jay", openingDialogue);
+        // }
     }
 
     private void Update()

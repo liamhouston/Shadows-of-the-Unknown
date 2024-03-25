@@ -1,0 +1,1736 @@
+fileFormatVersion: 2
+guid: 0542776b828706a4cb89844d86a0a119
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: Layer 6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 15476
+      y: 24107
+      width: 329
+      height: 240
+    spriteID: fffa54a5da487464bb6b1318c0674e9f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 15476, y: 24107}
+    spritePosition: {x: 7094, y: 3883}
+  - name: Layer 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 24433
+      width: 8382
+      height: 4031
+    spriteID: f9478ab91dcbb2b4d85dd2d226078d30
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 24433}
+    spritePosition: {x: 2650, y: 379}
+  - name: Layer 17 Copy
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 16200
+      height: 5400
+    spriteID: 43a30ae1762e32e409ce58c071d1a3e1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 0, y: 0}
+  - name: Layer 8 Copy 21
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 14569
+      y: 22265
+      width: 768
+      height: 1224
+    spriteID: 8377090d1787d054d88851b0b3409a46
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 14569, y: 22265}
+    spritePosition: {x: 4788, y: 4176}
+  - name: Layer 8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 15774
+      y: 26995
+      width: 506
+      height: 1412
+    spriteID: e4a82df0bb4ff884f869799bd57d21a5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 15774, y: 26995}
+    spritePosition: {x: 5050, y: 2768}
+  - name: Layer 5 Copy 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 15476
+      y: 21876
+      width: 636
+      height: 863
+    spriteID: 4364581df54dae04c8481dc693c6e94c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 15476, y: 21876}
+    spritePosition: {x: 13429, y: 2890}
+  - name: Layer 6 Copy 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 15476
+      y: 23484
+      width: 379
+      height: 369
+    spriteID: 0dda4d2f8a01c99498a4742074e71aab
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 15476, y: 23484}
+    spritePosition: {x: 8662, y: 3326}
+  - name: Layer 5 Copy 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 14569
+      y: 21001
+      width: 899
+      height: 1256
+    spriteID: 80a4712c303019745a81f021801ed9b4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 14569, y: 21001}
+    spritePosition: {x: 12367, y: 2182}
+  - name: Layer 5 Copy 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 15476
+      y: 21001
+      width: 637
+      height: 867
+    spriteID: 1902b948f5f623c41a1a7b2cdccd79c1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 15476, y: 21001}
+    spritePosition: {x: 14145, y: 2254}
+  - name: Layer 4 Copy
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 15476
+      y: 22747
+      width: 585
+      height: 729
+    spriteID: e577e86d463f05f4c9e52c88ec7406e5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 15476, y: 22747}
+    spritePosition: {x: 4883, y: 665}
+  - name: Layer 3 Copy 10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 15476
+      y: 23861
+      width: 350
+      height: 238
+    spriteID: f8aeb1fb8d3fd4e418991ea742dafb56
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 15476, y: 23861}
+    spritePosition: {x: 9636, y: 1721}
+  - name: Layer 2 Copy 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 14569
+      y: 23497
+      width: 831
+      height: 673
+    spriteID: 536d504b7005e824aa2fb04f83c08080
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 14569, y: 23497}
+    spritePosition: {x: 7479, y: 3159}
+  - name: Layer 2 Copy
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16053
+      y: 30076
+      width: 108
+      height: 107
+    spriteID: de47ba1d6fb4f454983316373f79b231
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 16053, y: 30076}
+    spritePosition: {x: 7430, y: 3213}
+  - name: Table
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 8394
+      y: 24433
+      width: 5222
+      height: 3100
+    spriteID: c8903e4288680cf4eaa04b90e9a6e42f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 8394, y: 24433}
+    spritePosition: {x: 5896, y: 561}
+  - name: Layer 9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 13624
+      y: 26995
+      width: 2142
+      height: 1113
+    spriteID: fcebb286d6d2f49429df4cda91c0d9f8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 13624, y: 26995}
+    spritePosition: {x: 9316, y: 624}
+  - name: Layer 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 16228
+      width: 15760
+      height: 4765
+    spriteID: 54713c8dc9f430a43a3517da05980d7c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 16228}
+    spritePosition: {x: 221, y: 346}
+  - name: Layer 7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 13624
+      y: 24433
+      width: 2433
+      height: 2554
+    spriteID: 15f19805104ee71448436860ec73fd57
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 13624, y: 24433}
+    spritePosition: {x: 5496, y: 664}
+  - name: Midground
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 5412
+      width: 16200
+      height: 5400
+    spriteID: 732110f1e6845b84bbc435f0d0e59522
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 5412}
+    spritePosition: {x: 0, y: 0}
+  - name: Layer 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 29287
+      width: 16200
+      height: 781
+    spriteID: 393bce2099b27a04a82e1d5671af9f2b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 29287}
+    spritePosition: {x: 0, y: 360}
+  - name: Layer 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 30076
+      width: 16041
+      height: 153
+    spriteID: 797d18459bf7736428bc0b938d086946
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 30076}
+    spritePosition: {x: 159, y: 195}
+  - name: Foreground
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 28472
+      width: 16200
+      height: 807
+    spriteID: c6507bc88cd5825438513157113e7d10
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 28472}
+    spritePosition: {x: 0, y: 0}
+  - name: Layer 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 21001
+      width: 14557
+      height: 3424
+    spriteID: 9ae860e307d872047aafbb989bf62896
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 21001}
+    spritePosition: {x: 1191, y: 760}
+  - name: Paper
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 10820
+      width: 16200
+      height: 5400
+    spriteID: 0a2a6093fa6818e45a4d35e4e8aece89
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 10820}
+    spritePosition: {x: 0, y: 0}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  platformSettings: []
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  pipeline: {instanceID: 0}
+  pipelineVersion: 
+  padding: 4
+  spriteSizeExpand: 0
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: Layer 6
+    spriteName: Layer 6
+    isGroup: 0
+    parentIndex: -1
+    spriteID: fffa54a5da487464bb6b1318c0674e9f
+    layerID: 124
+    mosaicPosition: {x: 15476, y: 24107}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 5
+    spriteName: Layer 5
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f9478ab91dcbb2b4d85dd2d226078d30
+    layerID: 123
+    mosaicPosition: {x: 4, y: 24433}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 17 Copy
+    spriteName: Layer 17 Copy
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 43a30ae1762e32e409ce58c071d1a3e1
+    layerID: 122
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 8 Copy 21
+    spriteName: Layer 8 Copy 21
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 8377090d1787d054d88851b0b3409a46
+    layerID: 121
+    mosaicPosition: {x: 14569, y: 22265}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 8
+    spriteName: Layer 8
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e4a82df0bb4ff884f869799bd57d21a5
+    layerID: 120
+    mosaicPosition: {x: 15774, y: 26995}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: ay Copy
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 0cc478f8f916c0746a78556da3d1f15d
+    layerID: 119
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  - name: Jay Walk Copy
+    spriteName: 
+    isGroup: 1
+    parentIndex: 5
+    spriteID: 23cea56b8b983b84da45775021624187
+    layerID: 118
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Walk 8 Copy
+    spriteName: 
+    isGroup: 1
+    parentIndex: 6
+    spriteID: a69ffad98b21cfb448eb189bec3b9e39
+    layerID: 117
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 8 Copy
+    spriteName: 
+    isGroup: 0
+    parentIndex: 7
+    spriteID: 537ada660a5c90645b599d159c2eedc0
+    layerID: 116
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Clothing Copy
+    spriteName: 
+    isGroup: 0
+    parentIndex: 7
+    spriteID: 0ec2e76a94bab3642a41c406f5c4474f
+    layerID: 115
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 8 Copy 2
+    spriteName: 
+    isGroup: 0
+    parentIndex: 7
+    spriteID: eae90d3427cb0f54092f4e99b24eebd3
+    layerID: 114
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 8 Copy 3
+    spriteName: 
+    isGroup: 0
+    parentIndex: 7
+    spriteID: 8333f50cfefb3f64e87146618be8fcbb
+    layerID: 113
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Clothing Copy 2
+    spriteName: 
+    isGroup: 0
+    parentIndex: 7
+    spriteID: 3c99872a5c9f9de4286197c0f9540c1e
+    layerID: 112
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 1 Copy
+    spriteName: 
+    isGroup: 0
+    parentIndex: 7
+    spriteID: 492874bb8af4dfc49bdc3e39ec123aeb
+    layerID: 111
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 1 Copy 2
+    spriteName: 
+    isGroup: 0
+    parentIndex: 7
+    spriteID: eb2e9e5826845c0489bc3d0303c62b9d
+    layerID: 110
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Clothing Copy 3
+    spriteName: 
+    isGroup: 0
+    parentIndex: 7
+    spriteID: 831c4e8daf6d8124a9bf33b60f862a41
+    layerID: 109
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 3 Copy
+    spriteName: 
+    isGroup: 0
+    parentIndex: 7
+    spriteID: ddac5da724891f94987972a609832d92
+    layerID: 108
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Walk 7 Copy
+    spriteName: 
+    isGroup: 1
+    parentIndex: 6
+    spriteID: b7d565c66847a1b4fb8452c425122165
+    layerID: 106
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Clothing Copy 4
+    spriteName: 
+    isGroup: 0
+    parentIndex: 17
+    spriteID: 44e2b652213ce244480ca47b71aeb50b
+    layerID: 105
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 8 Copy 4
+    spriteName: 
+    isGroup: 0
+    parentIndex: 17
+    spriteID: e941eb41bdd2c814caa0fa1ec3dd7304
+    layerID: 104
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Clothing Copy 5
+    spriteName: 
+    isGroup: 0
+    parentIndex: 17
+    spriteID: 063995fd349d0754ebd9c1e8f3b5f046
+    layerID: 103
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 8 Copy 5
+    spriteName: 
+    isGroup: 0
+    parentIndex: 17
+    spriteID: bb8c55b83f22c3c44b5c3c84ba62a714
+    layerID: 102
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 8 Copy 6
+    spriteName: 
+    isGroup: 0
+    parentIndex: 17
+    spriteID: 26f9bd71ba4e80740a892fe13e30ee91
+    layerID: 101
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Clothing Copy 6
+    spriteName: 
+    isGroup: 0
+    parentIndex: 17
+    spriteID: b914dcacadc59ff49bea8b6fb9c0b4a1
+    layerID: 100
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 1 Copy 3
+    spriteName: 
+    isGroup: 0
+    parentIndex: 17
+    spriteID: 39b013ada41972a49b395fa248786b1f
+    layerID: 99
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 1 Copy 4
+    spriteName: 
+    isGroup: 0
+    parentIndex: 17
+    spriteID: 8119974c7670a1e48afa8ff39a437c67
+    layerID: 98
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 3 Copy 2
+    spriteName: 
+    isGroup: 0
+    parentIndex: 17
+    spriteID: af618ced02b80b344843c80341435566
+    layerID: 97
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Walk 6 Copy
+    spriteName: 
+    isGroup: 1
+    parentIndex: 6
+    spriteID: 5cf9e2e616d0c6d41a2fc35588672be3
+    layerID: 95
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Clothing Copy 7
+    spriteName: 
+    isGroup: 0
+    parentIndex: 27
+    spriteID: aa0e042eac2b46d478ca219ecfdc68cd
+    layerID: 94
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 8 Copy 7
+    spriteName: 
+    isGroup: 0
+    parentIndex: 27
+    spriteID: 0c13cc76f36ed064eb6211adb3451278
+    layerID: 93
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Clothing Copy 8
+    spriteName: 
+    isGroup: 0
+    parentIndex: 27
+    spriteID: 870a2443a394bc14491e59182ffcb6ce
+    layerID: 92
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 8 Copy 8
+    spriteName: 
+    isGroup: 0
+    parentIndex: 27
+    spriteID: 74ecf2d62a5a94d4fbd24acd15955e04
+    layerID: 91
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Clothing Copy 9
+    spriteName: 
+    isGroup: 0
+    parentIndex: 27
+    spriteID: 3f8d2c0eee08ed9409c980484290715e
+    layerID: 90
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 1 Copy 5
+    spriteName: 
+    isGroup: 0
+    parentIndex: 27
+    spriteID: d87f511819e99494b9c816531645e6a5
+    layerID: 89
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 1 Copy 6
+    spriteName: 
+    isGroup: 0
+    parentIndex: 27
+    spriteID: dc6f4919ccb44bc40b5018ab1ab6874e
+    layerID: 88
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 3 Copy 3
+    spriteName: 
+    isGroup: 0
+    parentIndex: 27
+    spriteID: 736faaaf232d33844aabd5ac46ef9a5d
+    layerID: 87
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Walk 5 Copy
+    spriteName: 
+    isGroup: 1
+    parentIndex: 6
+    spriteID: 09494f0ad54bdde489a5fdb898d2627b
+    layerID: 85
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 8 Copy 9
+    spriteName: 
+    isGroup: 0
+    parentIndex: 36
+    spriteID: c0c94b4cf6bafec4499b9e8661000484
+    layerID: 84
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Clothing Copy 10
+    spriteName: 
+    isGroup: 0
+    parentIndex: 36
+    spriteID: 29297cb5941f6304a9f0544d3af943f5
+    layerID: 83
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 8 Copy 10
+    spriteName: 
+    isGroup: 0
+    parentIndex: 36
+    spriteID: b725a294ee2c0d941a35b8b52a99734e
+    layerID: 82
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Clothing Copy 11
+    spriteName: 
+    isGroup: 0
+    parentIndex: 36
+    spriteID: 79069c35aecdbbe4a9e40a4ec06c5c96
+    layerID: 81
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 1 Copy 7
+    spriteName: 
+    isGroup: 0
+    parentIndex: 36
+    spriteID: 4f65c56a071bdaa4e934d78aeb96aaea
+    layerID: 80
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 1 Copy 8
+    spriteName: 
+    isGroup: 0
+    parentIndex: 36
+    spriteID: d2de31c4f7f9b044fb4710ae44488a6e
+    layerID: 79
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 3 Copy 4
+    spriteName: 
+    isGroup: 0
+    parentIndex: 36
+    spriteID: 9fe3f4956cc6e2147bc958514205d5c9
+    layerID: 78
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Clothing Copy 12
+    spriteName: 
+    isGroup: 0
+    parentIndex: 36
+    spriteID: f2215b6477606a44b8bb14c2c8688d80
+    layerID: 77
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Walk 4 Copy
+    spriteName: 
+    isGroup: 1
+    parentIndex: 6
+    spriteID: df725fad2aaeb7a40804fd182065b59c
+    layerID: 75
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 8 Copy 11
+    spriteName: 
+    isGroup: 0
+    parentIndex: 45
+    spriteID: df84c18b52bc0e64a939586aadfaef5d
+    layerID: 74
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Clothing Copy 13
+    spriteName: 
+    isGroup: 0
+    parentIndex: 45
+    spriteID: 09212c7ead2a4ff44a4ff12326b3cffb
+    layerID: 73
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 8 Copy 12
+    spriteName: 
+    isGroup: 0
+    parentIndex: 45
+    spriteID: 4a9d177704923064a82bdd4279261c4b
+    layerID: 72
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Clothing Copy 14
+    spriteName: 
+    isGroup: 0
+    parentIndex: 45
+    spriteID: 50db60ad5522b8f4ca8d057fd41dad25
+    layerID: 71
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 1 Copy 9
+    spriteName: 
+    isGroup: 0
+    parentIndex: 45
+    spriteID: 1b3644f87c893b046a4de5db1fa848bc
+    layerID: 70
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 1 Copy 10
+    spriteName: 
+    isGroup: 0
+    parentIndex: 45
+    spriteID: 64014b225b469ec41aea6917deca1e7d
+    layerID: 69
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 3 Copy 5
+    spriteName: 
+    isGroup: 0
+    parentIndex: 45
+    spriteID: 1a05ebfd58ca62f45aa4cff6afe3b0e8
+    layerID: 68
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Clothing Copy 15
+    spriteName: 
+    isGroup: 0
+    parentIndex: 45
+    spriteID: 1795f05933a6b8b4b9d61b3c36095bb1
+    layerID: 67
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Walk 3 Copy
+    spriteName: 
+    isGroup: 1
+    parentIndex: 6
+    spriteID: d0ea8e13ca9630949a52fd38d01c8ed2
+    layerID: 65
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 8 Copy 13
+    spriteName: 
+    isGroup: 0
+    parentIndex: 54
+    spriteID: 1fef0335ee40cda41ae3dc724d6f1e88
+    layerID: 64
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 8 Copy 14
+    spriteName: 
+    isGroup: 0
+    parentIndex: 54
+    spriteID: 742db50aaa860db4194b15ad8d8484e9
+    layerID: 63
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Clothing Copy 16
+    spriteName: 
+    isGroup: 0
+    parentIndex: 54
+    spriteID: a5a8c231d49e07b448fc7473c7689033
+    layerID: 62
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Clothing Copy 17
+    spriteName: 
+    isGroup: 0
+    parentIndex: 54
+    spriteID: c6468668153c6a14ca7fcd260816b4c9
+    layerID: 61
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 1 Copy 11
+    spriteName: 
+    isGroup: 0
+    parentIndex: 54
+    spriteID: e011110771e8445418656dfec7b6fe07
+    layerID: 60
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 1 Copy 12
+    spriteName: 
+    isGroup: 0
+    parentIndex: 54
+    spriteID: eba2ec9328a2b3e4d8411064a705bed1
+    layerID: 59
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 3 Copy 6
+    spriteName: 
+    isGroup: 0
+    parentIndex: 54
+    spriteID: 1f8882038f0a5494883a113e60d858b5
+    layerID: 58
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Walk 2 Copy
+    spriteName: 
+    isGroup: 1
+    parentIndex: 6
+    spriteID: 211e3272ea6f3db479eb9dcab5a7aa58
+    layerID: 56
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 8 Copy 15
+    spriteName: 
+    isGroup: 0
+    parentIndex: 62
+    spriteID: b60ce5acf4eb5a84d857c0fdcc377a1f
+    layerID: 55
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 8 Copy 16
+    spriteName: 
+    isGroup: 0
+    parentIndex: 62
+    spriteID: 3eb40e81530f1724c82b87bc8c80ef55
+    layerID: 54
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 1 Copy 13
+    spriteName: 
+    isGroup: 0
+    parentIndex: 62
+    spriteID: 1c9ebb75c113781459ce8c276a958812
+    layerID: 53
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 1 Copy 14
+    spriteName: 
+    isGroup: 0
+    parentIndex: 62
+    spriteID: 2bd4f1efec5fd484e93f121942f3d3a8
+    layerID: 52
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Clothing Copy 18
+    spriteName: 
+    isGroup: 0
+    parentIndex: 62
+    spriteID: 08b492be18b5f584f8847fcd1d732634
+    layerID: 51
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Clothing Copy 19
+    spriteName: 
+    isGroup: 0
+    parentIndex: 62
+    spriteID: 9a02e540d39a6594496896f82fef920d
+    layerID: 50
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 3 Copy 7
+    spriteName: 
+    isGroup: 0
+    parentIndex: 62
+    spriteID: 86d2ffbed44350a46942a684f72b7663
+    layerID: 49
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Walk 1 Copy
+    spriteName: 
+    isGroup: 1
+    parentIndex: 6
+    spriteID: d64c2a64fd8878841b7f47663513aedc
+    layerID: 47
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 1 Copy 15
+    spriteName: 
+    isGroup: 0
+    parentIndex: 70
+    spriteID: 6801f736b9ed25647bae2dfd7c15f42f
+    layerID: 46
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 8 Copy 17
+    spriteName: 
+    isGroup: 0
+    parentIndex: 70
+    spriteID: 39930b88ed7ce4540bc64c9eb532eedb
+    layerID: 45
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 8 Copy 18
+    spriteName: 
+    isGroup: 0
+    parentIndex: 70
+    spriteID: 1256395271f680347ae9f37b73ecd830
+    layerID: 44
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Clothing Copy 20
+    spriteName: 
+    isGroup: 0
+    parentIndex: 70
+    spriteID: d2179713d979ffb45a93f8233889cfcb
+    layerID: 43
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Clothing Copy 21
+    spriteName: 
+    isGroup: 0
+    parentIndex: 70
+    spriteID: df25188623341234f9acf27c052d5a78
+    layerID: 42
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 1 Copy 16
+    spriteName: 
+    isGroup: 0
+    parentIndex: 70
+    spriteID: 0290bb4f05872f54a964e4ac7e003788
+    layerID: 41
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 3 Copy 8
+    spriteName: 
+    isGroup: 0
+    parentIndex: 70
+    spriteID: 4d2f323aa762fc44396a3941e7863e80
+    layerID: 40
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Idle Copy
+    spriteName: 
+    isGroup: 1
+    parentIndex: 6
+    spriteID: 97cf24bdacd86ce4ab746560da7f2856
+    layerID: 38
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 1 Copy 17
+    spriteName: 
+    isGroup: 0
+    parentIndex: 78
+    spriteID: 95b1b74fead55fc4995379b3f27d96c3
+    layerID: 37
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 8 Copy 19
+    spriteName: 
+    isGroup: 0
+    parentIndex: 78
+    spriteID: 88938f246ed48d34dbe9a379fa67b39f
+    layerID: 36
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Clothing Copy 22
+    spriteName: 
+    isGroup: 0
+    parentIndex: 78
+    spriteID: 8137d46ffbabc3944b7c53b349f4eb52
+    layerID: 35
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 1 Copy 18
+    spriteName: 
+    isGroup: 0
+    parentIndex: 78
+    spriteID: 02faff7d04afda44ba75b2f733f8a9c3
+    layerID: 34
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 3 Copy 9
+    spriteName: 
+    isGroup: 0
+    parentIndex: 78
+    spriteID: 3b5b725db09dc204cb8bfde4f4f3f45f
+    layerID: 33
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 8 Copy 20
+    spriteName: 
+    isGroup: 0
+    parentIndex: 5
+    spriteID: 5da93fdc5e655bb45b686e7c175ff241
+    layerID: 30
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 4 Copy 2
+    spriteName: 
+    isGroup: 0
+    parentIndex: 5
+    spriteID: e88a5e2c93f99fd47bfa9a67df96654c
+    layerID: 29
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 10 Copy
+    spriteName: 
+    isGroup: 0
+    parentIndex: 5
+    spriteID: 7b1adf7c50066e94e9071967cff6d41f
+    layerID: 28
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 6 Copy
+    spriteName: 
+    isGroup: 0
+    parentIndex: 5
+    spriteID: 76d8c99dafbcd7141a8068579577efce
+    layerID: 27
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 9 Copy
+    spriteName: 
+    isGroup: 0
+    parentIndex: 5
+    spriteID: 49fe20da931caab428a62d2d7d2d1b5d
+    layerID: 26
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 7 Copy
+    spriteName: 
+    isGroup: 0
+    parentIndex: 5
+    spriteID: c444c4d7b2c056e4599bb5489cdeccd3
+    layerID: 25
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 11 Copy
+    spriteName: 
+    isGroup: 0
+    parentIndex: 5
+    spriteID: ebfca2daf44116542b90bbc9df9a3130
+    layerID: 24
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 5 Copy
+    spriteName: 
+    isGroup: 0
+    parentIndex: 5
+    spriteID: 0985ec08cdd4a7c4db624f20be299b7f
+    layerID: 23
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 5 Copy 3
+    spriteName: Layer 5 Copy 3
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 4364581df54dae04c8481dc693c6e94c
+    layerID: 21
+    mosaicPosition: {x: 15476, y: 21876}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 6 Copy 2
+    spriteName: Layer 6 Copy 2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0dda4d2f8a01c99498a4742074e71aab
+    layerID: 20
+    mosaicPosition: {x: 15476, y: 23484}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 5 Copy 4
+    spriteName: Layer 5 Copy 4
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 80a4712c303019745a81f021801ed9b4
+    layerID: 19
+    mosaicPosition: {x: 14569, y: 21001}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 5 Copy 2
+    spriteName: Layer 5 Copy 2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 1902b948f5f623c41a1a7b2cdccd79c1
+    layerID: 18
+    mosaicPosition: {x: 15476, y: 21001}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 4 Copy
+    spriteName: Layer 4 Copy
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e577e86d463f05f4c9e52c88ec7406e5
+    layerID: 17
+    mosaicPosition: {x: 15476, y: 22747}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 3 Copy 10
+    spriteName: Layer 3 Copy 10
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f8aeb1fb8d3fd4e418991ea742dafb56
+    layerID: 16
+    mosaicPosition: {x: 15476, y: 23861}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 2 Copy 2
+    spriteName: Layer 2 Copy 2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 536d504b7005e824aa2fb04f83c08080
+    layerID: 15
+    mosaicPosition: {x: 14569, y: 23497}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 2 Copy
+    spriteName: Layer 2 Copy
+    isGroup: 0
+    parentIndex: -1
+    spriteID: de47ba1d6fb4f454983316373f79b231
+    layerID: 14
+    mosaicPosition: {x: 16053, y: 30076}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Table
+    spriteName: Table
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c8903e4288680cf4eaa04b90e9a6e42f
+    layerID: 13
+    mosaicPosition: {x: 8394, y: 24433}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 9
+    spriteName: Layer 9
+    isGroup: 0
+    parentIndex: -1
+    spriteID: fcebb286d6d2f49429df4cda91c0d9f8
+    layerID: 12
+    mosaicPosition: {x: 13624, y: 26995}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 4
+    spriteName: Layer 4
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 54713c8dc9f430a43a3517da05980d7c
+    layerID: 11
+    mosaicPosition: {x: 4, y: 16228}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 7
+    spriteName: Layer 7
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 15f19805104ee71448436860ec73fd57
+    layerID: 10
+    mosaicPosition: {x: 13624, y: 24433}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Midground
+    spriteName: Midground
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 732110f1e6845b84bbc435f0d0e59522
+    layerID: 9
+    mosaicPosition: {x: 4, y: 5412}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Folder 1
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 6d384fae712041343b68320ecb8cb5fd
+    layerID: 8
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 2
+    spriteName: Layer 2
+    isGroup: 0
+    parentIndex: 105
+    spriteID: 393bce2099b27a04a82e1d5671af9f2b
+    layerID: 7
+    mosaicPosition: {x: 4, y: 29287}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 1
+    spriteName: Layer 1
+    isGroup: 0
+    parentIndex: 105
+    spriteID: 797d18459bf7736428bc0b938d086946
+    layerID: 6
+    mosaicPosition: {x: 4, y: 30076}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Foreground
+    spriteName: Foreground
+    isGroup: 0
+    parentIndex: 105
+    spriteID: c6507bc88cd5825438513157113e7d10
+    layerID: 5
+    mosaicPosition: {x: 4, y: 28472}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 3
+    spriteName: Layer 3
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9ae860e307d872047aafbb989bf62896
+    layerID: 3
+    mosaicPosition: {x: 4, y: 21001}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Paper
+    spriteName: Paper
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0a2a6093fa6818e45a4d35e4e8aece89
+    layerID: 2
+    mosaicPosition: {x: 4, y: 10820}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  spriteSizeExpandChanged: 0
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []
