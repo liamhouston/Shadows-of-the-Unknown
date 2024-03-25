@@ -51,8 +51,7 @@ public class Player : MonoBehaviour
     }
 
     private void Update()
-    {
-        _movement.Set(InputManager.Instance.MoveInput.x, 0f);
+    {        _movement.Set(InputManager.Instance.MoveInput.x, 0f);
 
         _rb.velocity = _movement * _moveSpeed;
         _animator.SetFloat(_horizontal, _movement.x);

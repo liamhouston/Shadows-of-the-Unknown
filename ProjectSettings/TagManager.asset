@@ -13,6 +13,7 @@ TagManager:
   - NPC
   - Bush
   - Apartment
+  - Mouse
   layers:
   - Default
   - TransparentFX

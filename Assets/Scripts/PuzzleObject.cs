@@ -27,10 +27,12 @@ public class PuzzleObject : MonoBehaviour
         // start puzzle if player clicks
         if (playerIsNearby && InputManager.Instance.ClickInput && !puzzlePanel.activeSelf){
             puzzlePanel.SetActive(true);
+            InputManager.PlayerInput.actions.FindAction("Move").Disable();
         }
         // close panel if user clicks
         else if (puzzleComplete && puzzlePanel.activeSelf && InputManager.Instance.ClickInput){
             puzzlePanel.SetActive(false);
+            InputManager.PlayerInput.actions.FindAction("Move").Enable();
         }
         // check for puzzle completion
         else if (puzzlePanel.activeSelf && !puzzleComplete){
@@ -46,7 +48,7 @@ public class PuzzleObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Mouse"))
         {
             playerIsNearby = true;
         }
@@ -54,7 +56,7 @@ public class PuzzleObject : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Mouse"))
         {
             playerIsNearby = false;
         }
