@@ -7,21 +7,28 @@ public class NextScene : MonoBehaviour
 {
     [Header("Scene names")]
     public string ToScene = "";
-    private const string _lastHorizontal = "LastHorizontal";
-    
-    private void OnTriggerEnter2D(Collider2D other) {    
-    if(other.tag == "Player") 
+    // private const string _lastHorizontal = "LastHorizontal";
+    private bool playerIsNearby;
+    private void Update()
+    {
+        if (playerIsNearby && InputManager.Instance.ClickInput)
         {
-            if (ToScene != "")
-            {
-                string fromScene = SceneManager.GetActiveScene().name;
-                PlayerPrefs.SetInt(fromScene, 1);
-                PlayerPrefs.SetString("FromScene", fromScene);
-                LevelManager.Instance.LoadScene(ToScene, "CrossFade");
-            }
+            LevelManager.Instance.LoadScene(ToScene, "CrossFade");
         }
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player")) playerIsNearby = true;
+        // InteractwithText.SetActive(true);
+    }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player")) playerIsNearby = false;
+        // if (InteractwithText != null)
+        // {
+        //     // InteractwithText.SetActive(false);
+        // }
 
-
+    }
 }

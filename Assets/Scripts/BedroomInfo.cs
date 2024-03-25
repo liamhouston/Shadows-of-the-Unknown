@@ -20,7 +20,7 @@ public class BedroomInfo : MonoBehaviour
                 this.transform.position = new Vector3(-68.65f, 14.55f, 0f);
                 // TryGetComponent(out Animator _playerAnimator);
                 // _playerAnimator.SetFloat(_lastHorizontal, -1);
-                // _playerAnimator.SetFloat("LastHorizontal", 1);
+                _playerAnimator.SetFloat("LastHorizontal", 1);
             }
         }
     }
