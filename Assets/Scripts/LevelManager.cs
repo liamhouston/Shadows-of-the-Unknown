@@ -7,8 +7,6 @@ using System.Linq;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
-
-    // public Slider progressBar;
     public GameObject transitionsContainer;
 
     private SceneTransition[] transitions;
@@ -33,10 +31,11 @@ public class LevelManager : MonoBehaviour
 
     public void LoadScene(string sceneName, string transitionName)
     {
-        if (Player.Instance != null) Player.Instance.currentSceneName = sceneName;
-        SceneManager.LoadSceneAsync(sceneName);
-        // Debug.Log("trying to load" + sceneName);
-        // StartCoroutine(LoadSceneAsync(sceneName, transitionName));
+        
+        // if (Player.Instance != null) Player.Instance.currentSceneName = sceneName;
+        // SceneManager.LoadSceneAsync(sceneName);
+        // // Debug.Log("trying to load" + sceneName);
+        StartCoroutine(LoadSceneAsync(sceneName, transitionName));
     }
 
     private IEnumerator LoadSceneAsync(string sceneName, string transitionName)
@@ -76,11 +75,6 @@ public class LevelManager : MonoBehaviour
     {
         LoadScene("Campsite", "CrossFade");
         MusicManager.Instance.PlayMusic("Campsite");
-    }
-
-    public void LoadApartmentScene()
-    {
-        LoadScene("Campsite", "CrossFade");
     }
 
 }

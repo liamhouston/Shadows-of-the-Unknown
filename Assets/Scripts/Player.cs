@@ -12,33 +12,33 @@ public class Player : MonoBehaviour
     private float _moveSpeed = 5f;
 
     [SerializeField]
-    public bool TentPic;
+    // public bool TentPic;
     private Vector2 _movement;
     private Rigidbody2D _rb;
 
     // keep track of whether we've played the opening dialogue for this scene
     public string currentSceneName = "Fishdock";
-    Dictionary<string, bool> enteredScenes = new Dictionary<string, bool>();
+    // Dictionary<string, bool> enteredScenes = new Dictionary<string, bool>();
 
     private Animator _animator;
     private const string _horizontal = "Horizontal";
     private const string _lastHorizontal = "LastHorizontal";
-    public static Player Instance;
+    // public static Player Instance;
 
     private AudioSource footstepsAudioSource;
 
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+    // private void Awake()
+    // {
+    //     if (Instance == null)
+    //     {
+    //         Instance = this;
+    //         DontDestroyOnLoad(gameObject);
+    //     }
+    //     else
+    //     {
+    //         Destroy(gameObject);
+    //     }
+    // }
     private void Start()
     {
         Cursor.visible = true;
@@ -51,7 +51,9 @@ public class Player : MonoBehaviour
     }
 
     private void Update()
-    {        _movement.Set(InputManager.Instance.MoveInput.x, 0f);
+    {        
+        // Debug.Log(PlayerPrefs.GetInt("Bedroom"));
+        _movement.Set(InputManager.Instance.MoveInput.x, 0f);
 
         _rb.velocity = _movement * _moveSpeed;
         _animator.SetFloat(_horizontal, _movement.x);
@@ -68,21 +70,21 @@ public class Player : MonoBehaviour
         }
     }
 
-    public bool playedOpeningDialogue()
-    {
-        // Check if we've already been in this scene
-        if (currentSceneName != null)
-        {
-            if (enteredScenes.ContainsKey(currentSceneName))
-            {
-                return true; // we've already been in this scene
-            }
-            else
-            {
-                enteredScenes[currentSceneName] = true;
-                return false;
-            }
-        }
-        return false;
-    }
+    // public bool playedOpeningDialogue()
+    // {
+    //     // Check if we've already been in this scene
+    //     if (currentSceneName != null)
+    //     {
+    //         if (enteredScenes.ContainsKey(currentSceneName))
+    //         {
+    //             return true; // we've already been in this scene
+    //         }
+    //         else
+    //         {
+    //             enteredScenes[currentSceneName] = true;
+    //             return false;
+    //         }
+    //     }
+    //     return false;
+    // }
 }

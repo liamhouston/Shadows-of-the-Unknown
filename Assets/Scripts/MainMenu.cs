@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-        LevelManager.Instance.LoadScene("Apartment", "CrossFade");
+        LevelManager.Instance.LoadScene("Bedroom", "CrossFade");
         MusicManager.Instance.PlayMusic("Fishdock");
     }
 
