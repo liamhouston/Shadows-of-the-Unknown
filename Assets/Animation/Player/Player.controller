@@ -38,8 +38,8 @@ AnimatorState:
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
-  - {fileID: -6219172325233469312}
   - {fileID: -5060943564537144050}
+  - {fileID: -6219172325233469312}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -181,7 +181,7 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: LastHorizontal
     m_Type: 1
-    m_DefaultFloat: 0
+    m_DefaultFloat: 1
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}

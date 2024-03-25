@@ -30,7 +30,7 @@ public class CameraPickUp : MonoBehaviour
     private void Update()
     {
         // if player has clicked through all of dialogue, then start the tutorial scene
-        if (triggeredCameraDialogue && !DialogueManager.Instance.DialogueIsActive()){
+        if (triggeredCameraDialogue && !DialogueManager.Instance.DialogueIsActive() && PlayerPrefs.GetInt(isCameraPickedUp) != 1){
             PlayerPrefs.SetInt(isCameraPickedUp, 1); // camera picked up in player prefs
             LevelManager.Instance.LoadScene("BedroomCam", "CrossFade");
         }

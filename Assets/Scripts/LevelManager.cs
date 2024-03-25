@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            //DontDestroyOnLoad(gameObject);
+            // DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -33,10 +33,13 @@ public class LevelManager : MonoBehaviour
 
     public void LoadScene(string sceneName, string transitionName)
     {
-        if (Player.Instance != null) Player.Instance.currentSceneName = sceneName;
-        SceneManager.LoadSceneAsync(sceneName);
+        // if (Player.Instance != null) Player.Instance.currentSceneName = sceneName;
+        // SceneManager.LoadSceneAsync(sceneName);
         // Debug.Log("trying to load" + sceneName);
-        // StartCoroutine(LoadSceneAsync(sceneName, transitionName));
+        string fromScene = SceneManager.GetActiveScene().name;
+        PlayerPrefs.SetInt(sceneName, 1);
+        PlayerPrefs.SetString("FromScene", fromScene);
+        StartCoroutine(LoadSceneAsync(sceneName, transitionName));
     }
 
     private IEnumerator LoadSceneAsync(string sceneName, string transitionName)
@@ -78,7 +81,7 @@ public class LevelManager : MonoBehaviour
         MusicManager.Instance.PlayMusic("Campsite");
     }
 
-    public void LoadApartmentScene()
+    public void LoadBedroomScene()
     {
         LoadScene("Bedroom", "CrossFade");
     }
