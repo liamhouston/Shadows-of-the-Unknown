@@ -1144,7 +1144,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageHeight: 800
   itemCanvas: {fileID: 192642143}
-  InteractwithText: {fileID: 1327660720}
   displayImage: {fileID: 21300000, guid: 7e257d1e4e5a51f49a7c577f680bb1d2, type: 3}
 --- !u!61 &191618404
 BoxCollider2D:
@@ -6944,6 +6943,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 653373452495360585, guid: 20f997db4c7ccf54994b980664ab2dfe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1456181887145726235, guid: 20f997db4c7ccf54994b980664ab2dfe,
         type: 3}
       propertyPath: m_IsActive

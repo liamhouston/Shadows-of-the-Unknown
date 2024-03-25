@@ -776,7 +776,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageHeight: 600
   itemCanvas: {fileID: 1982566907351442447}
-  InteractwithText: {fileID: 3630835877747498023}
   displayImage: {fileID: 21300000, guid: 903fef09f8ec9594590ec0f3ae109557, type: 3}
 --- !u!61 &259800071
 BoxCollider2D:
@@ -3859,7 +3858,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1885904513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3958,7 +3957,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageHeight: 600
   itemCanvas: {fileID: 1982566907351442447}
-  InteractwithText: {fileID: 3630835877747498023}
   displayImage: {fileID: 21300000, guid: 5d5d0097a5f6b6740bcc2396da95f58b, type: 3}
 --- !u!50 &1983930670
 Rigidbody2D:
