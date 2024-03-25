@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class FilmPickUp : MonoBehaviour
 {
     public Button exitButton;
-    public SpriteRenderer filmSprite;
+    public GameObject film;
 
     private bool playerIsNearby = false;
     public bool playerFoundMajorClue = false;
@@ -24,7 +24,7 @@ public class FilmPickUp : MonoBehaviour
             playerFoundMajorClue = true;
             exitButton.gameObject.SetActive(true);
             exitButton.interactable = true; 
-            filmSprite.color = new Color(filmSprite.color.r, filmSprite.color.g, filmSprite.color.b, 0); // make film sprite invisible
+            film.SetActive(false); // make film invisible
             SoundManager.Instance.PlaySound2D("MajorClue");
         }
     }
