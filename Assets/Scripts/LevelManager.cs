@@ -37,6 +37,7 @@ public class LevelManager : MonoBehaviour
         // SceneManager.LoadSceneAsync(sceneName);
         // Debug.Log("trying to load" + sceneName);
         string fromScene = SceneManager.GetActiveScene().name;
+        PlayerPrefs.SetInt(fromScene, 1);
         PlayerPrefs.SetString("FromScene", fromScene);
         StartCoroutine(LoadSceneAsync(sceneName, transitionName));
     }

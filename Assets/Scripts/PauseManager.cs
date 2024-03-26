@@ -6,7 +6,8 @@ public class PauseManager : MonoBehaviour
 {
     public static PauseManager Instance;
     public static bool IsPaused = false;
-    public GameObject pauseMenuUI;
+    public GameObject PauseMenuUI;
+    public GameObject VolumeMenuUI;
     private void Awake()
     {
         if (Instance == null)
@@ -42,7 +43,8 @@ public class PauseManager : MonoBehaviour
 
     public void Resume()
     {
-        pauseMenuUI.SetActive(false);
+        PauseMenuUI.SetActive(false);
+        VolumeMenuUI.SetActive(false);
         Time.timeScale = 1f;
         if (!DialogueManager.Instance.dialoguePanel.activeSelf)
         {
@@ -60,7 +62,7 @@ public class PauseManager : MonoBehaviour
 
     public void Pause()
     {
-        pauseMenuUI.SetActive(true);
+        PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         if (!DialogueManager.Instance.dialoguePanel.activeSelf)
         {

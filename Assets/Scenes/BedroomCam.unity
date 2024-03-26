@@ -818,13 +818,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3336835923912458764, guid: 66f15d4dae2676643ace55b6b16ca69f,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1358757939}
+    - target: {fileID: 3336835923912458764, guid: 66f15d4dae2676643ace55b6b16ca69f,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1358757939}
     - target: {fileID: 3336835923912458764, guid: 66f15d4dae2676643ace55b6b16ca69f,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SaveVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336835923912458764, guid: 66f15d4dae2676643ace55b6b16ca69f,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: SaveVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336835923912458764, guid: 66f15d4dae2676643ace55b6b16ca69f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MainMenu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3336835923912458764, guid: 66f15d4dae2676643ace55b6b16ca69f,
         type: 3}
@@ -853,6 +868,11 @@ PrefabInstance:
       objectReference: {fileID: 1358757940}
     - target: {fileID: 7193811203393162591, guid: 66f15d4dae2676643ace55b6b16ca69f,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193811203393162591, guid: 66f15d4dae2676643ace55b6b16ca69f,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetActive
       objectReference: {fileID: 0}
@@ -860,6 +880,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: LoadMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193811203393162591, guid: 66f15d4dae2676643ace55b6b16ca69f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7193811203393162591, guid: 66f15d4dae2676643ace55b6b16ca69f,
         type: 3}
@@ -1348,7 +1373,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.25143433, y: -0.20114827}
+  m_Offset: {x: 0.10887623, y: 0.2904079}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1359,7 +1384,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 26.780376, y: 13.269985}
+  m_Size: {x: 15.599678, y: 7.562472}
   m_EdgeRadius: 0
 --- !u!1 &626498504
 GameObject:
@@ -1811,6 +1836,7 @@ MonoBehaviour:
     type: 3}
   defaultCursorTexture: {fileID: 2800000, guid: 2667393de2ceb4f4db28f86600dc4110,
     type: 3}
+  isDefault: 0
 --- !u!114 &1286262211
 MonoBehaviour:
   m_ObjectHideFlags: 0

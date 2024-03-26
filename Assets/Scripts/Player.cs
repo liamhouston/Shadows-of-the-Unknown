@@ -45,6 +45,12 @@ public class Player : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         footstepsAudioSource = GetComponent<AudioSource>();
+        Debug.Log("Bedroom:" + PlayerPrefs.GetInt("Bedroom"));
+        Debug.Log("BedroomCam:" + PlayerPrefs.GetInt("BedroomCam"));
+        Debug.Log("Fishdock:" + PlayerPrefs.GetInt("Fishdock"));
+        Debug.Log("Darkroom:" + PlayerPrefs.GetInt("Darkroom"));
+        Debug.Log("Store:" + PlayerPrefs.GetInt("Store"));
+        Debug.Log("Campsite:" + PlayerPrefs.GetInt("Campsite"));
     }
 
     private void Update()

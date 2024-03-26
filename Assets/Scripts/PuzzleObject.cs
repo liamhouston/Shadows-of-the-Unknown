@@ -28,11 +28,14 @@ public class PuzzleObject : MonoBehaviour
         if (playerIsNearby && InputManager.Instance.ClickInput && !puzzlePanel.activeSelf){
             puzzlePanel.SetActive(true);
             InputManager.PlayerInput.actions.FindAction("Move").Disable();
+            CursorManager.Instance.MouseColliderSwitch();
         }
         // close panel if user clicks
         else if (puzzleComplete && puzzlePanel.activeSelf && InputManager.Instance.ClickInput){
             puzzlePanel.SetActive(false);
             InputManager.PlayerInput.actions.FindAction("Move").Enable();
+            CursorManager.Instance.MouseColliderSwitch();
+
         }
         // check for puzzle completion
         else if (puzzlePanel.activeSelf && !puzzleComplete){

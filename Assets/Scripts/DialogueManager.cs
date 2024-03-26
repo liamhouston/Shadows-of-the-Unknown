@@ -59,8 +59,6 @@ public class DialogueManager : MonoBehaviour
                 playBlockingDialogue("Jay", openingDialogue);
             }
         }
-
-        PlayerPrefs.SetInt(currentSceneName, 1);
     }
 
     private void Update()

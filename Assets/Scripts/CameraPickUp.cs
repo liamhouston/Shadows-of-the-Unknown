@@ -16,8 +16,9 @@ public class CameraPickUp : MonoBehaviour
     private void Start(){
         triggeredCameraDialogue = false;
         cameraObj.SetActive(true);
+        PlayerPrefs.SetInt(isCameraPickedUp, 0);
 
-        Debug.Log(PlayerPrefs.GetInt(isCameraPickedUp));
+        Debug.Log("iscamPickedUp?" + PlayerPrefs.GetInt(isCameraPickedUp));
         // cover the camera if it's already been picked up
         if (PlayerPrefs.HasKey(isCameraPickedUp) && PlayerPrefs.GetInt("BedroomCam") == 1){
             // cameraCover.color = new Color (cameraCover.color.r, cameraCover.color.g, cameraCover.color.b, 1); // cover the camera
@@ -29,10 +30,11 @@ public class CameraPickUp : MonoBehaviour
     private void Update()
     {
         // if player has clicked through all of dialogue, then start the tutorial scene
-        if (triggeredCameraDialogue && !DialogueManager.Instance.DialogueIsActive() && PlayerPrefs.GetInt(isCameraPickedUp) != 1){
+        if (triggeredCameraDialogue && !DialogueManager.Instance.DialogueIsActive() && PlayerPrefs.GetInt("IsCameraPickedUp") != 1){
             PlayerPrefs.SetInt(isCameraPickedUp, 1); // camera picked up in player prefs
             // Debug.Log(PlayerPrefs.GetInt(isCameraPickedUp));
             LevelManager.Instance.LoadScene("BedroomCam", "CrossFade");
+            MusicManager.Instance.PlayMusic("Bedroom");
         }
 
         // if player within range and clicks

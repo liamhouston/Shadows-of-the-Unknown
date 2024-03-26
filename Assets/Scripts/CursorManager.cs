@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class CursorManager : MonoBehaviour
@@ -8,8 +9,11 @@ public class CursorManager : MonoBehaviour
 
     [SerializeField] private Texture2D clickableCursorTexture;
     [SerializeField] private Texture2D defaultCursorTexture;
-
+    
+    [SerializeField]
     private bool isDefault;
+
+    
 
     private void Awake()
     {
@@ -28,6 +32,7 @@ public class CursorManager : MonoBehaviour
     void Start()
     {   
         SetDefaultCursor();
+        
     }
 
     public void SetDefaultCursor(){
@@ -36,5 +41,11 @@ public class CursorManager : MonoBehaviour
 
     public void SetClickableCursor(){
         Cursor.SetCursor(clickableCursorTexture, Vector2.zero, CursorMode.Auto);
+    }
+
+    public void MouseColliderSwitch(){
+        // Collider2D
+        TryGetComponent(out Collider2D  mouseCollider);
+        mouseCollider.enabled = !mouseCollider.enabled;
     }
 }
