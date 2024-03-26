@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine.PlayerLoop;
 using TMPro;
@@ -47,17 +48,19 @@ public class DialogueManager : MonoBehaviour
     public void Start()
     {
         dialoguePanel.SetActive(false);
-        // defaultActionMap = InputManager.PlayerInput.currentActionMap?.name;
-        // if (openingDialogue.Length != 0)
-        // {
-        //     dialogue = openingDialogue;
-        //     playBlockingDialogue("Jay", openingDialogue);
-        // }
-        // if (!Player.Instance.playedOpeningDialogue() && openingDialogue.Length != 0)
-        // {
-        //     dialogue = openingDialogue;
-        //     playBlockingDialogue("Jay", openingDialogue);
-        // }
+
+        string currentSceneName = SceneManager.GetActiveScene().name;
+
+        // play opening dialogue if this is our first time in the scene
+        if (openingDialogue.Length != 0)
+        {
+            Debug.Log(currentSceneName + " has a value of " + PlayerPrefs.GetInt(currentSceneName));
+            if (PlayerPrefs.GetInt(currentSceneName) == 0){
+                playBlockingDialogue("Jay", openingDialogue);
+            }
+        }
+
+        PlayerPrefs.SetInt(currentSceneName, 1);
     }
 
     private void Update()
@@ -89,10 +92,6 @@ public class DialogueManager : MonoBehaviour
                     InputManager.PlayerInput.actions.FindAction("Move").Enable();
                     // InputManager.PlayerInput.actions.FindAction("Point").Enable();
                     InputManager.PlayerInput.actions.FindAction("RightClick").Enable();
-                    // InputManager.PlayerInput.actions.FindActionMap(defaultActionMap).Enable();
-                    // InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap(defaultActionMap);
-                    // InputManager.PlayerInput.SwitchCurrentActionMap(defaultActionMap);
-                    // InputManager.PlayerInput.actions.FindActionMap("UI").Disable();
                 }
                 wordSpeed = 0.04f;
             }
@@ -106,22 +105,8 @@ public class DialogueManager : MonoBehaviour
         if (dialoguePanel.activeSelf)
         {
             dialoguePanel.SetActive(false);
-            // InputManager.PlayerInput.actions.FindActionMap("UI").Disable();
-            // InputManager.PlayerInput.actions.FindActionMap(defaultActionMap).Enable();
-            // InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap(defaultActionMap);
-            // InputManager.PlayerInput.SwitchCurrentActionMap(defaultActionMap);
             return;
         }
-
-        // disable input system
-        // InputManager.PlayerInput.actions.FindActionMap("UI").Enable();
-        // InputManager.PlayerInput.actions.FindActionMap("Player").Disable();
-        // InputManager.PlayerInput.actions.FindActionMap("Camera").Disable();
-        // InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap("UI");
-        // // InputManager.PlayerInput.actions.FindActionMap("UI").Enable();
-        // InputManager.PlayerInput.SwitchCurrentActionMap("UI");
-
-
         // prep for typing
         dialogue = dialogueLines;
         dialogueText.text = "";
@@ -142,13 +127,6 @@ public class DialogueManager : MonoBehaviour
         if (dialoguePanel.activeSelf)
         {
             dialoguePanel.SetActive(false);
-
-
-            // InputManager.PlayerInput.actions.FindActionMap("UI").Enable();
-            // InputManager.PlayerInput.actions.FindActionMap("Camera").Enable();
-            // InputManager.PlayerInput.SwitchCurrentActionMap("Camera");
-            // InputManager.PlayerInput.currentActionMap = InputManager.PlayerInput.actions.FindActionMap(defaultActionMap);
-            // InputManager.PlayerInput.SwitchCurrentActionMap(defaultActionMap);
             return;
         }
         // prep for typing
@@ -192,9 +170,4 @@ public class DialogueManager : MonoBehaviour
     public void DisableDialoguePanel(){
         dialoguePanel.SetActive(false);
     }
-
-    // public void DialogueSkip()
-    // {
-    //     wordSpeed = 0.01f;
-    // }
 }
