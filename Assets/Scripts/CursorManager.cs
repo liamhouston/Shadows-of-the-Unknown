@@ -48,4 +48,8 @@ public class CursorManager : MonoBehaviour
         TryGetComponent(out Collider2D  mouseCollider);
         mouseCollider.enabled = !mouseCollider.enabled;
     }
+    public void MouseColliderEnable(bool enable){
+        TryGetComponent(out Collider2D  mouseCollider);
+        mouseCollider.enabled = enable;
+    }
 }

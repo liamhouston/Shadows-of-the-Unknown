@@ -25,6 +25,7 @@ public class InspectItem : MonoBehaviour
         {
             // Set the image to the display image or the sprite
             itemCanvas.SetActive(true);
+            CursorManager.Instance.MouseColliderEnable(false);
 
             StartCoroutine(CloseCanvasInSeconds(2));
 
@@ -73,5 +74,6 @@ public class InspectItem : MonoBehaviour
     private IEnumerator CloseCanvasInSeconds (float seconds){
         yield return new WaitForSeconds(seconds);
         itemCanvas.SetActive(false);
+        CursorManager.Instance.MouseColliderEnable(true);
     }
 }

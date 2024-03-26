@@ -168,7 +168,7 @@ public class GameController : MonoBehaviour
             BlackoutBox.GetComponent<Image>().color = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
             yield return null;
         }
-        // CursorManager.Instance.MouseColliderSwitch();
+        CursorManager.Instance.MouseColliderEnable(false);
         gameOverFadeComplete = true;
     }
 
