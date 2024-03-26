@@ -88,7 +88,8 @@ public class GameController : MonoBehaviour
             gameOverFadeStarted = true;
             // disable on screen elements
             DialogueManager.Instance.DisableDialoguePanel();
-            XButton.SetActive(false);
+            if (XButton != null)
+                XButton.SetActive(false);
 
             StartCoroutine(GameOverFade((float)0.3));
         }
@@ -199,10 +200,8 @@ public class GameController : MonoBehaviour
     }
 
     private IEnumerator LoadMainMenuAfterSeconds(float seconds){
-        Debug.Log("waiting for " + seconds);
         yield return new WaitForSeconds(seconds);
         // load main menu
-        Debug.Log("done wait, loading main menu");
         LevelManager.Instance.LoadScene("MainMenu", "CrossFade");
     }
 }

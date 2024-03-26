@@ -10,8 +10,6 @@ public class LowerResolveItem : MonoBehaviour
     public float delayBetweenDamages = 1f; // wait before taking more damage to resolve meter
     public int damageAmount = 3; // amount of damage to resolve meter every delayBetweenDamages seconds
 
-
-    private SpriteRenderer spriteRenderer;
     private GameController gameController;
 
     // bool indicators
@@ -24,8 +22,6 @@ public class LowerResolveItem : MonoBehaviour
     void Start(){
         gameController = GameController.Instance;
         Debug.Assert(gameController != null, "GameController must exist in the scene");
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        Debug.Assert(spriteRenderer != null, "SpriteRenderer must exist on this object");
 
     }
 
