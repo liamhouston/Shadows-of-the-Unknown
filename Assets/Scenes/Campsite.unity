@@ -1989,9 +1989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea78e1dfde0dec7458e0ac9ffedd3864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitToPlaySound: 2.5
   exitButton: {fileID: 1772804596646269793}
-  playMajorClueSound: 0
   playerFoundMajorClue: 0
   dialogue: []
 --- !u!114 &781784735
@@ -2930,13 +2928,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3336835923912458764, guid: 66f15d4dae2676643ace55b6b16ca69f,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1912895806}
+    - target: {fileID: 3336835923912458764, guid: 66f15d4dae2676643ace55b6b16ca69f,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1912895806}
     - target: {fileID: 3336835923912458764, guid: 66f15d4dae2676643ace55b6b16ca69f,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SaveVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336835923912458764, guid: 66f15d4dae2676643ace55b6b16ca69f,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: SaveVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336835923912458764, guid: 66f15d4dae2676643ace55b6b16ca69f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MainMenu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3336835923912458764, guid: 66f15d4dae2676643ace55b6b16ca69f,
         type: 3}
@@ -2975,6 +2988,11 @@ PrefabInstance:
       objectReference: {fileID: 1912895807}
     - target: {fileID: 7193811203393162591, guid: 66f15d4dae2676643ace55b6b16ca69f,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193811203393162591, guid: 66f15d4dae2676643ace55b6b16ca69f,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetActive
       objectReference: {fileID: 0}
@@ -2982,6 +3000,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: LoadMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193811203393162591, guid: 66f15d4dae2676643ace55b6b16ca69f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7193811203393162591, guid: 66f15d4dae2676643ace55b6b16ca69f,
         type: 3}
