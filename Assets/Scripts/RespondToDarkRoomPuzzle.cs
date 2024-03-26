@@ -66,7 +66,8 @@ public class RespondToDarkRoomPuzzle : MonoBehaviour
             BlackoutBox.GetComponent<Image>().color = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
             yield return null;
         }
-
+        CursorManager.Instance.MouseColliderSwitch();
+        InputManager.PlayerInput.actions.FindAction("Move").Disable();
         gameOverFadeComplete = true;
     }
     
