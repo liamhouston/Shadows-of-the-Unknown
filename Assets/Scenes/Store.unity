@@ -348,7 +348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 202247422}
   m_Layer: 0
-  m_Name: ----------------- UI
+  m_Name: '----------------- UI'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -379,7 +379,7 @@ GameObject:
   m_Component:
   - component: {fileID: 235231649}
   m_Layer: 0
-  m_Name: ----- Interactable Objs
+  m_Name: '----- Interactable Objs'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -410,7 +410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 269704804}
   m_Layer: 0
-  m_Name: ----------------- MANAGERS
+  m_Name: '----------------- MANAGERS'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -550,6 +550,86 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 2105745267}
+--- !u!1001 &379032497
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 689088263209042539, guid: b5bbe6747458c3d468ae464760616ff5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 689088263209042539, guid: b5bbe6747458c3d468ae464760616ff5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 689088263209042539, guid: b5bbe6747458c3d468ae464760616ff5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 689088263209042539, guid: b5bbe6747458c3d468ae464760616ff5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 689088263209042539, guid: b5bbe6747458c3d468ae464760616ff5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 689088263209042539, guid: b5bbe6747458c3d468ae464760616ff5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 689088263209042539, guid: b5bbe6747458c3d468ae464760616ff5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 689088263209042539, guid: b5bbe6747458c3d468ae464760616ff5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 689088263209042539, guid: b5bbe6747458c3d468ae464760616ff5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 689088263209042539, guid: b5bbe6747458c3d468ae464760616ff5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858387802275715263, guid: b5bbe6747458c3d468ae464760616ff5,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelManagerHelper
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b5bbe6747458c3d468ae464760616ff5, type: 3}
+--- !u!114 &379032498 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7162708932853830880, guid: b5bbe6747458c3d468ae464760616ff5,
+    type: 3}
+  m_PrefabInstance: {fileID: 379032497}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb16be84d3f6114cbf7eb5d00980f04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &455791522
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,7 +722,7 @@ GameObject:
   m_Component:
   - component: {fileID: 470887893}
   m_Layer: 0
-  m_Name: ----- Background Objs
+  m_Name: '----- Background Objs'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1212,7 +1292,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playTogether: 0
   barkList:
-  - Jeepers... maybe I shouldn't be in here.
+  - "Okay, gross. I don\u2019t remember this being here last time."
+  - Mice? Shit. Percy shoulda warned me about hantavirus before I spent eighty bucks
+    on a bus ticket.
 --- !u!1 &654399034
 GameObject:
   m_ObjectHideFlags: 0
@@ -1603,7 +1685,9 @@ MonoBehaviour:
   exitButton: {fileID: 1107005347}
   playerFoundMajorClue: 0
   dialogue:
-  - 
+  - Okay. I feel a little better now.
+  - "Hopefully things make more sense now that I\u2019ve taken the picture. "
+  - It feels like they should.
 --- !u!114 &654399041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1681,7 +1765,7 @@ GameObject:
   m_Component:
   - component: {fileID: 747739495}
   m_Layer: 0
-  m_Name: ----------------- ENV
+  m_Name: '----------------- ENV'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2883,6 +2967,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 379032498}
+        m_TargetAssemblyTypeName: LevelManagerHelper, Assembly-CSharp
+        m_MethodName: LoadFishdockScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 829483886}
         m_TargetAssemblyTypeName: LevelManagerHelper, Assembly-CSharp
         m_MethodName: LoadFishdockScene
@@ -2933,7 +3029,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1107315560}
   m_Layer: 0
-  m_Name: ----------------- CAMERA
+  m_Name: '----------------- CAMERA'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3168,7 +3264,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1705233607}
   m_Layer: 0
-  m_Name: ----------------- PLAYER
+  m_Name: '----------------- PLAYER'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4997,7 +5093,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playTogether: 0
   barkList:
-  - I think Percy worked here for a summer?
+  - "Wonder if there\u2019s anything left in here. Not that I\u2019m, you know, a
+    robber, but a lucky quarter would be cool. Maybe enough money to get a gumball."
 --- !u!212 &4868204021911475889
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5168,7 +5265,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playTogether: 0
   barkList:
-  - Eughh.. someone squash that thing.
+  - "Okay, this place is gonna turn me into a germaphobe. I already hate spiders,
+    man\u2026"
+  - Eugh. Spiders. One time when we were younger, Percy put a spider in one of my
+    Superman sneakers and thought it was the funniest thing in the world. This thing
+    is much, much bigger than that was, though.
 --- !u!60 &4923078401406329057
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5962,6 +6063,7 @@ SceneRoots:
   - {fileID: 269704804}
   - {fileID: 537189985}
   - {fileID: 2084475679}
+  - {fileID: 379032497}
   - {fileID: 829483885}
   - {fileID: 975942505}
   - {fileID: 839219293}

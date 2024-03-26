@@ -735,7 +735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageHeight: 600
   itemCanvas: {fileID: 1982566907351442447}
-  displayImage: {fileID: 21300000, guid: 903fef09f8ec9594590ec0f3ae109557, type: 3}
+  displayImage: {fileID: 21300000, guid: 4ebdb170993db494fbe422a041d28070, type: 3}
 --- !u!114 &259800071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1991,7 +1991,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exitButton: {fileID: 1772804596646269793}
   playerFoundMajorClue: 0
-  dialogue: []
+  dialogue:
+  - "Okay, that\u2019s a relief. I feel less sick now that I\u2019ve taken the photo."
+  - "Hopefully he\u2019s around here somewhere. It\u2019s really not like him to
+    disappear like this. Or just not be\u2026 around."
 --- !u!114 &781784735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2575,11 +2578,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDialogue:
-  - "Ugh its dark... I think I can use a flashlight? Where\u2026 Wow, this is clunky.
-    I think the mouse is the flashlight and maybe\u2026 Yeah, I just move the camera
-    the same way I walk."
-  - "From what I remember about Percy\u2019s chattering, it\u2019s right-click to
-    take a photo."
+  - "Ugh its dark... I really have to use the flashlight? Where\u2026 Wow, this is
+    clunky. "
   characterNames: []
   characterProfile: []
   dialoguePanel: {fileID: 6909169462577309869}
