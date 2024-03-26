@@ -2042,7 +2042,7 @@ Transform:
   m_GameObject: {fileID: 1226332784}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 90.965256, y: -0.8743639, z: -3.2399998}
+  m_LocalPosition: {x: 90.96529, y: -0.8789778, z: -3.2399998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4247,6 +4247,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2063860054 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2052908205624880181, guid: 20f997db4c7ccf54994b980664ab2dfe,
+    type: 3}
+  m_PrefabInstance: {fileID: 2066154230}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2066154230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4842,9 +4854,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2507012110022052003, guid: da8beea927f05cc47af30a82ff21709d,
         type: 3}
+      propertyPath: profileName
+      value: 
+      objectReference: {fileID: 1340264518}
+    - target: {fileID: 2507012110022052003, guid: da8beea927f05cc47af30a82ff21709d,
+        type: 3}
       propertyPath: dialogueText
       value: 
       objectReference: {fileID: 1340264518}
+    - target: {fileID: 2507012110022052003, guid: da8beea927f05cc47af30a82ff21709d,
+        type: 3}
+      propertyPath: profileImage
+      value: 
+      objectReference: {fileID: 2063860054}
     - target: {fileID: 2507012110022052003, guid: da8beea927f05cc47af30a82ff21709d,
         type: 3}
       propertyPath: dialoguePanel
@@ -4854,6 +4876,16 @@ PrefabInstance:
         type: 3}
       propertyPath: openingDialogue.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507012110022052003, guid: da8beea927f05cc47af30a82ff21709d,
+        type: 3}
+      propertyPath: openingDialogueCharacterName
+      value: Jay
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507012110022052003, guid: da8beea927f05cc47af30a82ff21709d,
+        type: 3}
+      propertyPath: openingDialogue.Array.data[0]
+      value: test
       objectReference: {fileID: 0}
     - target: {fileID: 3589434304751965755, guid: da8beea927f05cc47af30a82ff21709d,
         type: 3}

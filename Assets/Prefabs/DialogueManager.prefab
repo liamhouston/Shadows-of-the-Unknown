@@ -45,10 +45,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDialogue:
-  - Whoa.. my legs feel shaky. I think it's A to move left, D to move right and click
-    to interact.
-  characterNames: []
-  characterProfile: []
+  - default ahh dialogue
+  characterNames:
+  - Jay
+  - Mr. D
+  characterProfiles:
+  - {fileID: 2800000, guid: 25cf4dc27e2377b4980c441e3bd40302, type: 3}
+  - {fileID: 0}
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
+  profileName: {fileID: 0}
+  profileImage: {fileID: 0}
   wordSpeed: 0.04

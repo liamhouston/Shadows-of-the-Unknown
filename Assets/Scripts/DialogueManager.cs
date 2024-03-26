@@ -13,15 +13,18 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
 
+    public string openingDialogueCharacterName = "Jay";
     public string[] openingDialogue;
 
     [Header("Character Info")]
     public List<string> characterNames;
-    public List<Image> characterProfile;
+    public List<Texture2D> characterProfiles;
 
     [Header("Dialogue Panel Info")]
     public GameObject dialoguePanel;
     public TextMeshProUGUI dialogueText;
+    public TextMeshProUGUI profileName;
+    public RawImage profileImage;
     public float wordSpeed = 0.04f;
 
     private int line_index;
@@ -54,9 +57,8 @@ public class DialogueManager : MonoBehaviour
         // play opening dialogue if this is our first time in the scene
         if (openingDialogue.Length != 0)
         {
-            Debug.Log(currentSceneName + " has a value of " + PlayerPrefs.GetInt(currentSceneName));
             if (PlayerPrefs.GetInt(currentSceneName) == 0){
-                playBlockingDialogue("Jay", openingDialogue);
+                playBlockingDialogue(openingDialogueCharacterName, openingDialogue);
             }
         }
     }
@@ -105,6 +107,8 @@ public class DialogueManager : MonoBehaviour
             dialoguePanel.SetActive(false);
             return;
         }
+        SetCharacterPanel(characterName);
+
         // prep for typing
         dialogue = dialogueLines;
         dialogueText.text = "";
@@ -127,6 +131,8 @@ public class DialogueManager : MonoBehaviour
             dialoguePanel.SetActive(false);
             return;
         }
+        SetCharacterPanel(characterName);
+
         // prep for typing
         dialogue = dialogueLines;
         dialogueText.text = "";
@@ -167,5 +173,32 @@ public class DialogueManager : MonoBehaviour
 
     public void DisableDialoguePanel(){
         dialoguePanel.SetActive(false);
+    }
+
+    public void SetCharacterPanel(string characterName){
+        // if in first person don't try to change anything
+        if (profileImage == null || profileName == null){
+            return;
+        }
+
+        // if specified invalid name, assume it was supposed to be jay
+        if (!characterNames.Contains(characterName)){
+            characterName = "Jay";
+        }
+        // set character name
+        profileName.text = characterName;
+
+        // set character profile
+        int index = characterNames.IndexOf(characterName);
+        if (characterProfiles[index] == null){
+            // name does not have associated texture
+            profileImage.color = new Color(profileImage.color.r, profileImage.color.g, profileImage.color.b, 0);
+        }
+        else {
+            // name does have associated texture
+            profileImage.color = new Color(profileImage.color.r, profileImage.color.g, profileImage.color.b, 1);
+            profileImage.texture = characterProfiles[index];
+        }
+        
     }
 }
