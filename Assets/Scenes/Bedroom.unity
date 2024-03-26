@@ -1424,9 +1424,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f6a402ea29feb7419344eb340333371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickableCursorTexture: {fileID: 2800000, guid: 2f0e515ca6b490b459bb222612f45a09,
+  clickableCursorTexture: {fileID: 2800000, guid: 5f6e47a44f5ba564ca548fb97d9507f9,
     type: 3}
-  defaultCursorTexture: {fileID: 2800000, guid: 2667393de2ceb4f4db28f86600dc4110,
+  defaultCursorTexture: {fileID: 2800000, guid: 452cce04b1238a94c9a776cd0e25eff6,
     type: 3}
   isDefault: 0
 --- !u!114 &823618066
@@ -6459,7 +6459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &7331536777782709802
 MonoBehaviour:
   m_ObjectHideFlags: 0
