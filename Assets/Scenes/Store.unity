@@ -348,7 +348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 202247422}
   m_Layer: 0
-  m_Name: '----------------- UI'
+  m_Name: ----------------- UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -379,7 +379,7 @@ GameObject:
   m_Component:
   - component: {fileID: 235231649}
   m_Layer: 0
-  m_Name: '----- Interactable Objs'
+  m_Name: ----- Interactable Objs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -410,7 +410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 269704804}
   m_Layer: 0
-  m_Name: '----------------- MANAGERS'
+  m_Name: ----------------- MANAGERS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -722,7 +722,7 @@ GameObject:
   m_Component:
   - component: {fileID: 470887893}
   m_Layer: 0
-  m_Name: '----- Background Objs'
+  m_Name: ----- Background Objs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1765,7 +1765,7 @@ GameObject:
   m_Component:
   - component: {fileID: 747739495}
   m_Layer: 0
-  m_Name: '----------------- ENV'
+  m_Name: ----------------- ENV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2026,10 +2026,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f6a402ea29feb7419344eb340333371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickableCursorTexture: {fileID: 2800000, guid: 2f0e515ca6b490b459bb222612f45a09,
+  clickableCursorTexture: {fileID: 2800000, guid: 5f6e47a44f5ba564ca548fb97d9507f9,
     type: 3}
-  defaultCursorTexture: {fileID: 2800000, guid: 2667393de2ceb4f4db28f86600dc4110,
+  defaultCursorTexture: {fileID: 2800000, guid: 452cce04b1238a94c9a776cd0e25eff6,
     type: 3}
+  isDefault: 0
 --- !u!114 &872916856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3029,7 +3030,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1107315560}
   m_Layer: 0
-  m_Name: '----------------- CAMERA'
+  m_Name: ----------------- CAMERA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3264,7 +3265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1705233607}
   m_Layer: 0
-  m_Name: '----------------- PLAYER'
+  m_Name: ----------------- PLAYER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

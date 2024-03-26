@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
+
 public class PuzzleObject : MonoBehaviour
 {
     public Canvas canvas;
@@ -33,7 +34,7 @@ public class PuzzleObject : MonoBehaviour
     void Update()
     {
         // start puzzle if player clicks
-        if (playerIsNearby && InputManager.Instance.ClickInput && !puzzlePanel.activeSelf){
+        if (playerIsNearby && InputManager.Instance.ClickInput && !DialogueManager.Instance.DialogueIsActive() && !puzzlePanel.activeSelf){
             puzzlePanel.SetActive(true);
             InputManager.PlayerInput.actions.FindAction("Move").Disable();
             CursorManager.Instance.MouseColliderSwitch();
@@ -54,9 +55,14 @@ public class PuzzleObject : MonoBehaviour
             }
             // otherwise puzzle complete
             puzzleComplete = true;
+            
             string fromScene = SceneManager.GetActiveScene().name + "Puzzle";
             PlayerPrefs.SetInt(fromScene, 1);
-            SoundManager.Instance.PlaySound2D("PuzzleComplete");
+            
+            string scene = SceneManager.GetActiveScene().name;
+            if (scene != "Darkroom"){
+                SoundManager.Instance.PlaySound2D("PuzzleComplete");
+            }
         }
 
     }
