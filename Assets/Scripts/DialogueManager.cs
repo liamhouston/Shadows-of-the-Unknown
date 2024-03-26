@@ -67,7 +67,6 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialoguePanel.activeSelf)
         {
-
             if (_isTyping == true && InputManager.Instance.ClickInput)
             {
                 wordSpeed = 0.01f;
@@ -89,6 +88,7 @@ public class DialogueManager : MonoBehaviour
                     // last line of dialogue
                     dialogueText.text = "";
                     dialoguePanel.SetActive(false);
+                    CursorManager.Instance.MouseColliderSwitch();
                     InputManager.PlayerInput.actions.FindAction("Move").Enable();
                     // InputManager.PlayerInput.actions.FindAction("Point").Enable();
                     InputManager.PlayerInput.actions.FindAction("RightClick").Enable();
@@ -113,6 +113,7 @@ public class DialogueManager : MonoBehaviour
         dialogue = dialogueLines;
         dialogueText.text = "";
         dialoguePanel.SetActive(true);
+        CursorManager.Instance.MouseColliderSwitch();
         InputManager.PlayerInput.actions.FindAction("Move").Disable();
         InputManager.PlayerInput.actions.FindAction("RightClick").Disable();
         // InputManager.PlayerInput.actions.FindAction("RightClick").Disable();

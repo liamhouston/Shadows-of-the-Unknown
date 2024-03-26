@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MajorClue : MonoBehaviour
 {
@@ -35,6 +36,8 @@ public class MajorClue : MonoBehaviour
             playerFoundMajorClue = true;
 
             exitButton.gameObject.SetActive(true);
+            string fromScene = SceneManager.GetActiveScene().name + "Puzzle";
+            PlayerPrefs.SetInt(fromScene, 1);
             exitButton.interactable = true;
 
             if (dialogue.Length != 0){
