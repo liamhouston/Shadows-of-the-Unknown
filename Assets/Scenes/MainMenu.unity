@@ -254,6 +254,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -131.1
       objectReference: {fileID: 0}
+    - target: {fileID: 2617802705688662050, guid: ba4a25fa390836a4382c623b507d2bcf,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2674774513511208172, guid: ba4a25fa390836a4382c623b507d2bcf,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -332,6 +337,11 @@ PrefabInstance:
     - target: {fileID: 3143186583022027870, guid: ba4a25fa390836a4382c623b507d2bcf,
         type: 3}
       propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3345272213170184157, guid: ba4a25fa390836a4382c623b507d2bcf,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3346114837701929561, guid: ba4a25fa390836a4382c623b507d2bcf,
@@ -1947,7 +1957,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.5
+  m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96

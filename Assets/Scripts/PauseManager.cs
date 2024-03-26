@@ -87,6 +87,7 @@ public class PauseManager : MonoBehaviour
         IsPaused = false;
 
         LevelManager.Instance.LoadScene("MainMenu", "CrossFade");
+        MusicManager.Instance.PlayMusic("MainMenu");
     }
     public void Quid()
     {

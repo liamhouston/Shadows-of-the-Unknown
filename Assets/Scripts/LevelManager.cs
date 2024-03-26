@@ -67,22 +67,4 @@ public class LevelManager : MonoBehaviour
 
         yield return transition.AnimateTransitionOut();
     }
-
-    // The On-Click button to exit the campsite scene will call this
-    public void LoadFishDockScene()
-    {
-        LoadScene("Fishdock", "CrossFade");
-        MusicManager.Instance.PlayMusic("Fishdock");
-    }
-
-    public void LoadCampsiteScene()
-    {
-        LoadScene("Campsite", "CrossFade");
-        MusicManager.Instance.PlayMusic("Campsite");
-    }
-
-    public void LoadBedroomScene()
-    {
-        LoadScene("Bedroom", "CrossFade");
-    }
 }
