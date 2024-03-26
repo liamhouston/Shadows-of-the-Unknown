@@ -735,7 +735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageHeight: 600
   itemCanvas: {fileID: 1982566907351442447}
-  displayImage: {fileID: 21300000, guid: 903fef09f8ec9594590ec0f3ae109557, type: 3}
+  displayImage: {fileID: 21300000, guid: 4ebdb170993db494fbe422a041d28070, type: 3}
 --- !u!114 &259800071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1989,11 +1989,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea78e1dfde0dec7458e0ac9ffedd3864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitToPlaySound: 2.5
   exitButton: {fileID: 1772804596646269793}
-  playMajorClueSound: 0
   playerFoundMajorClue: 0
-  dialogue: []
+  dialogue:
+  - "Okay, that\u2019s a relief. I feel less sick now that I\u2019ve taken the photo."
+  - "Hopefully he\u2019s around here somewhere. It\u2019s really not like him to
+    disappear like this. Or just not be\u2026 around."
 --- !u!114 &781784735
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1071,7 +1071,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playTogether: 0
   barkList:
-  - Jeepers... maybe I shouldn't be in here.
+  - "Okay, gross. I don\u2019t remember this being here last time."
+  - Mice? Shit. Percy shoulda warned me about hantavirus before I spent eighty bucks
+    on a bus ticket.
 --- !u!1 &654399034
 GameObject:
   m_ObjectHideFlags: 0
@@ -1462,7 +1464,9 @@ MonoBehaviour:
   exitButton: {fileID: 1107005347}
   playerFoundMajorClue: 0
   dialogue:
-  - 
+  - Okay. I feel a little better now.
+  - "Hopefully things make more sense now that I\u2019ve taken the picture. "
+  - It feels like they should.
 --- !u!114 &654399041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4752,7 +4756,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playTogether: 0
   barkList:
-  - I think Percy worked here for a summer?
+  - "Wonder if there\u2019s anything left in here. Not that I\u2019m, you know, a
+    robber, but a lucky quarter would be cool. Maybe enough money to get a gumball."
 --- !u!212 &4868204021911475889
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4923,7 +4928,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playTogether: 0
   barkList:
-  - Eughh.. someone squash that thing.
+  - "Okay, this place is gonna turn me into a germaphobe. I already hate spiders,
+    man\u2026"
+  - Eugh. Spiders. One time when we were younger, Percy put a spider in one of my
+    Superman sneakers and thought it was the funniest thing in the world. This thing
+    is much, much bigger than that was, though.
 --- !u!60 &4923078401406329057
 PolygonCollider2D:
   m_ObjectHideFlags: 0
