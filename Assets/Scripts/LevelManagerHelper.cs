@@ -13,33 +13,33 @@ public class LevelManagerHelper : MonoBehaviour
     public void LoadBedroomScene()
     {
         _levelManagerHelper.LoadScene("Bedroom", "CrossFade");
-        MusicManager.Instance.PlayMusic("Bedroom");
+        // MusicManager.Instance.PlayMusic("Bedroom");
     }
 
     public void LoadBedroomCameScene()
     {
         _levelManagerHelper.LoadScene("BedroomCam", "CrossFade");
-        MusicManager.Instance.PlayMusic("Bedroom");
+        // MusicManager.Instance.PlayMusic("Bedroom");
     }
 
     public void LoadFishdockScene()
     {
         _levelManagerHelper.LoadScene("Fishdock", "CrossFade");
-        MusicManager.Instance.PlayMusic("Fishdock");
+        // MusicManager.Instance.PlayMusic("Fishdock");
     }
     public void LoadCampsiteScene()
     {
         _levelManagerHelper.LoadScene("Campsite", "CrossFade");
-        MusicManager.Instance.PlayMusic("Campsite");
+        // MusicManager.Instance.PlayMusic("Campsite");
     }
     public void LoadStoreScene()
     {
         _levelManagerHelper.LoadScene("Store", "CrossFade");
-        MusicManager.Instance.PlayMusic("Store");
+        // MusicManager.Instance.PlayMusic("Fishdock");
     }
     public void LoadDarkroomScene()
     {
         _levelManagerHelper.LoadScene("Darkroom", "CrossFade");
-        MusicManager.Instance.PlayMusic("Darkroom");
+        // MusicManager.Instance.PlayMusic("Darkroom");
     }
 }

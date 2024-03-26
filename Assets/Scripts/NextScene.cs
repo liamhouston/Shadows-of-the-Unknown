@@ -13,6 +13,7 @@ public class NextScene : MonoBehaviour
     {
         if (playerIsNearby && InputManager.Instance.ClickInput)
         {
+            MusicManager.Instance.PlayMusic(ToScene);
             LevelManager.Instance.LoadScene(ToScene, "CrossFade");
         }
     }

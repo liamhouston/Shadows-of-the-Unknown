@@ -1392,7 +1392,7 @@ PrefabInstance:
     - target: {fileID: 4063165185107553852, guid: af9a69f8dd886d24eb9e61c08dabedba,
         type: 3}
       propertyPath: tracks.Array.data[1].trackName
-      value: Fishdock
+      value: Bedroom
       objectReference: {fileID: 0}
     - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
         type: 3}
@@ -2085,7 +2085,7 @@ Transform:
   m_GameObject: {fileID: 1226332784}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 90.96529, y: -0.8789778, z: -3.2399998}
+  m_LocalPosition: {x: 90.96524, y: -0.87199306, z: -3.2399998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
