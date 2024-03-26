@@ -51,8 +51,9 @@ public class Player : MonoBehaviour
         Debug.Log("Darkroom:" + PlayerPrefs.GetInt("Darkroom"));
         Debug.Log("Store:" + PlayerPrefs.GetInt("Store"));
         Debug.Log("Campsite:" + PlayerPrefs.GetInt("Campsite"));
-        string fromScene = SceneManager.GetActiveScene().name + "Puzzle";
-        Debug.Log(fromScene + ": " + PlayerPrefs.GetInt(fromScene));
+        // PlayerPrefs.SetInt("BedroomPuzzle", 1);
+        // PlayerPrefs.SetInt("StorePuzzle", 1);
+        // PlayerPrefs.SetInt("CampsitePuzzle", 1);
     }
 
     private void Update()
