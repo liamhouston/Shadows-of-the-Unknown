@@ -88,6 +88,10 @@ public class GameController : MonoBehaviour
             gameOverFadeStarted = true;
             // disable on screen elements
             DialogueManager.Instance.DisableDialoguePanel();
+            InputManager.PlayerInput.actions.FindAction("Move").Disable();
+            InputManager.PlayerInput.actions.FindAction("Click").Disable();
+            InputManager.PlayerInput.actions.FindAction("RightClick").Disable();
+            
             if (XButton != null)
                 XButton.SetActive(false);
 
@@ -98,6 +102,7 @@ public class GameController : MonoBehaviour
             gameOverFadeComplete = false;
             
             // play dialogue if fade complete
+            DialogueManager.Instance.DisableDialoguePanel();
             DialogueManager.Instance.playBlockingDialogue("Jay", gameOverBark);
 
             StartCoroutine(LoadMainMenuAfterSeconds(mainMenuLoadDelay));

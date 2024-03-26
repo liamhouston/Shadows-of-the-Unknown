@@ -643,8 +643,9 @@ GameObject:
   m_Component:
   - component: {fileID: 259800069}
   - component: {fileID: 259800068}
+  - component: {fileID: 259800074}
+  - component: {fileID: 259800075}
   - component: {fileID: 259800070}
-  - component: {fileID: 259800072}
   - component: {fileID: 259800071}
   - component: {fileID: 259800073}
   m_Layer: 0
@@ -733,7 +734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496f2332e78cccc418511222358474c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageHeight: 600
+  imageHeight: 800
   itemCanvas: {fileID: 1982566907351442447}
   displayImage: {fileID: 21300000, guid: 4ebdb170993db494fbe422a041d28070, type: 3}
 --- !u!114 &259800071
@@ -787,8 +788,21 @@ MonoBehaviour:
   - {x: -2.6927, y: -18.916645, z: 0}
   - {x: -3.5051472, y: -18.511122, z: 0}
   - {x: -8.07549, y: -18.964586, z: 0}
---- !u!68 &259800072
-EdgeCollider2D:
+--- !u!114 &259800073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259800067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56be3323f4d682e4fa8d9bed91dec61f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetingIntensity: 0.4
+--- !u!61 &259800074
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -819,28 +833,46 @@ EdgeCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 1
-  m_Points:
-  - {x: -7.748062, y: -19.223497}
-  - {x: -2.4860268, y: -18.7625}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
---- !u!114 &259800073
-MonoBehaviour:
+  m_Offset: {x: -5.173327, y: -18.989689}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 84, y: 42}
+    newSize: {x: 84, y: 42}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.6497297, y: 1.7618923}
+  m_EdgeRadius: 0
+--- !u!50 &259800075
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 259800067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56be3323f4d682e4fa8d9bed91dec61f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TargetingIntensity: 0.4
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &264987590
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,7 +1022,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.1
 --- !u!224 &264987596
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2578,13 +2610,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f1dbc7524cd4d4e8e5a2cdf91b6350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openingDialogueCharacterName: Jay
   openingDialogue:
   - "Ugh its dark... I really have to use the flashlight? Where\u2026 Wow, this is
     clunky. "
   characterNames: []
-  characterProfile: []
+  characterProfiles: []
   dialoguePanel: {fileID: 6909169462577309869}
   dialogueText: {fileID: 6628123823136734323}
+  profileName: {fileID: 0}
+  profileImage: {fileID: 0}
   wordSpeed: 0.04
 --- !u!4 &1083930779
 Transform:
@@ -3489,6 +3524,7 @@ GameObject:
   - component: {fileID: 1491658050}
   - component: {fileID: 1491658049}
   - component: {fileID: 1491658052}
+  - component: {fileID: 1491658053}
   m_Layer: 0
   m_Name: Campfire
   m_TagString: Untagged
@@ -3570,7 +3606,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491658046}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2eac34f5bea1aca419d8ac232ce4fb61, type: 3}
   m_Name: 
@@ -3706,6 +3742,21 @@ MonoBehaviour:
   - {x: 6.9583344, y: -0.61585295, z: 0}
   - {x: 5.035403, y: 0.16404442, z: 0}
   - {x: -1.318894, y: -0.12991613, z: 0}
+--- !u!114 &1491658053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491658046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 496f2332e78cccc418511222358474c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageHeight: 400
+  itemCanvas: {fileID: 1982566907351442447}
+  displayImage: {fileID: 0}
 --- !u!1 &1564346495
 GameObject:
   m_ObjectHideFlags: 0
@@ -4051,7 +4102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eac34f5bea1aca419d8ac232ce4fb61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playTogether: 1
+  playTogether: 0
   barkList:
   - "Eugh, what the hell\u2026 Not touching that."
   - Looks like it got shot. Or maybe chronic wasting disease. Personally, I would
@@ -10234,9 +10285,9 @@ RectTransform:
   m_Children:
   - {fileID: 1564346496}
   - {fileID: 201160774}
-  - {fileID: 3956738910453711110}
   - {fileID: 2584144458388574740}
   - {fileID: 770667451}
+  - {fileID: 3956738910453711110}
   - {fileID: 9056077335320199303}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10271,7 +10322,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1001 &5427165324648013382
 PrefabInstance:
   m_ObjectHideFlags: 0

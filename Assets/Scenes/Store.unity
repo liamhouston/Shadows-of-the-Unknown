@@ -3394,9 +3394,9 @@ RectTransform:
   m_Children:
   - {fileID: 1739452381}
   - {fileID: 1907916033}
+  - {fileID: 131347592}
   - {fileID: 1892507395}
   - {fileID: 1842887643}
-  - {fileID: 131347592}
   - {fileID: 1107005348}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3497,13 +3497,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f1dbc7524cd4d4e8e5a2cdf91b6350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openingDialogueCharacterName: Jay
   openingDialogue:
   - It almost smells as bad as Percy's bedroom in here.
   - I think this used to be Mr. Dawson's store.
   characterNames: []
-  characterProfile: []
+  characterProfiles: []
   dialoguePanel: {fileID: 1892507397}
   dialogueText: {fileID: 1892507396}
+  profileName: {fileID: 0}
+  profileImage: {fileID: 0}
   wordSpeed: 0.04
 --- !u!4 &1842444974
 Transform:
@@ -5166,7 +5169,7 @@ GameObject:
   - component: {fileID: 4923078401406329053}
   m_Layer: 0
   m_Name: Spiderweb by Register
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5251,7 +5254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayOnFirstSight: 1
   delayBetweenDamages: 1
-  damageAmount: 3
+  damageAmount: 5
 --- !u!114 &4923078401406329056
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,27 +6,28 @@ using UnityEngine.UI;
 
 public class InspectItem : MonoBehaviour
 {
-    private bool playerIsNearby = false;
+    private bool playerIsNearby;
     public float imageHeight = 400;
 
     public GameObject itemCanvas;
 
     public Sprite displayImage = null;
 
+    void Start(){
+        playerIsNearby = false;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        // if open and click happens, close
-        if (InputManager.Instance.ClickInput && itemCanvas.activeSelf){
-            itemCanvas.SetActive(false);
-        }
-
         // open if player nearby
         if (InputManager.Instance.ClickInput && playerIsNearby && !DialogueManager.Instance.DialogueIsActive())
         {
             // Set the image to the display image or the sprite
             itemCanvas.SetActive(true);
+
+            StartCoroutine(CloseCanvasInSeconds(2));
+
             if (displayImage != null)
             {
                 // Calculate the aspect ratio of the image
@@ -67,5 +68,10 @@ public class InspectItem : MonoBehaviour
         {
             playerIsNearby = false;
         }
+    }
+
+    private IEnumerator CloseCanvasInSeconds (float seconds){
+        yield return new WaitForSeconds(seconds);
+        itemCanvas.SetActive(false);
     }
 }

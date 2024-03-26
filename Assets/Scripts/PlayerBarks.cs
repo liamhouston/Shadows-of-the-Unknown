@@ -21,24 +21,15 @@ public class PlayerBarks : MonoBehaviour
     {
         // if player within range and clicks
         if (playerIsNearby && InputManager.Instance.ClickInput && !DialogueManager.Instance.DialogueIsActive()){
-            if (this.CompareTag("Enemy")){
-                // play non blocking on enemy
+            if (playTogether){
+                // if we want to play all dialogue lines at once
+                DialogueManager.Instance.playBlockingDialogue("Jay", barkList);
+            }
+            else{
                 string[] element = new string[1];
                 element[0] = barkList[barkIndex];
-                DialogueManager.Instance.playNonBlockingDialogue("Mr. NPC", element, 0.01f);
+                DialogueManager.Instance.playBlockingDialogue("Jay", element);
                 IncrementBarkIndex();
-            }    
-            else {
-                if (playTogether){
-                    // if we want to play all dialogue lines at once
-                    DialogueManager.Instance.playBlockingDialogue("Mr. NPC", barkList);
-                }
-                else{
-                    string[] element = new string[1];
-                    element[0] = barkList[barkIndex];
-                    DialogueManager.Instance.playBlockingDialogue("Mr. NPC", element);
-                    IncrementBarkIndex();
-                }
             }
         }
     }
@@ -67,9 +58,5 @@ public class PlayerBarks : MonoBehaviour
 
     private void IncrementBarkIndex(){
         barkIndex = (barkIndex + 1) % barkList.Length;
-    }
-
-    public void TestFunction(){
-        Debug.Log("Please please please");
     }
 }
