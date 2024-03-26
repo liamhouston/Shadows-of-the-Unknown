@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class PuzzleObject : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PuzzleObject : MonoBehaviour
 
 
     private bool playerIsNearby = false;
+    [SerializeField]
     private bool puzzleComplete = false;
 
     // Start is called before the first frame update
@@ -19,6 +21,12 @@ public class PuzzleObject : MonoBehaviour
     {
         Debug.Assert(puzzlePanel != null);
         puzzlePanel.SetActive(false);
+        string fromScene = SceneManager.GetActiveScene().name + "Puzzle";
+        if (PlayerPrefs.GetInt(fromScene) == 1)
+        {
+            TryGetComponent(out Collider2D collider);
+            collider.enabled = false;
+        }
     }
 
     // Update is called once per frame
@@ -38,12 +46,16 @@ public class PuzzleObject : MonoBehaviour
 
         }
         // check for puzzle completion
-        else if (puzzlePanel.activeSelf && !puzzleComplete){
-            foreach (PuzzlePiece piece in pieces){
+        else if (puzzlePanel.activeSelf && !puzzleComplete)
+        {
+            foreach (PuzzlePiece piece in pieces)
+            {
                 if (!piece.inCorrectPosition) return;
             }
             // otherwise puzzle complete
             puzzleComplete = true;
+            string fromScene = SceneManager.GetActiveScene().name + "Puzzle";
+            PlayerPrefs.SetInt(fromScene, 1);
             SoundManager.Instance.PlaySound2D("PuzzleComplete");
         }
 

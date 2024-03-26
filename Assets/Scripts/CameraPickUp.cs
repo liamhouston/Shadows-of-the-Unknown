@@ -33,8 +33,9 @@ public class CameraPickUp : MonoBehaviour
         if (triggeredCameraDialogue && !DialogueManager.Instance.DialogueIsActive() && PlayerPrefs.GetInt("IsCameraPickedUp") != 1){
             PlayerPrefs.SetInt(isCameraPickedUp, 1); // camera picked up in player prefs
             // Debug.Log(PlayerPrefs.GetInt(isCameraPickedUp));
+            // MusicManager.Instance.PlayMusic("Bedroom");
             LevelManager.Instance.LoadScene("BedroomCam", "CrossFade");
-            MusicManager.Instance.PlayMusic("Bedroom");
+            
         }
 
         // if player within range and clicks
