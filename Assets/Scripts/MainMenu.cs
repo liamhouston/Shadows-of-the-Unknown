@@ -9,13 +9,13 @@ public class MainMenu : MonoBehaviour
     public Slider musicSlider;
     public Slider sfxSlider;
 
+    // Menu always plays the right music whenever a scene is loaded
     private void Start()
     {
-        // InputManager.PlayerInput.actions.FindActionMap("UI").Enable();
         LoadVolume();
         Scene activeScene = SceneManager.GetActiveScene();
         string sceneName = activeScene.name;
-        MusicManager.Instance.PlayMusic(sceneName);
+        MusicManager.Instance.PlayMusic(sceneName); 
 
         // PlayerPrefs.SetInt("IsCameraPickedUp", 0); // player has not picked up camera yet
     }
