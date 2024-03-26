@@ -47,7 +47,7 @@ public class DialogueManager : MonoBehaviour
     public void Start()
     {
         dialoguePanel.SetActive(false);
-        // defaultActionMap = InputManager.PlayerInput.currentActionMap?.name;
+        // // defaultActionMap = InputManager.PlayerInput.currentActionMap?.name;
         // if (openingDialogue.Length != 0)
         // {
         //     dialogue = openingDialogue;
