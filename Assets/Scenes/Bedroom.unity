@@ -2799,6 +2799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496f2332e78cccc418511222358474c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerIsNearby: 0
   imageHeight: 1200
   itemCanvas: {fileID: 9021764720962229052}
   displayImage: {fileID: 21300000, guid: f7eb724e1c759f345bde6711f5d1f196, type: 3}
@@ -7006,6 +7007,7 @@ MonoBehaviour:
     a cold Eastern town in the middle of nowhere. What did he leave on the table?"
   - "Oh. Of course. \u2018Thesis project\u2019... I\u2019m sure. Weird that he left
     his camera. Film? I\u2019m not really sure how to use this. Let\u2019s see."
+  PuzzlePanel: {fileID: 1643736191584887742}
 --- !u!114 &8505536626815871593
 MonoBehaviour:
   m_ObjectHideFlags: 0

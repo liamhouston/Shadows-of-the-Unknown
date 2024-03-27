@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class InspectItem : MonoBehaviour
 {
+    [SerializeField]
     private bool playerIsNearby;
     public float imageHeight = 400;
 
@@ -20,14 +21,19 @@ public class InspectItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+         // if open and click happens, close
+        if (InputManager.Instance.ClickInput && itemCanvas.activeSelf){
+            itemCanvas.SetActive(false);
+            CursorManager.Instance.MouseColliderEnable(true);
+        }
+
         // open if player nearby
         if (InputManager.Instance.ClickInput && playerIsNearby && !DialogueManager.Instance.DialogueIsActive())
         {
             // Set the image to the display image or the sprite
             itemCanvas.SetActive(true);
             CursorManager.Instance.MouseColliderEnable(false);
-
-            StartCoroutine(CloseCanvasInSeconds(2));
+            playerIsNearby = false;
 
             if (displayImage != null)
             {
@@ -69,11 +75,5 @@ public class InspectItem : MonoBehaviour
         {
             playerIsNearby = false;
         }
-    }
-
-    private IEnumerator CloseCanvasInSeconds (float seconds){
-        yield return new WaitForSeconds(seconds);
-        itemCanvas.SetActive(false);
-        CursorManager.Instance.MouseColliderEnable(true);
     }
 }

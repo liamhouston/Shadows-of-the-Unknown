@@ -17,5 +17,6 @@ public class PlayerInfo : MonoBehaviour
         PlayerPrefs.SetInt("StorePuzzle", 0);   // player took the pic from store?
         PlayerPrefs.SetInt("CampsitePuzzle", 0);    // player took the pic from campsite?
         PlayerPrefs.SetInt("DarkroomPuzzle", 0);    // player did the puzzle from darkroom?
+        PlayerPrefs.SetInt("LeaveBedroom", 0);    // player did the puzzle from fishdock?
     }
 }

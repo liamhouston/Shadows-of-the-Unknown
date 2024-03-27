@@ -483,7 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf681c67d6cdb2a4a95509e0e79c4e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 10
+  _moveSpeed: 15
   CamBoundary: {fileID: 1145651341}
   vcam: {fileID: 314649726}
 --- !u!222 &314649724
@@ -3103,11 +3103,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 6.7243214}
-      - {x: -13.449722, y: 6.7107735}
-      - {x: -13.357424, y: -6.770441}
-      - {x: 13.492912, y: -6.7365685}
-      - {x: 13.58521, y: 6.778517}
+    - - {x: 0.39024383, y: 3.2721586}
+      - {x: -7.115754, y: 3.2285945}
+      - {x: -7.053474, y: -3.4683723}
+      - {x: 7.4591327, y: -3.2543876}
+      - {x: 7.341299, y: 3.2963374}
   m_UseDelaunayMesh: 0
 --- !u!1 &1257479822
 GameObject:

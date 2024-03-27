@@ -2067,7 +2067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf681c67d6cdb2a4a95509e0e79c4e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 10
+  _moveSpeed: 15
   CamBoundary: {fileID: 546031417}
   vcam: {fileID: 1306578732}
 --- !u!222 &1306578730
@@ -2713,14 +2713,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f1dbc7524cd4d4e8e5a2cdf91b6350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openingDialogueCharacterName: Jay
   openingDialogue:
   - 'Ugh it''s kinda dark... I think Percy left a flashlight too? Wow, this is clunky. '
   - "I think the mouse is the flashlight and maybe\u2026 Yeah, I just move the camera
     the same way I walk."
   characterNames: []
-  characterProfile: []
+  characterProfiles: []
   dialoguePanel: {fileID: 1594604839}
   dialogueText: {fileID: 180093000}
+  profileName: {fileID: 0}
+  profileImage: {fileID: 0}
   wordSpeed: 0.04
 --- !u!4 &1543151193
 Transform:
