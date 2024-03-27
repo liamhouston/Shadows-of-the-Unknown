@@ -483,7 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf681c67d6cdb2a4a95509e0e79c4e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 15
+  _moveSpeed: 10
   CamBoundary: {fileID: 1145651341}
   vcam: {fileID: 314649726}
 --- !u!222 &314649724
