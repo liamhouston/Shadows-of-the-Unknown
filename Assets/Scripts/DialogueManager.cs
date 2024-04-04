@@ -54,13 +54,13 @@ public class DialogueManager : MonoBehaviour
 
         string currentSceneName = SceneManager.GetActiveScene().name;
 
-        // play opening dialogue if this is our first time in the scene
-        if (openingDialogue.Length != 0)
-        {
-            if (PlayerPrefs.GetInt(currentSceneName) == 0){
-                playBlockingDialogue(openingDialogueCharacterName, openingDialogue);
-            }
-        }
+        // // play opening dialogue if this is our first time in the scene
+        // if (openingDialogue.Length != 0)
+        // {
+        //     if (PlayerPrefs.GetInt(currentSceneName) == 0){
+        //         playBlockingDialogue(openingDialogueCharacterName, openingDialogue);
+        //     }
+        // }
     }
 
     private void Update()
