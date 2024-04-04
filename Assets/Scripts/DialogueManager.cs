@@ -52,7 +52,7 @@ public class DialogueManager : MonoBehaviour
     {
         dialoguePanel.SetActive(false);
 
-        string currentSceneName = SceneManager.GetActiveScene().name;
+        // string currentSceneName = SceneManager.GetActiveScene().name;
 
         // // play opening dialogue if this is our first time in the scene
         // if (openingDialogue.Length != 0)

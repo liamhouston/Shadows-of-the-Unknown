@@ -4918,10 +4918,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "This is your camera. Move the flashlight using your mouse and the camera
-    back and forth using A/D or the left/right arrow keys. Click to interact with
-    highlighted objects. \n\nYou cannot exit camera scenes until you\u2019ve taken
-    a photo, but you must collect film first.You are safe in your brother\u2019s
-    apartment, but outside there are things that will hurt you and lower your resolve"
+    back and forth using WASD or the arrow keys. Click to interact with highlighted
+    objects. \n\nYou cannot exit camera scenes until you\u2019ve taken a photo, but
+    you must collect film first. You are safe in your brother\u2019s apartment, but
+    outside there are things that will hurt you and lower your resolve. \n\nIf you
+    let your resolve get too low, you will die. If you are confused, take a deep
+    breath, and remember: the most important thing in the world is the camera."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 167ed707225cc134d9c85d826e5ef0a8, type: 2}
   m_sharedMaterial: {fileID: 986355144178585337, guid: 167ed707225cc134d9c85d826e5ef0a8,
@@ -4949,8 +4951,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
