@@ -405,6 +405,15 @@ MonoBehaviour:
   - groupID: BusArrival
     clips:
     - {fileID: 8300000, guid: ddaab7479a94a6f408cff873b25346da, type: 3}
+  - groupID: FootTaps
+    clips:
+    - {fileID: 8300000, guid: 0deae589e6b73c34e90037abc79df7fa, type: 3}
+  - groupID: PickUpKey
+    clips:
+    - {fileID: 8300000, guid: 55d3cfed22a56fd419d824ffa8333039, type: 3}
+  - groupID: KeyInDoor
+    clips:
+    - {fileID: 8300000, guid: 6fe223ba3db84294ca4e2c1be60b2c37, type: 3}
 --- !u!1 &4063165185422374783
 GameObject:
   m_ObjectHideFlags: 0
