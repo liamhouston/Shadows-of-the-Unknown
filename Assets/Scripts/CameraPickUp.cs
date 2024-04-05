@@ -21,7 +21,6 @@ public class CameraPickUp : MonoBehaviour
         cameraObj.SetActive(true);
         PlayerPrefs.SetInt(isCameraPickedUp, 0);
 
-        Debug.Log("iscamPickedUp?" + PlayerPrefs.GetInt(isCameraPickedUp));
         // cover the camera if it's already been picked up
         if (PlayerPrefs.HasKey(isCameraPickedUp) && PlayerPrefs.GetInt("BedroomCam") == 1){
             // cameraCover.color = new Color (cameraCover.color.r, cameraCover.color.g, cameraCover.color.b, 1); // cover the camera

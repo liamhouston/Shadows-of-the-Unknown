@@ -35,7 +35,8 @@ public class CutsceneManager : MonoBehaviour
     void Update()
     {
         // if executed all commands
-        if (lastCommandFinished  && commandIndex + 1 >= cutsceneCommands.Length){
+        if (InputManager.Instance.ClickInput || (lastCommandFinished  && commandIndex + 1 >= cutsceneCommands.Length)){
+        //if (lastCommandFinished  && commandIndex + 1 >= cutsceneCommands.Length){
             LevelManager.Instance.LoadScene("Bedroom", "CrossFade");
             lastCommandFinished = false; // prevent any more execution
         }
