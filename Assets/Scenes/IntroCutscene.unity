@@ -139,6 +139,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2500718899811137495, guid: 43213c0d9da6598419b9ca4462307a49,
         type: 3}
+      propertyPath: m_margin.z
+      value: -46.598953
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500718899811137495, guid: 43213c0d9da6598419b9ca4462307a49,
+        type: 3}
       propertyPath: m_VerticalAlignment
       value: 256
       objectReference: {fileID: 0}
@@ -230,7 +235,7 @@ PrefabInstance:
     - target: {fileID: 5636950942706047723, guid: 43213c0d9da6598419b9ca4462307a49,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 484
+      value: 576
       objectReference: {fileID: 0}
     - target: {fileID: 5636950942706047723, guid: 43213c0d9da6598419b9ca4462307a49,
         type: 3}
@@ -260,7 +265,7 @@ PrefabInstance:
     - target: {fileID: 9170095203217047590, guid: 43213c0d9da6598419b9ca4462307a49,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -53
+      value: -27
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -568,6 +573,8 @@ MonoBehaviour:
     not even here to say hello. Or, like, offer me mac\u2019n\u2019cheese or something.
     It\u2019s the least he could do after I was deprived of a proper bathroom for
     four hours."
+  - sound:DoorClose
+  - delay:4
   - "dialogue:Jesus, it\u2019s a mess in here. Percy? Percy, hello? You here?"
   dialogueLine: 
   dialoguePanel: {fileID: 688371013}

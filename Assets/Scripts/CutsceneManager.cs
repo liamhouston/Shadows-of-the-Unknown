@@ -83,13 +83,12 @@ public class CutsceneManager : MonoBehaviour
                 StartCoroutine(Typing(secondsOnScreen));
             }
             else{
-                Debug.Log("comparing " + command.Substring(0, command.IndexOf(delimiter)) + " with delay");
+                throw new Exception("Invalid command at index " + commandIndex.ToString());
             }
         }
     }
 
     private IEnumerator enterDelay(float seconds){
-        Debug.Log("entering a delay of " + seconds.ToString() + " seconds");
         yield return new WaitForSeconds(seconds);
         lastCommandFinished = true;
     }
@@ -107,7 +106,6 @@ public class CutsceneManager : MonoBehaviour
         {
             yield return new WaitForSeconds(secondsOnScreen);
         }
-        dialoguePanel.SetActive(false);
         _isTyping = false;
         lastCommandFinished = true;
     }
