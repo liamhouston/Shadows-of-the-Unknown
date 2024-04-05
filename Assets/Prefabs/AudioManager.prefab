@@ -401,7 +401,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: b51ec63013a38054da4b0ed9bb186482, type: 3}
   - groupID: MajorClue
     clips:
-    - {fileID: 8300000, guid: eff339cb3e1576444a989996a75a49ff, type: 3}
+    - {fileID: 8300000, guid: c7099fde50122da4281513cbb3cfd7cd, type: 3}
   - groupID: BusArrival
     clips:
     - {fileID: 8300000, guid: ddaab7479a94a6f408cff873b25346da, type: 3}

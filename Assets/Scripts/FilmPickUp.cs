@@ -15,6 +15,7 @@ public class FilmPickUp : MonoBehaviour
     void Start()
     {
         exitButton.gameObject.SetActive(false);
+        InputManager.PlayerInput.actions.FindAction("RightClick").Disable();
     }
 
     // Update is called once per frame
@@ -25,6 +26,7 @@ public class FilmPickUp : MonoBehaviour
             exitButton.gameObject.SetActive(true);
             exitButton.interactable = true; 
             film.SetActive(false); // make film invisible
+            InputManager.PlayerInput.actions.FindAction("RightClick").Enable();
             SoundManager.Instance.PlaySound2D("MajorClue");
         }
     }
