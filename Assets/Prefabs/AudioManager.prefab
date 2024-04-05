@@ -374,7 +374,7 @@ MonoBehaviour:
   - groupID: Heartbeating
     clips:
     - {fileID: 8300000, guid: e062608c6b4eaf04294d8272a5177ab1, type: 3}
-    - {fileID: 8300000, guid: d776de5702e7afb44bf40723e218db4f, type: 3}
+    - {fileID: 8300000, guid: 65a6e0b42d520ee4c86576623ac5b3b1, type: 3}
   - groupID: ScaryAmbientWind
     clips:
     - {fileID: 8300000, guid: 45ac17da59bae60439f76fa8acc3afe3, type: 3}
@@ -402,6 +402,9 @@ MonoBehaviour:
   - groupID: MajorClue
     clips:
     - {fileID: 8300000, guid: c7099fde50122da4281513cbb3cfd7cd, type: 3}
+  - groupID: BusArrival
+    clips:
+    - {fileID: 8300000, guid: ddaab7479a94a6f408cff873b25346da, type: 3}
 --- !u!1 &4063165185422374783
 GameObject:
   m_ObjectHideFlags: 0
