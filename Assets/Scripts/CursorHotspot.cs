@@ -21,16 +21,14 @@ public class CursorHotspot : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
-           
         if (other.CompareTag("Mouse"))
         {
-            
             CursorManager.Instance.SetClickableCursor();
             if (_light)
             {
                 _light.intensity = TargetingIntensity;
             }
+            SoundManager.Instance.PlaySound2D("Hover");
         }
     }
 

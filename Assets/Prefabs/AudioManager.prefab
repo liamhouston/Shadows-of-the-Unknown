@@ -414,6 +414,12 @@ MonoBehaviour:
   - groupID: KeyInDoor
     clips:
     - {fileID: 8300000, guid: 6fe223ba3db84294ca4e2c1be60b2c37, type: 3}
+  - groupID: DoorClose
+    clips:
+    - {fileID: 8300000, guid: bfbe308211de28b4cb170e207895a138, type: 3}
+  - groupID: Hover
+    clips:
+    - {fileID: 8300000, guid: 84c65a5c5528b1c43a7cea1799b457bd, type: 3}
 --- !u!1 &4063165185422374783
 GameObject:
   m_ObjectHideFlags: 0
