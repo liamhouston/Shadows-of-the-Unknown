@@ -32,6 +32,14 @@ public class SoundManager : MonoBehaviour
         sfx2DSource.volume = volume;
     }
 
+    public bool DoesSoundExist(string soundName){
+        if (sfxLibrary.GetClipFromName(soundName) == null){
+            return false;
+        }
+        else 
+            return true;
+    }
+
     public void PlaySound3D(string soundName, Vector3 pos)
     {
         PlaySound3D(sfxLibrary.GetClipFromName(soundName), pos);

@@ -16,14 +16,17 @@ public class MainMenu : MonoBehaviour
         Scene activeScene = SceneManager.GetActiveScene();
         string sceneName = activeScene.name;
         MusicManager.Instance.PlayMusic(sceneName); 
-
-        // PlayerPrefs.SetInt("IsCameraPickedUp", 0); // player has not picked up camera yet
     }
 
     public void Play()
     {
-        LevelManager.Instance.LoadScene("Bedroom", "CrossFade");
-        // MusicManager.Instance.PlayMusic("Bedroom");
+        if (PlayerPrefs.GetInt("Bedroom") == 1){
+            LevelManager.Instance.LoadScene("Bedroom", "CrossFade");
+        }
+        else {
+            // Load intro cutscene if player hasn't been to bedroom
+            LevelManager.Instance.LoadScene("IntroCutscene", "CrossFade");
+        }
     }
 
     public void Quit()
