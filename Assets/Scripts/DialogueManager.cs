@@ -31,8 +31,13 @@ public class DialogueManager : MonoBehaviour
     private string[] dialogue;
     private bool stopTyping = false;
     private bool _isTyping = false;
+    private bool _playingAudio = false;
     private float secondsOnScreen;
 
+    [Header("Talking Clips")]
+    public AudioClip[] talkingClips;
+    private int clip_index = 0;
+    private AudioSource talkingSource;
 
 
     private void Awake()
@@ -51,6 +56,8 @@ public class DialogueManager : MonoBehaviour
     public void Start()
     {
         dialoguePanel.SetActive(false);
+        _playingAudio = false;
+        talkingSource = GetComponentInChildren<AudioSource>();
 
         // string currentSceneName = SceneManager.GetActiveScene().name;
 
@@ -65,6 +72,22 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
+        // play talking sound if typing
+        if (talkingClips.Length != 0){
+            if (_isTyping && !_playingAudio){
+                _playingAudio = true;
+                talkingSource.clip = talkingClips[clip_index];
+                clip_index = (clip_index + 1) % talkingClips.Length;
+                talkingSource.loop = true;
+                talkingSource.Play();
+            }
+            // stop audio when not typing
+            if (!_isTyping && _playingAudio){
+                _playingAudio = false;
+                talkingSource.Stop();
+            }
+        }
+
         if (dialoguePanel.activeSelf)
         {
             if (_isTyping == true && InputManager.Instance.ClickInput)

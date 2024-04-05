@@ -419,6 +419,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: soundEffects.Array.size
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: soundEffects.Array.data[15].groupID
+      value: TextboxTalk
+      objectReference: {fileID: 0}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: soundEffects.Array.data[15].clips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: soundEffects.Array.data[15].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: a6d46d1c4ce8b614caf52c5dbca5d07f, type: 3}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: soundEffects.Array.data[15].clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: c0cffd00445136242bc04ce47b68f8d6, type: 3}
     - target: {fileID: 4063165185107553854, guid: af9a69f8dd886d24eb9e61c08dabedba,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -804,38 +829,6 @@ PrefabInstance:
       propertyPath: dialoguePanel
       value: 
       objectReference: {fileID: 3810702705813138433}
-    - target: {fileID: 2507012110022052003, guid: da8beea927f05cc47af30a82ff21709d,
-        type: 3}
-      propertyPath: openingDialogue.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2507012110022052003, guid: da8beea927f05cc47af30a82ff21709d,
-        type: 3}
-      propertyPath: openingDialogueCharacterName
-      value: Jay
-      objectReference: {fileID: 0}
-    - target: {fileID: 2507012110022052003, guid: da8beea927f05cc47af30a82ff21709d,
-        type: 3}
-      propertyPath: openingDialogue.Array.data[0]
-      value: "God. Classic Percy, fucking off for the day. Just great\u2026 Eugh."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2507012110022052003, guid: da8beea927f05cc47af30a82ff21709d,
-        type: 3}
-      propertyPath: openingDialogue.Array.data[1]
-      value: His room at home was just this messy too.
-      objectReference: {fileID: 0}
-    - target: {fileID: 2507012110022052003, guid: da8beea927f05cc47af30a82ff21709d,
-        type: 3}
-      propertyPath: openingDialogue.Array.data[2]
-      value: To be honest, I think half the reason he moved out was to get Dad off
-        his back about picking up his disgusting PopTart dishes.
-      objectReference: {fileID: 0}
-    - target: {fileID: 2507012110022052003, guid: da8beea927f05cc47af30a82ff21709d,
-        type: 3}
-      propertyPath: openingDialogue.Array.data[3]
-      value: Anyways, I think it's A to move left and D to move right-- or something
-        like that.
-      objectReference: {fileID: 0}
     - target: {fileID: 3589434304751965755, guid: da8beea927f05cc47af30a82ff21709d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2872,7 +2865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.4117647}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3932,6 +3925,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TutorialBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 335588703423681504, guid: 807662a1b5c81084f98c536ea6f47b2c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2925955298678087895, guid: 807662a1b5c81084f98c536ea6f47b2c,
         type: 3}
