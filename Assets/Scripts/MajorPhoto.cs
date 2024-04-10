@@ -23,8 +23,8 @@ public class MajorPhoto : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             PlayerPrefs.SetInt("Fishshop", 0);
 
             print("MajorPhoto script is running");
-            print("current scene: "+SceneManager.GetActiveScene().name);
-            print("MotelPosterPuzzle: "+PlayerPrefs.GetInt("MotelPosterPuzzle"));
+            print("current scene: " + SceneManager.GetActiveScene().name);
+            print("MotelPosterPuzzle: " + PlayerPrefs.GetInt("MotelPosterPuzzle"));
 
 
 
