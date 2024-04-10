@@ -15,20 +15,21 @@ public class CameraFlash : MonoBehaviour
     void Start()
     {
         flashLight.SetActive(false);
+        SoundManager.Instance.PreloadSound("CameraFlash");
     }
     void Update()
     {
         if (InputManager.Instance.RightClickInput && readyFlash){
             readyFlash = false;
+            SoundManager.Instance.PlaySound2D("CameraFlash");
             StartCoroutine(WaitForFlash());
         }
     }
     
     private IEnumerator WaitForFlash()
     {
-        yield return new WaitForSeconds(flashDelay);
-        SoundManager.Instance.PlaySound2D("CameraFlash");
         flashLight.transform.position = this.transform.position;
+        yield return new WaitForSeconds(flashDelay);
         flashLight.SetActive(true);
         yield return new WaitForSeconds(flashLength);
 

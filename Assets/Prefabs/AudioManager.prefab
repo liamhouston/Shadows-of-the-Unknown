@@ -337,6 +337,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 0dc4035b20dddac46a4f8954d223fd52, type: 3}
   - trackName: Darkroom
     clip: {fileID: 8300000, guid: d03b42bfa6ac1744dbf8542590ed8742, type: 3}
+  - trackName: MotelPoster
+    clip: {fileID: 8300000, guid: 195135253411bdf4aae09c61a27346ce, type: 3}
 --- !u!114 &4063165185107553850
 MonoBehaviour:
   m_ObjectHideFlags: 0

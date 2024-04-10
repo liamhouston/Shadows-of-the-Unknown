@@ -5,6 +5,7 @@ using UnityEngine;
 public class Fishdockinfo : MonoBehaviour
 {
     private const string _lastHorizontal = "LastHorizontal";
+    public GameObject MotelPoster;
     private void Start()
     {
         TryGetComponent(out Animator _playerAnimator);
@@ -22,6 +23,15 @@ public class Fishdockinfo : MonoBehaviour
                 // _playerAnimator.SetFloat(_lastHorizontal, -1);
                 // _playerAnimator.SetFloat("LastHorizontal", 1);
             }
+            else if (PlayerPrefs.GetString("FromScene") == "MotelPoster")
+            {
+                this.transform.position = new Vector3(118.6f, -6.4f, 0f);
+            }
+        }
+
+        if (PlayerPrefs.GetInt("MotelPosterPuzzle") == 1)
+        {
+            MotelPoster.GetComponent<Collider2D>().enabled = false;
         }
     }
 }

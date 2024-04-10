@@ -2046,7 +2046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9564f3308b835274689e2f4aab0f6e17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashDelay: 0.5
+  flashDelay: 0.6
   flashLength: 0.1
   afterFlashDelay: 3
   flashLight: {fileID: 455791522}
