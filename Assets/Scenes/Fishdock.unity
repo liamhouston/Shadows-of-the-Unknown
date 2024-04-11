@@ -762,7 +762,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191618402}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
@@ -1283,7 +1283,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 553436249}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
@@ -3324,7 +3324,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1548179246}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
@@ -3418,22 +3418,13 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 2
+  m_EdgeRadius: 3
   m_Points:
-  - {x: -12.635361, y: -1.7795238}
-  - {x: -2.8903198, y: 1.21941}
-  - {x: -2.9152756, y: 7.260815}
-  - {x: -5.611328, y: 9.074952}
-  - {x: -18.733276, y: 9.974327}
-  - {x: -18.799026, y: 4.2727222}
-  - {x: -14.1341095, y: 6.3777223}
-  - {x: -15.729172, y: 7.3030224}
-  - {x: -13.148712, y: 7.0857224}
-  - {x: -11.658646, y: 7.790657}
-  - {x: -6.1257935, y: 6.060678}
-  - {x: -6.66864, y: 3.3138204}
-  - {x: -9.953598, y: 1.5839448}
-  - {x: -10.251312, y: 5.0666986}
+  - {x: -15.406586, y: 8.33552}
+  - {x: -8.979584, y: 8.354265}
+  - {x: -8.581299, y: -0.15787363}
+  - {x: -4.9837646, y: 1.5226655}
+  - {x: -4.4283066, y: 8.943953}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
