@@ -1276,7 +1276,7 @@ MonoBehaviour:
   m_LightType: 1
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 0.5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -1870,9 +1870,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9564f3308b835274689e2f4aab0f6e17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashDelay: 0.35
+  flashDelay: 0.6
   flashLength: 0.1
-  afterFlashDelay: 3
+  afterFlashDelay: 2
   flashLight: {fileID: 2072202576}
 --- !u!50 &1286262213
 Rigidbody2D:
