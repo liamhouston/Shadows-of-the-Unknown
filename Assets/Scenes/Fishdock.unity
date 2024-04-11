@@ -2665,7 +2665,7 @@ Transform:
   m_GameObject: {fileID: 1226332784}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 91.69533, y: -0.8844118, z: -3.2399998}
+  m_LocalPosition: {x: 91.69525, y: -0.86817074, z: -3.2399998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5466,7 +5466,7 @@ PrefabInstance:
     - target: {fileID: 2507012110022052003, guid: da8beea927f05cc47af30a82ff21709d,
         type: 3}
       propertyPath: openingDialogue.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2507012110022052003, guid: da8beea927f05cc47af30a82ff21709d,
         type: 3}
@@ -5476,7 +5476,8 @@ PrefabInstance:
     - target: {fileID: 2507012110022052003, guid: da8beea927f05cc47af30a82ff21709d,
         type: 3}
       propertyPath: openingDialogue.Array.data[0]
-      value: 
+      value: I should look around and see if Percy's haunting any of the spots he
+        mentioned. Maybe I can take this camera for a spin...
       objectReference: {fileID: 0}
     - target: {fileID: 3589434304751965755, guid: da8beea927f05cc47af30a82ff21709d,
         type: 3}

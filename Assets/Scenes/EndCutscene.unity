@@ -569,7 +569,7 @@ MonoBehaviour:
   - delay:1
   - sound:Breathing
   - sound:Sizzle
-  - "dialogue:\u2018Ow, ouch, oh god. The camera\u2014please help me\u2014"
+  - "dialogue:Ow, ouch, oh god. The camera\u2014please help me\u2014"
   - sound:Breathing
   - delay:3
   dialogueLine: 

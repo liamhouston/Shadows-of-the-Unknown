@@ -2324,7 +2324,7 @@ PrefabInstance:
     - target: {fileID: 2507012110022052003, guid: da8beea927f05cc47af30a82ff21709d,
         type: 3}
       propertyPath: openingDialogue.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2507012110022052003, guid: da8beea927f05cc47af30a82ff21709d,
         type: 3}
@@ -2339,8 +2339,8 @@ PrefabInstance:
     - target: {fileID: 2507012110022052003, guid: da8beea927f05cc47af30a82ff21709d,
         type: 3}
       propertyPath: openingDialogue.Array.data[0]
-      value: I-- I remember Percy talking about a secret darkroom to develop his
-        pictures.
+      value: Okay, found it. I should develop these photos. I think it should help
+        me figure out whatever Percy was working on.
       objectReference: {fileID: 0}
     - target: {fileID: 2507012110022052003, guid: da8beea927f05cc47af30a82ff21709d,
         type: 3}
