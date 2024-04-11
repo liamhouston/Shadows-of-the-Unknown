@@ -561,16 +561,9 @@ MonoBehaviour:
   cutsceneCommands:
   - sound:EndCutscene
   - delay:1
-  - sound:Breathing
   - "dialogue:Oh, god, Percy. Percy! Where are you? Where is\u2014"
-  - sound:Sizzle
-  - delay:0.5
-  - sound:Breathing
   - delay:1
-  - sound:Breathing
-  - sound:Sizzle
   - "dialogue:Ow, ouch, oh god. The camera\u2014please help me\u2014"
-  - sound:Breathing
   - delay:3
   dialogueLine: 
   dialoguePanel: {fileID: 688371013}
@@ -834,6 +827,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: soundEffects.Array.data[16].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9f42ac0a20048b040b51734fb9c8e8d6, type: 3}
     - target: {fileID: 4063165185107553854, guid: af9a69f8dd886d24eb9e61c08dabedba,
         type: 3}
       propertyPath: m_RootOrder
