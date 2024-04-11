@@ -92,7 +92,7 @@ public class Fishdockinfo : MonoBehaviour
         // Change the color of the lights if the player has already solved the puzzle from old scenes
         if (PlayerPrefs.GetInt("StorePuzzle") == 1)
         {
-            Campsite.GetComponent<Light2D>().color = new Color(255f/255f, 255f/255f, 255f/255f);
+            Store.GetComponent<Light2D>().color = new Color(255f/255f, 255f/255f, 255f/255f);
         }
         if (PlayerPrefs.GetInt("CampsitePuzzle") == 1)
         {

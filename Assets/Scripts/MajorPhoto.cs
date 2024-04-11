@@ -15,16 +15,16 @@ public class MajorPhoto : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         if (true)
         {
-            PlayerPrefs.SetInt("MotelPosterPuzzle", 0); // for testing
-            PlayerPrefs.SetInt("MotelPoster", 0);
-            PlayerPrefs.SetInt("PercyCamPuzzle", 0); // for testing
-            PlayerPrefs.SetInt("PercyCam", 0);
-            PlayerPrefs.SetInt("FishshopPuzzle", 0); // for testing
-            PlayerPrefs.SetInt("Fishshop", 0);
+            // PlayerPrefs.SetInt("MotelPosterPuzzle", 0); // for testing
+            // PlayerPrefs.SetInt("MotelPoster", 0);
+            // PlayerPrefs.SetInt("PercyCamPuzzle", 0); // for testing
+            // PlayerPrefs.SetInt("PercyCam", 0);
+            // PlayerPrefs.SetInt("FishshopPuzzle", 0); // for testing
+            // PlayerPrefs.SetInt("Fishshop", 0);
 
             print("MajorPhoto script is running");
-            print("current scene: " + SceneManager.GetActiveScene().name);
-            print("MotelPosterPuzzle: " + PlayerPrefs.GetInt("MotelPosterPuzzle"));
+            // print("current scene: " + SceneManager.GetActiveScene().name);
+            // print("MotelPosterPuzzle: " + PlayerPrefs.GetInt("MotelPosterPuzzle"));
 
 
 
