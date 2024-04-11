@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering.Universal;
 
 
 public class PuzzleObject : MonoBehaviour
@@ -44,6 +45,8 @@ public class PuzzleObject : MonoBehaviour
             puzzlePanel.SetActive(false);
             InputManager.PlayerInput.actions.FindAction("Move").Enable();
             CursorManager.Instance.MouseColliderSwitch();
+            TryGetComponent(out Light2D trashcanLight);
+            trashcanLight.color = new Color(255f/255f, 255f/255f, 255f/255f);
 
         }
         // check for puzzle completion

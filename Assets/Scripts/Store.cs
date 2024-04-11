@@ -9,11 +9,20 @@ public class Store : MonoBehaviour
     public GameObject xbutton;
     private void Start()
     {
-        if (PlayerPrefs.GetInt("CampsitePuzzle") == 1)
+        if (PlayerPrefs.GetInt("StorePuzzle") == 1)
         {
             TryGetComponent(out Collider2D storeCollider);
             storeCollider.enabled = false;
             xbutton.SetActive(true);
+        }
+    }
+
+    private void Update()
+    {
+        if (PlayerPrefs.GetInt("StorePuzzle") == 1)
+        {
+            TryGetComponent(out Collider2D storeCollider);
+            storeCollider.enabled = false;
         }
     }
 }
