@@ -7,10 +7,31 @@ public class BedroomInfo : MonoBehaviour
     // private int _bedroomPuzzle;
     // private int _tookCamera;
     private const string _lastHorizontal = "LastHorizontal";
+    // private void Awake()
+    // {
+    //     PlayerPrefs.SetInt("Bedroom", 0);
+    //     PlayerPrefs.SetInt("BedroomCam", 0); // player has camera?
+    //     PlayerPrefs.SetInt("Fishdock", 0);
+    //     PlayerPrefs.SetInt("Campsite", 0);
+    //     PlayerPrefs.SetInt("Store", 0);
+    //     PlayerPrefs.SetInt("Darkroom", 0);
+    //     PlayerPrefs.SetString("FromScene", "");
+        
+    //     PlayerPrefs.SetInt("BedroomPuzzle", 0); // player did the puzzle from the trash can?
+    //     PlayerPrefs.SetInt("StorePuzzle", 0);   // player took the pic from store?
+    //     PlayerPrefs.SetInt("CampsitePuzzle", 0);    // player took the pic from campsite?
+    //     PlayerPrefs.SetInt("DarkroomPuzzle", 0);    // player did the puzzle from darkroom?
+    //     PlayerPrefs.SetInt("LeaveBedroom", 0);    // player did the puzzle from fishdock?
+
+    //     PlayerPrefs.SetInt("MotelPosterPuzzle", 0); // for testing
+    //     PlayerPrefs.SetInt("MotelPoster", 0);
+    //     PlayerPrefs.SetInt("PercyCamPuzzle", 0); // for testing
+    //     PlayerPrefs.SetInt("PercyCam", 0);
+    //     PlayerPrefs.SetInt("FishshopPuzzle", 0); // for testing
+    //     PlayerPrefs.SetInt("Fishshop", 0);
+    // }
     private void Start()
     {
-        // _bedroomPuzzle = PlayerPrefs.GetInt("BedroomPuzzle");
-        // _tookCamera = PlayerPrefs.GetInt("BedroomCam");
         TryGetComponent(out Animator _playerAnimator);
         _playerAnimator.SetFloat(_lastHorizontal, -1);
         if (PlayerPrefs.HasKey("FromScene"))
@@ -27,17 +48,5 @@ public class BedroomInfo : MonoBehaviour
                 _playerAnimator.SetFloat("LastHorizontal", 1);
             }
         }
-        // while (_bedroomPuzzle == 1 || _tookCamera == 1)
-        // {
-        //     _bedroomPuzzle = PlayerPrefs.GetInt("BedroomPuzzle");
-        //     _tookCamera = PlayerPrefs.GetInt("BedroomCam");
-        //     if (_bedroomPuzzle == 1 && _tookCamera == 1)
-        //     {
-                
-        //         string[] leavingBedroom = {"I don't like you"};  
-        //         DialogueManager.Instance.playBlockingDialogue("Jay", leavingBedroom);
-        //         break;
-        //     }
-        // }
     }
 }
