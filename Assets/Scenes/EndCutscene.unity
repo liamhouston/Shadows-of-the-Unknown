@@ -560,21 +560,23 @@ MonoBehaviour:
   nextScene: MainMenu
   cutsceneCommands:
   - sound:EndCutscene
-  - delay:3
+  - delay:1
+  - sound:Breathing
   - "dialogue:Oh, god, Percy. Percy! Where are you? Where is\u2014"
   - sound:Sizzle
   - delay:0.5
   - sound:Breathing
   - delay:1
-  - sound:Sizzle
   - sound:Breathing
+  - sound:Sizzle
   - "dialogue:\u2018Ow, ouch, oh god. The camera\u2014please help me\u2014"
   - sound:Breathing
+  - delay:3
   dialogueLine: 
   dialoguePanel: {fileID: 688371013}
   dialogueText: {fileID: 1191759040}
   wordSpeed: 0.04
-  secondsOnScreen: 3
+  secondsOnScreen: 1
 --- !u!4 &1360177406
 Transform:
   m_ObjectHideFlags: 0
@@ -832,31 +834,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
-    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
-        type: 3}
-      propertyPath: soundEffects.Array.size
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
-        type: 3}
-      propertyPath: soundEffects.Array.data[17].groupID
-      value: Sizzle
-      objectReference: {fileID: 0}
-    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
-        type: 3}
-      propertyPath: soundEffects.Array.data[18].groupID
-      value: Breathing
-      objectReference: {fileID: 0}
-    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
-        type: 3}
-      propertyPath: soundEffects.Array.data[18].clips.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
-        type: 3}
-      propertyPath: soundEffects.Array.data[18].clips.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: e062608c6b4eaf04294d8272a5177ab1, type: 3}
     - target: {fileID: 4063165185107553854, guid: af9a69f8dd886d24eb9e61c08dabedba,
         type: 3}
       propertyPath: m_RootOrder

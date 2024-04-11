@@ -427,10 +427,13 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 237e04a55e2e2964e95ba5e8017e9780, type: 3}
   - groupID: EndCutscene
     clips:
-    - {fileID: 8300000, guid: ca79ccd39bf6fb748bf29dfa4c6c1ac1, type: 3}
-  - groupID: sizzle
+    - {fileID: 8300000, guid: de1d5d484fc3d8945a3d1051f61a4bc5, type: 3}
+  - groupID: Sizzle
     clips:
     - {fileID: 8300000, guid: 03a87f1c19c128d499e5c89b376cad22, type: 3}
+  - groupID: Breathing
+    clips:
+    - {fileID: 8300000, guid: e062608c6b4eaf04294d8272a5177ab1, type: 3}
 --- !u!1 &4063165185422374783
 GameObject:
   m_ObjectHideFlags: 0
