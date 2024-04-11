@@ -422,6 +422,9 @@ MonoBehaviour:
   - groupID: Hover
     clips:
     - {fileID: 8300000, guid: 84c65a5c5528b1c43a7cea1799b457bd, type: 3}
+  - groupID: DarkroomOpen
+    clips:
+    - {fileID: 8300000, guid: 237e04a55e2e2964e95ba5e8017e9780, type: 3}
 --- !u!1 &4063165185422374783
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,6 +21,10 @@ public class DarkroomTriggerCheck : MonoBehaviour
         int puzzle4 = PlayerPrefs.GetInt("FishshopPuzzle");
         int puzzle5 = PlayerPrefs.GetInt("PercyCamPuzzle");
         int puzzle6 = PlayerPrefs.GetInt("MotelPosterPuzzle");
+
+        SoundManager.Instance.PreloadSound("DarkroomOpen");
+
+        // check the condition to open Darkroom
         if (puzzle1 == 1 && puzzle2 == 1 && puzzle3 == 1 && puzzle4 == 1 && puzzle5 == 1 && puzzle6 == 1)
         {
             TryGetComponent(out SpriteRenderer openDoor);
@@ -29,6 +33,7 @@ public class DarkroomTriggerCheck : MonoBehaviour
             redLight.enabled = true;
             collider.enabled = true;
             openDoor.enabled = true;
+            SoundManager.Instance.PlaySound2D("DarkroomOpen");
         }
     }
 }
