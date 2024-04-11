@@ -2,9 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class RespondToDarkRoomPuzzle : MonoBehaviour
 {
+    [Header ("Camera Shake Info")]
+    [SerializeField] private float max_amplitude;
+    [SerializeField] private float max_frequency;
+    [SerializeField] private CinemachineVirtualCamera CinemachineVirtualCamera;
+
+    private float num_correct_pieces = 0;
+    private bool startedCutscene = false;
+
+    void Update(){
+        // if player has solved a new piece. increase shake and play breathing
+        if (num_correct_pieces != PuzzleObject.Instance.GetNumCorrectPieces()){
+            num_correct_pieces = PuzzleObject.Instance.GetNumCorrectPieces();
+
+            CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = CinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+            cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = (num_correct_pieces / PuzzleObject.Instance.GetNumPieces()) * max_amplitude;
+            cinemachineBasicMultiChannelPerlin.m_FrequencyGain = (num_correct_pieces / PuzzleObject.Instance.GetNumPieces()) * max_frequency;
+
+            SoundManager.Instance.PlaySound2D("Heartbeating");
+        }
+
+        // if the puzzle is complete and not loaded cutscene yet
+        if (!startedCutscene && PuzzleObject.Instance.puzzleComplete){
+            startedCutscene = true;
+
+            StartCoroutine(LoadCutsceneAfterSeconds(1));
+        }
+    }
+
+    private IEnumerator LoadCutsceneAfterSeconds(float seconds){
+        yield return new WaitForSeconds(seconds);
+        // load cutscene
+        LevelManager.Instance.LoadScene("EndCutscene", "CrossFade");
+    }
+    /*
     public string[] puzzleCompletionDialogue;
     private bool puzzleCompletionDialoguePlayed;
 
@@ -76,4 +111,5 @@ public class RespondToDarkRoomPuzzle : MonoBehaviour
         // load main menu
         LevelManager.Instance.LoadScene("MainMenu", "CrossFade");
     }
+    */
 }

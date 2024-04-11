@@ -7,7 +7,9 @@ using TMPro;
 public class CutsceneManager : MonoBehaviour
 {
     [Header ("Cutscene Commands (sound OR delay OR dialogue)")]
+    public string nextScene;
     public string[] cutsceneCommands;
+    
 
     private string delimiter = ":";
     private bool lastCommandFinished;
@@ -36,7 +38,7 @@ public class CutsceneManager : MonoBehaviour
     {
         // if executed all commands
         if (lastCommandFinished  && commandIndex + 1 >= cutsceneCommands.Length){
-            LevelManager.Instance.LoadScene("Bedroom", "CrossFade");
+            LevelManager.Instance.LoadScene(nextScene, "CrossFade");
             lastCommandFinished = false; // prevent any more execution
         }
         // if there's more commands to play

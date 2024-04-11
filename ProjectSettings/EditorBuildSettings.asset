@@ -38,6 +38,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fishshop.unity
     guid: 34f2ef41f34d34b47b246440e63e441f
+  - enabled: 1
+    path: Assets/Scenes/EndCutscene.unity
+    guid: b29dccbd4a6eddf41a09c730a6c2638f
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9fed1e94b3b0c964cb5ab3bf26cf30bc,
       type: 2}

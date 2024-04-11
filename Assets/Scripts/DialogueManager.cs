@@ -13,7 +13,6 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
 
-    public string openingDialogueCharacterName = "Jay";
     public string[] openingDialogue;
 
     [Header("Character Info")]
@@ -64,7 +63,7 @@ public class DialogueManager : MonoBehaviour
         // // play opening dialogue if this is our first time in the scene
         if (openingDialogue.Length != 0 && PlayerPrefs.GetInt(currentSceneName) == 0)
         {
-            playBlockingDialogue(openingDialogueCharacterName, openingDialogue);
+            playBlockingDialogue("Jay", openingDialogue);
         }
     }
 

@@ -8,23 +8,36 @@ using UnityEngine.SceneManagement;
 
 public class PuzzleObject : MonoBehaviour
 {
+    public static PuzzleObject Instance;
+
     public Canvas canvas;
     public GameObject puzzlePanel;
     public PuzzlePiece[] pieces;
 
 
     private bool playerIsNearby = false;
-    [SerializeField]
-    private bool puzzleComplete = false;
+    public bool puzzleComplete = false;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            // DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         Debug.Assert(puzzlePanel != null);
         puzzlePanel.SetActive(false);
-        string fromScene = SceneManager.GetActiveScene().name + "Puzzle";
-        if (PlayerPrefs.GetInt(fromScene) == 1)
-        {
+        string scenePuzzleName = SceneManager.GetActiveScene().name + "Puzzle";
+        if (PlayerPrefs.GetInt(scenePuzzleName) == 1 && SceneManager.GetActiveScene().name != "Darkroom"){
             TryGetComponent(out Collider2D collider);
             collider.enabled = false;
         }
@@ -64,8 +77,20 @@ public class PuzzleObject : MonoBehaviour
                 SoundManager.Instance.PlaySound2D("PuzzleComplete");
             }
         }
-
     }
+
+    public int GetNumPieces(){
+        return pieces.Length;
+    }
+
+    public int GetNumCorrectPieces(){
+        int num_correct = 0;
+        foreach (PuzzlePiece piece in pieces) {
+                if (piece.inCorrectPosition) num_correct++;
+        }
+        return num_correct;
+    }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {

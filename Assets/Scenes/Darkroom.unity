@@ -932,6 +932,7 @@ GameObject:
   - component: {fileID: 670011306}
   - component: {fileID: 670011308}
   - component: {fileID: 670011307}
+  - component: {fileID: 670011309}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -1009,6 +1010,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &670011309
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670011305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 0
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &715558844
 GameObject:
   m_ObjectHideFlags: 0
@@ -2800,7 +2818,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1413589747
 Transform:
   m_ObjectHideFlags: 0
@@ -2828,17 +2846,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93ffe5cc507e38a4897de06e323605bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzleCompletionDialogue:
-  - "Oh, god, Percy. Percy! Where are you? Where is\u2014"
-  - "Ow, ouch, oh god. The camera\u2014please help me\u2014"
-  puzzlePanel: {fileID: 288660696}
-  BlackoutBox: {fileID: 1931602563}
-  gameOverDialogue:
-  - "Oh, god. I feel\u2014I feel really nauseous. I\u2019m\u2026 "
-  - "This camera is burning my hands. My hands hurt. I need to\u2014I need to leave.
-    I\u2019m gonna leave."
-  - "Percy\u2026 I\u2019ll wait for him at the\u2026"
-  mainMenuLoadDelay: 10
+  max_amplitude: 10
+  max_frequency: 10
+  CinemachineVirtualCamera: {fileID: 1901413363}
 --- !u!1 &1429178493
 GameObject:
   m_ObjectHideFlags: 0
@@ -3077,6 +3087,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4063165185107553852, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: tracks.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d03b42bfa6ac1744dbf8542590ed8742, type: 3}
     - target: {fileID: 4063165185107553854, guid: af9a69f8dd886d24eb9e61c08dabedba,
         type: 3}
       propertyPath: m_LocalPosition.x

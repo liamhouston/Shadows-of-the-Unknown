@@ -557,26 +557,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f0f0ec6073fb4b48b7e5406f18d840d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: Bedroom
+  nextScene: MainMenu
   cutsceneCommands:
-  - sound:BusArrival
-  - delay:12
-  - sound:FootTaps
-  - delay:4
-  - "dialogue:God, that was a long bus drive. Glad I\u2019m here, I guess\u2026 Where
-    did Percy say he put the key?"
-  - sound:PickUpKey
+  - sound:EndCutscene
+  - delay:3
+  - "dialogue:Oh, god, Percy. Percy! Where are you? Where is\u2014"
+  - sound:Sizzle
+  - delay:0.5
+  - sound:Breathing
   - delay:1
-  - sound:KeyInDoor
-  - delay:2
-  - "dialogue:There it is. It\u2019s just like him to not answer the door, huh? I
-    come all this way for spring break, see my dumb older brother, and he\u2019s
-    not even here to say hello. Or, like, offer me mac\u2019n\u2019cheese or something.
-    It\u2019s the least he could do after I was deprived of a proper bathroom for
-    four hours."
-  - sound:DoorClose
-  - delay:4
-  - "dialogue:Jesus, it\u2019s a mess in here. Percy? Percy, hello? You here?"
+  - sound:Sizzle
+  - sound:Breathing
+  - "dialogue:\u2018Ow, ouch, oh god. The camera\u2014please help me\u2014"
+  - sound:Breathing
   dialogueLine: 
   dialoguePanel: {fileID: 688371013}
   dialogueText: {fileID: 1191759040}
@@ -732,7 +725,7 @@ GameObject:
   - component: {fileID: 2131376567}
   - component: {fileID: 2131376566}
   m_Layer: 5
-  m_Name: IntroCutsceneCanvas
+  m_Name: EndCutsceneCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -839,21 +832,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
-    - target: {fileID: 4063165185107553852, guid: af9a69f8dd886d24eb9e61c08dabedba,
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
         type: 3}
-      propertyPath: tracks.Array.data[0].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 9eb5d984ea600aa489eca58fce9d7dda, type: 3}
-    - target: {fileID: 4063165185107553852, guid: af9a69f8dd886d24eb9e61c08dabedba,
-        type: 3}
-      propertyPath: tracks.Array.data[2].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 4a5271cd1fbb32a44a38f4b784935180, type: 3}
-    - target: {fileID: 4063165185107553852, guid: af9a69f8dd886d24eb9e61c08dabedba,
-        type: 3}
-      propertyPath: tracks.Array.data[1].trackName
-      value: Fishdock
+      propertyPath: soundEffects.Array.size
+      value: 19
       objectReference: {fileID: 0}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: soundEffects.Array.data[17].groupID
+      value: Sizzle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: soundEffects.Array.data[18].groupID
+      value: Breathing
+      objectReference: {fileID: 0}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: soundEffects.Array.data[18].clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: soundEffects.Array.data[18].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: e062608c6b4eaf04294d8272a5177ab1, type: 3}
     - target: {fileID: 4063165185107553854, guid: af9a69f8dd886d24eb9e61c08dabedba,
         type: 3}
       propertyPath: m_RootOrder
