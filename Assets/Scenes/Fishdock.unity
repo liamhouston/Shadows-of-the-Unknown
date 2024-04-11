@@ -775,7 +775,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 0000000063c2af28973e9e6f495c713529459ea9
+  m_ApplyToSortingLayers: 00000000973e9e6f495c713529459ea9
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -1044,7 +1044,7 @@ EdgeCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: 2
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1061,15 +1061,20 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 2
+  m_EdgeRadius: 1
   m_Points:
-  - {x: 17.77343, y: 13.550494}
-  - {x: 14.875011, y: 9.310375}
-  - {x: 19.637724, y: 11.312286}
-  - {x: 21.33982, y: 5.5152497}
-  - {x: 24.285555, y: 8.017943}
-  - {x: 25.476322, y: 5.3202524}
-  - {x: 28.498304, y: 6.682948}
+  - {x: 12.508832, y: 10.155523}
+  - {x: 16.770348, y: 6.055031}
+  - {x: 16.856564, y: 10.2621975}
+  - {x: 12.743105, y: 10.513628}
+  - {x: 18.159332, y: 15.180773}
+  - {x: 20.65476, y: 11.069343}
+  - {x: 19.410557, y: 4.836224}
+  - {x: 23.31846, y: 9.441115}
+  - {x: 22.366964, y: 4.315165}
+  - {x: 26.51604, y: 7.887038}
+  - {x: 25.459408, y: 4.285794}
+  - {x: 28.627851, y: 6.989947}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -4112,7 +4117,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.11268616, y: -9.494163}
+  m_Offset: {x: -1.2151031, y: -9.494163}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4123,7 +4128,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.2970886, y: 19.988325}
+  m_Size: {x: 2.0922546, y: 19.988325}
   m_EdgeRadius: 0
 --- !u!114 &1856242976
 MonoBehaviour:
