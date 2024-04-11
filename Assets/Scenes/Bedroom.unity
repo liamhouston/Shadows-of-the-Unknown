@@ -829,6 +829,11 @@ PrefabInstance:
       propertyPath: dialoguePanel
       value: 
       objectReference: {fileID: 3810702705813138433}
+    - target: {fileID: 2507012110022052003, guid: da8beea927f05cc47af30a82ff21709d,
+        type: 3}
+      propertyPath: openingDialogue.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3589434304751965755, guid: da8beea927f05cc47af30a82ff21709d,
         type: 3}
       propertyPath: m_LocalPosition.x

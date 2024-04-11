@@ -46,13 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDialogueCharacterName: Jay
-  openingDialogue:
-  - "God. Classic Percy, fucking off for the day. Just great\u2026 Eugh."
-  - His room at home was just this messy too.
-  - To be honest, I think half the reason he moved out was to get Dad off his back
-    about picking up his disgusting PopTart dishes.
-  - Anyways, I think it's A to move left and D to move right-- or something like
-    that.
+  openingDialogue: []
   characterNames:
   - Jay
   - Mr. D

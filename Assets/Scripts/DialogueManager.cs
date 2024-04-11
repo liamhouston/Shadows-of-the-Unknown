@@ -59,15 +59,13 @@ public class DialogueManager : MonoBehaviour
         _playingAudio = false;
         talkingSource = GetComponentInChildren<AudioSource>();
 
-        // string currentSceneName = SceneManager.GetActiveScene().name;
+        string currentSceneName = SceneManager.GetActiveScene().name;
 
         // // play opening dialogue if this is our first time in the scene
-        // if (openingDialogue.Length != 0)
-        // {
-        //     if (PlayerPrefs.GetInt(currentSceneName) == 0){
-        //         playBlockingDialogue(openingDialogueCharacterName, openingDialogue);
-        //     }
-        // }
+        if (openingDialogue.Length != 0 && PlayerPrefs.GetInt(currentSceneName) == 0)
+        {
+            playBlockingDialogue(openingDialogueCharacterName, openingDialogue);
+        }
     }
 
     private void Update()

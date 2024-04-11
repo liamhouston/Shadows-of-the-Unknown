@@ -511,7 +511,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &288660697
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2305,6 +2305,11 @@ PrefabInstance:
       objectReference: {fileID: 2007866799}
     - target: {fileID: 2507012110022052003, guid: da8beea927f05cc47af30a82ff21709d,
         type: 3}
+      propertyPath: openingDialogue.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507012110022052003, guid: da8beea927f05cc47af30a82ff21709d,
+        type: 3}
       propertyPath: characterProfile.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -2316,18 +2321,19 @@ PrefabInstance:
     - target: {fileID: 2507012110022052003, guid: da8beea927f05cc47af30a82ff21709d,
         type: 3}
       propertyPath: openingDialogue.Array.data[0]
-      value: Ah, Jay. Glad you could make it. I see you have some photos to develop?
+      value: I-- I remember Percy talking about a secret darkroom to develop his
+        pictures.
       objectReference: {fileID: 0}
     - target: {fileID: 2507012110022052003, guid: da8beea927f05cc47af30a82ff21709d,
         type: 3}
       propertyPath: openingDialogue.Array.data[1]
-      value: His room at home was just this messy too.
+      value: But, this place has a creepy aura.
       objectReference: {fileID: 0}
     - target: {fileID: 2507012110022052003, guid: da8beea927f05cc47af30a82ff21709d,
         type: 3}
       propertyPath: openingDialogue.Array.data[2]
-      value: To be honest, I think half the reason he moved out was to get Dad off
-        his back about picking up his disgusting PopTart dishes.
+      value: Anyways, I think it's A to move left and D to move right-- or something
+        like that.
       objectReference: {fileID: 0}
     - target: {fileID: 2507012110022052003, guid: da8beea927f05cc47af30a82ff21709d,
         type: 3}
@@ -2794,7 +2800,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1413589747
 Transform:
   m_ObjectHideFlags: 0
@@ -3185,7 +3191,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1692284754
 Transform:
   m_ObjectHideFlags: 0
