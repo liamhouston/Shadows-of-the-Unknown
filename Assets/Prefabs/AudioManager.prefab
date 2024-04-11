@@ -427,7 +427,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 237e04a55e2e2964e95ba5e8017e9780, type: 3}
   - groupID: EndCutscene
     clips:
-    - {fileID: 8300000, guid: de1d5d484fc3d8945a3d1051f61a4bc5, type: 3}
+    - {fileID: 8300000, guid: 8a36aaa568cf03540bb3accba3a510bc, type: 3}
   - groupID: Sizzle
     clips:
     - {fileID: 8300000, guid: 03a87f1c19c128d499e5c89b376cad22, type: 3}
