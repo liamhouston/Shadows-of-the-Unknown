@@ -9,6 +9,8 @@ public class NextScene : MonoBehaviour
     public string ToScene = "";
     // private const string _lastHorizontal = "LastHorizontal";
     private bool playerIsNearby;
+
+    
     private void Update()
     {
         if (playerIsNearby && InputManager.Instance.ClickInput)

@@ -325,7 +325,7 @@ MonoBehaviour:
   tracks:
   - trackName: MainMenu
     clip: {fileID: 8300000, guid: 9eb5d984ea600aa489eca58fce9d7dda, type: 3}
-  - trackName: Fishdock
+  - trackName: Bedroom
     clip: {fileID: 8300000, guid: 315a552fba6504a46929c788ec4477cd, type: 3}
   - trackName: BedroomCam
     clip: {fileID: 8300000, guid: 4a5271cd1fbb32a44a38f4b784935180, type: 3}
@@ -338,6 +338,8 @@ MonoBehaviour:
   - trackName: Darkroom
     clip: {fileID: 8300000, guid: d03b42bfa6ac1744dbf8542590ed8742, type: 3}
   - trackName: MotelPoster
+    clip: {fileID: 8300000, guid: 195135253411bdf4aae09c61a27346ce, type: 3}
+  - trackName: PercyCam
     clip: {fileID: 8300000, guid: 195135253411bdf4aae09c61a27346ce, type: 3}
 --- !u!114 &4063165185107553850
 MonoBehaviour:
