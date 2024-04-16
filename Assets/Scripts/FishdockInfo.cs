@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.Timeline;
 
 public class Fishdockinfo : MonoBehaviour
 {
@@ -13,6 +14,20 @@ public class Fishdockinfo : MonoBehaviour
     public GameObject Fishshop;
     public GameObject Campsite;
     public GameObject Store;
+
+    public GameObject pannel;
+    public GameObject sign;
+    private float _startTime;
+    private float _elapsedTime;
+    string[] _dialogue = {};
+
+    private int puzzle1;
+    private int puzzle2;
+    private int puzzle3;
+    private int puzzle4;
+    private int puzzle5;
+    private int puzzle6;
+
 
     // private void Awake()
     // {
@@ -47,8 +62,33 @@ public class Fishdockinfo : MonoBehaviour
     // }
     private void Start()
     {
+        // string[] puzzles = new string[] { "BedroomPuzzle", "StorePuzzle", "CampsitePuzzle", "FishshopPuzzle", "PercyCamPuzzle", "MotelPosterPuzzle" };
+        // List<string> unsolvedPuzzles = new List<string>();
+
+        // foreach (string puzzle in puzzles)
+        // {
+        //     if (PlayerPrefs.GetInt(puzzle) == 0)
+        //     {
+        //         unsolvedPuzzles.Add(puzzle);
+        //     }
+        // }
+        // string value = "";
+        // int n = unsolvedPuzzles.Count;
+        // if (n != 0)
+        // {
+        //     int k = Random.Range(0, n-1);
+        //     value = unsolvedPuzzles[k];
+        // }
+        
         TryGetComponent(out Animator _playerAnimator);
         _playerAnimator.SetFloat(_lastHorizontal, -1);
+
+        puzzle1 = PlayerPrefs.GetInt("BedroomPuzzle");
+        puzzle2 = PlayerPrefs.GetInt("StorePuzzle");
+        puzzle3 = PlayerPrefs.GetInt("CampsitePuzzle");
+        puzzle4 = PlayerPrefs.GetInt("FishshopPuzzle");
+        puzzle5 = PlayerPrefs.GetInt("PercyCamPuzzle");
+        puzzle6 = PlayerPrefs.GetInt("MotelPosterPuzzle");
 
         // Depending on the scene the player is coming from, set the player's position
         if (PlayerPrefs.HasKey("FromScene"))
@@ -98,5 +138,34 @@ public class Fishdockinfo : MonoBehaviour
         {
             Campsite.GetComponent<Light2D>().color = new Color(255f/255f, 255f/255f, 255f/255f);
         }
+        if (puzzle1 == 1 && puzzle2 == 1 && puzzle3 == 1 && puzzle4 == 1 && puzzle5 == 1 && puzzle6 == 1)
+        {
+            DialogueManager.Instance.playBlockingDialogue("Jay", new string[] {"What was that?"});
+            MotelPoster.SetActive(false);
+            PercyCam.SetActive(false);
+            Fishshop.SetActive(false);
+            Campsite.SetActive(false);
+            Store.SetActive(false);
+        }
+    }
+    private void Update()
+    {
+        if (puzzle1 == 0 || puzzle2 == 0 || puzzle3 == 0 || puzzle4 == 0 || puzzle5 == 0 || puzzle6 == 0)
+        {
+            if (!DialogueManager.Instance.DialogueIsActive() && pannel.activeSelf == false && sign.activeSelf == false)
+                {
+                    _elapsedTime = Time.time - _startTime;
+                    if (_elapsedTime > 10) // If more than 10 seconds have passed
+                    { 
+                        _dialogue = new string[] {"I still need to check some other place here. Fishdock"};
+                        print("You have been in the campsite for more than 10 seconds");
+                        DialogueManager.Instance.playBlockingDialogue("Jay", _dialogue);
+                        _startTime = Time.time;
+                    }
+                }
+                else _startTime = Time.time;
+        }
     }
 }
+
+    

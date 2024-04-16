@@ -1720,6 +1720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xbutton: {fileID: 1107005346}
+  pannel: {fileID: 1892507397}
 --- !u!1 &745859772
 GameObject:
   m_ObjectHideFlags: 0

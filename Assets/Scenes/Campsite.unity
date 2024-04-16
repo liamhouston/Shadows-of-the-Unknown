@@ -2032,6 +2032,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xbutton: {fileID: 5344586550053374101}
+  sign: {fileID: 16056362}
+  paperclue: {fileID: 1982566907351442447}
+  pannel: {fileID: 6909169462577309869}
 --- !u!850595691 &785221733
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -3800,7 +3803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56be3323f4d682e4fa8d9bed91dec61f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetingIntensity: 0
+  TargetingIntensity: 0.4
 --- !u!1 &1564346495
 GameObject:
   m_ObjectHideFlags: 0

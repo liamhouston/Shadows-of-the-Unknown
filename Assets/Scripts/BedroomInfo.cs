@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class BedroomInfo : MonoBehaviour
 {   
-    // private int _bedroomPuzzle;
-    // private int _tookCamera;
+    private float _startTime;
+    private float _elapsedTime;
+    string[] _dialogue = {};
+    [Header("Puzzle Panel and Note")]
+    public GameObject pannel;
+    public GameObject note;
     private const string _lastHorizontal = "LastHorizontal";
     // private void Awake()
     // {
@@ -32,6 +36,7 @@ public class BedroomInfo : MonoBehaviour
     // }
     private void Start()
     {
+        _startTime = Time.time; // Store the time when the player enters the campsite
         TryGetComponent(out Animator _playerAnimator);
         _playerAnimator.SetFloat(_lastHorizontal, -1);
         if (PlayerPrefs.HasKey("FromScene"))
@@ -47,6 +52,46 @@ public class BedroomInfo : MonoBehaviour
                 // _playerAnimator.SetFloat(_lastHorizontal, -1);
                 _playerAnimator.SetFloat("LastHorizontal", 1);
             }
+        }
+    }
+
+    private void Update()
+    {
+        
+        int roomPuzzle = PlayerPrefs.GetInt("BedroomPuzzle");
+        int camPuzzle = PlayerPrefs.GetInt("BedroomCam");
+        if (roomPuzzle != 1 || camPuzzle != 1)
+        {
+            if (!DialogueManager.Instance.DialogueIsActive() && pannel.activeSelf == false && note.activeSelf == false) 
+            {
+                _elapsedTime = Time.time - _startTime;
+                if (_elapsedTime > 10) // If more than 10 seconds have passed
+                {
+                    
+                    _dialogue = new string[] {"Why do you take this much time? Bedroom"};
+                    print("You have been in the campsite for more than 10 seconds");
+                    DialogueManager.Instance.playBlockingDialogue("Jay", _dialogue);
+                    _startTime = Time.time;
+                }
+            }
+            else _startTime = Time.time;
+
+        }
+        else if (roomPuzzle == 1 && camPuzzle == 1)
+        {
+            if (!DialogueManager.Instance.DialogueIsActive() && pannel.activeSelf == false && note.activeSelf == false) 
+            {
+                _elapsedTime = Time.time - _startTime;
+                if (_elapsedTime > 20) // If more than 10 seconds have passed
+                {
+                    
+                    _dialogue = new string[] {"Gotta find Percy. Bedroom"};
+                    print("You have been in the campsite for more than 20 seconds");
+                    DialogueManager.Instance.playBlockingDialogue("Jay", _dialogue);
+                    _startTime = Time.time;
+                }
+            }
+            else _startTime = Time.time;
         }
     }
 }

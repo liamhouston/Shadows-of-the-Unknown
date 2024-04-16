@@ -762,7 +762,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191618402}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
@@ -4614,6 +4614,8 @@ MonoBehaviour:
   Fishshop: {fileID: 675424301}
   Campsite: {fileID: 1835261802}
   Store: {fileID: 2144769566}
+  pannel: {fileID: 1701177317}
+  sign: {fileID: 2103351143}
 --- !u!1 &2011322880
 GameObject:
   m_ObjectHideFlags: 0
