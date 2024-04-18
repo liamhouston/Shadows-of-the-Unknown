@@ -57,13 +57,27 @@ public class Player : MonoBehaviour
     }
 
     private void Update()
-    {        _movement.Set(InputManager.Instance.MoveInput.x, 0f);
+    {        
+        float direction = InputManager.Instance.MoveInput.x;
+            if (direction > 0)
+            {
+                direction = 1f;
+            }
+            else if (direction < 0) 
+            {
+                direction = -1f;
+            }
 
+        _movement.Set(direction, 0f);
         _rb.velocity = _movement * _moveSpeed;
+
+        
         _animator.SetFloat(_horizontal, _movement.x);
 
         if (_movement != Vector2.zero)
         {
+            
+
             _animator.SetFloat(_lastHorizontal, _movement.x);
             if (!footstepsAudioSource.isPlaying){
                 footstepsAudioSource.Play();
