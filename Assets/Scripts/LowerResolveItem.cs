@@ -31,9 +31,6 @@ public class LowerResolveItem : MonoBehaviour
             // allow the player time to see the item for the first time
             if (playerSeenItem == false) {
                 StartCoroutine(WaitForFirstSight());
-            } 
-            else {
-                SoundManager.Instance.PlaySound2D("Heartbeating");
             }
 
             if (playerSeenItem){                
@@ -44,6 +41,8 @@ public class LowerResolveItem : MonoBehaviour
                 // wait until we can take damage again
                 readyDamage = false;
                 StartCoroutine(WaitForDamage());    
+                SoundManager.Instance.PlaySound2D("Heartbeating");
+                Debug.Log("Playing heartbeating" + Time.deltaTime);
             }
             
         }
@@ -71,7 +70,6 @@ public class LowerResolveItem : MonoBehaviour
         yield return new WaitForSeconds(delayOnFirstSight);
         if (playerIsNearby){
             playerSeenItem = true;
-            SoundManager.Instance.PlaySound2D("Heartbeating");
         }
     }
 }

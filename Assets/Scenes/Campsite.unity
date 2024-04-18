@@ -1901,9 +1901,10 @@ MonoBehaviour:
   exitButton: {fileID: 1772804596646269793}
   playerFoundMajorClue: 0
   dialogue:
-  - "Okay, that\u2019s a relief. I feel less sick now that I\u2019ve taken the photo."
-  - "Hopefully he\u2019s around here somewhere. It\u2019s really not like him to
-    disappear like this. Or just not be\u2026 around."
+  - "So Percy must\u2019ve been using this site as a sorta staging ground for some
+    of his photos."
+  - "It seems like you can see the deer better through the camera\u2026 I wonder
+    why that is?"
 --- !u!114 &781784735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2118,7 +2119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &833725711
 MonoBehaviour:
   m_ObjectHideFlags: 0

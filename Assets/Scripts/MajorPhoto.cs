@@ -114,8 +114,8 @@ public class MajorPhoto : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             if (SceneManager.GetActiveScene().name == "MotelPoster" && PlayerPrefs.GetInt("MotelPosterPuzzle") == 0)
             {
                 PlayerPrefs.SetInt("MotelPosterPuzzle", 1);
-                PosterDialogue = new string[] {"That feels… Better, I think. I really do feel much less sick after I take a photo.", 
-                                            "I can kinda see how Percy got hooked on these things."
+                PosterDialogue = new string[] {"So Percy was using this camera for his work. It’s strange that he’d leave it to me?…",
+                                               "Or maybe the camera wanted to be left to me."
                                             };        
                 SoundManager.Instance.PlaySound2D("MajorClue");
                 DialogueManager.Instance.playBlockingDialogue("Jay", PosterDialogue);
@@ -124,7 +124,7 @@ public class MajorPhoto : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             else if (SceneManager.GetActiveScene().name == "PercyCam" && PlayerPrefs.GetInt("PercyCamPuzzle") == 0)
             {
                 PlayerPrefs.SetInt("PercyCamPuzzle", 1);
-                PosterDialogue = new string[] {"Okay, phew, got it. I'll… Leave it there, I think. Considering the state of his apartment, I don't really want to touch it.", 
+                PosterDialogue = new string[] {"It’s so weird that he’d abandon his other cameras. This one was expensive, too. I suppose when the camera is this good at picking up things, you don’t really need others anymore."
                                             };
                 SoundManager.Instance.PlaySound2D("MajorClue");
                 DialogueManager.Instance.playBlockingDialogue("Jay", PosterDialogue);
@@ -133,7 +133,7 @@ public class MajorPhoto : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             else if (SceneManager.GetActiveScene().name == "Fishshop" && PlayerPrefs.GetInt("FishshopPuzzle") == 0)
             {
                 PlayerPrefs.SetInt("FishshopPuzzle", 1);
-                PosterDialogue = new string[] {"Awesome, snapped. I almost don’t want to put the camera down—I’m getting attached to it."};
+                PosterDialogue = new string[] {"Damn, I don’t think I can get in there. That blows. What was Percy doing in there? And how did he even get in?"};
                 SoundManager.Instance.PlaySound2D("MajorClue");
                 DialogueManager.Instance.playBlockingDialogue("Jay", PosterDialogue);
                 xbutton.SetActive(true);
