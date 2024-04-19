@@ -4510,7 +4510,8 @@ AudioSource:
   m_GameObject: {fileID: 1914666852}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 1540273720642176239, guid: c650268cadc1f84489d5d5ff9c14d070,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 368baa8b96b3dfb499cfff784ec3c371, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -4623,7 +4624,6 @@ MonoBehaviour:
   Fishshop: {fileID: 675424301}
   Campsite: {fileID: 1835261802}
   Store: {fileID: 2144769566}
-  pannel: {fileID: 1701177317}
   sign: {fileID: 2103351143}
 --- !u!1 &2011322880
 GameObject:
@@ -5087,6 +5087,11 @@ PrefabInstance:
     - target: {fileID: 7118937565516194886, guid: 20f997db4c7ccf54994b980664ab2dfe,
         type: 3}
       propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218841505957601178, guid: 20f997db4c7ccf54994b980664ab2dfe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7291016101347097892, guid: 20f997db4c7ccf54994b980664ab2dfe,
