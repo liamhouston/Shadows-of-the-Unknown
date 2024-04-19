@@ -8,12 +8,13 @@ public class Store : MonoBehaviour
     public string hintDialogue;
     public int delay;
     private bool hintPlayed = false;
+    private bool timeAdjust = false;
 
     // if puzzle is done, disable the puzzle
     public GameObject xbutton;
     private float _startTime;
     private float _elapsedTime;
-    public GameObject pannel;
+    // public GameObject pannel;
     string[] _dialogue = {};
     private void Start()
     {
@@ -28,6 +29,8 @@ public class Store : MonoBehaviour
 
     private void Update()
     {
+        bool DialogueIsActive = DialogueManager.Instance.DialogueIsActive();
+        if (!DialogueIsActive) timeAdjust = false;
         if (PlayerPrefs.GetInt("StorePuzzle") == 1)
         {
             TryGetComponent(out Collider2D storeCollider);
@@ -35,18 +38,29 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (!DialogueManager.Instance.DialogueIsActive() && pannel.activeSelf == false) 
+            if (!DialogueIsActive) 
             {
                 _elapsedTime = Time.time - _startTime;
-                if (!DialogueManager.Instance.DialogueIsActive() && pannel.activeSelf == false) {
-                    _elapsedTime = Time.time - _startTime;
-                    if (!hintPlayed && _elapsedTime > delay) {
-                        hintPlayed = true;
-                        DialogueManager.Instance.playBlockingDialogue("Jay", new string[] {hintDialogue});
-                        _startTime = Time.time;
-                    }
+                if (!hintPlayed && _elapsedTime > delay) {
+                    hintPlayed = true;
+                    DialogueManager.Instance.playBlockingDialogue("Jay", new string[] {hintDialogue});
+                    _startTime = Time.time;
                 }
             }
+            else if (!timeAdjust) StartCoroutine(WaitAndAdd());
+        }
+    }
+    private IEnumerator WaitAndAdd()
+    {
+        _startTime = Time.time + _elapsedTime;
+        yield return new WaitUntil(() => !DialogueManager.Instance.DialogueIsActive());
+        if (!DialogueManager.Instance.DialogueIsActive() && !timeAdjust)
+        {
+            timeAdjust = true;
+            _startTime += 5f;
+            StopAllCoroutines();
+            print("time adjusted");
+            
         }
     }
 }

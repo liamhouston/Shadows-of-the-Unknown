@@ -24,10 +24,11 @@ public class Fishdockinfo : MonoBehaviour
     public GameObject Campsite;
     public GameObject Store;
 
-    public GameObject pannel;
+    // public GameObject pannel;
     public GameObject sign;
     private float _startTime;
     private float _elapsedTime;
+    private bool timeAdjust = false;
     string[] _dialogue = {};
 
     private int puzzle1;
@@ -39,24 +40,6 @@ public class Fishdockinfo : MonoBehaviour
 
     private void Start()
     {
-        // string[] puzzles = new string[] { "BedroomPuzzle", "StorePuzzle", "CampsitePuzzle", "FishshopPuzzle", "PercyCamPuzzle", "MotelPosterPuzzle" };
-        // List<string> unsolvedPuzzles = new List<string>();
-
-        // foreach (string puzzle in puzzles)
-        // {
-        //     if (PlayerPrefs.GetInt(puzzle) == 0)
-        //     {
-        //         unsolvedPuzzles.Add(puzzle);
-        //     }
-        // }
-        // string value = "";
-        // int n = unsolvedPuzzles.Count;
-        // if (n != 0)
-        // {
-        //     int k = Random.Range(0, n-1);
-        //     value = unsolvedPuzzles[k];
-        // }
-        
         TryGetComponent(out Animator _playerAnimator);
         _playerAnimator.SetFloat(_lastHorizontal, -1);
 
@@ -129,9 +112,12 @@ public class Fishdockinfo : MonoBehaviour
     }
     private void Update()
     {
+        bool DialogueIsActive = DialogueManager.Instance.DialogueIsActive();
+        if (!DialogueIsActive && !sign.activeSelf) timeAdjust = false;
+
         if (puzzle1 == 0 || puzzle2 == 0 || puzzle3 == 0 || puzzle4 == 0 || puzzle5 == 0 || puzzle6 == 0)
         {
-            if (!DialogueManager.Instance.DialogueIsActive() && pannel.activeSelf == false && sign.activeSelf == false)
+            if (!DialogueIsActive && !sign.activeSelf)
                 {
                     _elapsedTime = Time.time - _startTime;
                     if (_elapsedTime > delay){ // If more than delay seconds have passed since last hint
@@ -158,6 +144,21 @@ public class Fishdockinfo : MonoBehaviour
                         DialogueManager.Instance.playBlockingDialogue("Jay", _dialogue);
                     }
                 }
+            else if (!timeAdjust) StartCoroutine(WaitAndAdd());
+            
+        }
+    }
+
+    private IEnumerator WaitAndAdd()
+    {
+        _startTime = Time.time + _elapsedTime;
+        yield return new WaitUntil(() => !DialogueManager.Instance.DialogueIsActive() && !sign.activeSelf);
+        if (!DialogueManager.Instance.DialogueIsActive() && !sign.activeSelf && !timeAdjust)
+        {
+            timeAdjust = true;
+            _startTime += 5f;
+            StopAllCoroutines();
+            print("time adjusted");
         }
     }
 }

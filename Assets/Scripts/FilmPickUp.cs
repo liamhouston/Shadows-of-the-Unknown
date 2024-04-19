@@ -14,10 +14,11 @@ public class FilmPickUp : MonoBehaviour
     private bool hintDialoguePlayed = false;
     private float _startTime;
     private float _elapsedTime;
+    
+    private bool timeAdjust = false;
 
     private bool playerIsNearby = false;
     public bool playerFoundMajorClue = false;
-    string[] BedroomCamdialogue = {};
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,8 @@ public class FilmPickUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bool DialogueIsActive = DialogueManager.Instance.DialogueIsActive();
+        if (!DialogueIsActive) timeAdjust = false;
         // play hint dialogue
         if (!playerFoundMajorClue)
         {
@@ -42,6 +45,7 @@ public class FilmPickUp : MonoBehaviour
                     _startTime = Time.time;
                 }
             }
+            else if (!timeAdjust) StartCoroutine(WaitAndAdd());
         }
 
         // pick up film
@@ -55,6 +59,19 @@ public class FilmPickUp : MonoBehaviour
             SoundManager.Instance.PlaySound2D("MajorClue");
             
             DialogueManager.Instance.playBlockingDialogue("Jay", pickUpDialogue);
+        }
+    }
+
+    private IEnumerator WaitAndAdd()
+    {
+        _startTime = Time.time + _elapsedTime;
+        yield return new WaitUntil(() => !DialogueManager.Instance.DialogueIsActive());
+        if (!DialogueManager.Instance.DialogueIsActive() && !timeAdjust)
+        {
+            timeAdjust = true;
+            _startTime += 5f;
+            StopAllCoroutines();
+            print("time adjusted");
         }
     }
 
