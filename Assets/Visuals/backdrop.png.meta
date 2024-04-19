@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d26fa3ca5fd47b249bfebf96860444fa
+guid: 23e65d9a2d673c748b73de6a7f2c8b64
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,70 +121,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: piece1
-      rect:
-        serializedVersion: 2
-        x: 757
-        y: 560
-        width: 3033
-        height: 3177
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0b4199d79da786b4b9651ee47bc8d489
-      internalID: -1122455551
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: piece0
-      rect:
-        serializedVersion: 2
-        x: 2346
-        y: 4960
-        width: 3024
-        height: 3177
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 60244d6d3d312c54fb94cf13fa384a4d
-      internalID: 1523226273
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: piece2
-      rect:
-        serializedVersion: 2
-        x: 5812
-        y: 458
-        width: 3024
-        height: 3152
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b59d0c9d0e945f2468b1ace0c6f632b5
-      internalID: -101148771
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -195,10 +132,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      piece0: 1523226273
-      piece1: -1122455551
-      piece2: -101148771
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
