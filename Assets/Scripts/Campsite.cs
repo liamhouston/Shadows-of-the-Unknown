@@ -4,7 +4,12 @@ using UnityEngine;
 using UnityEngine.Analytics;
 
 public class Campsite : MonoBehaviour
-{
+{   
+    public string hintDialogue;
+    public int delay;
+    private bool hintPlayed = false;
+
+
     public GameObject xbutton;
     public GameObject sign;
     public GameObject paperclue;
@@ -29,35 +34,18 @@ public class Campsite : MonoBehaviour
         {
             TryGetComponent(out Collider2D campsiteCollider);
             campsiteCollider.enabled = false;
-            if (!DialogueManager.Instance.DialogueIsActive() && pannel.activeSelf == false && sign.activeSelf == false && paperclue.activeSelf == false) 
-                {
-                    _elapsedTime = Time.time - _startTime;
-                    if (_elapsedTime > 10) // If more than 10 seconds have passed
-                    {
-                        
-                        _dialogue = new string[] {"Gotta leave store to find Percy. Campsite"};
-                        print("You have been in the campsite for more than 10 seconds");
-                        DialogueManager.Instance.playBlockingDialogue("Jay", _dialogue);
-                        _startTime = Time.time;
-                    }
-                }
-                else _startTime = Time.time;
         }
         else
         {
             if (!DialogueManager.Instance.DialogueIsActive() && pannel.activeSelf == false && sign.activeSelf == false && paperclue.activeSelf == false) 
             {
                 _elapsedTime = Time.time - _startTime;
-                if (_elapsedTime > 10) // If more than 10 seconds have passed
-                {
-                    
-                    _dialogue = new string[] {"Why do you take this much time? Campsite"};
-                    print("You have been in the campsite for more than 10 seconds");
-                    DialogueManager.Instance.playBlockingDialogue("Jay", _dialogue);
+                if (!hintPlayed && _elapsedTime > delay) {
+                    DialogueManager.Instance.playBlockingDialogue("Jay", new string[] {hintDialogue});
+                    hintPlayed = true;
                     _startTime = Time.time;
                 }
             }
-            else _startTime = Time.time;
         }
         
         

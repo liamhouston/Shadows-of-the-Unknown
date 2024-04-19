@@ -1719,6 +1719,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35a95ca3a33958f4b8bfdc84257a4eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hintDialogue: "I should look over in these darker corners and see if there\u2019s
+    anything Percy would\u2019ve taken a photo of."
+  delay: 60
   xbutton: {fileID: 1107005346}
   pannel: {fileID: 1892507397}
 --- !u!1 &745859772

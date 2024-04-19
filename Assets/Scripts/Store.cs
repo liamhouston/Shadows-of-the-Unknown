@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class Store : MonoBehaviour
 {
+    public string hintDialogue;
+    public int delay;
+    private bool hintPlayed = false;
+
     // if puzzle is done, disable the puzzle
     public GameObject xbutton;
     private float _startTime;
@@ -28,35 +32,21 @@ public class Store : MonoBehaviour
         {
             TryGetComponent(out Collider2D storeCollider);
             storeCollider.enabled = false;
-            if (!DialogueManager.Instance.DialogueIsActive() && pannel.activeSelf == false) 
-            {
-                _elapsedTime = Time.time - _startTime;
-                if (_elapsedTime > 10) // If more than 10 seconds have passed
-                {
-                    
-                    _dialogue = new string[] {"Gotta leave store to find Percy. Store"};
-                    print("You have been in the campsite for more than 20 seconds");
-                    DialogueManager.Instance.playBlockingDialogue("Jay", _dialogue);
-                    _startTime = Time.time;
-                }
-            }
-            else _startTime = Time.time;
         }
         else
         {
             if (!DialogueManager.Instance.DialogueIsActive() && pannel.activeSelf == false) 
             {
                 _elapsedTime = Time.time - _startTime;
-                if (_elapsedTime > 10) // If more than 10 seconds have passed
-                {
-                    
-                    _dialogue = new string[] {"Why do you take this much time? Store"};
-                    print("You have been in the campsite for more than 10 seconds");
-                    DialogueManager.Instance.playBlockingDialogue("Jay", _dialogue);
-                    _startTime = Time.time;
+                if (!DialogueManager.Instance.DialogueIsActive() && pannel.activeSelf == false) {
+                    _elapsedTime = Time.time - _startTime;
+                    if (!hintPlayed && _elapsedTime > delay) {
+                        hintPlayed = true;
+                        DialogueManager.Instance.playBlockingDialogue("Jay", new string[] {hintDialogue});
+                        _startTime = Time.time;
+                    }
                 }
             }
-            else _startTime = Time.time;
         }
     }
 }
