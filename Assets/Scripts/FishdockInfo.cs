@@ -102,7 +102,7 @@ public class Fishdockinfo : MonoBehaviour
         }
         if (puzzle1 == 1 && puzzle2 == 1 && puzzle3 == 1 && puzzle4 == 1 && puzzle5 == 1 && puzzle6 == 1)
         {
-            DialogueManager.Instance.playBlockingDialogue("Jay", new string[] {"What was that?"});
+            DialogueManager.Instance.playBlockingDialogue("Jay", new string[] {"That sounded like the garage? It’s over near the store."});
             MotelPoster.SetActive(false);
             PercyCam.SetActive(false);
             Fishshop.SetActive(false);
