@@ -124,7 +124,8 @@ public class MajorPhoto : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             else if (SceneManager.GetActiveScene().name == "PercyCam" && PlayerPrefs.GetInt("PercyCamPuzzle") == 0)
             {
                 PlayerPrefs.SetInt("PercyCamPuzzle", 1);
-                PosterDialogue = new string[] {"It’s so weird that he’d abandon his other cameras. This one was expensive, too. I suppose when the camera is this good at picking up things, you don’t really need others anymore."
+                PosterDialogue = new string[] {"It’s so weird that he’d abandon his other cameras. This one was expensive, too.", 
+                                               "I suppose when the camera is this good at picking up things, you don’t really need others anymore."
                                             };
                 SoundManager.Instance.PlaySound2D("MajorClue");
                 DialogueManager.Instance.playBlockingDialogue("Jay", PosterDialogue);

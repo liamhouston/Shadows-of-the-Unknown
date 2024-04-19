@@ -1095,7 +1095,6 @@ GameObject:
   - component: {fileID: 515041879}
   - component: {fileID: 515041880}
   - component: {fileID: 515041884}
-  - component: {fileID: 515041885}
   - component: {fileID: 515041882}
   - component: {fileID: 515041881}
   - component: {fileID: 515041886}
@@ -1242,24 +1241,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exitButton: {fileID: 1817331167}
   film: {fileID: 515041878}
-  playerFoundMajorClue: 0
---- !u!114 &515041885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 515041878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eac34f5bea1aca419d8ac232ce4fb61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playTogether: 1
-  barkList:
+  pickUpDialogue:
   - "Oh, this must be for the camera. I\u2019ll pocket that. Thanks Percy for\u2026
     being so messy."
   - I think I can take some pictures now with right-click.
+  delay: 5
+  hintDialogue: I think I see some film up on the shelf there. Hopefully it works
+    with this camera.
+  playerFoundMajorClue: 0
 --- !u!114 &515041886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4745,8 +4734,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Click to continue
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 167ed707225cc134d9c85d826e5ef0a8, type: 2}
-  m_sharedMaterial: {fileID: 986355144178585337, guid: 167ed707225cc134d9c85d826e5ef0a8,
+  m_fontAsset: {fileID: 11400000, guid: caf04aaf11857364ea5677d72749aa53, type: 2}
+  m_sharedMaterial: {fileID: 3752214704442490073, guid: caf04aaf11857364ea5677d72749aa53,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4771,13 +4760,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -4939,17 +4928,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "This is your <color=red>camera</color>. Move the flashlight using your
-    mouse and the camera back and forth using WASD or the arrow keys. Click to interact
-    with highlighted objects. \n\nYou cannot exit camera scenes <color=red>until
-    you\u2019ve taken a photo,</color> but you must collect film first. You are safe
-    in your brother\u2019s apartment, but outside there are things that will hurt
-    you and lower your resolve. \n\nIf you let your resolve get too low, you will
-    die. If you are confused, take a deep breath, and remember: <color=red>the most
-    important thing in the world is the camera.</color>"
+  m_text: "This is your <color=red>camera</color>. \n\nMove the flashlight using
+    your mouse and the camera using WASD or the arrow keys. Click to interact with
+    highlighted objects.\n\nTo exit camera scenes <color=red>you must take a photo.</color>\n\nOutside
+    the apartment, there are things that will hurt you and lower your resolve. Do
+    not let your resolve get too low."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 167ed707225cc134d9c85d826e5ef0a8, type: 2}
-  m_sharedMaterial: {fileID: 986355144178585337, guid: 167ed707225cc134d9c85d826e5ef0a8,
+  m_fontAsset: {fileID: 11400000, guid: caf04aaf11857364ea5677d72749aa53, type: 2}
+  m_sharedMaterial: {fileID: 3752214704442490073, guid: caf04aaf11857364ea5677d72749aa53,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4974,13 +4960,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535

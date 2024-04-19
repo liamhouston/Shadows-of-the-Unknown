@@ -3243,6 +3243,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74e8bb36aca5dd54d84fee21f8add9ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delay: 60
+  findCameraDialogue: Did Percy leave that camera on the table for me?
+  findPuzzleDialogue: I don't wanna go dig through Percy's trash.. but I think I
+    saw something in there.
+  leaveBedroomDialogue: "I should keep looking around outside. I can\u2019t waste
+    too much time\u2014Percy is a speedwalker."
   pannel: {fileID: 7291016102266516621}
   note: {fileID: 9021764720962229052}
 --- !u!1 &2104829086 stripped
@@ -3943,6 +3949,38 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 517991811908042419, guid: 807662a1b5c81084f98c536ea6f47b2c,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 517991811908042419, guid: 807662a1b5c81084f98c536ea6f47b2c,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: caf04aaf11857364ea5677d72749aa53,
+        type: 2}
+    - target: {fileID: 517991811908042419, guid: 807662a1b5c81084f98c536ea6f47b2c,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 517991811908042419, guid: 807662a1b5c81084f98c536ea6f47b2c,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 517991811908042419, guid: 807662a1b5c81084f98c536ea6f47b2c,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3752214704442490073, guid: caf04aaf11857364ea5677d72749aa53,
+        type: 2}
+    - target: {fileID: 517991811908042419, guid: 807662a1b5c81084f98c536ea6f47b2c,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2925955298678087895, guid: 807662a1b5c81084f98c536ea6f47b2c,
         type: 3}
       propertyPath: m_Pivot.x
@@ -4045,8 +4083,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3616012187857869248, guid: 807662a1b5c81084f98c536ea6f47b2c,
         type: 3}
+      propertyPath: m_text
+      value: "You can move using A/D or the left/right arrow keys. Click to interact
+        with highlighted objects. \n\nBe careful and cautious\u2014you never know
+        what\u2019ll be waiting for you in dark corners."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3616012187857869248, guid: 807662a1b5c81084f98c536ea6f47b2c,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3616012187857869248, guid: 807662a1b5c81084f98c536ea6f47b2c,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: caf04aaf11857364ea5677d72749aa53,
+        type: 2}
+    - target: {fileID: 3616012187857869248, guid: 807662a1b5c81084f98c536ea6f47b2c,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3616012187857869248, guid: 807662a1b5c81084f98c536ea6f47b2c,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3616012187857869248, guid: 807662a1b5c81084f98c536ea6f47b2c,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3752214704442490073, guid: caf04aaf11857364ea5677d72749aa53,
+        type: 2}
+    - target: {fileID: 3616012187857869248, guid: 807662a1b5c81084f98c536ea6f47b2c,
+        type: 3}
       propertyPath: m_HorizontalAlignment
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3616012187857869248, guid: 807662a1b5c81084f98c536ea6f47b2c,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -7,6 +7,15 @@ using UnityEngine.Timeline;
 public class Fishdockinfo : MonoBehaviour
 {
     private const string _lastHorizontal = "LastHorizontal";
+
+    [Header("Hints after interval")]
+    public float delay;
+    public string missingMotelPoster;
+    public string missingStore;
+    public string missingCampsite;
+    public string missingFishshop;
+    public string missingPercyCam;
+    public string missingDarkRoom;
     
     [Header("Puzzle Objects")]
     public GameObject MotelPoster;
@@ -28,38 +37,6 @@ public class Fishdockinfo : MonoBehaviour
     private int puzzle5;
     private int puzzle6;
 
-
-    // private void Awake()
-    // {
-    //     // PlayerPrefs.SetInt("Bedroom", 0);
-    //     // PlayerPrefs.SetInt("BedroomCam", 0); // player has camera?
-    //     // PlayerPrefs.SetInt("Fishdock", 0);
-    //     // PlayerPrefs.SetInt("Campsite", 0);
-    //     // PlayerPrefs.SetInt("Store", 0);
-    //     // PlayerPrefs.SetInt("Darkroom", 0);
-    //     // PlayerPrefs.SetString("FromScene", "");
-        
-    //     // PlayerPrefs.SetInt("BedroomPuzzle", 0); // player did the puzzle from the trash can?
-    //     // PlayerPrefs.SetInt("StorePuzzle", 0);   // player took the pic from store?
-    //     // PlayerPrefs.SetInt("CampsitePuzzle", 0);    // player took the pic from campsite?
-    //     // PlayerPrefs.SetInt("DarkroomPuzzle", 0);    // player did the puzzle from darkroom?
-    //     // PlayerPrefs.SetInt("LeaveBedroom", 0);    // player did the puzzle from fishdock?
-
-    //     // PlayerPrefs.SetInt("MotelPosterPuzzle", 0); // for testing
-    //     // PlayerPrefs.SetInt("MotelPoster", 0);
-    //     // PlayerPrefs.SetInt("PercyCamPuzzle", 0); // for testing
-    //     // PlayerPrefs.SetInt("PercyCam", 0);
-    //     // PlayerPrefs.SetInt("FishshopPuzzle", 0); // for testing
-    //     // PlayerPrefs.SetInt("Fishshop", 0);
-
-    //     // PlayerPrefs.SetInt("BedroomPuzzle", 1); // player did the puzzle from the trash can?
-    //     // PlayerPrefs.SetInt("StorePuzzle", 1);   // player took the pic from store?
-    //     // PlayerPrefs.SetInt("CampsitePuzzle", 1);    // player took the pic from campsite?
-    //     // PlayerPrefs.SetInt("DarkroomPuzzle", 1);    // player did the puzzle from darkroom?
-    //     // PlayerPrefs.SetInt("FishshopPuzzle", 1); // for testing
-    //     // PlayerPrefs.SetInt("PercyCamPuzzle", 1); // for testing
-    //     // PlayerPrefs.SetInt("MotelPosterPuzzle", 1); // for testing
-    // }
     private void Start()
     {
         // string[] puzzles = new string[] { "BedroomPuzzle", "StorePuzzle", "CampsitePuzzle", "FishshopPuzzle", "PercyCamPuzzle", "MotelPosterPuzzle" };
@@ -89,6 +66,8 @@ public class Fishdockinfo : MonoBehaviour
         puzzle4 = PlayerPrefs.GetInt("FishshopPuzzle");
         puzzle5 = PlayerPrefs.GetInt("PercyCamPuzzle");
         puzzle6 = PlayerPrefs.GetInt("MotelPosterPuzzle");
+
+        _startTime = Time.time;
 
         // Depending on the scene the player is coming from, set the player's position
         if (PlayerPrefs.HasKey("FromScene"))
@@ -155,15 +134,30 @@ public class Fishdockinfo : MonoBehaviour
             if (!DialogueManager.Instance.DialogueIsActive() && pannel.activeSelf == false && sign.activeSelf == false)
                 {
                     _elapsedTime = Time.time - _startTime;
-                    if (_elapsedTime > 10) // If more than 10 seconds have passed
-                    { 
-                        _dialogue = new string[] {"I still need to check some other place here. Fishdock"};
-                        print("You have been in the campsite for more than 10 seconds");
-                        DialogueManager.Instance.playBlockingDialogue("Jay", _dialogue);
+                    if (_elapsedTime > delay){ // If more than delay seconds have passed since last hint
                         _startTime = Time.time;
+
+                        if (PlayerPrefs.GetInt("MotelPosterPuzzle") == 0){
+                            _dialogue = new string[] {missingMotelPoster};
+                        }
+                        else if (PlayerPrefs.GetInt("StorePuzzle") == 0) {
+                            _dialogue = new string[] {missingStore};
+                        }
+                        else if (PlayerPrefs.GetInt("CampsitePuzzle") == 0){
+                            _dialogue = new string[] {missingCampsite};
+                        }
+                        else if (PlayerPrefs.GetInt("FishshopPuzzle") == 0){
+                            _dialogue = new string[] {missingFishshop};
+                        } 
+                        else if (PlayerPrefs.GetInt("PercyCamPuzzle") == 0){
+                            _dialogue = new string[] {missingPercyCam};
+                        }
+                        else{
+                            _dialogue = new string[] {missingDarkRoom};
+                        }
+                        DialogueManager.Instance.playBlockingDialogue("Jay", _dialogue);
                     }
                 }
-                else _startTime = Time.time;
         }
     }
 }
