@@ -22,13 +22,10 @@ public class CutsceneManager : MonoBehaviour
     public float wordSpeed = 0.04f;
     public float secondsOnScreen = 4f; // how long should dialogue remain on screen once complete?
 
-    private bool _isTyping;
-
 
     // Start is called before the first frame update
     void Start()
     {
-        _isTyping = false;
         lastCommandFinished = true;
         commandIndex = -1;
     }
@@ -97,7 +94,6 @@ public class CutsceneManager : MonoBehaviour
 
     private IEnumerator Typing(float secondsOnScreen)
     {
-        _isTyping = true;
         // this function types out each individual letter of the dialogue
         foreach (char letter in dialogueLine.ToCharArray())
         {
@@ -108,7 +104,6 @@ public class CutsceneManager : MonoBehaviour
         {
             yield return new WaitForSeconds(secondsOnScreen);
         }
-        _isTyping = false;
         lastCommandFinished = true;
     }
 }

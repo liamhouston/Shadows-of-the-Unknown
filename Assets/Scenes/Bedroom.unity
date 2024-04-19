@@ -7322,7 +7322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playTogether: 0
   barkList:
-  - Gross. I am not washing those, thanks. Maybe Perce should invest in a dishwasher.
+  - Gross. I am not washing those, thanks. Maybe Percy should invest in a dishwasher.
 --- !u!114 &8634899713890754299
 MonoBehaviour:
   m_ObjectHideFlags: 0
