@@ -140,7 +140,7 @@ PrefabInstance:
     - target: {fileID: 2500718899811137495, guid: 43213c0d9da6598419b9ca4462307a49,
         type: 3}
       propertyPath: m_margin.z
-      value: -46.598953
+      value: -79.05379
       objectReference: {fileID: 0}
     - target: {fileID: 2500718899811137495, guid: 43213c0d9da6598419b9ca4462307a49,
         type: 3}
@@ -265,7 +265,7 @@ PrefabInstance:
     - target: {fileID: 9170095203217047590, guid: 43213c0d9da6598419b9ca4462307a49,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -27
+      value: -3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

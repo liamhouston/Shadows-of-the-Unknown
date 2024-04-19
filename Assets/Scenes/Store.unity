@@ -5316,7 +5316,7 @@ MonoBehaviour:
   playTogether: 0
   barkList:
   - "Wonder if there\u2019s anything left in here. Not that I\u2019m, you know, a
-    robber, but a lucky quarter would be cool. Maybe enough money to get a gumball."
+    robber, but a lucky penny would be cool.."
 --- !u!212 &4868204021911475889
 SpriteRenderer:
   m_ObjectHideFlags: 0

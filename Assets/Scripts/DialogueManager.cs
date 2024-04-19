@@ -173,8 +173,7 @@ public class DialogueManager : MonoBehaviour
         // this function types out each individual letter of the dialogue
         foreach (char letter in dialogue[line_index].ToCharArray())
         {
-            if (!stopTyping)
-            {
+            if (!stopTyping) {
                 dialogueText.text += letter;
                 yield return new WaitForSeconds(wordSpeed);
             }

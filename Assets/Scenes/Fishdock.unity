@@ -4609,7 +4609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2003c54361aae09419028f62f286f73e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 60
+  delay: 75
   missingMotelPoster: 'I think I saw a poster or something back near Percy''s apartment. '
   missingStore: I wonder if Percy took any pictures around the old grocery store
   missingCampsite: Didn't Percy say something about a campsite in the bushes somewhere?

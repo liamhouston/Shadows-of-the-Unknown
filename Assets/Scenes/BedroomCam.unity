@@ -1245,7 +1245,7 @@ MonoBehaviour:
   - "Oh, this must be for the camera. I\u2019ll pocket that. Thanks Percy for\u2026
     being so messy."
   - I think I can take some pictures now with right-click.
-  delay: 5
+  delay: 45
   hintDialogue: I think I see some film up on the shelf there. Hopefully it works
     with this camera.
   playerFoundMajorClue: 0
