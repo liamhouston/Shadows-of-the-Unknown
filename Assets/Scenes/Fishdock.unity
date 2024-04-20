@@ -4410,7 +4410,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.8440723, y: 21.67}
+    oldSize: {x: 4.852615, y: 21.750002}
     newSize: {x: 0.1, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4431,7 +4431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df5b16f5536689469797f90e4f6c0ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 13
+  _moveSpeed: 12
   TentPic: 0
   currentSceneName: Fishdock
 --- !u!212 &1914666857
@@ -4475,7 +4475,7 @@ SpriteRenderer:
   m_SortingLayerID: 682607203
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -485730132, guid: 3a9cf21b582151642940be3a6544c529, type: 3}
+  m_Sprite: {fileID: 1811655266, guid: 3ad1442fa54f20648a3910dce2830f86, type: 3}
   m_Color: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
   m_FlipX: 0
   m_FlipY: 0
