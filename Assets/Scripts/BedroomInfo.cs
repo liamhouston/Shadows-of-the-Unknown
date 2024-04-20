@@ -13,11 +13,12 @@ public class BedroomInfo : MonoBehaviour
     private bool findCameraDialoguePlayed = false;
     private bool findPuzzleDialoguePlayed = false;
     private bool leaveBedroomDialoguePlayed = false;
+    private bool timeAdjust = false;
 
 
     private float _startTime;
     private float _elapsedTime;
-    string[] _dialogue = {};
+
     [Header("Puzzle Panel and Note")]
     public GameObject pannel;
     public GameObject note;
@@ -32,13 +33,11 @@ public class BedroomInfo : MonoBehaviour
         {
             if (PlayerPrefs.GetString("FromScene") == "BedroomCam")
             {
-                this.transform.position = new Vector3(-33.54f, 14.55f, 0f);
+                this.transform.position = new Vector3(-33.54f, 14.30f, 0f);
             }
             else if (PlayerPrefs.GetString("FromScene") == "Fishdock")
             {
-                this.transform.position = new Vector3(-68.65f, 14.55f, 0f);
-                // TryGetComponent(out Animator _playerAnimator);
-                // _playerAnimator.SetFloat(_lastHorizontal, -1);
+                this.transform.position = new Vector3(-68.65f, 14.30f, 0f);
                 _playerAnimator.SetFloat("LastHorizontal", 1);
             }
         }
@@ -49,8 +48,12 @@ public class BedroomInfo : MonoBehaviour
         
         int roomPuzzle = PlayerPrefs.GetInt("BedroomPuzzle");
         int camPuzzle = PlayerPrefs.GetInt("BedroomCam");
+        bool DialogueIsActive = DialogueManager.Instance.DialogueIsActive();
+
+        if (!DialogueIsActive && !pannel.activeSelf && !note.activeSelf) timeAdjust = false;
+
         if (camPuzzle != 1) {
-            if (!DialogueManager.Instance.DialogueIsActive() && pannel.activeSelf == false && note.activeSelf == false) {
+            if (!DialogueIsActive && !pannel.activeSelf && !note.activeSelf) {
                 _elapsedTime = Time.time - _startTime;
                 if (!findCameraDialoguePlayed && _elapsedTime > delay) {
                     DialogueManager.Instance.playBlockingDialogue("Jay", new string[] {findCameraDialogue});
@@ -58,9 +61,11 @@ public class BedroomInfo : MonoBehaviour
                     _startTime = Time.time;
                 }
             }
+            else if (!timeAdjust) StartCoroutine(WaitAndAdd());
         }
         else if (roomPuzzle != 1){
-            if (!DialogueManager.Instance.DialogueIsActive() && pannel.activeSelf == false && note.activeSelf == false) {
+            if (!DialogueIsActive && !pannel.activeSelf && !note.activeSelf) 
+            {
                 _elapsedTime = Time.time - _startTime;
                 if (!findPuzzleDialoguePlayed && _elapsedTime > delay) {
                     DialogueManager.Instance.playBlockingDialogue("Jay", new string[] {findPuzzleDialogue});
@@ -68,10 +73,11 @@ public class BedroomInfo : MonoBehaviour
                     _startTime = Time.time;
                 }
             }
+            else if (!timeAdjust) StartCoroutine(WaitAndAdd());
         }
         else if (roomPuzzle == 1 && camPuzzle == 1)
         {
-            if (!DialogueManager.Instance.DialogueIsActive() && pannel.activeSelf == false && note.activeSelf == false) 
+            if (!DialogueIsActive && !pannel.activeSelf && !note.activeSelf) 
             {
                 _elapsedTime = Time.time - _startTime;
                 if (!leaveBedroomDialoguePlayed && _elapsedTime > delay) {
@@ -80,6 +86,19 @@ public class BedroomInfo : MonoBehaviour
                     _startTime = Time.time;
                 }
             }
+            else if (!timeAdjust) StartCoroutine(WaitAndAdd());
+        }
+    }
+    private IEnumerator WaitAndAdd()
+    {
+        _startTime = Time.time + _elapsedTime;
+        yield return new WaitUntil(() => !DialogueManager.Instance.DialogueIsActive() && !pannel.activeSelf && !note.activeSelf);
+        if (!DialogueManager.Instance.DialogueIsActive() && !pannel.activeSelf && !note.activeSelf && !timeAdjust)
+        {
+            timeAdjust = true;
+            _startTime += 5f;
+            StopAllCoroutines();
+            print("time adjusted");
         }
     }
 }

@@ -16,6 +16,7 @@ public class Fishdockinfo : MonoBehaviour
     public string missingFishshop;
     public string missingPercyCam;
     public string missingDarkRoom;
+    public string toDarkroom;
     
     [Header("Puzzle Objects")]
     public GameObject MotelPoster;
@@ -23,11 +24,13 @@ public class Fishdockinfo : MonoBehaviour
     public GameObject Fishshop;
     public GameObject Campsite;
     public GameObject Store;
+    public GameObject Bedroom;
 
-    public GameObject pannel;
+    // public GameObject pannel;
     public GameObject sign;
     private float _startTime;
     private float _elapsedTime;
+    private bool timeAdjust = false;
     string[] _dialogue = {};
 
     private int puzzle1;
@@ -39,24 +42,6 @@ public class Fishdockinfo : MonoBehaviour
 
     private void Start()
     {
-        // string[] puzzles = new string[] { "BedroomPuzzle", "StorePuzzle", "CampsitePuzzle", "FishshopPuzzle", "PercyCamPuzzle", "MotelPosterPuzzle" };
-        // List<string> unsolvedPuzzles = new List<string>();
-
-        // foreach (string puzzle in puzzles)
-        // {
-        //     if (PlayerPrefs.GetInt(puzzle) == 0)
-        //     {
-        //         unsolvedPuzzles.Add(puzzle);
-        //     }
-        // }
-        // string value = "";
-        // int n = unsolvedPuzzles.Count;
-        // if (n != 0)
-        // {
-        //     int k = Random.Range(0, n-1);
-        //     value = unsolvedPuzzles[k];
-        // }
-        
         TryGetComponent(out Animator _playerAnimator);
         _playerAnimator.SetFloat(_lastHorizontal, -1);
 
@@ -68,7 +53,6 @@ public class Fishdockinfo : MonoBehaviour
         puzzle6 = PlayerPrefs.GetInt("MotelPosterPuzzle");
 
         _startTime = Time.time;
-
         // Depending on the scene the player is coming from, set the player's position
         if (PlayerPrefs.HasKey("FromScene"))
         {
@@ -119,19 +103,26 @@ public class Fishdockinfo : MonoBehaviour
         }
         if (puzzle1 == 1 && puzzle2 == 1 && puzzle3 == 1 && puzzle4 == 1 && puzzle5 == 1 && puzzle6 == 1)
         {
-            DialogueManager.Instance.playBlockingDialogue("Jay", new string[] {"What was that?"});
+            _dialogue = new string[] {toDarkroom};
+            
+            Bedroom.SetActive(false);
             MotelPoster.SetActive(false);
             PercyCam.SetActive(false);
             Fishshop.SetActive(false);
             Campsite.SetActive(false);
             Store.SetActive(false);
+            DialogueManager.Instance.playBlockingDialogue("Jay", _dialogue);
+            DialogueManager.Instance.dialoguePanel.SetActive(true);
         }
     }
     private void Update()
     {
+        bool DialogueIsActive = DialogueManager.Instance.DialogueIsActive();
+        if (!DialogueIsActive && !sign.activeSelf) timeAdjust = false;
+
         if (puzzle1 == 0 || puzzle2 == 0 || puzzle3 == 0 || puzzle4 == 0 || puzzle5 == 0 || puzzle6 == 0)
         {
-            if (!DialogueManager.Instance.DialogueIsActive() && pannel.activeSelf == false && sign.activeSelf == false)
+            if (!DialogueIsActive && !sign.activeSelf)
                 {
                     _elapsedTime = Time.time - _startTime;
                     if (_elapsedTime > delay){ // If more than delay seconds have passed since last hint
@@ -158,6 +149,21 @@ public class Fishdockinfo : MonoBehaviour
                         DialogueManager.Instance.playBlockingDialogue("Jay", _dialogue);
                     }
                 }
+            else if (!timeAdjust) StartCoroutine(WaitAndAdd());
+            
+        }
+    }
+
+    private IEnumerator WaitAndAdd()
+    {
+        _startTime = Time.time + _elapsedTime;
+        yield return new WaitUntil(() => !DialogueManager.Instance.DialogueIsActive() && !sign.activeSelf);
+        if (!DialogueManager.Instance.DialogueIsActive() && !sign.activeSelf && !timeAdjust)
+        {
+            timeAdjust = true;
+            _startTime += 5f;
+            StopAllCoroutines();
+            print("time adjusted");
         }
     }
 }

@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f1dbc7524cd4d4e8e5a2cdf91b6350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openingDialogueCharacterName: Jay
   openingDialogue: []
   characterNames:
   - Jay
@@ -70,7 +69,8 @@ AudioSource:
   m_GameObject: {fileID: 8672732656273735881}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 1540273720642176239, guid: c650268cadc1f84489d5d5ff9c14d070,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
