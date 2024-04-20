@@ -72,6 +72,18 @@ public class CutsceneManager : MonoBehaviour
                     lastCommandFinished = true;
                 }
             }
+            else if (command_type == "soundLoop"){
+                // get sound name
+                string soundName = command.Substring(command.IndexOf(delimiter) + 1);
+
+                if (!SoundManager.Instance.DoesSoundExist(soundName)){
+                    throw new Exception("Cannot find sound " + soundName);
+                }
+                else{
+                    SoundManager.Instance.PlayLoopingSound2D(soundName);
+                    lastCommandFinished = true;
+                }
+            }
             else if (command_type == "dialogue"){
                 // get dialogue
                 dialogueLine = command.Substring(command.IndexOf(delimiter) + 1);

@@ -403,6 +403,22 @@ MonoBehaviour:
     - {fileID: 8300000, guid: a13298bbbc6ac1d4d87a834f0cc33863, type: 3}
     - {fileID: 8300000, guid: 6e322f17b244d764e966a4d2e59b062b, type: 3}
     - {fileID: 8300000, guid: b51ec63013a38054da4b0ed9bb186482, type: 3}
+  - groupID: StoreBackgroundNoise
+    clips:
+    - {fileID: 8300000, guid: b51ec63013a38054da4b0ed9bb186482, type: 3}
+    - {fileID: 8300000, guid: 8a181045388a64d458490b44f4615824, type: 3}
+    - {fileID: 8300000, guid: b51ec63013a38054da4b0ed9bb186482, type: 3}
+    - {fileID: 8300000, guid: 8a181045388a64d458490b44f4615824, type: 3}
+    - {fileID: 8300000, guid: 6e322f17b244d764e966a4d2e59b062b, type: 3}
+    - {fileID: 8300000, guid: a53482411c9885c4d9ed76b72b8731d3, type: 3}
+  - groupID: ApartmentBackgroundNoise
+    clips:
+    - {fileID: 8300000, guid: e94e51c654da1bb468261ffddaf95217, type: 3}
+    - {fileID: 8300000, guid: 6e322f17b244d764e966a4d2e59b062b, type: 3}
+    - {fileID: 8300000, guid: 9159fa0aad13d1d439078b68d5293670, type: 3}
+    - {fileID: 8300000, guid: 1c8bacd68409fb64cafa2e4019b83fd3, type: 3}
+    - {fileID: 8300000, guid: dd6493f157af08a45b60f72d83caf29a, type: 3}
+    - {fileID: 8300000, guid: b51ec63013a38054da4b0ed9bb186482, type: 3}
   - groupID: MajorClue
     clips:
     - {fileID: 8300000, guid: c7099fde50122da4281513cbb3cfd7cd, type: 3}
@@ -421,21 +437,21 @@ MonoBehaviour:
   - groupID: DoorClose
     clips:
     - {fileID: 8300000, guid: bfbe308211de28b4cb170e207895a138, type: 3}
-  - groupID: Hover
+  - groupID: fanWhirring
     clips:
-    - {fileID: 8300000, guid: 84c65a5c5528b1c43a7cea1799b457bd, type: 3}
-  - groupID: DarkroomOpen
-    clips:
-    - {fileID: 8300000, guid: 237e04a55e2e2964e95ba5e8017e9780, type: 3}
+    - {fileID: 8300000, guid: 9c8ff0db3d7263f49b12835a8866cf2d, type: 3}
   - groupID: EndCutscene
     clips:
     - {fileID: 8300000, guid: 8a36aaa568cf03540bb3accba3a510bc, type: 3}
-  - groupID: Sizzle
+  - groupID: sizzle
     clips:
-    - {fileID: 8300000, guid: 03a87f1c19c128d499e5c89b376cad22, type: 3}
-  - groupID: Breathing
+    - {fileID: 8300000, guid: b782d8b5c3d2c4443b2c46664e014a57, type: 3}
+  - groupID: scrape
     clips:
-    - {fileID: 8300000, guid: e062608c6b4eaf04294d8272a5177ab1, type: 3}
+    - {fileID: 8300000, guid: a04fce6788d78ac4bac01b0976417f6e, type: 3}
+  - groupID: Hover
+    clips:
+    - {fileID: 8300000, guid: 84c65a5c5528b1c43a7cea1799b457bd, type: 3}
 --- !u!1 &4063165185422374783
 GameObject:
   m_ObjectHideFlags: 0

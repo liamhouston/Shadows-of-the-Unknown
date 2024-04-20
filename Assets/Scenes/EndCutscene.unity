@@ -559,11 +559,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: MainMenu
   cutsceneCommands:
-  - sound:EndCutscene
+  - soundLoop:EndCutscene
   - delay:1
-  - "dialogue:Oh, god, Percy. Percy! Where are you? Where is\u2014"
+  - dialogue:Oh, god, Percy. Percy! Where are you? What happened to you? Where is
+    my--
   - delay:1
-  - "dialogue:Ow, ouch, oh god. The camera\u2014please help me\u2014"
+  - sound:sizzle
+  - dialogue:Ow, ouch, oh god. The camera. It was-- it was the camera the whole time--
+  - dialogue:Why can't I fucking drop the camera?!
+  - dialogue:Percy!
+  - dialogue:LET ME GO!
+  - dialogue:...
+  - dialogue:...
+  - dialogue:...
+  - delay:2
+  - dialogue:I think... I think I should go take some pictures.
   - delay:3
   dialogueLine: 
   dialoguePanel: {fileID: 688371013}
@@ -827,6 +837,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: soundEffects.Array.data[17].clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: b782d8b5c3d2c4443b2c46664e014a57, type: 3}
+    - target: {fileID: 4063165185107553853, guid: af9a69f8dd886d24eb9e61c08dabedba,
+        type: 3}
+      propertyPath: soundEffects.Array.data[20].clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 84c65a5c5528b1c43a7cea1799b457bd, type: 3}
     - target: {fileID: 4063165185107553854, guid: af9a69f8dd886d24eb9e61c08dabedba,
         type: 3}
       propertyPath: m_RootOrder
