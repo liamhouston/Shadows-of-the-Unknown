@@ -4619,11 +4619,13 @@ MonoBehaviour:
   missingPercyCam: I think I saw something shine in the boat by the dock.
   missingDarkRoom: That poster said Percy's exhibit was in the darkroom.. Maybe he's
     working in there.
+  toDarkroom: That sounded like the garage? It's over near the store.
   MotelPoster: {fileID: 166126931}
   PercyCam: {fileID: 418770587}
   Fishshop: {fileID: 675424301}
   Campsite: {fileID: 1835261802}
   Store: {fileID: 2144769566}
+  Bedroom: {fileID: 1007458071}
   sign: {fileID: 2103351143}
 --- !u!1 &2011322880
 GameObject:
@@ -4932,7 +4934,7 @@ PrefabInstance:
     - target: {fileID: 3810702706739340712, guid: 20f997db4c7ccf54994b980664ab2dfe,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3859402224483502292, guid: 20f997db4c7ccf54994b980664ab2dfe,
         type: 3}

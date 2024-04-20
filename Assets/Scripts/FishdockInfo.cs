@@ -16,6 +16,7 @@ public class Fishdockinfo : MonoBehaviour
     public string missingFishshop;
     public string missingPercyCam;
     public string missingDarkRoom;
+    public string toDarkroom;
     
     [Header("Puzzle Objects")]
     public GameObject MotelPoster;
@@ -23,6 +24,7 @@ public class Fishdockinfo : MonoBehaviour
     public GameObject Fishshop;
     public GameObject Campsite;
     public GameObject Store;
+    public GameObject Bedroom;
 
     // public GameObject pannel;
     public GameObject sign;
@@ -51,7 +53,6 @@ public class Fishdockinfo : MonoBehaviour
         puzzle6 = PlayerPrefs.GetInt("MotelPosterPuzzle");
 
         _startTime = Time.time;
-
         // Depending on the scene the player is coming from, set the player's position
         if (PlayerPrefs.HasKey("FromScene"))
         {
@@ -102,12 +103,16 @@ public class Fishdockinfo : MonoBehaviour
         }
         if (puzzle1 == 1 && puzzle2 == 1 && puzzle3 == 1 && puzzle4 == 1 && puzzle5 == 1 && puzzle6 == 1)
         {
-            DialogueManager.Instance.playBlockingDialogue("Jay", new string[] {"That sounded like the garage? It’s over near the store."});
+            _dialogue = new string[] {toDarkroom};
+            
+            Bedroom.SetActive(false);
             MotelPoster.SetActive(false);
             PercyCam.SetActive(false);
             Fishshop.SetActive(false);
             Campsite.SetActive(false);
             Store.SetActive(false);
+            DialogueManager.Instance.playBlockingDialogue("Jay", _dialogue);
+            DialogueManager.Instance.dialoguePanel.SetActive(true);
         }
     }
     private void Update()

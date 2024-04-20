@@ -33,11 +33,11 @@ public class BedroomInfo : MonoBehaviour
         {
             if (PlayerPrefs.GetString("FromScene") == "BedroomCam")
             {
-                this.transform.position = new Vector3(-33.54f, 14.55f, 0f);
+                this.transform.position = new Vector3(-33.54f, 14.30f, 0f);
             }
             else if (PlayerPrefs.GetString("FromScene") == "Fishdock")
             {
-                this.transform.position = new Vector3(-68.65f, 14.55f, 0f);
+                this.transform.position = new Vector3(-68.65f, 14.30f, 0f);
                 _playerAnimator.SetFloat("LastHorizontal", 1);
             }
         }
