@@ -60,6 +60,7 @@ public class RespondToDarkRoomPuzzle : MonoBehaviour
 
     private IEnumerator ScaleAndMoveCoroutine()
     {
+        yield return new WaitForSeconds(1);
         float elapsedTime = 0f;
         SoundManager.Instance.PlaySound2D("Heartbeating");
 
